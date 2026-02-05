@@ -40,7 +40,7 @@ const ProgressiveLearner = () => {
         <div>
             <ContainerLayout className='mt-[10%]'>
                 <ScrollOverlappingCards
-                    heading=<>Built Spaces for the<br/> progressive <br/> <span> 21st Century Learner</span></>
+                    heading=<>Built Spaces for the<br/> progressive <br/> <span className='text-[#23519D]'> 21st Century</span> Learner</>
                     paragraph=<>Where learning moves beyond classrooms into studios, labs, workshops, kitchens, gardens, theatres, and community spaces.</>
                     cards={data}
                 />

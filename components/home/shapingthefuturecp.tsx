@@ -8,8 +8,9 @@ import float3 from '@/assets/home/float-3.png'
 import float4 from '@/assets/home/float-4.png'
 import Image from 'next/image'
 import gsap from 'gsap'
+import ImageTrail from '../reuseable/imagetrail'
 
-const Shapingthefuture = () => {
+const ShapingthefutureCP = () => {
     const containerRef = useRef(null)
     const logoSectionRef = useRef<HTMLDivElement>(null)
     const [rotation, setRotation] = useState({ x: 0, y: 0 })
@@ -60,33 +61,22 @@ const Shapingthefuture = () => {
 
                 {/* Header / Logo Section */}
                 <div
-                    ref={logoSectionRef}
-                    onMouseMove={handleMouseMove}
-                    onMouseLeave={handleMouseLeave}
                     className="relative flex flex-col items-center justify-center mb-24 md:mb-32"
                 >
 
                     {/* Floating Icons */}
                     <div
-                        className="absolute inset-0"
-                        style={{
-                            transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
-                            transition: 'transform 0.3s ease-out',
-                            pointerEvents: 'none'
-                        }}
+                        className="absolute inset-0 pointer-events-auto"
                     >
-                        <div className="absolute top-5 left-[5%] md:left-[2%] floating-icon z-10 w-20 h-20 md:w-28 md:h-28">
-                            <Image src={float1} alt="Icon" fill className="object-contain" />
-                        </div>
-                        <div className="absolute top-[60%] left-[2%] md:left-[10%] floating-icon z-10 w-16 h-16 md:w-24 md:h-24">
-                            <Image src={float2} alt="Icon" fill className="object-contain" />
-                        </div>
-                        <div className="absolute top-20 right-[5%] md:right-[5%] floating-icon z-10 w-20 h-20 md:w-28 md:h-28">
-                            <Image src={float3} alt="Icon" fill className="object-contain" />
-                        </div>
-                        <div className="absolute top-[80%] right-[2%] md:right-[10%] floating-icon z-10 w-16 h-16 md:w-24 md:h-24">
-                            <Image src={float4} alt="Icon" fill className="object-contain" />
-                        </div>
+                        <ImageTrail
+                            items={[
+                                float1.src,
+                                float2.src,
+                                float3.src,
+                                float4.src,
+                            ]}
+                            variant={1}
+                        />
                     </div>
 
                     {/* RAKS Logo & Text */}
@@ -147,4 +137,4 @@ const Shapingthefuture = () => {
     )
 }
 
-export default Shapingthefuture
+export default ShapingthefutureCP

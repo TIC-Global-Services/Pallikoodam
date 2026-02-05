@@ -47,6 +47,7 @@ const Wayofteaching = () => {
                         pin: true,
                         scrub: isMobile ? 0.2 : 1,
                         anticipatePin: 1,
+                        invalidateOnRefresh: true,
                         // markers: true
                     },
                 });
@@ -63,6 +64,11 @@ const Wayofteaching = () => {
                         { opacity: 1, yPercent: index * offset, duration: 0.5 }
                     );
                 });
+
+                // Refresh ScrollTrigger after setup to account for images loading
+                setTimeout(() => {
+                    ScrollTrigger.refresh();
+                }, 100);
             }, sectionRef);
 
             return () => ctx.revert();

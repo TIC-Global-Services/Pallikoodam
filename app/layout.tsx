@@ -1,29 +1,19 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/reuseable/navbar";
 import Footer from "@/components/reuseable/footer";
+import { ppe } from '@/font'
+import SmoothScroller from "@/layout/SmoothScroller";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-});
+
 
 
 export const metadata: Metadata = {
@@ -39,11 +29,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${playfair.variable} antialiased`}
+        className={`${inter.variable} ${ppe.variable} antialiased`}
+        suppressHydrationWarning
       >
-        <Navbar />
-        {children}
-        <Footer/>
+        <SmoothScroller>
+          <Navbar />
+          {children}
+          <Footer />
+        </SmoothScroller>
+
       </body>
     </html>
   );

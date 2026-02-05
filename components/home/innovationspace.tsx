@@ -106,7 +106,7 @@ const Innovationspace = () => {
                     {cards.map((card) => (
                         <div
                             key={card.id}
-                            className={`${card.colSpan} bg-white text-black rounded-[30px] overflow-hidden flex flex-col justify-between min-h-[400px] md:min-h-[500px] group`}
+                            className={`${card.colSpan} bg-white text-black rounded-[30px] overflow-hidden flex flex-col justify-between min-h-[400px] md:min-h-[500px] group hover:scale-105 transition-all duration-300`}
                         >
                             <div className='p-8 md:p-10'>
                                 <h3 className='text-3xl md:text-4xl font-medium mb-6 leading-none tracking-tight'>

@@ -5,7 +5,7 @@ import image2 from "@/assets/home/bg-image-2.png"
 import image3 from "@/assets/home/bg-image-3.png"
 import image4 from "@/assets/home/bg-image-4.png"
 import Card from '../reuseable/home/card'
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import ContainerLayout from '@/layout/ContainerLayout'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperType } from 'swiper'
@@ -47,10 +47,10 @@ const DifferenceWeCreate = () => {
   return (
     <div className='bg-[#000086]'>
       {/* <ContainerLayout> */}
-      <div className="flex flex-col gap-10 rounded-t-[40px] overflow-hidden bg-white p-8 md:p-14">
-        <div className='flex flex-col gap-4'>
-          <h1 className='text-[54px] font-medium tracking-tighter leading-[64px]'>The <span className='text-[#000086]'>Difference</span> We Create</h1>
-          <p className='text-2xl max-w-[54%]'>Discover what sets <span>RaK's Pallikkoodam</span> apart—a future-focused learning community where every space, every mentor, and every experience is thoughtfully designed with purpose and care.</p>
+      <div className="flex flex-col gap-10 rounded-t-[40px] overflow-hidden bg-white py-8 md:py-14">
+        <div className='flex flex-col gap-4 px-[3%]'>
+          <h1 className='text-[54px] font-medium tracking-tighter leading-[64px]'>The <span className='text-[#000086] font-ppe italic font-normal'>Difference</span> We Create</h1>
+          <p className='text-[2.1vh] max-w-[54%]'>Discover what sets <span>RaK's Pallikkoodam</span> apart—a future-focused learning community where every space, every mentor, and every experience is thoughtfully designed with purpose and care.</p>
         </div>
 
         <div className="w-full relative pb-20">
@@ -83,32 +83,32 @@ const DifferenceWeCreate = () => {
                 spaceBetween: 40,
               },
               1536: {
-                slidesPerView: 3.5,
+                slidesPerView: 3.3,
                 spaceBetween: 40,
               }
             }}
-            className="w-full py-10"
+            className="w-full py-4 h-[calc(100vh-300px)] !pl-[3%]"
           >
             {data.map((item, index) => {
               return (
-                <SwiperSlide key={index} className="h-auto">
+                <SwiperSlide key={index} className="!h-full">
                   <Card
                     title={item.title}
                     description={item.description}
                     image={item.image}
                     variant={index % 2 === 0 ? 'text-top' : 'text-bottom'}
-                    className="h-full !min-h-0 !max-h-none aspect-[3/5] w-full"
+                    className="h-[65vh] !min-h-0 !max-h-none w-[27vw] aspect-[3/4]"
                   />
                 </SwiperSlide>
               )
             })}
           </Swiper>
-          <div className="absolute bottom-0 right-0 flex gap-4 z-10 w-fit">
+          <div className="absolute bottom-3 right-10 flex gap-4 z-10 w-fit">
             <button className="swiper-button-prev-custom w-12 h-12 rounded-full border border-black flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer">
-              <ArrowLeft className="w-6 h-6" />
+              <ChevronLeft className="w-6 h-6" />
             </button>
             <button className="swiper-button-next-custom w-12 h-12 rounded-full border border-black flex items-center justify-center hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer">
-              <ArrowRight className="w-6 h-6" />
+              <ChevronRight className="w-6 h-6" />
             </button>
           </div>
         </div>

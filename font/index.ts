@@ -1,28 +1,27 @@
 import localFont from "next/font/local";
 
 
-
 export const ppe = localFont({
   src: [
     {
       path: "./PPEditorialNew-Italic.otf",
       weight: "300",
-      style: "normal",
+      style: "light",
     },
     {
       path: "./PPEditorialNew-Regular.otf",
       weight: "400",
-      style: "normal",
+      style: "regular",
     },
     {
       path: "./PPEditorialNew-Ultrabold.otf",
       weight: "500",
-      style: "normal",
+      style: "ultrabold",
     },
     {
       path: "./PPEditorialNew-UltraboldItalic.otf",
       weight: "700",
-      style: "normal",
+      style: "ultrabold-italic",
     },
   ],
   variable: "--font-ppe",

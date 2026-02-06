@@ -8,17 +8,17 @@ import ContainerLayout from '@/layout/ContainerLayout'
 
 const data = [
     {
-        title: <span>Learning by <span className='font-serif italic font-light'>Design</span>, Not Delivery</span>,
+        title: <span>Learning by <span className='font-ppe italic font-light'>Design</span>, Not Delivery</span>,
         description: "Every experience is planned with intention and centred on the learner.",
         image: image1
     },
     {
-        title: <span>Hands-On & Real-World <span className='font-serif italic font-light'>Learning</span></span>,
+        title: <span>Hands-On & Real-World <span className='font-ppe italic font-light'>Learning</span></span>,
         description: "Thinking through doing, questioning, building, making.",
         image: image2
     },
     {
-        title: <span><span className='font-serif italic font-light'>Learning</span> Begins With the Learner at the Center of Everything We Do! </span>,
+        title: <span><span className='font-ppe italic font-light'>Learning</span> Begins With the Learner at the Center of Everything We Do! </span>,
         description: "Every experience is planned with intention and centred on the learner.",
         image: image3
     },
@@ -81,16 +81,16 @@ const Wayofteaching = () => {
         <section ref={sectionRef} className='w-full bg-white py-10 font-sans min-h-screen flex flex-col justify-start items-center'>
             <ContainerLayout>
                 <div className='text-center mb-6 md:mb-16'>
-                    <h1 className='text-3xl md:text-[54px] font-medium leading-tight text-black'>
-                        RaK’s way of <span className='font-serif italic font-light'>Teaching & Learning</span>
+                    <h1 className='text-3xl md:text-[54px] font-medium leading-tight tracking-tight text-black'>
+                        RaK’s way of <span className='font-ppe italic font-light'>Teaching & Learning</span>
                     </h1>
                 </div>
 
-                <div className='relative w-full h-[65vh] min-h-[480px] max-h-[700px] flex justify-center items-start'>
+                <div className='relative w-full h-[70vh] min-h-[500px] max-h-[700px] flex justify-center items-start'>
                     {data.map((item, index) => (
                         <div
                             key={index}
-                            className={`card-${index} absolute top-0 w-full max-w-5xl h-[5vh] min-h-[450px] max-h-[700px] rounded-[30px] overflow-hidden shadow-2xl origin-top bg-white`}
+                            className={`card-${index} absolute top-0 w-full max-w-5xl h-[10vh] min-h-[500px] max-h-[700px] rounded-[30px] overflow-hidden shadow-2xl origin-top bg-white`}
                             style={{
                                 zIndex: index + 1,
                                 // Initial style handled by GSAP, but good to have defaults
@@ -113,7 +113,7 @@ const Wayofteaching = () => {
                                     <h2 className='text-2xl md:text-5xl font-medium mb-2 md:mb-4 max-w-4xl leading-tight'>
                                         {item.title}
                                     </h2>
-                                    <p className='text-base md:text-xl text-gray-200 max-w-2xl font-light'>
+                                    <p className='text-base md:text-xl text-gray-200 max-w-md font-light'>
                                         {item.description}
                                     </p>
                                 </div>

@@ -48,16 +48,22 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
                 },
             });
 
-            cards.forEach((_, index) => {
-                if (index === 0) {
-                    tl.set(`.card-${index}`, { opacity: 1, yPercent: 0 });
-                    return;
-                }
+            // Set initial state for first card immediately
+            gsap.set(`.card-0`, { yPercent: 0, xPercent: 0, rotation: 0 });
 
-                tl.fromTo(
+            // Set other cards below the view initially
+            cards.forEach((_, index) => {
+                if (index > 0) {
+                    gsap.set(`.card-${index}`, { yPercent: 250, xPercent: 10, rotation: -20 });
+                }
+            });
+
+            cards.forEach((_, index) => {
+                if (index === 0) return;
+
+                tl.to(
                     `.card-${index}`,
-                    { opacity: 0, yPercent: 100 },
-                    { opacity: 1, yPercent: index * offset, duration: 0.5 } // Shorter duration
+                    { yPercent: index * offset, xPercent: 0, rotation: 0, duration: 0.4, ease: "power2.out" }
                 );
             });
         }, sectionRef);

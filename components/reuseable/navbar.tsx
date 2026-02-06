@@ -153,13 +153,14 @@ const navbar = () => {
     const isHome = pathname === '/';
 
     return (
-        <nav className={`w-full z-50 fixed  transition-all duration-300 ${isHome ? 'absolute top-0 left-0 bg-transparent' : 'relative bg-white'}`}>
+        <nav className={`w-full z-50 transition-all duration-300 ${isHome ? 'absolute top-0 left-0 bg-transparent' : 'relative bg-white'}`}>
             <ContainerLayout>
                 <div className="flex justify-between gap-4 items-center">
                     <Image src="/Raks_Logo.png" alt="Raks_Logo.png" width={120} height={50} />
                     <div className="flex gap-10 items-center">
                         <button
                             onClick={toggleAudio}
+                            suppressHydrationWarning={true}
                             className="group flex flex-col items-center justify-center mx-auto gap-2 cursor-pointer"
                         >
                             <AudioWave isPlaying={isPlaying} isLightSection={isLightSection} />

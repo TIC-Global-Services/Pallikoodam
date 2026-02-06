@@ -34,8 +34,12 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   // Recursive function to split text nodes into individual words wrapped in spans
   const processContent = (content: ReactNode): ReactNode => {
     return React.Children.map(content, (child) => {
+      // Handle null/undefined
+      if (child === null || child === undefined) return child;
+
       // Handle strings: split into words
-      if (typeof child === 'string' && child.trim().length > 0) {
+      if (typeof child === 'string') {
+        if (child.trim().length === 0) return child;
         return child.split(/(\s+)/).map((word, index) => {
           if (word.match(/^\s+$/)) return word; // Preserve whitespace
           return (
@@ -46,20 +50,27 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
         });
       }
 
-      // Handle strings that are just whitespace (return as is)
-      if (typeof child === 'string') {
-        return child;
-      }
-
       // Handle React Elements (recursive)
       if (React.isValidElement(child)) {
-        const element = child as ReactElement;
-        // Check if the element has children to process
+        const element = child as ReactElement<any>;
+
+        // Skip elements that are already word spans
+        if (element.props?.className?.includes('word')) return child;
+
+        // Handle Fragments specifically
+        if (element.type === React.Fragment) {
+          return (
+            <React.Fragment key={element.key}>
+              {processContent(element.props.children)}
+            </React.Fragment>
+          );
+        }
+
+        // If the element has children, process them recursively
         if (element.props.children) {
           const processedChildren = processContent(element.props.children);
-          return React.cloneElement(element, {} as any, processedChildren);
+          return React.cloneElement(element, { ...element.props }, processedChildren);
         }
-        return child;
       }
 
       return child;
@@ -76,6 +87,9 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 
     // Use window as default scroller if ref is missing/null
     const scroller = scrollContainerRef?.current || window;
+
+    // Ensure ScrollTrigger correctly calculates the layout after splitting
+    ScrollTrigger.refresh();
 
     // Animate the container rotation
     gsap.fromTo(
@@ -137,13 +151,17 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
     }
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => {
+        if (trigger.trigger === el) {
+          trigger.kill();
+        }
+      });
     };
   }, [scrollContainerRef, enableBlur, baseRotation, baseOpacity, rotationEnd, wordAnimationEnd, blurStrength, splitText]);
 
   return (
     <div ref={containerRef} className={`my-5 ${containerClassName}`}>
-      <div className={`text-[clamp(1.6rem,4vw,3rem)] leading-[1.5] tracking-tighter font-medium ${textClassName}`}>
+      <div className={`text-[clamp(1.6rem,4vw,2.5rem)] leading-[41.1px] max-w-[89vw] tracking-tighter font-medium ${textClassName}`}>
         {splitText}
       </div>
     </div>

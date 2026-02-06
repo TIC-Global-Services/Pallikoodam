@@ -33,8 +33,8 @@ const Footer = () => {
                                         key={link.href}
                                         href={link.href}
                                         className={`transition-colors ${isActive
-                                                ? 'text-blue-600 font-medium'
-                                                : 'text-white hover:text-blue-600'
+                                            ? 'text-blue-600 font-medium'
+                                            : 'text-white hover:text-blue-600'
                                             }`}
                                     >
                                         {link.label}
@@ -68,9 +68,10 @@ const Footer = () => {
                                 <input
                                     type="email"
                                     placeholder="E-mail"
+                                    suppressHydrationWarning={true}
                                     className="w-full bg-black border border-white/30 rounded-full py-4 px-6 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
                                 />
-                                <button className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center text-white/70 hover:text-white transition-colors">
+                                <button suppressHydrationWarning={true} className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center text-white/70 hover:text-white transition-colors">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                                 </button>
                             </div>

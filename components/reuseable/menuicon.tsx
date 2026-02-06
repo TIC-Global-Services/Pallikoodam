@@ -15,18 +15,19 @@ export const MenuIcon = forwardRef<HTMLButtonElement, MenuIconProps>(
     const topLineRef = useRef<HTMLSpanElement>(null);
     const bottomLineRef = useRef<HTMLSpanElement>(null);
 
-   
+
     return (
       <button
         ref={ref}
         onClick={onClick}
+        suppressHydrationWarning={true}
         aria-label="Menu"
         className={`
           relative p-3 flex items-center justify-center cursor-pointer z-50
           transition-colors duration-300 bg-[#000086] rounded-full
         `}
       >
-        <Menu  className="text-white"/>
+        <Menu className="text-white" />
       </button>
     );
   }

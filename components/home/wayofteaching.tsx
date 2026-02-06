@@ -90,7 +90,7 @@ const Wayofteaching = () => {
                     {data.map((item, index) => (
                         <div
                             key={index}
-                            className={`card-${index} absolute top-0 w-full max-w-5xl h-[10vh] min-h-[500px] max-h-[700px] rounded-[30px] overflow-hidden shadow-2xl origin-top bg-white`}
+                            className={`card-${index} absolute top-0 w-full max-w-5xl h-[10vh] min-h-[500px] max-h-[700px] rounded-[10px] overflow-hidden shadow-2xl origin-top bg-white`}
                             style={{
                                 zIndex: index + 1,
                                 // Initial style handled by GSAP, but good to have defaults

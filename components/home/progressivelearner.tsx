@@ -4,6 +4,7 @@ import icon1 from "@/assets/home/icons/icon-1.svg"
 import icon2 from "@/assets/home/icons/icon-2.svg"
 import icon3 from "@/assets/home/icons/icon-3.svg"
 import icon4 from "@/assets/home/icons/icon-4.svg"
+import icon5 from "@/assets/home/icons/icon-5.svg"
 import ContainerLayout from '@/layout/ContainerLayout'
 import ScrollOverlappingCards from '../reuseable/scrollOverlapping'
 
@@ -34,6 +35,12 @@ const ProgressiveLearner = () => {
             description: "A space designed for movement, collaboration, discovery, and presentations.",
             icon: <Image src={icon4} alt="QUAD Learning" className="w-full h-full object-contain" />,
             color: "#FFCEC7"
+        },
+        {
+            title: "Clifton Block (Library)",
+            description: "A quiet, sunlit haven where stories, ideas, and possibilities wait to be discovered.",
+            icon: <Image src={icon5} alt="QUAD Learning" className="w-full h-full object-contain" />,
+            color: "#196ED3"
         },
     ]
     return (

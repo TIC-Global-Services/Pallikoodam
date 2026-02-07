@@ -63,7 +63,6 @@ const Innovationspace = () => {
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger)
-
         const ctx = gsap.context(() => {
             // Explicit initial state
             gsap.set(highlightRef.current, {
@@ -72,13 +71,13 @@ const Innovationspace = () => {
             })
 
             gsap.to(highlightRef.current, {
-                scaleX: 1.3,
+                scaleX: 1.2,
                 duration: 1.2,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: "top 75%",
-                    toggleActions: "restart none none reset"
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
                 }
             })
         }, containerRef)
@@ -95,7 +94,7 @@ const Innovationspace = () => {
             <ContainerLayout>
                 <div className='flex justify-center items-center mb-16'>
                     <h2 className='text-3xl md:text-5xl lg:text-6xl font-medium text-center leading-tight'>
-                        Innovative Spaces for <span className='font-serif italic font-light'>Curious</span> <br className='hidden md:block' />
+                        Innovative Spaces for <span className='font-ppe italic font-light'>Curious</span> <br className='hidden md:block' />
                         <span ref={wrapperRef} className='relative inline-block px-2 ml-2'>
                             <span
                                 ref={highlightRef}

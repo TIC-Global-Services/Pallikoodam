@@ -1,8 +1,9 @@
 import Campus from "@/components/home/campus";
 import Campustour from "@/components/home/campustour";
+import Curricullam from "@/components/home/curricullam";
 import Differencewecreate from "@/components/home/differencewecreate";
 import Hero from "@/components/home/hero";
-import Innovationspace from "@/components/home/innovationspace";
+import Innovationspace from "@/components/home/innovationspace copy";
 import ProgressiveLearner from "@/components/home/progressivelearner";
 import Shapingthefuture from "@/components/home/shapingthefuture";
 import ShapingthefutureCP from "@/components/home/shapingthefuturecp";
@@ -16,6 +17,7 @@ export default function Home() {
       <Campustour />
       <Differencewecreate />
       <Shapingthefuture />
+      <Curricullam/>
       <ProgressiveLearner />
       <Innovationspace/>
       <Wayofteaching/>

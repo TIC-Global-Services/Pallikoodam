@@ -65,23 +65,28 @@ const Innovationspace = () => {
         gsap.registerPlugin(ScrollTrigger)
 
         const ctx = gsap.context(() => {
-            gsap.fromTo(highlightRef.current,
-                { scaleX: 0 },
-                {
-                    scaleX: 1.3,
-                    duration: 1.2,
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: containerRef.current,
-                        start: "top 75%",
-                        toggleActions: "play none none reverse"
-                    }
+            // Explicit initial state
+            gsap.set(highlightRef.current, {
+                scaleX: 0,
+                transformOrigin: "left center"
+            })
+
+            gsap.to(highlightRef.current, {
+                scaleX: 1.3,
+                duration: 1.2,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 75%",
+                    toggleActions: "restart none none reset"
                 }
-            )
+            })
         }, containerRef)
 
         return () => ctx.revert()
     }, [])
+
+
 
     return (
 
@@ -94,7 +99,7 @@ const Innovationspace = () => {
                         <span ref={wrapperRef} className='relative inline-block px-2 ml-2'>
                             <span
                                 ref={highlightRef}
-                                className='absolute top-3 -left-10 bg-[#0045FF] -rotate-6 transform h-full w-full z-10 block origin-left scale-x-90'
+                                className='absolute top-3 -left-10 bg-[#0045FF] -rotate-6 h-full w-full z-10 block origin-left'
                             ></span>
                             <span className='relative z-20'>Minds</span>
                         </span>
@@ -106,29 +111,29 @@ const Innovationspace = () => {
                     {cards.map((card) => (
                         <div
                             key={card.id}
-                            className={`${card.colSpan} bg-white text-black rounded-[30px] overflow-hidden flex flex-col justify-between min-h-[400px] md:min-h-[500px] group hover:scale-105 transition-all duration-300`}
+                            className={`${card.colSpan} bg-white text-black rounded-[30px] overflow-hidden flex flex-col justify-between ${card.id > 2 ? 'min-h-[400px] md:min-h-[400px]' : 'min-h-[400px] md:min-h-[500px]'} group hover:scale-105 transition-all duration-300`}
                         >
                             <div className='p-8 md:p-10 h-[50%]'>
                                 <h3 className='text-3xl md:text-4xl font-medium  leading-[15px] tracking-tight'>
                                     {card.italicPosition === 'before' && (
                                         <>
-                                            <span className='font-ppe italic font-light'>{card.italic}</span>{' '}
+                                            <span className='font-ppe italic tracking-tighter font-light'>{card.italic}</span>{' '}
                                         </>
                                     )}
                                     {card.title}
                                     {card.italicPosition === 'after' && (
                                         <>
-                                            {' '}<span className='font-serif italic font-light'>{card.italic}</span>
+                                            {' '}<span className='font-ppe italic tracking-tighter font-light'>{card.italic}</span>
                                         </>
                                     )}
                                 </h3>
 
-                                <div className='space-y-0 mt-5'>
+                                <div className='space-y-0 mt-10'>
 
                                     {card.description.split('\n\n').map((paragraph, idx) => (
                                         <div key={idx} className='relative pl-4'>
                                             <div className="w-0.5 h-full bg-[#0045FF] absolute left-0 top-0"></div>
-                                            <p className='text-sm md:text-base leading-relaxed text-gray-800 font-medium'>
+                                            <p className='text-sm md:text-base leading-[20px] text-gray-800 font-medium'>
                                                 {paragraph}
                                             </p>
                                         </div>
@@ -136,7 +141,7 @@ const Innovationspace = () => {
                                 </div>
                             </div>
 
-                            <div className='w-full h-[50%] relative mt-auto'>
+                            <div className={`w-full ${card.id > 2 ? 'h-[30%]' : 'h-[50%]'} relative mt-auto`}>
                                 <Image
                                     src={card.image}
                                     alt={`${card.title} ${card.italic}`}

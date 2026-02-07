@@ -86,14 +86,14 @@ const Wayofteaching = () => {
                     </h1>
                 </div>
 
-                <div className='relative w-full h-[70vh] min-h-[500px] max-h-[700px] flex justify-center items-start'>
+                <div className='relative w-full flex justify-center items-start' style={{ minHeight: 'clamp(400px, 55vh, 700px)' }}>
                     {data.map((item, index) => (
                         <div
                             key={index}
-                            className={`card-${index} absolute top-0 w-full max-w-5xl h-[10vh] min-h-[500px] max-h-[700px] rounded-[10px] overflow-hidden shadow-2xl origin-top bg-white`}
+                            className={`card-${index} absolute top-0 w-full max-w-5xl rounded-[10px] overflow-hidden shadow-2xl origin-top bg-white`}
                             style={{
+                                height: 'clamp(400px, 55vh, 700px)',
                                 zIndex: index + 1,
-                                // Initial style handled by GSAP, but good to have defaults
                             }}
                         >
                             <div className='relative w-full h-full'>

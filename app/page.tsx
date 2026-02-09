@@ -7,7 +7,7 @@ import Innovationspace from "@/components/home/innovationspace copy";
 import ProgressiveLearner from "@/components/home/progressivelearner";
 import Shapingthefuture from "@/components/home/shapingthefuture";
 import ShapingthefutureCP from "@/components/home/shapingthefuturecp";
-import Wayofteaching from "@/components/home/wayofteaching";
+import Wayofteaching from "@/components/home/wayofteaching copy";
 import Image from "next/image";
 
 export default function Home() {

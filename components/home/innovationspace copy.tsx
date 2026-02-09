@@ -113,7 +113,7 @@ const Innovationspace = () => {
                             className={`${card.colSpan} bg-white text-black rounded-[30px] overflow-hidden flex flex-col justify-between ${card.id > 2 ? 'min-h-[400px] md:min-h-[400px]' : 'min-h-[400px] md:min-h-[500px]'} group hover:scale-105 transition-all duration-300`}
                         >
                             <div className='p-8 md:p-10 h-[50%]'>
-                                <h3 className='text-3xl md:text-4xl font-medium  leading-[15px] tracking-tight'>
+                                <h3 className='text-[clamp(16px,10vw,2rem)] font-medium  leading-clamp-2 tracking-tight'>
                                     {card.italicPosition === 'before' && (
                                         <>
                                             <span className='font-ppe italic tracking-tighter font-light'>{card.italic}</span>{' '}
@@ -127,11 +127,12 @@ const Innovationspace = () => {
                                     )}
                                 </h3>
 
-                                <div className='space-y-0 mt-10'>
+                                <div className='space-y-0 mt-[2%]'>
 
                                     {card.description.split('\n\n').map((paragraph, idx) => (
-                                        <div key={idx} className='relative pl-4'>
-                                            <p className='text-sm md:text-base leading-[20px] text-gray-800 font-medium'>
+                                        <div key={idx} className='relative'>
+                                            <div className="w-0.5 h-full bg-[#0045FF] absolute left-0 top-0"></div>
+                                            <p className='text-[clamp(16px,10vw,1rem)] leading-clamp-2 pl-2 text-gray-800 font-medium'>
                                                 {paragraph}
                                             </p>
                                         </div>

@@ -33,17 +33,32 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
     useEffect(() => {
         const ctx = gsap.context(() => {
             const isMobile = window.innerWidth < 768;
-            const isSmallHeightDesktop = window.innerWidth >= 768 && window.innerHeight < 768;
-            const offset = isSmallHeightDesktop ? 2 : 5;
-            const scrollMultiplier = isMobile ? 20 : isSmallHeightDesktop ? 75 : 100; // Reduced mobile to 30 for faster scroll
+            const isSmallHeight = window.innerHeight < 700;
+            const isSmallHeightDesktop = window.innerWidth >= 768 && isSmallHeight;
+            
+            // Adjust offset based on screen size
+            let offset = 5;
+            if (isSmallHeight && isMobile) {
+                offset = 1;
+            } else if (isSmallHeightDesktop) {
+                offset = 2;
+            }
+            
+            // Adjust scroll multiplier for better control
+            let scrollMultiplier = 100;
+            if (isMobile) {
+                scrollMultiplier = isSmallHeight ? 15 : 20;
+            } else if (isSmallHeightDesktop) {
+                scrollMultiplier = 50;
+            }
 
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: 'top 15%',
+                    start: isSmallHeight ? 'top 10%' : 'top 15%',
                     end: `+=${cards.length * scrollMultiplier}%`,
                     pin: true,
-                    scrub: isMobile ? 0.2 : 1, // Lower scrub value = faster, snappier animations
+                    scrub: isMobile ? 0.2 : 1,
                     anticipatePin: 1,
                 },
             });
@@ -75,22 +90,28 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
         const updateSizes = () => {
             const width = window.innerWidth;
             const height = window.innerHeight;
+            const isSmallHeight = height < 700;
+            
             if (width < 768) {
-                setContainerHeight(380);
+                const mobileHeight = isSmallHeight ? Math.min(height * 0.5, 300) : 380;
+                setContainerHeight(mobileHeight);
                 setCardWidth('100%');
-                setCardMaxHeight('380px');
+                setCardMaxHeight(`${mobileHeight}px`);
             } else if (width < 1280) {
-                setContainerHeight(400);
+                const tabletHeight = isSmallHeight ? Math.min(height * 0.55, 350) : 500;
+                setContainerHeight(tabletHeight);
                 setCardWidth('100%');
-                setCardMaxHeight('400px');
+                setCardMaxHeight(`${tabletHeight}px`);
             } else if (width < 1536) {
-                setContainerHeight(500);
+                const desktopHeight = isSmallHeight ? Math.min(height * 0.6, 400) : 500;
+                setContainerHeight(desktopHeight);
                 setCardWidth('521px');
-                setCardMaxHeight('521px');
+                setCardMaxHeight(`${desktopHeight}px`);
             } else {
-                setContainerHeight(600);
+                const largeHeight = isSmallHeight ? Math.min(height * 0.65, 450) : 500;
+                setContainerHeight(largeHeight);
                 setCardWidth('521px');
-                setCardMaxHeight('521px');
+                setCardMaxHeight(`${largeHeight}px`);
             }
         };
 

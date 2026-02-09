@@ -96,16 +96,16 @@ const curricullam = () => {
                     </p>
                     <p className="leading-[26px] tracking-tight text-sm md:text-2xl">
                       A pathway that nurtures inquiry, reflection, and
-                      independent thinking.<br/> Its global framework pairs
-                      seamlessly with our active, project-based learning,
-                      research-led approach encouraging learners to question,
-                      explore, create, and connect ideas with real-world
-                      meaning.
+                      independent thinking.
+                      <br /> Its global framework pairs seamlessly with our
+                      active, project-based learning, research-led approach
+                      encouraging learners to question, explore, create, and
+                      connect ideas with real-world meaning.
                     </p>
                     <p className="leading-[26px] mt-10 text-sm tracking-tight md:text-2xl">
-                      At <span className="font-ppe font-light">RaK's </span>Cambridge becomes more than a curriculum. It
-                      becomes a journey of agency, voice, and courageous
-                      curiosity.
+                      At <span className="font-ppe font-light">RaK's </span>
+                      Cambridge becomes more than a curriculum. It becomes a
+                      journey of agency, voice, and courageous curiosity.
                     </p>
                   </div>
                 </div>

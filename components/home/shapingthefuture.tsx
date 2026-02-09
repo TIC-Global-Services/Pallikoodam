@@ -8,12 +8,70 @@ import float3 from '@/assets/home/float-3.png'
 import float4 from '@/assets/home/float-4.png'
 import Image from 'next/image'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const Shapingthefuture = () => {
     const containerRef = useRef(null)
     const logoSectionRef = useRef<HTMLDivElement>(null)
     const [rotation, setRotation] = useState({ x: 0, y: 0 })
+    const bubblesRef = useRef<HTMLDivElement[]>([]);
+    const [bubbleCount, setBubbleCount] = React.useState(0);
 
+    useEffect(() => {
+        const calculateBubbles = () => {
+            const width = window.innerWidth;
+            const bubbleSize = width < 768 ? 60 : 120;
+            const count = Math.ceil(width / bubbleSize);
+            setBubbleCount(count);
+        };
+
+        calculateBubbles();
+        window.addEventListener('resize', calculateBubbles);
+        return () => window.removeEventListener('resize', calculateBubbles);
+    }, []);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger)
+        const ctx = gsap.context(() => {
+
+            gsap.to(bubblesRef.current, {
+                scaleX: 1.2,
+                duration: 1.2,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 55%",
+                    toggleActions: "play none none reverse"
+                }
+            })
+            if (bubblesRef.current.length > 0) {
+                gsap.set(bubblesRef.current, {
+                    scaleY: 0,
+                    transformOrigin: "bottom center"
+                });
+
+                gsap.to(bubblesRef.current, {
+                    scaleY: 1,
+                    stagger: {
+                        each: 0.1,
+                        from: "edges",
+                        amount: 1.5
+                    },
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 100%",
+                        end: "top 60%",
+                        scrub: 1,
+                        toggleActions: "play reverse play reverse"
+                    }
+                });
+            }
+
+        }, containerRef)
+
+        return () => ctx.revert()
+    }, [bubbleCount])
     useEffect(() => {
         const ctx = gsap.context(() => {
             // Floating animation for icons
@@ -44,8 +102,8 @@ const Shapingthefuture = () => {
         const centerX = rect.width / 2
         const centerY = rect.height / 2
 
-        const rotateX = ((y - centerY) / centerY) * -10 // Tilt up/down (reversed)
-        const rotateY = ((x - centerX) / centerX) * 5 // Tilt left/right
+        const rotateX = ((y - centerY) / centerY) * -10 
+        const rotateY = ((x - centerX) / centerX) * 5 
 
         setRotation({ x: rotateX, y: rotateY })
     }
@@ -55,8 +113,25 @@ const Shapingthefuture = () => {
     }
 
     return (
-        <section ref={containerRef} className="bg-black text-white py-20 lg:py-32 min-h-screen relative overflow-hidden">
-            <div className="container mx-auto px-4 md:px-8">
+        <section  className='relative bg-black mt-24' ref={containerRef}>
+            <div className="absolute top-0 left-0 w-full -translate-y-[99%] flex overflow-hidden pointer-events-none z-20 leading-0">
+                {Array.from({ length: bubbleCount }).map((_, index) => (
+                    <div
+                        key={index}
+                        ref={(el) => {
+                            if (el) bubblesRef.current[index] = el;
+                        }}
+                        className="bg-black rounded-t-full shrink-0"
+                        style={{
+                            width: `${100 / bubbleCount}%`,
+                            height: 'auto',
+                            aspectRatio: '2/1',
+                        }}
+                    ></div>
+                ))}
+            </div>
+           <div ref={containerRef} className="bg-black text-white py-20 lg:py-32 min-h-screen relative overflow-hidden">
+             <div className="container mx-auto px-4 md:px-8">
 
                 {/* Header / Logo Section */}
                 <div
@@ -143,6 +218,7 @@ const Shapingthefuture = () => {
 
                 </div>
             </div>
+           </div>
         </section>
     )
 }

@@ -1,12 +1,17 @@
 'use client'
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import innovation1 from '@/assets/home/innovation-1.jpg'
 import innovation2 from '@/assets/home/innovation-2.jpg'
 import innovation3 from '@/assets/home/innovation-3.jpg'
+import effectsvg from '@/assets/home/scroll_effect.png'
 import ContainerLayout from '@/layout/ContainerLayout'
+import ScrollReveal from '../reuseable/effects/Scrollreveal'
+import { span } from 'motion/react-client'
+import LetterRevealWrapper from '../reuseable/texteffect/LetterRevealWrapper'
+import { useLetterReveal } from '../reuseable/texteffect/useLetterReveal'
 
 const cards = [
     {
@@ -60,11 +65,25 @@ const Innovationspace = () => {
     const highlightRef = useRef(null)
     const containerRef = useRef(null)
     const wrapperRef = useRef(null)
+    const bubblesRef = useRef<HTMLDivElement[]>([]);
+    const [bubbleCount, setBubbleCount] = React.useState(0);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
+        const calculateBubbles = () => {
+            const width = window.innerWidth;
+            const bubbleSize = width < 768 ? 60 : 120;
+            const count = Math.ceil(width / bubbleSize);
+            setBubbleCount(count);
+        };
+
+        calculateBubbles();
+        window.addEventListener('resize', calculateBubbles);
+        return () => window.removeEventListener('resize', calculateBubbles);
+    }, []);
+
+    useEffect(() => {
         gsap.registerPlugin(ScrollTrigger)
         const ctx = gsap.context(() => {
-            // Explicit initial state
             gsap.set(highlightRef.current, {
                 scaleX: 0,
                 transformOrigin: "left center"
@@ -76,83 +95,129 @@ const Innovationspace = () => {
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: "top 85%",
+                    start: "top 55%",
                     toggleActions: "play none none reverse"
                 }
             })
+            if (bubblesRef.current.length > 0) {
+                gsap.set(bubblesRef.current, {
+                    scaleY: 0,
+                    transformOrigin: "bottom center"
+                });
+
+                gsap.to(bubblesRef.current, {
+                    scaleY: 1,
+                    stagger: {
+                        each: 0.1,
+                        from: "edges",
+                        amount: 1.5
+                    },
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 100%",
+                        end: "top 60%",
+                        scrub: 1,
+                        toggleActions: "play reverse play reverse"
+                    }
+                });
+            }
+
         }, containerRef)
 
         return () => ctx.revert()
-    }, [])
+    }, [bubbleCount])
 
 
 
     return (
+        <section className='relative bg-black mt-24' ref={containerRef}>
+            {/* Scalloped Edge Container */}
+            <div className="absolute top-0 left-0 w-full -translate-y-[97%] flex overflow-hidden pointer-events-none z-20 leading-0">
+                {Array.from({ length: bubbleCount }).map((_, index) => (
+                    <div
+                        key={index}
+                        ref={(el) => {
+                            if (el) bubblesRef.current[index] = el;
+                        }}
+                        className="bg-black rounded-t-full shrink-0"
+                        style={{
+                            width: `${100 / bubbleCount}%`,
+                            height: 'auto',
+                            aspectRatio: '2/1',
+                        }}
+                    ></div>
+                ))}
+            </div>
 
-        <div ref={containerRef} className='w-full bg-black py-20 px-5 md:px-10 lg:px-20 text-white font-sans'>
-            {/* Header */}
-            <ContainerLayout>
-                <div className='flex justify-center items-center mb-16'>
-                    <h2 className='text-3xl md:text-5xl lg:text-6xl font-medium text-center leading-tight'>
-                        Innovative Spaces for <span className='font-ppe italic font-light'>Curious</span> <br className='hidden md:block' />
-                        <span ref={wrapperRef} className='relative inline-block px-2 ml-2'>
-                            <span
-                                ref={highlightRef}
-                                className='absolute top-3 -left-10 bg-[#0045FF] -rotate-6 h-full w-full z-10 block origin-left'
-                            ></span>
-                            <span className='relative z-20'>Minds</span>
-                        </span>
-                    </h2>
-                </div>
+            <div className='w-full py-20 px-5 md:px-10 lg:px-20 text-white font-sans relative z-10'>
+                {/* Header */}
+                <ContainerLayout>
+                    <div className='flex justify-center items-center mb-16'>
+                        <h2 className='text-3xl md:text-5xl lg:text-6xl font-medium text-center leading-tight'>
+                            <LetterRevealWrapper>Innovative Spaces for </LetterRevealWrapper> <LetterRevealWrapper className='font-ppe italic font-light'>Curious</LetterRevealWrapper> <br className='hidden md:block' />
+                            <span ref={wrapperRef} className='relative inline-block px-2 ml-2'>
+                                <span
+                                    ref={highlightRef}
+                                    className='absolute top-3 -left-10 bg-[#0045FF] -rotate-6 h-full w-full z-10 block origin-left'
+                                ></span>
+                                <span className='relative z-20'>
+                                    <LetterRevealWrapper>Minds</LetterRevealWrapper>
+                                </span>
+                            </span>
+                        </h2>
+                    </div>
 
-                {/* Grid */}
-                <div className='grid grid-cols-1 md:grid-cols-6 gap-6'>
-                    {cards.map((card) => (
-                        <div
-                            key={card.id}
-                            className={`${card.colSpan} bg-white text-black rounded-[30px] overflow-hidden flex flex-col justify-between ${card.id > 2 ? 'min-h-[400px] md:min-h-[400px]' : 'min-h-[400px] md:min-h-[500px]'} group hover:scale-105 transition-all duration-300`}
-                        >
-                            <div className='p-8 md:p-10 h-[50%]'>
-                                <h3 className='text-3xl md:text-4xl font-medium  leading-[15px] tracking-tight'>
-                                    {card.italicPosition === 'before' && (
-                                        <>
-                                            <span className='font-ppe italic tracking-tighter font-light'>{card.italic}</span>{' '}
-                                        </>
-                                    )}
-                                    {card.title}
-                                    {card.italicPosition === 'after' && (
-                                        <>
-                                            {' '}<span className='font-ppe italic tracking-tighter font-light'>{card.italic}</span>
-                                        </>
-                                    )}
-                                </h3>
+                    {/* Grid */}
+                    <div className='grid grid-cols-1 md:grid-cols-6 gap-6'>
+                        {cards.map((card) => (
+                            <div
+                                key={card.id}
+                                className={`${card.colSpan} bg-white text-black rounded-[30px] overflow-hidden flex flex-col justify-between ${card.id > 2 ? 'min-h-[400px] md:min-h-[400px]' : 'min-h-[400px] md:min-h-[500px]'} group hover:scale-105 transition-all duration-300`}
+                            >
+                                <div className='p-8 md:p-10 h-[50%]'>
+                                    <h3 className='text-3xl md:text-4xl font-medium  leading-[15px] tracking-tight'>
+                                        {card.italicPosition === 'before' && (
+                                            <>
+                                                <span className='font-ppe italic tracking-tighter font-light'>{card.italic}</span>{' '}
+                                            </>
+                                        )}
+                                        {card.title}
+                                        {card.italicPosition === 'after' && (
+                                            <>
+                                                {' '}<span className='font-ppe italic tracking-tighter font-light'>{card.italic}</span>
+                                            </>
+                                        )}
+                                    </h3>
 
-                                <div className='space-y-0 mt-10'>
+                                    <div className='space-y-0 mt-10'>
 
-                                    {card.description.split('\n\n').map((paragraph, idx) => (
-                                        <div key={idx} className='relative pl-4'>
-                                            <div className="w-0.5 h-full bg-[#0045FF] absolute left-0 top-0"></div>
-                                            <p className='text-sm md:text-base leading-[20px] text-gray-800 font-medium'>
-                                                {paragraph}
-                                            </p>
-                                        </div>
-                                    ))}
+                                        {card.description.split('\n\n').map((paragraph, idx) => (
+                                            <div key={idx} className='relative pl-4'>
+                                                <div className="w-0.5 h-full bg-[#0045FF] absolute left-0 top-0"></div>
+                                                <p className='text-sm md:text-base leading-[20px] text-gray-800 font-medium'>
+                                                    {paragraph}
+                                                </p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className={`w-full ${card.id > 2 ? 'h-[30%]' : 'h-[50%]'} relative mt-auto`}>
+                                    <Image
+                                        src={card.image}
+                                        alt={`${card.title} ${card.italic}`}
+                                        fill
+                                        className='object-cover'
+                                    />
                                 </div>
                             </div>
+                        ))}
+                    </div>
+                </ContainerLayout>
+            </div>
+        </section>
 
-                            <div className={`w-full ${card.id > 2 ? 'h-[30%]' : 'h-[50%]'} relative mt-auto`}>
-                                <Image
-                                    src={card.image}
-                                    alt={`${card.title} ${card.italic}`}
-                                    fill
-                                    className='object-cover'
-                                />
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </ContainerLayout>
-        </div>
 
     )
 }

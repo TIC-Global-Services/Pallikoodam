@@ -76,7 +76,7 @@ const Wayofteaching = () => {
     return (
         <section ref={sectionRef} className='w-full bg-white  font-sans min-h-screen flex flex-col justify-start items-center'>
             <ContainerLayout>
-                <div className='text-center mb-6 md:mb-5'>
+                <div className='text-center mb-6 md:mb-10'>
                     <h1 className='text-3xl md:text-[54px] font-medium leading-tight tracking-tight text-black'>
                         RaK’s way of <span className='font-ppe italic font-light'>Teaching & Learning</span>
                     </h1>

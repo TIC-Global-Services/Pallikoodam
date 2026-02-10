@@ -30,36 +30,24 @@ const curricullam = () => {
         },
       });
 
-      // Initial state
-      gsap.set(card2Ref.current, { yPercent: 100 });
+      // Initial state - first card visible, second card hidden
+      gsap.set(card1Ref.current, { opacity: 1, zIndex: 2 });
+      gsap.set(card2Ref.current, { opacity: 0, zIndex: 1 });
 
-      // Animate second card overlapping first
-      tl.to(card2Ref.current, {
-        yPercent: 0,
+      // Fade out first card and fade in second card
+      tl.to(card1Ref.current, {
+        opacity: 0,
         duration: 1,
         ease: "power2.inOut",
       })
-        // Blur first card text as second card overlaps
         .to(
-          text1Ref.current,
+          card2Ref.current,
           {
-            filter: "blur(8px)",
-            opacity: 0.3,
-            duration: 1,
-            ease: "power2.inOut",
-          },
-          "<",
-        )
-        // Keep second card text sharp
-        .to(
-          text2Ref.current,
-          {
-            filter: "blur(0px)",
             opacity: 1,
             duration: 1,
             ease: "power2.inOut",
           },
-          "<",
+          "<", // Start at the same time as previous animation
         );
     }, sectionRef);
 
@@ -77,13 +65,12 @@ const curricullam = () => {
           <div
             ref={card1Ref}
             className="absolute top-0 left-0 w-full h-full overflow-hidden shadow-2xl"
-            style={{ zIndex: 1 }}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 h-full">
               {/* Left side - Text */}
               <div
                 ref={text1Ref}
-                className="bg-[#000086] p-8 md:p-12 flex flex-col text-white"
+                className="bg-[#000086] p-8 md:p-12 flex flex-col text-white overflow-y-auto"
               >
                 <div ref={titleRef2}>
                   <h2 className="text-4xl md:text-[54px] leading-[60px] mb-2">
@@ -97,7 +84,7 @@ const curricullam = () => {
                     <p className="font-light italic font-ppe text-sm md:text-xl">
                       Cambridge @ RaK's
                     </p>
-                    <p className="leading-[26px] tracking-tight text-sm md:text-2xl">
+                    <p className="md:leading-[26px] tracking-tight text-[clamp(16px,10vw,1.5rem)]">
                       A pathway that nurtures inquiry, reflection, and
                       independent thinking.
                       <br /> Its global framework pairs seamlessly with our
@@ -105,7 +92,7 @@ const curricullam = () => {
                       encouraging learners to question, explore, create, and
                       connect ideas with real-world meaning.
                     </p>
-                    <p className="leading-[26px] mt-10 text-sm tracking-tight md:text-2xl">
+                    <p className="leading-[26px] mt-10 text-sm tracking-tight md:text-[clamp(16px,10vw,1.5rem)]">
                       At <span className="font-ppe font-light">RaK's </span>
                       Cambridge becomes more than a curriculum. It becomes a
                       journey of agency, voice, and courageous curiosity.
@@ -133,36 +120,36 @@ const curricullam = () => {
           {/* Second Card - National Curriculum */}
           <div
             ref={card2Ref}
-            className="absolute top-0 left-0 w-full h-full  overflow-hidden shadow-2xl"
-            style={{ zIndex: 2 }}
+            className="absolute top-0 left-0 w-full h-full overflow-hidden shadow-2xl"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 h-full">
               {/* Left side - Text */}
               <div
                 ref={text2Ref}
-                className="bg-[#000086] p-8 md:p-12 flex flex-col text-white"
+                className="bg-[#000086] p-8 md:p-12 flex flex-col text-white overflow-y-auto"
               >
                 <div ref={titleRef}>
                   <h2 className="text-4xl md:text-[54px] leading-[60px] mb-2">
                     National Curriculum
                   </h2>
-                  <h3 className="font-light italic font-ppe text-sm md:text-[54px]">
+                  <h3 className="text-2xl md:text-[54px] font-ppe leading-[60px] italic mb-6">
                     (CBSE)
                   </h3>
 
-                  <div ref={titleRef} className="space-y-4 text-sm md:text-base">
-                    <p className="font-semibold">CBSE @ RaK's</p>
+                  <div ref={titleRef} className="">
+                    <p className="font-light italic font-ppe text-sm md:text-xl">
+                      CBSE @ RaK's
+                    </p>
                     <p className="leading-[26px] tracking-tight text-sm md:text-2xl">
                       A strong, structured academic pathway that builds clarity,
                       discipline, and conceptual depth.
-                    </p>
-                    <p className="leading-[26px] tracking-tight text-sm md:text-2xl">
-                      When blended with our experiential, hands-on methodology,
+                      <br /> When blended with our experiential, hands-on methodology,
                       CBSE becomes dynamic helping learners understand, apply,
                       question, and express learning with confidence.
                     </p>
-                    <p className="leading-[26px] mt-6 text-sm tracking-tight md:text-2xl">
-                      At RaK's CBSE evolves into a pathway of rigour, purpose,
+                    <p className="leading-[26px] mt-10 text-sm tracking-tight md:text-2xl">
+                      At <span className="font-ppe font-light">RaK's </span>
+                      CBSE evolves into a pathway of rigour, purpose,
                       and meaningful mastery.
                     </p>
                   </div>
@@ -172,7 +159,6 @@ const curricullam = () => {
                   Explore CBSE
                 </button>
               </div>
-
               {/* Right side - Image */}
               <div className="relative h-full">
                 <Image

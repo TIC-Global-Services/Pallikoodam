@@ -58,7 +58,7 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: isSmallHeight ? 'top 10%' : 'top 15%',
+                    start: isSmallHeight ? 'top 10%' : 'top 5%',
                     end: `+=${cards.length * scrollMultiplier}%`,
                     pin: true,
                     scrub: isMobile ? 0.2 : 1,
@@ -94,24 +94,49 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
             const width = window.innerWidth;
             const height = window.innerHeight;
             const isSmallHeight = height < 700;
+            const isVerySmallHeight = height < 600;
 
             if (width < 768) {
-                const mobileHeight = isSmallHeight ? Math.min(height * 0.6, 350) : 380;
+                // Mobile
+                let mobileHeight = 380;
+                if (isVerySmallHeight) {
+                    mobileHeight = Math.min(height * 0.5, 280);
+                } else if (isSmallHeight) {
+                    mobileHeight = Math.min(height * 0.55, 320);
+                }
                 setContainerHeight(mobileHeight);
                 setCardWidth('100%');
                 setCardMaxHeight(`${mobileHeight}px`);
             } else if (width < 1280) {
-                const tabletHeight = isSmallHeight ? Math.min(height * 0.65, 400) : 500;
+                // Tablet
+                let tabletHeight = 500;
+                if (isVerySmallHeight) {
+                    tabletHeight = Math.min(height * 0.55, 320);
+                } else if (isSmallHeight) {
+                    tabletHeight = Math.min(height * 0.6, 380);
+                }
                 setContainerHeight(tabletHeight);
                 setCardWidth('100%');
                 setCardMaxHeight(`${tabletHeight}px`);
             } else if (width < 1536) {
-                const desktopHeight = isSmallHeight ? Math.min(height * 0.65, 420) : 500;
+                // Desktop
+                let desktopHeight = 500;
+                if (isVerySmallHeight) {
+                    desktopHeight = Math.min(height * 0.55, 350);
+                } else if (isSmallHeight) {
+                    desktopHeight = Math.min(height * 0.6, 400);
+                }
                 setContainerHeight(desktopHeight);
                 setCardWidth('521px');
                 setCardMaxHeight(`${desktopHeight}px`);
             } else {
-                const largeHeight = isSmallHeight ? Math.min(height * 0.7, 480) : 500;
+                // Large Desktop
+                let largeHeight = 500;
+                if (isVerySmallHeight) {
+                    largeHeight = Math.min(height * 0.6, 380);
+                } else if (isSmallHeight) {
+                    largeHeight = Math.min(height * 0.65, 450);
+                }
                 setContainerHeight(largeHeight);
                 setCardWidth('521px');
                 setCardMaxHeight(`${largeHeight}px`);
@@ -129,11 +154,11 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 xl:gap-x-[20%] w-full items-start  xl:px-0">
                     {/* Left Column: Static Text */}
                     <div className="left-content">
-                        <h2 ref={titleRef} className="xl:text-[3.4rem] text-[1.25rem] tracking-tight leading-[54px] font-medium w-full font-hoves-pro">
+                        <h2 ref={titleRef} className="xl:text-[3.4rem] text-[1.25rem] tracking-tight leading-[54px] font-medium w-full font-hoves-pro mb-[2%]">
                             {heading}
                         </h2>
                         <BlurText text={paragraph}
-                        className='text-[0.875rem] leading-[120%] max-w-sm md:max-w-xl xl:text-[1.25rem] font-regular font-inter-tight pt-2'
+                        className='text-[0.875rem] leading-[120%] max-w-sm md:max-w-xl xl:text-[1.25rem] font-regular font-inter-tight pt-[3%]'
                         delay={5}
                         animateBy="words"
                         direction="top"
@@ -146,30 +171,26 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
                             {cards.map((card, index) => (
                                 <div
                                     key={index}
-                                    className={`card card-${index} absolute top-0 left-0 w-full h-full rounded-3xl overflow-hidden shadow-lg p-8 md:p-10 flex flex-col justify-between`}
+                                    className={`card card-${index} absolute top-0 left-0 w-full rounded-3xl overflow-auto shadow-lg p-4 md:p-6 lg:p-8 xl:p-10 flex flex-col justify-between gap-4`}
                                     style={{
                                         zIndex: index + 1,
                                         width: cardWidth,
+                                        height: cardMaxHeight,
                                         maxHeight: cardMaxHeight,
                                         backgroundColor: card.color
                                     }}
                                 >
-                                    <div className="flex justify-between items-start w-full">
-                                        <h3 className="text-white text-3xl md:text-5xl font-medium tracking-tight font-inter-tight leading-none max-w-[70%]">
+                                    <div className="flex justify-between items-start w-full gap-3">
+                                        <h3 className="text-white text-xl md:text-2xl lg:text-3xl xl:text-5xl font-medium tracking-tight font-inter-tight leading-tight max-w-[70%]">
                                             {card.title}
                                         </h3>
-                                        <div className="bg-white rounded-full p-4 flex items-center justify-center w-16 h-16 shrink-0 text-black">
+                                        <div className="bg-white rounded-full p-2 md:p-3 lg:p-4 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 shrink-0 text-black">
                                             {card.icon}
                                         </div>
                                     </div>
 
                                     <div className="relative">
-                                        {/* {card.badge && (
-                                            <div className="absolute -top-16 left-0">
-                                                {card.badge}
-                                            </div>
-                                        )} */}
-                                        <p className="text-white font-inter-tight text-lg md:text-2xl leading-tight">
+                                        <p className="text-white font-inter-tight text-sm md:text-base lg:text-lg xl:text-2xl leading-tight">
                                             {card.description}
                                         </p>
                                     </div>

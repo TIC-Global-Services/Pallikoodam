@@ -7,6 +7,9 @@ import { MenuIcon } from './menuicon'
 import Link from 'next/link'
 import ContainerLayout from '@/layout/ContainerLayout'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger);
 
 const navbar = () => {
     const overlayRef = useRef<HTMLDivElement>(null);
@@ -16,17 +19,32 @@ const navbar = () => {
     const audioRef = useRef<HTMLAudioElement>(null);
     const [menuOpen, setMenuOpen] = useState(false);
     const [isLightSection, setIsLightSection] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
     const closeBtnRef = useRef<HTMLButtonElement>(null);
-    
+
     // Optional: Add sound effect support
     const menuSfxRef = useRef<HTMLAudioElement | null>(null);
 
     const pathname = usePathname();
-    
+    const isHome = pathname === '/';
+
     useEffect(() => {
         // Initialize menu sound effect (optional - add your sound file path)
         // menuSfxRef.current = new Audio('/sounds/menu-click.mp3');
-    }, []);
+
+        if (isHome) {
+            const trigger = ScrollTrigger.create({
+                trigger: "section", // First section is Hero
+                start: "bottom top",
+                onEnter: () => setIsHidden(true),
+                onLeaveBack: () => setIsHidden(false),
+            });
+
+            return () => {
+                trigger.kill();
+            };
+        }
+    }, [isHome]);
 
     const toggleMenu = () => {
         if (!overlayRef.current) return;
@@ -139,7 +157,6 @@ const navbar = () => {
         }
     };
 
-    const isHome = pathname === '/';
 
     const menuItems = [
         { name: 'HOME', href: '/' },
@@ -150,7 +167,7 @@ const navbar = () => {
 
     return (
         <>
-            <nav className={`w-full z-50 transition-all duration-300 ${isHome ? 'absolute top-0 left-0 bg-transparent' : 'relative bg-white'}`}>
+            <nav className={`w-full z-50 transition-all duration-500  ${isHome ? `fixed top-0 left-0 bg-transparent ${isHidden ? '-translate-y-full' : 'translate-y-0'}` : 'relative bg-white'}`}>
                 <ContainerLayout>
                     <div className="flex justify-between gap-4 items-center">
                         <Image src="/Raks_Logo.png" alt="Raks_Logo.png" width={120} height={50} />
@@ -168,7 +185,7 @@ const navbar = () => {
                                             isPlaying
                                                 ? "text-primary"
                                                 : isLightSection
-                                                    ? "text-white"
+                                                    ? "text-black"
                                                     : "text-white"
                                         }
                                     >
@@ -193,7 +210,7 @@ const navbar = () => {
 
                             <div className="relative">
                                 <MenuIcon ref={menuBtnRef} isOpen={menuOpen} onClick={toggleMenu} />
-                                
+
                                 {/* Dropdown Menu */}
                                 <div
                                     ref={overlayRef}

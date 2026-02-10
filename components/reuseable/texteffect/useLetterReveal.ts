@@ -75,7 +75,7 @@ export const useLetterReveal = <T extends HTMLElement = HTMLElement>(threshold: 
           opacity 0.3s ease,
           transform 0.3s ease
         `;
-        span.style.transitionDelay = `${index * 10}ms`;
+        span.style.transitionDelay = `${index * 5}ms`;
 
         fragment.appendChild(span);
       }

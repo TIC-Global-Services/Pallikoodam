@@ -90,7 +90,7 @@ const Innovationspace = () => {
             })
 
             gsap.to(highlightRef.current, {
-                scaleX: 1.2,
+                scaleX: 1.3,
                 duration: 1.2,
                 ease: "power2.out",
                 scrollTrigger: {
@@ -166,12 +166,12 @@ const Innovationspace = () => {
                                 </span>
                             </span>
                         </h2> */}
-                        <h2 className='text-3xl md:text-5xl lg:text-6xl font-medium text-center leading-tight'>
+                        <h2 className='text-3xl md:text-5xl lg:text-6xl leading-[58px] font-medium text-center -tracking-[2px]'>
                             Innovative Spaces for <span className='font-ppe italic font-light'>Curious</span> <br className='hidden md:block' />
                             <span ref={wrapperRef} className='relative inline-block px-2 ml-2'>
                                 <span
                                     ref={highlightRef}
-                                    className='absolute top-3 -left-10 bg-[#0045FF] -rotate-6 h-full w-full z-10 block origin-left'
+                                    className='absolute top-1 py-9 -left-[14%] bg-[#0045FF] -rotate-6 h-full w-full -z-10 block origin-left'
                                 ></span>
                                 <span className='relative z-20'>Minds</span>
                             </span>

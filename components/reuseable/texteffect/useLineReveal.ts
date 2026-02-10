@@ -69,7 +69,8 @@ export const useLineReveal = <T extends HTMLElement = HTMLElement>(threshold: nu
             span.style.display = 'inline-block';
             span.style.opacity = '0';
             span.style.transform = 'translateY(4px)';
-            span.style.transition = 'opacity 0.25s ease-out, transform 0.25s ease-out';
+            span.style.filter = 'blur(4px)';
+            span.style.transition = 'opacity 0.10s ease-out, transform 0.10s ease-out, filter 0.10s ease-out';
             fragment.appendChild(span);
           }
         });
@@ -122,8 +123,9 @@ export const useLineReveal = <T extends HTMLElement = HTMLElement>(threshold: nu
           line.forEach(word => {
             word.style.opacity = '1';
             word.style.transform = 'translateY(0)';
+            word.style.filter = 'blur(0)';
           });
-        }, lineIndex * 40); // Fast 40ms delay between lines
+        }, lineIndex * 20); // Fast 40ms delay between lines
       });
     });
   };

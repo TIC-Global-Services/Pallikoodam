@@ -31,10 +31,10 @@ const Campus = () => {
             <section className="bg-white text-black py-20">
                 {/* Header Section */}
                 <div ref={titleRef} className="mb-16">
-                    <h2  className="text-4xl md:text-[54px] font-medium mb-6">
+                    <h2 className="text-4xl md:text-[54px] font-medium mb-6">
                         Stories from our <span className="font-ppe italic font-normal">Campus</span>
                     </h2>
-                    <p  className="text-2xl text-gray-800">A vibrant community where milestones, discoveries,<br /> and celebrations shine through every day.</p>
+                    <p className="text-2xl text-gray-800">A vibrant community where milestones, discoveries,<br /> and celebrations shine through every day.</p>
                 </div>
 
                 {/* Grid Section */}

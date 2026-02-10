@@ -24,7 +24,7 @@ const curricullam = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=200%",
+          end: "+=80%",
           pin: true,
           scrub: 1,
         },
@@ -37,14 +37,14 @@ const curricullam = () => {
       // Fade out first card and fade in second card
       tl.to(card1Ref.current, {
         opacity: 0,
-        duration: 1,
+        duration: 0.5,
         ease: "power2.inOut",
       })
         .to(
           card2Ref.current,
           {
             opacity: 1,
-            duration: 1,
+            duration: 0.5,
             ease: "power2.inOut",
           },
           "<", // Start at the same time as previous animation
@@ -57,7 +57,8 @@ const curricullam = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-screen bg-black"
+      className="relative w-full bg-black"
+      style={{ height: '100dvh' }}
     >
       <div className="w-full h-full">
         <div className="relative w-full h-full">
@@ -70,13 +71,13 @@ const curricullam = () => {
               {/* Left side - Text */}
               <div
                 ref={text1Ref}
-                className="bg-[#000086] p-8 md:p-12 flex flex-col text-white overflow-y-auto"
+                className="bg-[#000086] p-8 md:p-12 flex flex-col justify-center text-white overflow-y-auto"
               >
                 <div ref={titleRef2}>
-                  <h2 className="text-4xl md:text-[54px] leading-[60px] mb-2">
+                  <h2 className="text-4xl md:text-[clamp(2.5rem,5dvh,3.375rem)] leading-[1.2] mb-2">
                     Cambridge
                   </h2>
-                  <h3 className="text-2xl md:text-[54px] font-ppe leading-[60px] italic mb-6">
+                  <h3 className="text-2xl md:text-[clamp(2rem,4.5dvh,3.375rem)] font-ppe leading-[1.2] italic mb-6">
                     International
                   </h3>
 
@@ -126,13 +127,13 @@ const curricullam = () => {
               {/* Left side - Text */}
               <div
                 ref={text2Ref}
-                className="bg-[#000086] p-8 md:p-12 flex flex-col text-white overflow-y-auto"
+                className="bg-[#000086] p-8 md:p-12 flex flex-col text-white  justify-center overflow-y-auto"
               >
                 <div ref={titleRef}>
-                  <h2 className="text-4xl md:text-[54px] leading-[60px] mb-2">
+                  <h2 className="text-4xl md:text-[clamp(2.5rem,5dvh,3.375rem)] leading-[1.2] mb-2">
                     National Curriculum
                   </h2>
-                  <h3 className="text-2xl md:text-[54px] font-ppe leading-[60px] italic mb-6">
+                  <h3 className="text-2xl md:text-[clamp(2rem,4.5dvh,3.375rem)] font-ppe leading-[1.2] italic mb-6">
                     (CBSE)
                   </h3>
 

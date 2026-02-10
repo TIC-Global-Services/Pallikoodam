@@ -36,9 +36,13 @@ const Wayofteaching = () => {
         const initGsap = async () => {
             const ctx = gsap.context(() => {
                 const isMobile = window.innerWidth < 768;
-                const isSmallHeightDesktop = window.innerWidth >= 768 && window.innerHeight < 768;
+                const isSmallHeightDesktop = window.innerHeight < 768;
                 const offset = isSmallHeightDesktop ? 2 : 5;
-                const scrollMultiplier = isMobile ? 50 : isSmallHeightDesktop ? 100 : 150;
+                const scrollMultiplier = isMobile
+                    ? 40
+                    : isSmallHeightDesktop
+                        ? 50
+                        : 150;
 
                 const tl = gsap.timeline({
                     scrollTrigger: {
@@ -68,18 +72,32 @@ const Wayofteaching = () => {
                     ScrollTrigger.refresh();
                 }, 100);
             }, sectionRef);
+            const handleResize = () => ScrollTrigger.refresh();
 
-            return () => ctx.revert();
+            window.addEventListener('resize', handleResize);
+            window.addEventListener('orientationchange', handleResize);
+            window.addEventListener('load', handleResize);
+
+            return () => {
+                window.removeEventListener('resize', handleResize);
+                window.removeEventListener('orientationchange', handleResize);
+                window.removeEventListener('load', handleResize);
+                ctx.revert();
+            };
         };
 
         initGsap();
     }, []);
 
     return (
-        <div className='bg-black'>
-            <section ref={sectionRef} className='w-full bg-white rounded-t-[40px] font-sans min-h-screen flex flex-col justify-start items-center'>
+        <div className='bg-white'>
+            <section
+                ref={sectionRef}
+                className="w-full bg-white rounded-t-[40px] font-sans min-h-[100svh] flex flex-col justify-start items-center overflow-hidden"
+
+            >
                 <ContainerLayout>
-                    <div className='text-center mb-6 md:mb-10'>
+                    <div className='text-center mt-10 mb-6 md:mb-12'>
                         <h1 ref={titleRef} className='text-3xl md:text-[54px] font-medium leading-tight tracking-tight text-black'>
                             RaK’s way of <span className='font-ppe italic font-light'>Teaching & Learning</span>
                         </h1>
@@ -91,7 +109,7 @@ const Wayofteaching = () => {
                                 key={index}
                                 className={`card-${index} absolute top-0 w-full max-w-5xl rounded-[10px] overflow-hidden shadow-2xl origin-top bg-white`}
                                 style={{
-                                    height: 'clamp(400px, 55vh, 700px)',
+                                    height: 'clamp(400px, 50vh, 700px)',
                                     zIndex: index + 1,
                                 }}
                             >

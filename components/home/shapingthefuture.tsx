@@ -173,7 +173,7 @@ const Shapingthefuture = () => {
                             INSTITUTIONS
                         </h2> */}
                         <h3 className="text-2xl md:text-[50px] font-bold leading-[52px]">
-                            <span className="font-bold">15+</span> Years Of Shaping The Future
+                            <span className="font-bold">10+</span> Years Of Shaping The Future
                         </h3>
                     </div>
                 </div>
@@ -187,7 +187,7 @@ const Shapingthefuture = () => {
                             Our <span style={{ fontFamily: 'var(--font-ppe)' }} className="text-[#000086] font-normal italic">Vision</span>
                         </h4>
                         <div className="w-1 h-20 bg-blue-600/30 absolute left-8 top-8 hidden"></div> {/* Decorative line if needed */}
-                        <p className="text-gray-800 text-sm md:text-base leading-relaxed mb-auto max-w-lg z-10 font-normal">
+                        <p className="text-gray-800 text-sm md:text-base leading-[20px] mb-auto max-w-lg z-10 font-normal">
                             <span className="border-l-4 border-blue-300 pl-4 block">
                                 Enabling learners to thrive With purpose and build a sustainable, equitable, and compassionate world. From a vision guided by passion to a thriving community of joyful, purposeful learners discover how 11+ years of innovation, care, and courageous ideas have shaped the RaK's story.
                             </span>
@@ -203,7 +203,7 @@ const Shapingthefuture = () => {
                             <h4 className="text-4xl md:text-6xl mb-8 font-medium">
                                 Our <span style={{ fontFamily: 'var(--font-ppe)' }} className="text-[#000086] font-normal italic">Mission</span>
                             </h4>
-                            <p className="text-gray-800 text-sm md:text-base leading-relaxed mb-auto max-w-lg z-10 font-normal">
+                            <p className="text-gray-800 text-sm md:text-base leading-[20px] mb-auto max-w-lg z-10 font-normal">
                                 <span className="border-l-4 border-blue-800/40 pl-4 block">
                                     At RaK's <span className="italic font-serif">Pallikkoodam</span> we Promote inquiry-based, experiential learning
                                     and critical thinking through rigorous academic standards. Build a culture of lifelong learning to

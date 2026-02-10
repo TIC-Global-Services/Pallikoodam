@@ -105,8 +105,8 @@ const campustour = () => {
                 <div className='py-[5%]'>
                         
                         <div ref={titleRef} className="flex flex-col gap-[10%]">
-                            <h1 className={`text-[clamp(16px,10vw,2.2rem)] tracking-tight leading-[40px] text-white font-medium`} >Step into a school where learning is intentional, relationships are meaningful,<br/> and every experience is designed to help children grow with confidence,<br/> curiosity and purpose.</h1>
-                            <h1 className={`text-[clamp(16px,10vw,2.2rem)] tracking-tight leading-[40px] text-white font-medium mt-8`}>Discover the values that guide us, the research that shapes us, and the vision<br/> that inspires us to create joyful, future-ready learning every single day.</h1>
+                            <h1 className={`md:text-[4.5vh] tracking-tight leading-[40px] text-white font-medium`} >Step into a school where learning is intentional, relationships are meaningful,<br className='hidden xl:block'/> and every experience is designed to help children grow with confidence,<br/> curiosity and purpose.</h1>
+                            <h1 className={`md:text-[4.5vh] tracking-tight leading-[40px] text-white font-medium mt-8`}>Discover the values that guide us, the research that shapes us, and the vision<br className='hidden xl:block'/> that inspires us to create joyful, future-ready learning every single day.</h1>
                         </div>
                     
                    <div className="mt-[5%]"> 

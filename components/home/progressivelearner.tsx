@@ -44,7 +44,7 @@ const ProgressiveLearner = () => {
         },
     ]
     return (
-        <div>
+        <div className=''>
             <ContainerLayout className='mt-[10%]'>
                 <ScrollOverlappingCards
                     heading=<>Built Spaces for the<br/> progressive <br/> <span  className='text-[#23519D] font-ppe  font-normal italic'> 21st Century</span> Learner</>

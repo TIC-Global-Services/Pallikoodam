@@ -59,7 +59,7 @@ const campustour = () => {
     }, [])
 
     return (
-        <div className='bg-[#000086] min-h-screen overflow-hidden relative'>
+        <div className='bg-[#000086] rounded-t-[40px] min-h-screen overflow-hidden relative'>
             {iconsData.map((icon, i) => (
                 <div
                     key={i}

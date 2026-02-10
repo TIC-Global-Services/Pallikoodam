@@ -57,14 +57,14 @@ const curricullam = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-screen bg-background"
+      className="relative w-full h-screen bg-black"
     >
       <div className="w-full h-full">
         <div className="relative w-full h-full">
           {/* First Card - Cambridge */}
           <div
             ref={card1Ref}
-            className="absolute top-0 left-0 w-full h-full overflow-hidden shadow-2xl"
+            className="absolute bg-black rounded-t-[40px] top-0 left-0 w-full h-full overflow-hidden shadow-2xl"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 h-full">
               {/* Left side - Text */}
@@ -120,7 +120,7 @@ const curricullam = () => {
           {/* Second Card - National Curriculum */}
           <div
             ref={card2Ref}
-            className="absolute top-0 left-0 w-full h-full overflow-hidden shadow-2xl"
+            className="absolute bg-black rounded-t-[40px] top-0 left-0 w-full h-full overflow-hidden shadow-2xl"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 h-full">
               {/* Left side - Text */}

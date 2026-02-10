@@ -31,7 +31,11 @@ export default function BlurText({
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          // Stop observing once visible so the animation doesn't reset on scroll
+          observer.disconnect();
+        }
       },
       { threshold }
     );
@@ -66,6 +70,8 @@ export default function BlurText({
             span.style.opacity = '0';
             span.style.transform = getTransformStyle(false);
             span.style.transition = 'all 0.5s ease-out';
+            span.style.willChange = 'transform, opacity, filter';
+            span.style.backfaceVisibility = 'hidden';
             fragment.appendChild(span);
           }
         });

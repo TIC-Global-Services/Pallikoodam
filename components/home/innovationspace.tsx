@@ -179,7 +179,7 @@ const Innovationspace = () => {
                     </div>
 
                     {/* Grid */}
-                    <div className='grid grid-cols-1 md:grid-cols-6 gap-6'>
+                    <div className='grid grid-cols-1 md:grid-cols-6 gap-6 gap-y-8'>
                         {cards.map((card) => (
                             <div
                                 key={card.id}

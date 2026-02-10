@@ -30,16 +30,11 @@ const Campus = () => {
         <ContainerLayout>
             <section className="bg-white text-black py-20">
                 {/* Header Section */}
-                <div className="mb-16">
-                    <h2 ref={titleRef} className="text-4xl md:text-[54px] font-medium mb-6">
+                <div ref={titleRef} className="mb-16">
+                    <h2  className="text-4xl md:text-[54px] font-medium mb-6">
                         Stories from our <span className="font-ppe italic font-normal">Campus</span>
                     </h2>
-                    <BlurText className="text-2xl text-gray-800" text={<> A vibrant community where milestones, discoveries,<br /> and celebrations shine through every day.</>}
-                        delay={5}
-                        animateBy="words"
-                        direction="top"
-                    />
-
+                    <p  className="text-2xl text-gray-800">A vibrant community where milestones, discoveries,<br /> and celebrations shine through every day.</p>
                 </div>
 
                 {/* Grid Section */}

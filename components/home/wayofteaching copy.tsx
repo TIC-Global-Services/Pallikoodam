@@ -7,7 +7,7 @@ import image3 from '@/assets/home/stack-3.jpg'
 import ContainerLayout from '@/layout/ContainerLayout'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useLetterReveal } from '../reuseable/texteffect/useLetterReveal'
+import { useLineReveal } from '../reuseable/texteffect/useLineReveal'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -30,7 +30,7 @@ const data = [
 ]
 const Wayofteaching = () => {
     const sectionRef = useRef<HTMLElement>(null)
-    const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>();
+    const { elementRef: titleRef } = useLineReveal<HTMLHeadingElement>();
 
     useEffect(() => {
         const initGsap = async () => {
@@ -38,13 +38,13 @@ const Wayofteaching = () => {
                 const isMobile = window.innerWidth < 768;
                 const isSmallHeightDesktop = window.innerWidth >= 768 && window.innerHeight < 768;
                 const offset = isSmallHeightDesktop ? 2 : 5;
-                const scrollMultiplier = isMobile ? 20 : isSmallHeightDesktop ? 75 : 100;
+                const scrollMultiplier = isMobile ? 50 : isSmallHeightDesktop ? 100 : 150;
 
                 const tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: sectionRef.current,
                         start: 'top top',
-                        end: `+=${data.length * scrollMultiplier}%`,
+                        end: `+=${scrollMultiplier}%`,
                         pin: true,
                         scrub: isMobile ? 0.2 : 1,
                         anticipatePin: 1,

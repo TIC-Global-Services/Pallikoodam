@@ -153,16 +153,17 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
             <div className="w-full">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 xl:gap-x-[20%] w-full items-start  xl:px-0">
                     {/* Left Column: Static Text */}
-                    <div className="left-content">
-                        <h2 ref={titleRef} className="xl:text-[3.4rem] text-[1.25rem] tracking-tight leading-[54px] font-medium w-full font-hoves-pro mb-[2%]">
+                    <div ref={titleRef} className="left-content">
+                        <h2  className="xl:text-[3.4rem] text-[1.25rem] tracking-tight leading-[54px] font-medium w-full font-hoves-pro mb-6 md:mb-8">
                             {heading}
                         </h2>
-                        <BlurText text={paragraph}
-                        className='text-[0.875rem] leading-[120%] max-w-sm md:max-w-xl xl:text-[1.25rem] font-regular font-inter-tight pt-[3%]'
+                        <p className='text-[0.875rem] leading-[120%] max-w-sm md:max-w-xl xl:text-[1.25rem] font-regular font-inter-tight'>{paragraph}</p>
+                        {/* <BlurText text={paragraph}
+                        className=''
                         delay={5}
                         animateBy="words"
                         direction="top"
-                        />
+                        /> */}
                     </div>
 
                     {/* Right Column: Cards Container */}

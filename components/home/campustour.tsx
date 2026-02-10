@@ -105,12 +105,12 @@ const campustour = () => {
                 <div className='py-[5%]'>
                         
                         <div ref={titleRef} className="flex flex-col gap-[10%]">
-                            <h1 className={`text-[clamp(16px,10vw,2.5rem)] tracking-tight leading-[40px] text-white font-medium`} >Step into a school where learning is intentional, relationships are meaningful,<br/> and every experience is designed to help children grow with confidence,<br/> curiosity and purpose.</h1>
-                            <h1 className={`text-[clamp(16px,10vw,2.5rem)] tracking-tight leading-[40px] text-white font-medium mt-8`}>Discover the values that guide us, the research that shapes us, and the vision<br/> that inspires us to create joyful, future-ready learning every single day.</h1>
+                            <h1 className={`text-[clamp(16px,10vw,2.2rem)] tracking-tight leading-[40px] text-white font-medium`} >Step into a school where learning is intentional, relationships are meaningful,<br/> and every experience is designed to help children grow with confidence,<br/> curiosity and purpose.</h1>
+                            <h1 className={`text-[clamp(16px,10vw,2.2rem)] tracking-tight leading-[40px] text-white font-medium mt-8`}>Discover the values that guide us, the research that shapes us, and the vision<br/> that inspires us to create joyful, future-ready learning every single day.</h1>
                         </div>
                     
                    <div className="mt-[5%]"> 
-                    <button suppressHydrationWarning={true} className='bg-white text-[#000086] text-xl md:text-2xl hover:scale-105 transition-all duration-300 font-medium px-4 py-3 capitalize rounded-md'>schedule a campus tour</button>
+                    <button suppressHydrationWarning={true} className='bg-white text-[#000086] text-sm md:text-base lg:text-xl xl:text-2xl hover:scale-105 transition-all duration-300 font-medium px-4 py-3 capitalize rounded-md'>schedule a campus tour</button>
                    </div>
                 </div>
             </ContainerLayout>

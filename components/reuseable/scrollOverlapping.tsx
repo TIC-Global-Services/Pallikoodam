@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
+import { useLetterReveal } from './texteffect/useLetterReveal';
+import BlurText from './texteffect/BlurText';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,13 +31,14 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
     const [containerHeight, setContainerHeight] = useState(400);
     const [cardWidth, setCardWidth] = useState('100%');
     const [cardMaxHeight, setCardMaxHeight] = useState('auto');
+     const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>();
 
     useEffect(() => {
         const ctx = gsap.context(() => {
             const isMobile = window.innerWidth < 768;
             const isSmallHeight = window.innerHeight < 700;
             const isSmallHeightDesktop = window.innerWidth >= 768 && isSmallHeight;
-            
+
             // Adjust offset based on screen size
             let offset = 5;
             if (isSmallHeight && isMobile) {
@@ -43,7 +46,7 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
             } else if (isSmallHeightDesktop) {
                 offset = 2;
             }
-            
+
             // Adjust scroll multiplier for better control
             let scrollMultiplier = 100;
             if (isMobile) {
@@ -91,24 +94,24 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
             const width = window.innerWidth;
             const height = window.innerHeight;
             const isSmallHeight = height < 700;
-            
+
             if (width < 768) {
-                const mobileHeight = isSmallHeight ? Math.min(height * 0.5, 300) : 380;
+                const mobileHeight = isSmallHeight ? Math.min(height * 0.6, 350) : 380;
                 setContainerHeight(mobileHeight);
                 setCardWidth('100%');
                 setCardMaxHeight(`${mobileHeight}px`);
             } else if (width < 1280) {
-                const tabletHeight = isSmallHeight ? Math.min(height * 0.55, 350) : 500;
+                const tabletHeight = isSmallHeight ? Math.min(height * 0.65, 400) : 500;
                 setContainerHeight(tabletHeight);
                 setCardWidth('100%');
                 setCardMaxHeight(`${tabletHeight}px`);
             } else if (width < 1536) {
-                const desktopHeight = isSmallHeight ? Math.min(height * 0.6, 400) : 500;
+                const desktopHeight = isSmallHeight ? Math.min(height * 0.65, 420) : 500;
                 setContainerHeight(desktopHeight);
                 setCardWidth('521px');
                 setCardMaxHeight(`${desktopHeight}px`);
             } else {
-                const largeHeight = isSmallHeight ? Math.min(height * 0.65, 450) : 500;
+                const largeHeight = isSmallHeight ? Math.min(height * 0.7, 480) : 500;
                 setContainerHeight(largeHeight);
                 setCardWidth('521px');
                 setCardMaxHeight(`${largeHeight}px`);
@@ -121,22 +124,25 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
     }, []);
 
     return (
-        <section ref={sectionRef} className="scroll-section min-h-screen py-10 bg-background relative">
+        <section ref={sectionRef} className="scroll-section min-h-svh py-10 bg-background relative">
             <div className="w-full">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 xl:gap-x-[20%] w-full items-start  xl:px-0">
                     {/* Left Column: Static Text */}
                     <div className="left-content">
-                        <h2 className="xl:text-[3.4rem] text-[1.25rem] tracking-tighter font-medium w-full font-hoves-pro">
+                        <h2 ref={titleRef} className="xl:text-[3.4rem] text-[1.25rem] tracking-tight leading-[54px] font-medium w-full font-hoves-pro">
                             {heading}
                         </h2>
-                        <p className="text-[0.875rem] leading-[120%] max-w-sm md:max-w-xl xl:text-[1.25rem] font-regular font-inter-tight pt-2">
-                            {paragraph}
-                        </p>
+                        <BlurText text={paragraph}
+                        className='text-[0.875rem] leading-[120%] max-w-sm md:max-w-xl xl:text-[1.25rem] font-regular font-inter-tight pt-2'
+                        delay={5}
+                        animateBy="words"
+                        direction="top"
+                        />
                     </div>
 
                     {/* Right Column: Cards Container */}
                     <div className="right-content relative mb-10">
-                        <div className="cards-container relative w-full" style={{ height: `${containerHeight}px` }}>
+                        <div className="cards-container relative w-full overflow-visible" style={{ height: `${containerHeight}px` }}>
                             {cards.map((card, index) => (
                                 <div
                                     key={index}

@@ -54,37 +54,47 @@ export const useLetterReveal = <T extends HTMLElement = HTMLElement>(threshold: 
     tempDiv.innerHTML = originalHTML;
     
     // Function to wrap text nodes with spans
-    const wrapTextNodes = (node: Node): Node => {
-      if (node.nodeType === Node.TEXT_NODE) {
-        const text = node.textContent || '';
-        const fragment = document.createDocumentFragment();
-        
-        for (let i = 0; i < text.length; i++) {
-          const char = text[i];
-          const span = document.createElement('span');
-          span.textContent = char === ' ' ? '\u00A0' : char;
-          span.style.display = 'inline-block';
-          span.style.opacity = '0';
-          span.style.transform = 'translateY(100%)';
-          span.style.transition = 'transform 0.5s cubic-bezier(0.2, 0.65, 0.3, 0.9), opacity 0.5s ease-out';
-          fragment.appendChild(span);
-        }
-        
-        return fragment;
-      } else if (node.nodeType === Node.ELEMENT_NODE) {
-        const newElement = node.cloneNode(false) as Element;
-        const childNodes = Array.from(node.childNodes);
-        
-        childNodes.forEach(child => {
-          newElement.appendChild(wrapTextNodes(child));
-        });
-        
-        return newElement;
+   const wrapTextNodes = (node: Node): Node => {
+  if (node.nodeType === Node.TEXT_NODE) {
+    const text = node.textContent || '';
+    const words = text.split(/(\s+)/); // keeps spaces
+    const fragment = document.createDocumentFragment();
+
+    words.forEach((word, index) => {
+      if (word.trim() === '') {
+        fragment.appendChild(document.createTextNode(word));
+      } else {
+        const span = document.createElement('span');
+        span.textContent = word;
+        span.style.display = 'inline-block';
+        span.style.filter = 'blur(10px)';
+        span.style.opacity = '0';
+        span.style.transform = 'translateY(6px)';
+        span.style.transition = `
+          filter 0.3s ease,
+          opacity 0.3s ease,
+          transform 0.3s ease
+        `;
+        span.style.transitionDelay = `${index * 10}ms`;
+
+        fragment.appendChild(span);
       }
-      
-      return node.cloneNode(true);
-    };
-    
+    });
+
+    return fragment;
+  }
+
+  if (node.nodeType === Node.ELEMENT_NODE) {
+    const newElement = node.cloneNode(false) as Element;
+    node.childNodes.forEach(child => {
+      newElement.appendChild(wrapTextNodes(child));
+    });
+    return newElement;
+  }
+
+  return node.cloneNode(true);
+};
+
     // Process all child nodes
     const processedContent = document.createDocumentFragment();
     Array.from(tempDiv.childNodes).forEach(child => {
@@ -97,19 +107,12 @@ export const useLetterReveal = <T extends HTMLElement = HTMLElement>(threshold: 
     
     // Trigger animation
     const spans = element.querySelectorAll('span');
-    spans.forEach((span) => {
-      // Random delay between 0 and 0.5s (adjust as needed)
-      const randomDelay = Math.random() * 0.5; 
-      span.style.transitionDelay = `${randomDelay}s`;
+    spans.forEach((span, index) => {
+      setTimeout(() => {
+        (span as HTMLElement).style.filter = 'blur(0px)';
+        (span as HTMLElement).style.opacity = '1';
+      }, 50 + (index * 15));
     });
-
-    // Small delay to ensure transitions trigger
-    setTimeout(() => {
-      spans.forEach((span) => {
-        span.style.transform = 'translateY(0)';
-        span.style.opacity = '1';
-      });
-    }, 50);
   };
 
   return { elementRef, isVisible };

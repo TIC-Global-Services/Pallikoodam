@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import image1 from "@/assets/cambridge.jpg";
 import image2 from "@/assets/national-curriculam.jpg";
+import { useLetterReveal } from "../reuseable/texteffect/useLetterReveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +15,8 @@ const curricullam = () => {
   const card2Ref = useRef<HTMLDivElement>(null);
   const text1Ref = useRef<HTMLDivElement>(null);
   const text2Ref = useRef<HTMLDivElement>(null);
+  const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>();
+  const { elementRef: titleRef2 } = useLetterReveal<HTMLHeadingElement>();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -82,7 +85,7 @@ const curricullam = () => {
                 ref={text1Ref}
                 className="bg-[#000086] p-8 md:p-12 flex flex-col text-white"
               >
-                <div>
+                <div ref={titleRef2}>
                   <h2 className="text-4xl md:text-[54px] leading-[60px] mb-2">
                     Cambridge
                   </h2>
@@ -90,7 +93,7 @@ const curricullam = () => {
                     International
                   </h3>
 
-                  <div className="">
+                  <div ref={titleRef2} className="">
                     <p className="font-light italic font-ppe text-sm md:text-xl">
                       Cambridge @ RaK's
                     </p>
@@ -110,7 +113,7 @@ const curricullam = () => {
                   </div>
                 </div>
 
-                <button className="bg-white text-xl mt-15 text-[#0033A0] px-10 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors w-fit">
+                <button className="bg-white text-xl mt-15 text-[#0033A0] px-10 py-3 rounded-lg hover:scale-105 transition-all duration-300 font-semibold hover:bg-gray-100  w-fit">
                   Explore Cambridge
                 </button>
               </div>
@@ -139,7 +142,7 @@ const curricullam = () => {
                 ref={text2Ref}
                 className="bg-[#000086] p-8 md:p-12 flex flex-col text-white"
               >
-                <div>
+                <div ref={titleRef}>
                   <h2 className="text-4xl md:text-[54px] leading-[60px] mb-2">
                     National Curriculum
                   </h2>
@@ -147,7 +150,7 @@ const curricullam = () => {
                     (CBSE)
                   </h3>
 
-                  <div className="space-y-4 text-sm md:text-base">
+                  <div ref={titleRef} className="space-y-4 text-sm md:text-base">
                     <p className="font-semibold">CBSE @ RaK's</p>
                     <p className="leading-[26px] tracking-tight text-sm md:text-2xl">
                       A strong, structured academic pathway that builds clarity,
@@ -165,7 +168,7 @@ const curricullam = () => {
                   </div>
                 </div>
 
-                <button className="bg-white text-xl mt-15 text-[#0033A0] px-10 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors w-fit">
+                <button className="bg-white text-xl mt-15 text-[#0033A0] px-10 py-3 rounded-lg font-semibold hover:scale-105 transition-all duration-300 hover:bg-gray-100 w-fit">
                   Explore CBSE
                 </button>
               </div>

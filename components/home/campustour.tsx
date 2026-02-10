@@ -18,6 +18,7 @@ import icon11 from '@/assets/icon-11.png'
 import icon6 from '@/assets/icon-6.png'
 import icon12 from '@/assets/icon-12.png'
 import icon13 from '@/assets/icon-13.png'
+import { useLetterReveal } from '../reuseable/texteffect/useLetterReveal'
 
 const iconsData = [
     { src: icon11, top: '45%', right: '5%', size: 200, rotate: 40 }, // DNA
@@ -37,6 +38,8 @@ const iconsData = [
 
 const campustour = () => {
     const iconsRef = useRef<(HTMLDivElement | null)[]>([])
+    const { elementRef: titleRef} = useLetterReveal<HTMLHeadingElement>();
+    const { elementRef: titleRef2 } = useLetterReveal<HTMLHeadingElement>();
 
     useEffect(() => {
         iconsRef.current.forEach((icon, i) => {
@@ -99,20 +102,16 @@ const campustour = () => {
             ))}
 
             <ContainerLayout>
-                <div className='flex flex-col py-[7%] gap-5 justify-start items-start h-full relative z-20'>
-                    <ScrollReveal
-                        baseOpacity={0.1}
-                        enableBlur
-                        baseRotation={3}
-                        textClassName="text-white"
-                        blurStrength={4}
-                    >
-                        <span>Step into a school where learning is intentional, relationships are meaningful, and every experience is designed to help children grow with confidence, curiosity and purpose.</span>
-                        <div className="mt-8">
-                            <span>Discover the values that guide us, the research that shapes us, and the vision that inspires us to create joyful, future-ready learning every single day.</span>
+                <div className='py-[5%]'>
+                        
+                        <div ref={titleRef} className="flex flex-col gap-[10%]">
+                            <h1 className={`text-[clamp(16px,10vw,2.5rem)] tracking-tight leading-[40px] text-white font-medium`} >Step into a school where learning is intentional, relationships are meaningful,<br/> and every experience is designed to help children grow with confidence,<br/> curiosity and purpose.</h1>
+                            <h1 className={`text-[clamp(16px,10vw,2.5rem)] tracking-tight leading-[40px] text-white font-medium mt-8`}>Discover the values that guide us, the research that shapes us, and the vision<br/> that inspires us to create joyful, future-ready learning every single day.</h1>
                         </div>
-                    </ScrollReveal>
-                    <button suppressHydrationWarning={true} className='bg-white text-[#000086] text-xl md:text-2xl font-medium px-4 py-3 capitalize rounded-md'>schedule a campus tour</button>
+                    
+                   <div className="mt-[5%]"> 
+                    <button suppressHydrationWarning={true} className='bg-white text-[#000086] text-xl md:text-2xl hover:scale-105 transition-all duration-300 font-medium px-4 py-3 capitalize rounded-md'>schedule a campus tour</button>
+                   </div>
                 </div>
             </ContainerLayout>
         </div>

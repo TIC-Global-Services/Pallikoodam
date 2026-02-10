@@ -1,9 +1,7 @@
 "use client";
 
+import { Menu, X } from "lucide-react";
 import { forwardRef } from "react";
-import gsap from "gsap";
-import { Menu } from "lucide-react";
-import { useEffect, useRef } from "react";
 
 interface MenuIconProps {
   isOpen: boolean;
@@ -12,22 +10,22 @@ interface MenuIconProps {
 
 export const MenuIcon = forwardRef<HTMLButtonElement, MenuIconProps>(
   ({ isOpen, onClick }, ref) => {
-    const topLineRef = useRef<HTMLSpanElement>(null);
-    const bottomLineRef = useRef<HTMLSpanElement>(null);
-
-
     return (
       <button
         ref={ref}
         onClick={onClick}
         suppressHydrationWarning={true}
-        aria-label="Menu"
+        aria-label={isOpen ? "Close Menu" : "Open Menu"}
         className={`
-          relative p-3 flex items-center justify-center cursor-pointer z-50
-          transition-colors duration-300 bg-[#000086] rounded-full
+          relative px-4 py-3 flex items-center justify-center gap-2 cursor-pointer z-50
+          transition-all duration-300 rounded-full
+          ${isOpen ? 'bg-white text-black' : 'bg-[#000086] hover:bg-[#0c0cbc] text-white'}
         `}
       >
-        <Menu className="text-white" />
+        <span className="font-medium text-sm md:text-base uppercase tracking-wide">
+          {isOpen ? <X /> : <Menu />}
+        </span>
+        {/* {isOpen && <span className="text-xl">:</span>} */}
       </button>
     );
   }

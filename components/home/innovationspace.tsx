@@ -154,8 +154,8 @@ const Innovationspace = () => {
                 {/* Header */}
                 <ContainerLayout>
                     <div className='flex justify-center items-center mb-16'>
-                        <h2 className='text-3xl md:text-5xl lg:text-6xl font-medium text-center leading-tight'>
-                            <LetterRevealWrapper>Innovative Spaces for </LetterRevealWrapper> <LetterRevealWrapper className='font-ppe italic font-light'>Curious</LetterRevealWrapper> <br className='hidden md:block' />
+                        {/* <h2 className='text-3xl md:text-5xl lg:text-6xl font-medium text-center leading-tight'>
+                            <>Innovative Spaces for </> <LetterRevealWrapper className='font-ppe italic font-light'>Curious</LetterRevealWrapper> <br className='hidden md:block' />
                             <span ref={wrapperRef} className='relative inline-block px-2 ml-2'>
                                 <span
                                     ref={highlightRef}
@@ -164,6 +164,16 @@ const Innovationspace = () => {
                                 <span className='relative z-20'>
                                     <LetterRevealWrapper>Minds</LetterRevealWrapper>
                                 </span>
+                            </span>
+                        </h2> */}
+                        <h2 className='text-3xl md:text-5xl lg:text-6xl font-medium text-center leading-tight'>
+                            Innovative Spaces for <span className='font-ppe italic font-light'>Curious</span> <br className='hidden md:block' />
+                            <span ref={wrapperRef} className='relative inline-block px-2 ml-2'>
+                                <span
+                                    ref={highlightRef}
+                                    className='absolute top-3 -left-10 bg-[#0045FF] -rotate-6 h-full w-full z-10 block origin-left'
+                                ></span>
+                                <span className='relative z-20'>Minds</span>
                             </span>
                         </h2>
                     </div>

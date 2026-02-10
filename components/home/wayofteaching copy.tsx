@@ -7,6 +7,7 @@ import image3 from '@/assets/home/stack-3.jpg'
 import ContainerLayout from '@/layout/ContainerLayout'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useLetterReveal } from '../reuseable/texteffect/useLetterReveal'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -29,6 +30,7 @@ const data = [
 ]
 const Wayofteaching = () => {
     const sectionRef = useRef<HTMLElement>(null)
+    const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>();
 
     useEffect(() => {
         const initGsap = async () => {
@@ -77,7 +79,7 @@ const Wayofteaching = () => {
         <section ref={sectionRef} className='w-full bg-white  font-sans min-h-screen flex flex-col justify-start items-center'>
             <ContainerLayout>
                 <div className='text-center mb-6 md:mb-10'>
-                    <h1 className='text-3xl md:text-[54px] font-medium leading-tight tracking-tight text-black'>
+                    <h1 ref={titleRef} className='text-3xl md:text-[54px] font-medium leading-tight tracking-tight text-black'>
                         RaK’s way of <span className='font-ppe italic font-light'>Teaching & Learning</span>
                     </h1>
                 </div>

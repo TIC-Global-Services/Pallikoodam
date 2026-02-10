@@ -6,6 +6,8 @@ import image3 from '@/assets/home/campus-3.jpg'
 import Image from 'next/image'
 import ContainerLayout from '@/layout/ContainerLayout'
 import SimpleParallax from 'simple-parallax-js'
+import { useLetterReveal } from '../reuseable/texteffect/useLetterReveal'
+import BlurText from '../reuseable/texteffect/BlurText'
 
 const Campus = () => {
 
@@ -23,18 +25,21 @@ const Campus = () => {
             image: image3
         },
     ]
-
+    const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>();
     return (
         <ContainerLayout>
             <section className="bg-white text-black py-20">
                 {/* Header Section */}
                 <div className="mb-16">
-                    <h2 className="text-4xl md:text-[54px] font-medium mb-6">
+                    <h2 ref={titleRef} className="text-4xl md:text-[54px] font-medium mb-6">
                         Stories from our <span className="font-ppe italic font-normal">Campus</span>
                     </h2>
-                    <p className="text-2xl text-gray-800">
-                        A vibrant community where milestones, discoveries,<br /> and celebrations shine through every day.
-                    </p>
+                    <BlurText className="text-2xl text-gray-800" text={<> A vibrant community where milestones, discoveries,<br /> and celebrations shine through every day.</>}
+                        delay={5}
+                        animateBy="words"
+                        direction="top"
+                    />
+
                 </div>
 
                 {/* Grid Section */}
@@ -44,11 +49,11 @@ const Campus = () => {
                             <div className="relative w-full aspect-4/5 overflow-hidden rounded-[2rem] mb-6">
                                 <SimpleParallax>
                                     <Image
-                                    src={item.image}
-                                    alt={item.title}
-                                    fill
-                                    className={`object-cover transition-transform duration-700  ${index === 0 ? 'object-cover scale-95 group-hover:scale-90' : 'object-cover group-hover:scale-105'}`}
-                                />
+                                        src={item.image}
+                                        alt={item.title}
+                                        fill
+                                        className={`object-cover transition-transform duration-700  ${index === 0 ? 'object-cover scale-95 group-hover:scale-90' : 'object-cover group-hover:scale-105'}`}
+                                    />
                                 </SimpleParallax>
                             </div>
                             <h3 className="text-2xl font-medium">{item.title}</h3>

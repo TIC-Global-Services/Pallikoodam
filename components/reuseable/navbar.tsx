@@ -134,22 +134,18 @@ const navbar = () => {
         return false;
     };
     const toggleAudio = async () => {
-        if (audioRef.current) {
-            try {
-                if (isPlaying) {
-                    audioRef.current.pause();
-                    setIsPlaying(false);
-                } else {
-                    // Notify others to stop before we start
-                    window.dispatchEvent(
-                        new CustomEvent("global-audio-play", {
-                            detail: { source: "navbar" },
-                        }),
-                    );
+        if (!audioRef.current) {
+            audioRef.current = new Audio("/Kids-Songs.mp3");
+            audioRef.current.loop = true;
+        }
 
-                    await audioRef.current.play();
-                    setIsPlaying(true);
-                }
+        if (isPlaying) {
+            audioRef.current.pause();
+            setIsPlaying(false);
+        } else {
+            try {
+                await audioRef.current.play();
+                setIsPlaying(true);
             } catch (error) {
                 console.error("Audio playback failed:", error);
                 setIsPlaying(false);

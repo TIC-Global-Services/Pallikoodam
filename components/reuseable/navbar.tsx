@@ -135,7 +135,7 @@ const navbar = () => {
     };
     const toggleAudio = async () => {
         if (!audioRef.current) {
-            audioRef.current = new Audio("/Kids-Songs.mp3");
+            audioRef.current = new Audio("/pallikoodam-audio.mp3");
             audioRef.current.loop = true;
         }
 

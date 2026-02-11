@@ -38,7 +38,7 @@ const iconsData = [
 
 const campustour = () => {
     const iconsRef = useRef<(HTMLDivElement | null)[]>([])
-    const { elementRef: titleRef} = useLetterReveal<HTMLHeadingElement>();
+    const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>();
     const { elementRef: titleRef2 } = useLetterReveal<HTMLHeadingElement>();
 
     useEffect(() => {
@@ -59,7 +59,7 @@ const campustour = () => {
     }, [])
 
     return (
-        <div className='bg-[#000086] rounded-t-[40px] min-h-screen overflow-hidden relative'>
+        <section className='bg-[#000086] rounded-t-[40px] min-h-screen overflow-hidden relative'>
             {iconsData.map((icon, i) => (
                 <div
                     key={i}
@@ -103,18 +103,18 @@ const campustour = () => {
 
             <ContainerLayout>
                 <div className='py-[5%]'>
-                        
-                        <div ref={titleRef} className="flex flex-col gap-[10%]">
-                            <h1 className={`md:text-[4.5vh] tracking-tight leading-[40px] text-white font-medium`} >Step into a school where learning is intentional, relationships are meaningful,<br className='hidden xl:block'/> and every experience is designed to help children grow with confidence,<br/> curiosity and purpose.</h1>
-                            <h1 className={`md:text-[4.5vh] tracking-tight leading-[40px] text-white font-medium mt-8`}>Discover the values that guide us, the research that shapes us, and the vision<br className='hidden xl:block'/> that inspires us to create joyful, future-ready learning every single day.</h1>
-                        </div>
-                    
-                   <div className="mt-[5%]"> 
-                    <button suppressHydrationWarning={true} className='bg-white text-[#000086] text-sm md:text-base lg:text-xl xl:text-2xl hover:scale-105 transition-all duration-300 font-medium px-4 py-3 capitalize rounded-md'>schedule a campus tour</button>
-                   </div>
+
+                    <div ref={titleRef} className="flex flex-col gap-[10%]">
+                        <h1 className={`md:text-[4.5vh] tracking-tight leading-[40px] text-white font-medium`} >Step into a school where learning is intentional, relationships are meaningful,<br className='hidden xl:block' /> and every experience is designed to help children grow with confidence,<br /> curiosity and purpose.</h1>
+                        <h1 className={`md:text-[4.5vh] tracking-tight leading-[40px] text-white font-medium mt-8`}>Discover the values that guide us, the research that shapes us, and the vision<br className='hidden xl:block' /> that inspires us to create joyful, future-ready learning every single day.</h1>
+                    </div>
+
+                    <div className="mt-[5%]">
+                        <button suppressHydrationWarning={true} className='bg-white text-[#000086] text-sm md:text-base lg:text-xl xl:text-2xl hover:scale-105 transition-all duration-300 font-medium px-4 py-3 capitalize rounded-md'>schedule a campus tour</button>
+                    </div>
                 </div>
             </ContainerLayout>
-        </div>
+        </section>
     )
 }
 

@@ -102,8 +102,8 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
 
                     {/* Right Column: Cards Container */}
                     <div className="right-content relative mb-6 md:mb-10">
-                        <div 
-                            className="cards-container relative w-full overflow-visible" 
+                        <div
+                            className="cards-container relative w-full overflow-visible"
                             style={{ height: 'clamp(300px, 50vh, 500px)' }}
                         >
                             {cards.map((card, index) => (

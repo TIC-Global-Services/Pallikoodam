@@ -186,7 +186,7 @@ const navbar = () => {
                                                 ? "text-primary"
                                                 : isLightSection
                                                     ? "text-black"
-                                                    : "text-white"
+                                                    : "text-black"
                                         }
                                     >
                                         AUDIO
@@ -195,8 +195,8 @@ const navbar = () => {
                                         className={`font-bold ${isPlaying
                                             ? "text-primary"
                                             : isLightSection
-                                                ? "text-white"
-                                                : "text-white"
+                                                ? "text-black"
+                                                : "text-black"
                                             }`}
                                     >
                                         {isPlaying ? "ON" : "OFF"}

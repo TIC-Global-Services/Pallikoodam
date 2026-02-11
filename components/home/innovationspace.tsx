@@ -131,7 +131,7 @@ const Innovationspace = () => {
 
 
     return (
-        <section className='relative bg-black mt-24' ref={containerRef}>
+        <section className='relative bg-black' ref={containerRef}>
             {/* Scalloped Edge Container */}
             <div className="absolute top-0 left-0 w-full -translate-y-[97%] flex overflow-hidden pointer-events-none z-20 leading-0">
                 {Array.from({ length: bubbleCount }).map((_, index) => (

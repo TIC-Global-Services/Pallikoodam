@@ -150,11 +150,20 @@ const Shapingthefuture = () => {
                             pointerEvents: 'none'
                         }}
                     >
-                        <div className="absolute top-5 left-[5%] md:left-[2%] floating-icon z-10 w-20 h-20 md:w-28 md:h-28">
+                        <div className="absolute top-5 left-[5%] md:left-[5%] floating-icon z-10 w-20 h-20 md:w-28 md:h-28">
                             <Image src={float1} alt="Icon" fill className="object-contain" />
                         </div>
-                        <div className="absolute top-[60%] left-[2%] md:left-[10%] floating-icon z-10 w-16 h-16 md:w-24 md:h-24">
+                        <div className="absolute top-0 left-[5%] md:left-[20%] floating-icon z-10 w-20 h-20 md:w-20 md:h-20">
+                            <Image src={float1} alt="Icon" fill className="object-contain" />
+                        </div>
+                        <div className="absolute top-[80%] left-[2%] md:left-[10%] floating-icon z-10 w-16 h-16 md:w-24 md:h-24">
                             <Image src={float2} alt="Icon" fill className="object-contain" />
+                        </div>
+                        <div className="absolute top-[50%] left-[2%] md:left-[20%] floating-icon z-10 w-16 h-16 md:w-20 md:h-20">
+                            <Image src={float2} alt="Icon" fill className="object-contain" />
+                        </div>
+                        <div className="absolute top-0 right-[5%] md:right-[15%] floating-icon z-10 w-20 h-20 md:w-28 md:h-20">
+                            <Image src={float3} alt="Icon" fill className="object-contain" />
                         </div>
                         <div className="absolute top-20 right-[5%] md:right-[5%] floating-icon z-10 w-20 h-20 md:w-28 md:h-28">
                             <Image src={float3} alt="Icon" fill className="object-contain" />
@@ -162,17 +171,20 @@ const Shapingthefuture = () => {
                         <div className="absolute top-[80%] right-[2%] md:right-[10%] floating-icon z-10 w-16 h-16 md:w-24 md:h-24">
                             <Image src={float4} alt="Icon" fill className="object-contain" />
                         </div>
+                        <div className="absolute top-[50%] right-[2%] md:right-[20%] floating-icon z-10 w-16 h-16 md:w-24 md:h-24">
+                            <Image src={float4} alt="Icon" fill className="object-contain" />
+                        </div>
                     </div>
 
                     {/* RAKS Logo & Text */}
                     <div className="relative z-0 text-center w-full max-w-4xl mx-auto">
-                        <div className="relative w-full h-[120px] md:h-full min-h-[412px] mb-8">
+                        <div className="relative w-full h-[90px] md:h-full min-h-[250px] mb-8">
                             <Image src="/raks_logo_og.png" alt="RAKS INSTITUTIONS" fill className="object-contain" priority />
                         </div>
                         {/* <h2 className="text-xl md:text-3xl tracking-[0.4em] md:tracking-[0.6em] uppercase font-light text-white mb-6 md:mb-10">
                             INSTITUTIONS
                         </h2> */}
-                        <h3 className="text-2xl md:text-[50px] font-bold leading-[52px]">
+                        <h3 className="text-2xl md:text-[30px] font-bold leading-[52px]">
                             <span className="font-bold">10+</span> Years Of Shaping The Future
                         </h3>
                     </div>

@@ -28,7 +28,7 @@ const Campus = () => {
     const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>();
     return (
         <ContainerLayout>
-            <section className="bg-white text-black py-20">
+            <section className="bg-white text-black pb-10">
                 {/* Header Section */}
                 <div ref={titleRef} className="mb-16">
                     <h2 className="text-4xl md:text-[54px] font-medium mb-6">

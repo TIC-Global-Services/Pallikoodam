@@ -4,6 +4,7 @@ export const useLetterReveal = <T extends HTMLElement = HTMLElement>(threshold: 
   const [isVisible, setIsVisible] = useState(false);
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
   const elementRef = useRef<T>(null);
+  const originalContentRef = useRef<string | null>(null);
 
   useEffect(() => {
     // Detect mobile or tablet device (up to 1024px)
@@ -46,7 +47,14 @@ export const useLetterReveal = <T extends HTMLElement = HTMLElement>(threshold: 
   }, [threshold, isMobileOrTablet]);
 
   const applyLetterRevealAnimation = (element: HTMLElement) => {
-    // Store original HTML to preserve layout
+    // Store original HTML to preserve layout ONCE
+    if (!originalContentRef.current) {
+        originalContentRef.current = element.innerHTML;
+    }
+
+    // Reset to original content before animating to prevent duplication
+    element.innerHTML = originalContentRef.current || "";
+    
     const originalHTML = element.innerHTML;
     
     // Create a temporary element to parse the content

@@ -166,7 +166,7 @@ const navbar = () => {
             <nav className={`w-full z-50 transition-all duration-500  ${isHome ? `fixed top-0 left-0 bg-transparent ${isHidden ? '-translate-y-full' : 'translate-y-0'}` : 'relative bg-white'}`}>
                 <ContainerLayout>
                     <div className="flex justify-between gap-4 items-center">
-                        <Image src="/Raks_Logo.png" alt="Raks_Logo.png" width={120} height={50} />
+                        <Image src="/RAKS_Logo.png" alt="RAKS_Logo.png" width={120} height={50} />
                         <div className="flex gap-10 items-center">
                             <button
                                 onClick={toggleAudio}

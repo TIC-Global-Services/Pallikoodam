@@ -55,7 +55,7 @@ const Footer = () => {
                         {/* Contact */}
                         <div className="p-8 font-light text-gray-300">
                             <p>+91 XXXXX XXXXX</p>
-                            <p className="mt-1">info@rakspallikkoodam.com</p>
+                            <p className="mt-1">info@RAKSpallikkoodam.com</p>
                         </div>
                     </div>
 

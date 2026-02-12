@@ -83,7 +83,7 @@ const curricullam = () => {
 
                   <div ref={titleRef2} className="">
                     <p className="font-light italic font-ppe text-sm md:text-xl">
-                      Cambridge @ RaK's
+                      Cambridge @ RAKS
                     </p>
                     <p className="md:leading-[26px] tracking-tight text-[clamp(16px,10vw,1.5rem)]">
                       A pathway that nurtures inquiry, reflection, and
@@ -94,7 +94,7 @@ const curricullam = () => {
                       connect ideas with real-world meaning.
                     </p>
                     <p className="leading-[26px] mt-10 text-sm tracking-tight md:text-[clamp(16px,10vw,1.5rem)]">
-                      At <span className="font-ppe font-light">RaK's </span>
+                      At <span className="font-ppe font-light">RAKS </span>
                       Cambridge becomes more than a curriculum. It becomes a
                       journey of agency, voice, and courageous curiosity.
                     </p>
@@ -139,7 +139,7 @@ const curricullam = () => {
 
                   <div ref={titleRef} className="">
                     <p className="font-light italic font-ppe text-sm md:text-xl">
-                      CBSE @ RaK's
+                      CBSE @ RAKS
                     </p>
                     <p className="leading-[26px] tracking-tight text-sm md:text-2xl">
                       A strong, structured academic pathway that builds clarity,
@@ -149,7 +149,7 @@ const curricullam = () => {
                       question, and express learning with confidence.
                     </p>
                     <p className="leading-[26px] mt-10 text-sm tracking-tight md:text-2xl">
-                      At <span className="font-ppe font-light">RaK's </span>
+                      At <span className="font-ppe font-light">RAKS </span>
                       CBSE evolves into a pathway of rigour, purpose,
                       and meaningful mastery.
                     </p>

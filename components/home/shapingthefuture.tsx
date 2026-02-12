@@ -179,7 +179,7 @@ const Shapingthefuture = () => {
                     {/* RAKS Logo & Text */}
                     <div className="relative z-0 text-center w-full max-w-4xl mx-auto">
                         <div className="relative w-full h-[90px] md:h-full min-h-[250px] mb-8">
-                            <Image src="/RAKS_logo_og.png" alt="RAKS INSTITUTIONS" fill className="object-contain" priority />
+                            <Image src="/raks_logo_og.png" alt="RAKS INSTITUTIONS" fill className="object-contain" priority />
                         </div>
                         {/* <h2 className="text-xl md:text-3xl tracking-[0.4em] md:tracking-[0.6em] uppercase font-light text-white mb-6 md:mb-10">
                             INSTITUTIONS

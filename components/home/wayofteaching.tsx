@@ -82,7 +82,7 @@ const Wayofteaching = () => {
             <ContainerLayout>
                 <div className='text-center mb-6 md:mb-16'>
                     <h1 className='text-3xl md:text-[54px] font-medium leading-tight tracking-tight text-black'>
-                        RaK’s way of <span className='font-ppe italic font-light'>Teaching & Learning</span>
+                        RaKs way of <span className='font-ppe italic font-light'>Teaching & Learning</span>
                     </h1>
                 </div>
 

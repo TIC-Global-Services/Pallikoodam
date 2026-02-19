@@ -21,18 +21,18 @@ import icon12 from '@/assets/iconnew-12.png'
 import { useLetterReveal } from '../reuseable/texteffect/useLetterReveal'
 
 const iconsData = [
-    { src: icon11, top: '20%', right: '-10%', size: 800, rotate: 40 }, // DNA
+    { src: icon11, top: '15%', right: '-10%', size: 800, rotate: 40 }, // DNA
     { src: icon10, top: '28%', right: '1%', size: 800, rotate: -15 }, // Paint Brush
     { src: icon9, top: '40%', right: '-10%', size: 800, rotate: 10 }, // Soccer Ball
     { src: icon6, top: '25%', right: '25%', size: 800, rotate: 4 }, // Shuttlecock
     { src: icon7, top: '30%', right: '8%', size: 1000, rotate: -10 }, // Chess Knight
-    { src: icon5, top: '47%', left: '10%', size: 900, rotate: 0 }, // bulb
+    { src: icon5, top: '37%', left: '10%', size: 900, rotate: 0 }, // bulb
     { src: icon8, top: '18%', left: '35%', size: 800, rotate: 15 }, // Book
-    { src: icon4, top: '27%', left: '6%', size: 900, rotate: -30 }, // pencil
-    { src: icon3, top: '47%', left: '-1%', size: 900, rotate: 20 }, // Music
-    { src: icon1, top: '42%', left: '-24%', size: 1000, rotate: -5 }, // Globe
-    { src: icon2, top: '30%', left: '-18%', size: 1000, rotate: 10 }, // mouse
-    { src: icon12, top: '15%', right: '-25%', size: 900, rotate: 10 }, // Pink Cloud
+    { src: icon4, top: '23%', left: '6%', size: 900, rotate: -30 }, // pencil
+    { src: icon3, top: '32%', left: '-3%', size: 900, rotate: 20 }, // Music
+    { src: icon1, top: '32%', left: '-24%', size: 1000, rotate: -5 }, // Globe
+    { src: icon2, top: '18%', left: '-18%', size: 1000, rotate: 10 }, // mouse
+    { src: icon12, top: '10%', right: '-25%', size: 900, rotate: 10 }, // Pink Cloud
     // { src: icon13, top: '22%', left: '96%', size: 100, rotate: 20 }, // Pink Cloud
 ]
 const mobileiconsData = [

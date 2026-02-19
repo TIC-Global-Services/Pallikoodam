@@ -141,24 +141,28 @@ const Shapingthefuture = () => {
 
                         {/* RAKS Logo & Text */}
                         <div className="relative z-0 text-center w-full max-w-4xl mx-auto translate-z-0">
-                            <div className="relative w-full bg-white h-auto md:h-full min-h-[350px] md:mb-8 -mb-[2px] z-10 flex items-center justify-center leading-0 overflow-hidden">
+                            <div className="relative w-full bg-white h-auto md:h-full md:mb-8 z-10 flex items-center justify-center leading-0 text-[0]">
                                 <video
                                     src="/Animation_2_Logo.mp4"
                                     autoPlay
                                     loop
                                     muted
                                     playsInline
-                                     style={{
-      transform: "translate3d(0,0,0)",
-      backfaceVisibility: "hidden"
-    }}
+                                    style={{
+                                        transform: "translate3d(0, 0, 0) scale(1.01)", // Force GPU & cover sub-pixel gaps
+                                        willChange: "transform",
+                                        backfaceVisibility: "hidden",
+                                        clipPath: "inset(1px)", // Crop 1px to remove edge lines
+                                    }}
                                     className="w-full h-full object-cover block outline-none border-none"
                                 />
+                                {/* Overlay Patch to cover any remaining bottom line artifact */}
+                                <div className="absolute -bottom-1 left-0 w-full h-[8px] bg-white z-20 pointer-events-none" />
                             </div>
                             {/* <h2 className="text-xl md:text-3xl tracking-[0.4em] md:tracking-[0.6em] uppercase font-light text-white mb-6 md:mb-10">
                             INSTITUTIONS
                         </h2> */}
-                            <h3 className="text-xl md:text-[30px]  bg-white font-bold leading-[52px]">
+                            <h3 className="text-xl md:text-[30px] bg-white font-bold leading-[52px]">
                                 <span className="font-bold text-black">10+</span> Years Of Shaping The Future
                             </h3>
                         </div>

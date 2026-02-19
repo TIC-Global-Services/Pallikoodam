@@ -157,7 +157,7 @@ const Shapingthefuture = () => {
                                     className="w-full h-full object-cover block outline-none border-none"
                                 />
                                 {/* Overlay Patch to cover any remaining bottom line artifact */}
-                                <div className="absolute -bottom-1 left-0 w-full h-[8px] bg-white z-20 pointer-events-none" />
+                                <div className="absolute -bottom-1 left-0 w-full h-[1vh] bg-white z-20 pointer-events-none" />
                             </div>
                             {/* <h2 className="text-xl md:text-3xl tracking-[0.4em] md:tracking-[0.6em] uppercase font-light text-white mb-6 md:mb-10">
                             INSTITUTIONS

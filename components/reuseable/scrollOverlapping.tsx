@@ -121,7 +121,7 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
                                         <h3 className="text-white text-[clamp(1.25rem,3vw,3rem)] font-medium tracking-tight font-inter-tight leading-tight max-w-[70%]">
                                             {card.title}
                                         </h3>
-                                        <div className="bg-white rounded-full p-2 md:p-3 lg:p-4 flex items-center justify-center w-[clamp(2.5rem,8vw,4rem)] h-[clamp(2.5rem,8vw,4rem)] shrink-0 text-black">
+                                        <div className={`bg-white rounded-full flex items-center justify-center w-[clamp(2.5rem,8vw,4rem)] h-[clamp(2.5rem,8vw,4rem)] shrink-0 text-black ${index === 2 || index === 3 ? 'p-0' : 'p-2 md:p-3 lg:p-4'}`}>
                                             {card.icon}
                                         </div>
                                     </div>

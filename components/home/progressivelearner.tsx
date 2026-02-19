@@ -27,7 +27,7 @@ const ProgressiveLearner = () => {
         {
             title: "POD Learning",
             description: "Here is where curiosity turns into collaboration and ideas find expression through deeper thinking.",
-            icon: <Image src={icon3} alt="POD Learning" className="w-full h-full object-contain" />,
+            icon: <Image src={icon3} alt="POD Learning" className="w-84 h-84 object-contain" />,
             color: "#144840"
         },
         {

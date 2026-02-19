@@ -3,9 +3,11 @@ import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import innovation1 from '@/assets/home/innovation-1.jpg'
-import innovation2 from '@/assets/home/innovation-2.jpg'
-import innovation3 from '@/assets/home/innovation-3.jpg'
+import innovation1 from '@/assets/home/innovationnew-1.jpg'
+import innovation2 from '@/assets/home/innovationnew-2.jpg'
+import innovation3 from '@/assets/home/innovationnew-3.jpg'
+import innovation4 from '@/assets/home/innovationnew-4.jpg'
+import innovation5 from '@/assets/home/innovationnew-5.jpg'
 import effectsvg from '@/assets/home/scroll_effect.png'
 import ContainerLayout from '@/layout/ContainerLayout'
 import ScrollReveal from '../reuseable/effects/Scrollreveal'
@@ -47,7 +49,7 @@ const cards = [
         italic: "Space",
         italicPosition: "after",
         description: "A playground of innovation where hands lead the mind.From tinkering to building, this is where ideas are tested, stretched, rebuilt, and celebrated turning creativity into capability.",
-        image: innovation3,
+        image: innovation4,
         colSpan: "md:col-span-2"
     },
     {
@@ -56,7 +58,7 @@ const cards = [
         italic: "",
         italicPosition: "none",
         description: "From the composite lab, the ICT lab, chemistry to biology to physics, our labs are designed to nurture precision, curiosity, and the thrill of uncovering how the world works.",
-        image: innovation3,
+        image: innovation5,
         colSpan: "md:col-span-2"
     }
 ]
@@ -131,9 +133,9 @@ const Innovationspace = () => {
 
 
     return (
-        <section className='relative bg-black' ref={containerRef}>
+        <section className='relative bg-[#144840]' ref={containerRef}>
             {/* Scalloped Edge Container */}
-            <div className="absolute top-0 left-0 w-full -translate-y-[97%] flex overflow-hidden pointer-events-none z-20 leading-0">
+            {/* <div className="absolute top-0 left-0 w-full -translate-y-[97%] flex overflow-hidden pointer-events-none z-20 leading-0">
                 {Array.from({ length: bubbleCount }).map((_, index) => (
                     <div
                         key={index}
@@ -148,7 +150,7 @@ const Innovationspace = () => {
                         }}
                     ></div>
                 ))}
-            </div>
+            </div> */}
 
             <div className='w-full py-20 px-5 md:px-10 lg:px-20 text-white font-sans relative z-10'>
                 {/* Header */}

@@ -17,7 +17,7 @@ export const MenuIcon = forwardRef<HTMLButtonElement, MenuIconProps>(
         suppressHydrationWarning={true}
         aria-label={isOpen ? "Close Menu" : "Open Menu"}
         className={`
-          relative px-4 py-3 flex items-center justify-center gap-2 cursor-pointer z-50
+          relative md:px-4 md:py-3 py-2 px-2 flex items-center justify-center gap-2 cursor-pointer z-50
           transition-all duration-300 rounded-full
           ${isOpen ? 'bg-white text-black' : 'bg-[#000086] hover:bg-[#0c0cbc] text-white'}
         `}

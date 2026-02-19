@@ -3,8 +3,8 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import image1 from "@/assets/cambridge.jpg";
-import image2 from "@/assets/national-curriculam.jpg";
+import image1 from "@/assets/home/cambridgeimg.jpg";
+import image2 from "@/assets/home/national-curriculamimg.jpg";
 import { useLetterReveal } from "../reuseable/texteffect/useLetterReveal";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -57,7 +57,7 @@ const curricullam = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-black"
+      className="relative w-full bg-white mt-20"
       style={{ height: '100dvh' }}
     >
       <div className="w-full h-full">
@@ -107,12 +107,12 @@ const curricullam = () => {
               </div>
 
               {/* Right side - Image */}
-              <div className="relative h-full">
+              <div className="relative bg-[#000086] h-full">
                 <Image
                   src={image1}
                   alt="Cambridge curriculum students"
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-4xl"
                 />
               </div>
             </div>
@@ -161,12 +161,12 @@ const curricullam = () => {
                 </button>
               </div>
               {/* Right side - Image */}
-              <div className="relative h-full">
+              <div className="relative bg-[#000086]  h-full">
                 <Image
                   src={image2}
                   alt="CBSE curriculum students"
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-4xl"
                 />
               </div>
             </div>

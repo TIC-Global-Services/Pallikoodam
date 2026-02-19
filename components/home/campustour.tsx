@@ -5,35 +5,35 @@ import ScrollReveal from '../reuseable/effects/Scrollreveal'
 import ContainerLayout from '@/layout/ContainerLayout'
 import gsap from 'gsap'
 
-import icon1 from '@/assets/icon-1.png'
-import icon2 from '@/assets/icon-2.png'
-import icon3 from '@/assets/icon-3.png'
-import icon4 from '@/assets/icon-4.png'
-import icon5 from '@/assets/icon-5.png'
-import icon7 from '@/assets/icon-7.png'
-import icon8 from '@/assets/icon-8.png'
-import icon9 from '@/assets/icon-9.png'
-import icon10 from '@/assets/icon-10.png'
-import icon11 from '@/assets/icon-11.png'
-import icon6 from '@/assets/icon-6.png'
-import icon12 from '@/assets/icon-12.png'
-import icon13 from '@/assets/icon-13.png'
+import icon1 from '@/assets/iconnew-1.png'
+import icon2 from '@/assets/iconnew-2.png'
+import icon3 from '@/assets/iconnew-3.png'
+import icon4 from '@/assets/iconnew-4.png'
+import icon5 from '@/assets/iconnew-5.png'
+import icon7 from '@/assets/iconnew-7.png'
+import icon8 from '@/assets/iconnew-8.png'
+import icon9 from '@/assets/iconnew-9.png'
+import icon10 from '@/assets/iconnew-10.png'
+import icon11 from '@/assets/iconnew-11.png'
+import icon6 from '@/assets/iconnew-6.png'
+import icon12 from '@/assets/iconnew-12.png'
+// import icon13 from '@/assets/iconnew-13.png'
 import { useLetterReveal } from '../reuseable/texteffect/useLetterReveal'
 
 const iconsData = [
-    { src: icon11, top: '45%', right: '5%', size: 200, rotate: 40 }, // DNA
-    { src: icon10, top: '78%', right: '25%', size: 200, rotate: -15 }, // Paint Brush
-    { src: icon9, top: '60%', right: '12%', size: 300, rotate: 10 }, // Soccer Ball
-    { src: icon7, top: '55%', right: '40%', size: 300, rotate: 4 }, // Shuttlecock
-    { src: icon6, top: '55%', right: '28%', size: 200, rotate: -10 }, // Chess Knight
-    { src: icon5, top: '68%', left: '30%', size: 200, rotate: 0 }, // pensil
-    { src: icon8, top: '75%', left: '50%', size: 200, rotate: 15 }, // Book
-    { src: icon4, top: '80%', left: '35%', size: 300, rotate: -30 }, // Grad Cap
-    { src: icon3, top: '72%', left: '10%', size: 200, rotate: 20 }, // Mouse
-    { src: icon1, top: '85%', left: '0%', size: 200, rotate: -5 }, // Globe
-    { src: icon2, top: '89%', left: '22%', size: 100, rotate: 10 }, // Pink Cloud
-    { src: icon12, top: '32%', left: '92%', size: 200, rotate: 10 }, // Pink Cloud
-    { src: icon13, top: '22%', left: '96%', size: 100, rotate: 20 }, // Pink Cloud
+    { src: icon11, top: '20%', right: '-10%', size: 800, rotate: 40 }, // DNA
+    { src: icon10, top: '28%', right: '1%', size: 800, rotate: -15 }, // Paint Brush
+    { src: icon9, top: '40%', right: '-10%', size: 800, rotate: 10 }, // Soccer Ball
+    { src: icon6, top: '25%', right: '25%', size: 800, rotate: 4 }, // Shuttlecock
+    { src: icon7, top: '30%', right: '8%', size: 1000, rotate: -10 }, // Chess Knight
+    { src: icon5, top: '47%', left: '10%', size: 900, rotate: 0 }, // bulb
+    { src: icon8, top: '18%', left: '35%', size: 800, rotate: 15 }, // Book
+    { src: icon4, top: '27%', left: '6%', size: 900, rotate: -30 }, // pencil
+    { src: icon3, top: '47%', left: '-1%', size: 900, rotate: 20 }, // Music
+    { src: icon1, top: '42%', left: '-24%', size: 1000, rotate: -5 }, // Globe
+    { src: icon2, top: '30%', left: '-18%', size: 1000, rotate: 10 }, // mouse
+    { src: icon12, top: '15%', right: '-25%', size: 900, rotate: 10 }, // Pink Cloud
+    // { src: icon13, top: '22%', left: '96%', size: 100, rotate: 20 }, // Pink Cloud
 ]
 
 const campustour = () => {
@@ -73,19 +73,27 @@ const campustour = () => {
                     }}
                 >
                     {i < 10 ?
-                        <div className='w-1 h-1 absolute top-20 bg-white m-3'></div>
+                        <div className='w-1 h-1 absolute top-30 bg-white m-3'></div>
                         : null
                     }
                     {i < 10 ?
-                        <div className='w-1 h-1 absolute top-40 left-0 bg-white m-3'></div>
+                        <div className='w-1 h-1 absolute bottom-40 left-10 bg-white m-3'></div>
                         : null
                     }
                     {i < 10 ?
-                        <div className='w-1 h-1 absolute top-40 left-40 bg-white m-3'></div>
+                        <div className='w-1 h-1 absolute bottom-50 left-10 bg-white m-3'></div>
                         : null
                     }
                     {i < 10 ?
-                        <div className='w-1 h-1 absolute top-40 left-30 bg-white m-3'></div>
+                        <div className='w-1 h-1 absolute top-50 left-10 bg-white m-3'></div>
+                        : null
+                    }
+                    {i < 10 ?
+                        <div className='w-1 h-1 absolute bottom-40 right-10 bg-white m-3'></div>
+                        : null
+                    }
+                    {i < 10 ?
+                        <div className='w-1 h-1 absolute bottom-40 right-0 bg-white m-3'></div>
                         : null
                     }
 

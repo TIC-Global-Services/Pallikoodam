@@ -92,10 +92,10 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-x-[20%] w-full items-start max-w-[1600px] mx-auto">
                     {/* Left Column: Static Text */}
                     <div ref={titleRef} className="left-content">
-                        <h2 className="text-[clamp(1.25rem,4vw,3.4rem)] tracking-tight md:leading-[58px] font-medium w-full font-hoves-pro mb-4 md:mb-6 lg:mb-8">
+                        <h2 className="text-[32px] md:text-[clamp(1.25rem,4vw,3.4rem)] tracking-tight leading-[36px] md:leading-[58px] font-medium w-full font-hoves-pro mb-4 md:mb-6 lg:mb-8">
                             {heading}
                         </h2>
-                        <p className='text-[clamp(0.875rem,2vw,1.25rem)] leading-[120%] max-w-full lg:max-w-xl font-regular font-inter-tight'>
+                        <p className='text-base md:text-[clamp(0.875rem,2vw,1.25rem)] md:leading-[120%] leading-[20px] max-w-full lg:max-w-xl font-regular font-inter-tight'>
                             {paragraph}
                         </p>
                     </div>

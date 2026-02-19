@@ -32,15 +32,15 @@ export default function Card({
     return (
         <CardContainer containerClassName="w-full h-full" className="w-full h-full">
             <CardBody className="w-full h-full">
-                <div className={`bg-[#E6E6E6] rounded-[22px] p-8 md:p-10 flex flex-col justify-between relative overflow-hidden w-full h-full ${className}`} style={style}>
+                <div className={`bg-[#E6E6E6] rounded-[22px] p-4 md:p-10 flex flex-col justify-between relative overflow-hidden w-full h-full ${className}`} style={style}>
                     {/* Content Wrapper - Order changes based on variant */}
                     {/* Text Content */}
                     <div className={`z-10 relative h-full flex flex-col ${isTextTop ? 'justify-start' : 'justify-end'} pointer-events-none`}>
                         <div className={`${isTextTop ? 'mb-8' : 'mt-8'} pointer-events-auto`}>
-                            <h2 className={`text-[4.5vh] tracking-tight font-medium leading-[1.1] tracking-tight text-black mb-4 ${titleClassName}`}>
+                            <h2 className={`text-xl md:text-[4.5vh]  font-mediumleading-[1.1] tracking-tight text-black mb-4 ${titleClassName}`}>
                                 {title}
                             </h2>
-                            <p className={`text-[2.3vh] leading-[28px] text-gray-800 max-w-prose ${descriptionClassName}`}>
+                            <p className={`text-sm md:text-[2.3vh] leading-[16px] md:leading-[28px] text-gray-800 max-w-prose ${descriptionClassName}`}>
                                 {description}
                             </p>
                         </div>

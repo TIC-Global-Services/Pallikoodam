@@ -109,7 +109,7 @@ const Shapingthefuture = () => {
     }
 
     return (
-        <section className='relative bg-black mt-24' ref={containerRef}>
+        <section className='relative bg-white md:mt-24' ref={containerRef}>
             {/* <div className="absolute top-0 left-0 w-full -translate-y-[99%] flex overflow-hidden pointer-events-none z-20 leading-0">
                 {Array.from({ length: bubbleCount }).map((_, index) => (
                     <div
@@ -126,46 +126,50 @@ const Shapingthefuture = () => {
                     ></div>
                 ))}
             </div> */}
-            <div ref={containerRef} className="bg-white text-black py-20 lg:py-0 min-h-screen relative overflow-hidden">
-                <div className="container mx-auto px-4 md:px-8">
+            <div className="bg-white text-black py-0 lg:py-0 h-full relative overflow-hidden">
+                <div className="container  bg-white mx-auto px-4 md:px-8">
 
                     {/* Header / Logo Section */}
                     <div
                         ref={logoSectionRef}
                         onMouseMove={handleMouseMove}
                         onMouseLeave={handleMouseLeave}
-                        className="relative flex flex-col items-center justify-center mb-24 md:mb-32"
+                        className="relative flex flex-col items-center justify-center mb-10 md:mb-32"
                     >
 
                         {/* Floating Icons */}
 
                         {/* RAKS Logo & Text */}
-                        <div className="relative z-0 text-center w-full max-w-4xl mx-auto">
-                            <div className="relative w-full h-[90px] md:h-full min-h-[300px] mb-8 flex items-center justify-center">
+                        <div className="relative z-0 text-center w-full max-w-4xl mx-auto translate-z-0">
+                            <div className="relative w-full bg-white h-auto md:h-full min-h-[350px] md:mb-8 -mb-[2px] z-10 flex items-center justify-center leading-0 overflow-hidden">
                                 <video
                                     src="/Animation_2_Logo.mp4"
                                     autoPlay
                                     loop
                                     muted
                                     playsInline
-                                    className="w-full h-full object-contain"
+                                     style={{
+      transform: "translate3d(0,0,0)",
+      backfaceVisibility: "hidden"
+    }}
+                                    className="w-full h-full object-cover block outline-none border-none"
                                 />
                             </div>
                             {/* <h2 className="text-xl md:text-3xl tracking-[0.4em] md:tracking-[0.6em] uppercase font-light text-white mb-6 md:mb-10">
                             INSTITUTIONS
                         </h2> */}
-                            <h3 className="text-2xl md:text-[30px] font-bold leading-[52px]">
+                            <h3 className="text-xl md:text-[30px]  bg-white font-bold leading-[52px]">
                                 <span className="font-bold text-black">10+</span> Years Of Shaping The Future
                             </h3>
                         </div>
                     </div>
 
                     {/* Vision & Mission Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-[1400px] mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2  bg-white  gap-6 md:gap-10 max-w-[1400px] mx-auto">
 
                         {/* Vision Card */}
-                        <div className="bg-[#E9E9E9] text-black rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden h-[600px] md:h-[700px] flex flex-col items-start transition-transform hover:scale-[1.01] duration-500">
-                            <h4 className="text-4xl md:text-6xl mb-8 font-medium">
+                        <div className="bg-[#E9E9E9] text-black rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden  h-[60vh] md:h-[700px] flex flex-col items-start transition-transform hover:scale-[1.01] duration-500">
+                            <h4 className="text-xl md:text-6xl mb-8 font-medium">
                                 Our <span style={{ fontFamily: 'var(--font-ppe)' }} className="text-[#000086] font-normal italic">Vision</span>
                             </h4>
                             <div className="w-1 h-20 bg-blue-600/30 absolute left-8 top-8 hidden"></div> {/* Decorative line if needed */}
@@ -180,12 +184,12 @@ const Shapingthefuture = () => {
                         </div>
 
                         {/* Mission Card */}
-                        <div className="bg-[#E9E9E9] text-black rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden  flex flex-col items-start  transition-transform hover:scale-[1.01] duration-500">
+                        <div className="bg-[#E9E9E9] text-black rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden  flex flex-col items-start h-[60vh] md:h-[700px]  transition-transform hover:scale-[1.01] duration-500">
                             <div>
-                                <h4 className="text-4xl md:text-6xl mb-4 font-medium">
+                                <h4 className="text-xl md:text-6xl mb-4 font-medium">
                                     Our <span style={{ fontFamily: 'var(--font-ppe)' }} className="text-[#000086] font-normal italic">Mission</span>
                                 </h4>
-                                <ol className="text-gray-800 text-sm md:text-base border-l-3 border-[#23519D]  pl-4 leading-[22px] mb-auto max-w-lg z-10 font-normal list-decimal list-inside space-y-2">
+                                <ol className="text-gray-800 text-xs md:text-base border-l-3 border-[#23519D]  pl-4 leading-[22px] mb-auto max-w-lg z-10 font-normal list-decimal list-inside space-y-2">
                                     <li>Promote inquiry-based, experiential learning and critical thinking through rigorous academic standards.</li>
                                     <li>Nurturing lifelong learners for human flourishing.</li>
                                     <li>Develop leadership skills with a global outlook and nurture cross-cultural collaboration.</li>

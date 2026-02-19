@@ -19,6 +19,9 @@ const curricullam = () => {
   const { elementRef: titleRef2 } = useLetterReveal<HTMLHeadingElement>();
 
   useEffect(() => {
+    // Only run pin/scroll animation on desktop (md+)
+    if (window.innerWidth < 768) return;
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -47,7 +50,7 @@ const curricullam = () => {
             duration: 0.5,
             ease: "power2.inOut",
           },
-          "<", // Start at the same time as previous animation
+          "<",
         );
     }, sectionRef);
 
@@ -57,15 +60,14 @@ const curricullam = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-white mt-20"
-      style={{ height: '100dvh' }}
+      className="relative w-full bg-white mt-20 md:h-dvh"
     >
-      <div className="w-full h-full">
-        <div className="relative w-full h-full">
+      <div className="w-full md:h-full">
+        <div className="relative w-full md:h-full flex flex-col md:block">
           {/* First Card - Cambridge */}
           <div
             ref={card1Ref}
-            className="absolute bg-black rounded-t-[40px] top-0 left-0 w-full h-full overflow-hidden shadow-2xl"
+            className="md:absolute bg-black rounded-t-[40px] md:top-0 md:left-0 w-full md:h-full overflow-hidden shadow-2xl"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 h-full">
               {/* Left side - Text */}
@@ -74,18 +76,27 @@ const curricullam = () => {
                 className="bg-[#000086] p-8 md:p-12 flex flex-col justify-center text-white overflow-y-auto"
               >
                 <div ref={titleRef2}>
-                  <h2 className="text-4xl md:text-[clamp(2.5rem,5dvh,3.375rem)] leading-[1.2] mb-2">
+                  <h2 className="text-xl md:text-[clamp(2.5rem,5dvh,3.375rem)] leading-[1.2] mb-2">
                     Cambridge
                   </h2>
-                  <h3 className="text-2xl md:text-[clamp(2rem,4.5dvh,3.375rem)] font-ppe leading-[1.2] italic mb-6">
+                  <h3 className="text-xl md:text-[clamp(2rem,4.5dvh,3.375rem)] font-ppe leading-[1.2] italic mb-6">
                     International
                   </h3>
+                  <div className="mb-5 md:hidden">
+                    <Image
+                      src={image1}
+                      alt="Cambridge curriculum students"
+                      width={800}
+                      height={500}
+                      className="object-cover rounded-r-2xl w-full h-auto"
+                    />
+                  </div>
 
                   <div ref={titleRef2} className="">
                     <p className="font-light italic font-ppe text-sm md:text-xl">
                       Cambridge @ RAKS
                     </p>
-                    <p className="md:leading-[26px] tracking-tight text-[clamp(16px,10vw,1.5rem)]">
+                    <p className="md:leading-[26px] tracking-tight text-base md:text-[clamp(16px,10vw,1.5rem)]">
                       A pathway that nurtures inquiry, reflection, and
                       independent thinking.
                       <br /> Its global framework pairs seamlessly with our
@@ -93,7 +104,7 @@ const curricullam = () => {
                       encouraging learners to question, explore, create, and
                       connect ideas with real-world meaning.
                     </p>
-                    <p className="leading-[26px] mt-10 text-sm tracking-tight md:text-[clamp(16px,10vw,1.5rem)]">
+                    <p className="leading-[26px] mt-10 text-base tracking-tight md:text-[clamp(16px,10vw,1.5rem)]">
                       At <span className="font-ppe font-light">RAKS </span>
                       Cambridge becomes more than a curriculum. It becomes a
                       journey of agency, voice, and courageous curiosity.
@@ -101,13 +112,13 @@ const curricullam = () => {
                   </div>
                 </div>
 
-                <button className="bg-white text-xl mt-15 text-[#0033A0] px-10 py-3 rounded-lg hover:scale-105 transition-all duration-300 font-semibold hover:bg-gray-100  w-fit">
+                <button className="bg-white text-sm md:text-xl mt-3 md:mt-15 text-[#0033A0] md:px-10 px-5 py-2 md:py-3 rounded-lg hover:scale-105 transition-all duration-300 font-semibold hover:bg-gray-100  w-fit">
                   Explore Cambridge
                 </button>
               </div>
 
               {/* Right side - Image */}
-              <div className="relative bg-[#000086] h-full">
+              <div className="relative bg-[#000086] h-full hidden md:block">
                 <Image
                   src={image1}
                   alt="Cambridge curriculum students"
@@ -121,7 +132,7 @@ const curricullam = () => {
           {/* Second Card - National Curriculum */}
           <div
             ref={card2Ref}
-            className="absolute bg-black rounded-t-[40px] top-0 left-0 w-full h-full overflow-hidden shadow-2xl"
+            className="md:absolute bg-black rounded-t-[40px] md:top-0 md:left-0 w-full md:h-full overflow-hidden shadow-2xl"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 h-full">
               {/* Left side - Text */}
@@ -136,6 +147,16 @@ const curricullam = () => {
                   <h3 className="text-2xl md:text-[clamp(2rem,4.5dvh,3.375rem)] font-ppe leading-[1.2] italic mb-6">
                     (CBSE)
                   </h3>
+
+                  <div className="mb-5 md:hidden">
+                    <Image
+                      src={image2}
+                      alt="CBSE curriculum students"
+                      width={800}
+                      height={500}
+                      className="object-cover rounded-2xl w-full h-auto"
+                    />
+                  </div>
 
                   <div ref={titleRef} className="">
                     <p className="font-light italic font-ppe text-sm md:text-xl">
@@ -156,12 +177,12 @@ const curricullam = () => {
                   </div>
                 </div>
 
-                <button className="bg-white text-xl mt-15 text-[#0033A0] px-10 py-3 rounded-lg font-semibold hover:scale-105 transition-all duration-300 hover:bg-gray-100 w-fit">
+                <button className="bg-white text-sm md:text-xl mt-3 md:mt-15 text-[#0033A0] md:px-10 px-5 py-2 md:py-3 rounded-lg hover:scale-105 transition-all duration-300 font-semibold hover:bg-gray-100  w-fit">
                   Explore CBSE
                 </button>
               </div>
               {/* Right side - Image */}
-              <div className="relative bg-[#000086]  h-full">
+              <div className="relative bg-[#000086] hidden md:block  h-full">
                 <Image
                   src={image2}
                   alt="CBSE curriculum students"

@@ -53,12 +53,13 @@ const DifferenceWeCreate = () => {
     <div className='bg-[#000086]'>
       {/* <ContainerLayout> */}
       <div className="flex flex-col gap-10 rounded-t-[40px] overflow-hidden bg-white py-8 md:py-14">
-        <div ref={titleRef} className='flex flex-col gap-10 px-[3%]'>
-          <h1 className='text-[54px] font-medium tracking-tighter leading-[64px]'>The <span className='text-[#000086] font-ppe italic font-normal'>Difference</span> We Create</h1>
-          <p className='text-[clamp(14px,5vw,1.2rem)] max-w-[50%]'>Discover what sets <span>RAKS Pallikkoodam</span> apart—a future-focused learning community where every space, every mentor, and every experience is thoughtfully designed with purpose and care.</p>
+        <div ref={titleRef} className='flex flex-col md:gap-10 px-[3%]'>
+          <h1 className='md:text-[54px] text-[32px] font-medium tracking-tighter leading-[64px]'>The <span className='text-[#000086] font-ppe italic font-normal'>Difference</span> We Create</h1>
+          <p className='text-[clamp(16px,5vw,1.2rem)] leading-[24px] md:max-w-[50%]'>Discover what sets <span>RAKS Pallikkoodam</span> apart—a future-focused learning community where every space, every mentor, and every experience is thoughtfully designed with purpose and care.</p>
         </div>
 
-        <div className="w-full relative flex gap-4 px-[3%] pb-20">
+        {/* Desktop layout */}
+        <div className="w-full relative hidden md:flex gap-4 px-[3%] pb-20">
           {data.map((item, index) => {
             return (
               <Card
@@ -72,6 +73,44 @@ const DifferenceWeCreate = () => {
               />
             )
           })}
+        </div>
+
+        {/* Mobile slider */}
+        <div className="md:hidden px-[3%] pb-10">
+          <Swiper
+            modules={[Navigation]}
+            onSwiper={(swiper) => { swiperRef.current = swiper }}
+            slidesPerView={2}
+            spaceBetween={12}
+            className="w-full"
+          >
+            {data.map((item, index) => (
+              <SwiperSlide key={index}>
+                <Card
+                  title={item.title}
+                  description={item.description}
+                  image={item.image}
+                  variant={index % 2 === 0 ? 'text-top' : 'text-bottom'}
+                  className="w-full"
+                  style={{ height: 'clamp(263px, 45vh, 600px)' }}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="flex items-end justify-end gap-4 mt-6">
+            <button
+              onClick={() => swiperRef.current?.slidePrev()}
+              className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition-colors"
+            >
+              <ChevronLeft size={22} />
+            </button>
+            <button
+              onClick={() => swiperRef.current?.slideNext()}
+              className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition-colors"
+            >
+              <ChevronRight size={22} />
+            </button>
+          </div>
         </div>
       </div>
       {/* </ContainerLayout> */}

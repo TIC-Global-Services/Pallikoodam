@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import ScrollReveal from '../reuseable/effects/Scrollreveal'
 import ContainerLayout from '@/layout/ContainerLayout'
@@ -35,20 +35,45 @@ const iconsData = [
     { src: icon12, top: '15%', right: '-25%', size: 900, rotate: 10 }, // Pink Cloud
     // { src: icon13, top: '22%', left: '96%', size: 100, rotate: 20 }, // Pink Cloud
 ]
+const mobileiconsData = [
+    { src: icon11, top: '10%', left: '0%', size: 800, rotate: 40 }, // DNA
+    { src: icon10, top: '28%', left: '1%', size: 800, rotate: -15 }, // Paint Brush
+    { src: icon9, top: '40%', left: '20%', size: 800, rotate: 10 }, // Soccer Ball
+    { src: icon6, top: '25%', left: '45%', size: 800, rotate: 4 }, // Shuttlecock
+    { src: icon7, top: '30%', left: '50%', size: 1000, rotate: -10 }, // Chess Knight
+    { src: icon5, top: '47%', left: '50%', size: 900, rotate: 0 }, // bulb
+    { src: icon8, top: '18%', left: '65%', size: 800, rotate: 15 }, // Book
+    { src: icon4, top: '7%', left: '80%', size: 900, rotate: -30 }, // pencil
+    { src: icon3, top: '7%', left: '-1%', size: 900, rotate: 20 }, // Music
+    { src: icon1, top: '2%', left: '10%', md: '-24%', size: 1000, rotate: -5 }, // Globe
+    { src: icon2, top: '0%', left: '-18%', size: 1000, rotate: 10 }, // mouse
+    { src: icon12, top: '5%', left: '80%', size: 900, rotate: 10 }, // Pink Cloud
+    // { src: icon13, top: '22%', left: '96%', size: 100, rotate: 20 }, // Pink Cloud
+]
 
 const campustour = () => {
     const iconsRef = useRef<(HTMLDivElement | null)[]>([])
     const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>();
     const { elementRef: titleRef2 } = useLetterReveal<HTMLHeadingElement>();
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768)
+        checkMobile()
+        window.addEventListener('resize', checkMobile)
+        return () => window.removeEventListener('resize', checkMobile)
+    }, [])
+
+    const activeIcons = isMobile ? mobileiconsData : iconsData
 
     useEffect(() => {
         iconsRef.current.forEach((icon, i) => {
-            if (!icon) return
+            if (!icon || !activeIcons[i]) return
 
             gsap.to(icon, {
                 y: 'random(-20, 20)',
                 x: 'random(-10, 10)',
-                rotation: `random(${(iconsData[i].rotate || 0) - 10}, ${(iconsData[i].rotate || 0) + 10})`,
+                rotation: `random(${(activeIcons[i].rotate || 0) - 10}, ${(activeIcons[i].rotate || 0) + 10})`,
                 duration: 'random(3, 5)',
                 repeat: -1,
                 yoyo: true,
@@ -56,11 +81,11 @@ const campustour = () => {
                 delay: Math.random() * 2
             })
         })
-    }, [])
+    }, [activeIcons])
 
     return (
         <div className='bg-[#000086] rounded-t-[40px] min-h-screen overflow-hidden relative'>
-            {iconsData.map((icon, i) => (
+            {activeIcons.map((icon, i) => (
                 <div
                     key={i}
                     ref={(el) => { iconsRef.current[i] = el }}
@@ -113,8 +138,8 @@ const campustour = () => {
                 <div className='py-[5%]'>
 
                     <div ref={titleRef} className="flex flex-col gap-[10%]">
-                        <h1 className={`md:text-[4.5vh] tracking-tight leading-[40px] text-white font-medium`} >Step into a school where learning is intentional, relationships are meaningful,<br className='hidden xl:block' /> and every experience is designed to help children grow with confidence,<br /> curiosity and purpose.</h1>
-                        <h1 className={`md:text-[4.5vh] tracking-tight leading-[40px] text-white font-medium mt-8`}>Discover the values that guide us, the research that shapes us, and the vision<br className='hidden xl:block' /> that inspires us to create joyful, future-ready learning every single day.</h1>
+                        <h1 className={`text-sm md:text-[4.5vh] tracking-tight leading-[40px] text-white font-medium`} >Step into a school where learning is intentional, relationships are meaningful,<br className='hidden xl:block' /> and every experience is designed to help children grow with confidence,<br /> curiosity and purpose.</h1>
+                        <h1 className={`text-sm md:text-[4.5vh] tracking-tight leading-[40px] text-white font-medium mt-8`}>Discover the values that guide us, the research that shapes us, and the vision<br className='hidden xl:block' /> that inspires us to create joyful, future-ready learning every single day.</h1>
                     </div>
 
                     <div className="mt-[5%]">

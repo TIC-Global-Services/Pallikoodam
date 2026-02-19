@@ -215,7 +215,7 @@ const Innovationspace = () => {
                                     </div>
                                 </div>
 
-                                <div className={`w-full ${card.id > 2 ? 'h-[30%]' : 'h-[50%]'} relative mt-auto`}>
+                                <div className={`w-full ${card.id > 2 ? 'h-[40%]' : 'h-[50%]'} relative mt-auto`}>
                                     <Image
                                         src={card.image}
                                         alt={`${card.title} ${card.italic}`}

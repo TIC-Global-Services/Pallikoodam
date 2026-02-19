@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import ScrollReveal from '../reuseable/effects/Scrollreveal'
 import ContainerLayout from '@/layout/ContainerLayout'
 import gsap from 'gsap'
@@ -20,7 +20,17 @@ import icon12 from '@/assets/iconnew-12.png'
 // import icon13 from '@/assets/iconnew-13.png'
 import { useLetterReveal } from '../reuseable/texteffect/useLetterReveal'
 
-const iconsData = [
+interface IconData {
+    src: StaticImageData
+    top: string
+    left?: string
+    right?: string
+    size: number
+    rotate: number
+    md?: string
+}
+
+const iconsData: IconData[] = [
     { src: icon11, top: '15%', right: '-10%', size: 800, rotate: 40 }, // DNA
     { src: icon10, top: '28%', right: '1%', size: 800, rotate: -15 }, // Paint Brush
     { src: icon9, top: '40%', right: '-10%', size: 800, rotate: 10 }, // Soccer Ball
@@ -35,7 +45,7 @@ const iconsData = [
     { src: icon12, top: '10%', right: '-25%', size: 900, rotate: 10 }, // Pink Cloud
     // { src: icon13, top: '22%', left: '96%', size: 100, rotate: 20 }, // Pink Cloud
 ]
-const mobileiconsData = [
+const mobileiconsData: IconData[] = [
     { src: icon11, top: '10%', left: '0%', size: 800, rotate: 40 }, // DNA
     { src: icon10, top: '28%', left: '1%', size: 800, rotate: -15 }, // Paint Brush
     { src: icon9, top: '40%', left: '20%', size: 800, rotate: 10 }, // Soccer Ball

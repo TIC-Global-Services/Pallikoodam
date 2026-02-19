@@ -56,7 +56,7 @@ const ShapingthefutureCP = () => {
     }
 
     return (
-        <section ref={containerRef} className="bg-black text-white py-20 lg:py-32 min-h-screen relative overflow-hidden">
+        <section ref={containerRef} className="bg-black text-white py-20 lg:py-0 min-h-screen relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8">
 
                 {/* Header / Logo Section */}

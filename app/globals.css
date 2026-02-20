@@ -19,6 +19,20 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter);
 }
+
 video {
   display: block;
+}
+
+/* Hide scrollbar for mobile sliders */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  /* IE/Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari */
 }

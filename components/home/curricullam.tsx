@@ -19,9 +19,6 @@ const curricullam = () => {
   const { elementRef: titleRef2 } = useLetterReveal<HTMLHeadingElement>();
 
   useEffect(() => {
-    // Only run pin/scroll animation on desktop (md+)
-    if (window.innerWidth < 768) return;
-
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -42,16 +39,15 @@ const curricullam = () => {
         opacity: 0,
         duration: 0.5,
         ease: "power2.inOut",
-      })
-        .to(
-          card2Ref.current,
-          {
-            opacity: 1,
-            duration: 0.5,
-            ease: "power2.inOut",
-          },
-          "<",
-        );
+      }).to(
+        card2Ref.current,
+        {
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.inOut",
+        },
+        "<",
+      );
     }, sectionRef);
 
     return () => ctx.revert();
@@ -60,14 +56,14 @@ const curricullam = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-white mt-20 md:h-dvh"
+      className="relative w-full bg-white mt-20 h-dvh"
     >
-      <div className="w-full md:h-full">
-        <div className="relative w-full md:h-full flex flex-col md:block">
+      <div className="w-full h-full">
+        <div className="relative w-full h-full">
           {/* First Card - Cambridge */}
           <div
             ref={card1Ref}
-            className="md:absolute bg-black rounded-t-[40px] md:top-0 md:left-0 w-full md:h-full overflow-hidden shadow-2xl"
+            className="absolute bg-black rounded-t-[40px] top-0 left-0 w-full h-full overflow-hidden shadow-2xl"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 h-full">
               {/* Left side - Text */}
@@ -76,19 +72,20 @@ const curricullam = () => {
                 className="bg-[#000086] p-8 md:p-12 flex flex-col justify-center text-white overflow-y-auto"
               >
                 <div ref={titleRef2}>
-                  <h2 className="text-xl md:text-[clamp(2.5rem,5dvh,3.375rem)] leading-[1.2] mb-2">
+                  <h2 className="text-2xl md:text-[clamp(2.5rem,5dvh,3.375rem)] leading-[1.2] mb-2">
                     Cambridge
                   </h2>
                   <h3 className="text-xl md:text-[clamp(2rem,4.5dvh,3.375rem)] font-ppe leading-[1.2] italic mb-6">
                     International
                   </h3>
+                
                   <div className="mb-5 md:hidden">
                     <Image
-                      src={image1}
-                      alt="Cambridge curriculum students"
+                      src={image2}
+                      alt="CBSE curriculum students"
                       width={800}
                       height={500}
-                      className="object-cover rounded-r-2xl w-full h-auto"
+                      className="object-cover rounded-2xl w-full h-auto"
                     />
                   </div>
 
@@ -112,12 +109,15 @@ const curricullam = () => {
                   </div>
                 </div>
 
-                <button className="bg-white text-sm md:text-xl mt-3 md:mt-15 text-[#0033A0] md:px-10 px-5 py-2 md:py-3 rounded-lg hover:scale-105 transition-all duration-300 font-semibold hover:bg-gray-100  w-fit">
+                <button
+                  suppressHydrationWarning
+                  className="bg-white text-sm md:text-xl mt-3 md:mt-15 text-[#0033A0] md:px-10 px-5 py-2 md:py-3 rounded-lg hover:scale-105 transition-all duration-300 font-semibold hover:bg-gray-100 w-fit"
+                >
                   Explore Cambridge
                 </button>
               </div>
 
-              {/* Right side - Image */}
+              {/* Right side - Image (desktop only) */}
               <div className="relative bg-[#000086] h-full hidden md:block">
                 <Image
                   src={image1}
@@ -132,19 +132,19 @@ const curricullam = () => {
           {/* Second Card - National Curriculum */}
           <div
             ref={card2Ref}
-            className="md:absolute bg-black rounded-t-[40px] md:-top-8 md:left-0 w-full md:h-full overflow-hidden shadow-2xl"
+            className="absolute bg-black rounded-t-[40px] top-0 left-0 w-full h-full overflow-hidden shadow-2xl"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 h-full">
               {/* Left side - Text */}
               <div
                 ref={text2Ref}
-                className="bg-[#000086] p-8 md:p-12 flex flex-col text-white  justify-center overflow-y-auto"
+                className="bg-[#000086] p-8 md:p-12 flex flex-col text-white justify-center overflow-y-auto"
               >
                 <div ref={titleRef}>
-                  <h2 className="text-4xl md:text-[clamp(2.5rem,5dvh,3.375rem)] leading-[1.2] mb-2">
+                  <h2 className="text-2xl md:text-[clamp(2.5rem,5dvh,3.375rem)] leading-[1.2] mb-2">
                     National Curriculum
                   </h2>
-                  <h3 className="text-2xl md:text-[clamp(2rem,4.5dvh,3.375rem)] font-ppe leading-[1.2] italic mb-6">
+                  <h3 className="text-xl md:text-[clamp(2rem,4.5dvh,3.375rem)] font-ppe leading-[1.2] italic mb-6">
                     (CBSE)
                   </h3>
 
@@ -165,24 +165,29 @@ const curricullam = () => {
                     <p className="leading-[26px] tracking-tight text-sm md:text-2xl">
                       A strong, structured academic pathway that builds clarity,
                       discipline, and conceptual depth.
-                      <br /> When blended with our experiential, hands-on methodology,
-                      CBSE becomes dynamic helping learners understand, apply,
-                      question, and express learning with confidence.
+                      <br /> When blended with our experiential, hands-on
+                      methodology, CBSE becomes dynamic helping learners
+                      understand, apply, question, and express learning with
+                      confidence.
                     </p>
                     <p className="leading-[26px] mt-10 text-sm tracking-tight md:text-2xl">
                       At <span className="font-ppe font-light">RAKS </span>
-                      CBSE evolves into a pathway of rigour, purpose,
-                      and meaningful mastery.
+                      CBSE evolves into a pathway of rigour, purpose, and
+                      meaningful mastery.
                     </p>
                   </div>
                 </div>
 
-                <button className="bg-white text-sm md:text-xl mt-3 md:mt-15 text-[#0033A0] md:px-10 px-5 py-2 md:py-3 rounded-lg hover:scale-105 transition-all duration-300 font-semibold hover:bg-gray-100  w-fit">
+                <button
+                  suppressHydrationWarning
+                  className="bg-white text-sm md:text-xl mt-3 md:mt-15 text-[#0033A0] md:px-10 px-5 py-2 md:py-3 rounded-lg hover:scale-105 transition-all duration-300 font-semibold hover:bg-gray-100 w-fit"
+                >
                   Explore CBSE
                 </button>
               </div>
-              {/* Right side - Image */}
-              <div className="relative bg-[#000086] hidden md:block  h-full">
+
+              {/* Right side - Image (desktop only) */}
+              <div className="relative bg-[#000086] hidden md:block h-full">
                 <Image
                   src={image2}
                   alt="CBSE curriculum students"

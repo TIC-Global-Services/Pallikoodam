@@ -47,7 +47,7 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
             // Adjust scroll multiplier for better control
             let scrollMultiplier = 150;
             if (isMobile) {
-                scrollMultiplier = isSmallHeight ? 50 : 75;
+                scrollMultiplier = isSmallHeight ? 70 : 75;
             } else if (isSmallHeightDesktop) {
                 scrollMultiplier = 100;
             }
@@ -87,7 +87,7 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
     }, [cards]);
 
     return (
-        <section ref={sectionRef} className="scroll-section min-h-[70vh]  bg-background relative">
+        <section ref={sectionRef} className="scroll-section min-h-[50vh] md:min-h-[70vh]  bg-background relative">
             <div className="w-full px-4 md:px-0">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-x-[20%] w-full items-start max-w-[1600px] mx-auto">
                     {/* Left Column: Static Text */}
@@ -104,16 +104,14 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
                     <div className="right-content relative mb-6 md:mb-10">
                         <div
                             className="cards-container relative w-full overflow-visible"
-                            style={{ height: 'clamp(300px, 50vh, 500px)' }}
+                            style={{ height: 'clamp(220px, 42vh, 500px)' }}
                         >
                             {cards.map((card, index) => (
                                 <div
                                     key={index}
-                                    className={`card card-${index} absolute top-0 left-0 w-full lg:w-[521px] rounded-3xl overflow-auto shadow-lg p-4 md:p-6 lg:p-8 xl:p-10 flex flex-col justify-between gap-3 md:gap-4`}
+                                    className={`card card-${index} absolute top-0 left-0 w-full lg:w-[521px] rounded-3xl overflow-auto shadow-lg p-4 md:p-6 lg:p-8 xl:p-10 flex flex-col justify-between gap-3 md:gap-4 h-[35vh] min-h-[35vh] md:h-[40vh] md:max-h-[40vh] lg:h-[42vh] lg:max-h-[42vh] xl:h-[50vh] xl:max-h-[50vh]`}
                                     style={{
                                         zIndex: index + 1,
-                                        height: 'clamp(300px, 55vh, 500px)',
-                                        maxHeight: 'clamp(300px, 55vh, 500px)',
                                         backgroundColor: card.color
                                     }}
                                 >
@@ -127,7 +125,7 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
                                     </div>
 
                                     <div className="relative">
-                                        <p className="text-white font-inter-tight text-[clamp(0.875rem,2vw,1.5rem)] leading-tight">
+                                        <p className="text-white font-inter-tight text-base md:text-[clamp(0.875rem,2vw,1.5rem)] leading-tight">
                                             {card.description}
                                         </p>
                                     </div>

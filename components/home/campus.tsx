@@ -31,15 +31,32 @@ const Campus = () => {
             <ContainerLayout>
                 <section className="text-black pb-10">
                     {/* Header Section */}
-                    <div ref={titleRef} className="mb-16">
-                        <h2 className="text-4xl md:text-[54px] font-medium mb-6">
+                    <div ref={titleRef} className="mb-10 md:mb-16">
+                        <h2 className="text-2xl md:text-[54px] font-medium mb-2 md:mb-6">
                             Stories from our <span className="font-ppe italic font-normal">Campus</span>
                         </h2>
-                        <p className="text-2xl text-gray-800">A vibrant community where milestones, discoveries,<br /> and celebrations shine through every day.</p>
+                        <p className="text-sm md:text-base lg:text-xl xl:text-2xl text-gray-800">A vibrant community where milestones, discoveries,<br /> and celebrations shine through every day.</p>
                     </div>
 
-                    {/* Grid Section */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {/* Mobile: horizontal swipe slider */}
+                    <div className="md:hidden flex overflow-x-auto gap-4 snap-start snap-mandatory pb-4 -mx-11 pl-11 scrollbar-none">
+                        {data.map((item, index) => (
+                            <div key={index} className="snap-start shrink-0 w-[80vw] flex flex-col group">
+                                <div className="relative w-full aspect-4/5 overflow-hidden rounded-[2rem] mb-4">
+                                    <Image
+                                        src={item.image}
+                                        alt={item.title}
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
+                                <h3 className="text-lg font-medium">{item.title}</h3>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Desktop: original 3-col grid */}
+                    <div className="hidden md:grid md:grid-cols-3 gap-8">
                         {data.map((item, index) => (
                             <div key={index} className="flex flex-col group">
                                 <div className="relative w-full aspect-4/5 overflow-hidden rounded-[2rem] mb-6">
@@ -56,6 +73,7 @@ const Campus = () => {
                             </div>
                         ))}
                     </div>
+
                 </section>
             </ContainerLayout>
         </div>

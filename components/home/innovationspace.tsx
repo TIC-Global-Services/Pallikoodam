@@ -168,27 +168,73 @@ const Innovationspace = () => {
                                 </span>
                             </span>
                         </h2> */}
-                        <h2 className='text-3xl md:text-5xl lg:text-6xl leading-[58px] font-medium text-center -tracking-[2px]'>
-                            Innovative Spaces for <span className='font-ppe italic font-light'>Curious</span> <br className='hidden md:block' />
+                        <h2 className='text-2xl md:text-5xl lg:text-6xl leading-[20px] md:leading-[20px] lg:leading-[40px] xl:leading-[58px] font-medium text-center -tracking-[2px]'>
+                            Innovative Spaces for <span className='font-ppe italic font-light'>Curious</span> <br className='block' />
                             <span ref={wrapperRef} className='relative inline-block px-2 ml-2'>
                                 <span
                                     ref={highlightRef}
-                                    className='absolute top-1 py-9 -left-[14%] bg-[#0045FF] -rotate-6 h-full w-full -z-10 block origin-left'
+                                    className='absolute top-1 py-4 md:py-9 -left-[8%] md:-left-[14%] bg-[#0045FF] -rotate-6 h-full w-full -z-10 block origin-left'
                                 ></span>
                                 <span className='relative z-20'>Minds</span>
                             </span>
                         </h2>
                     </div>
 
-                    {/* Grid */}
-                    <div className='grid grid-cols-1 md:grid-cols-6 gap-6 gap-y-8'>
+                    {/* Mobile: horizontal swipe slider */}
+                    <div className='md:hidden flex overflow-x-auto snap-start snap-mandatory gap-4 pb-4 -mx-11 pl-11 scrollbar-none'>
+                        {cards.map((card) => (
+                            <div
+                                key={card.id}
+                                className='snap-start shrink-0 w-[80vw] bg-white text-black rounded-[30px] overflow-hidden flex flex-col justify-between min-h-[420px]'
+                            >
+                                <div className='p-6 h-[50%]'>
+                                    <h3 className='text-base font-medium leading-tight tracking-tight mb-4'>
+                                        {card.italicPosition === 'before' && (
+                                            <>
+                                                <span className='font-ppe italic tracking-tighter font-light'>{card.italic}</span>{' '}
+                                            </>
+                                        )}
+                                        {card.title}
+                                        {card.italicPosition === 'after' && (
+                                            <>
+                                                {' '}<span className='font-ppe italic tracking-tighter font-light'>{card.italic}</span>
+                                            </>
+                                        )}
+                                    </h3>
+
+                                    <div className='space-y-0'>
+                                        {card.description.split('\n\n').map((paragraph, idx, arr) => (
+                                            <div key={idx} className={`relative pl-4 ${idx !== arr.length - 1 ? 'pb-4' : ''}`}>
+                                                <div className="w-0.5 h-full bg-[#0045FF] absolute left-0 top-0"></div>
+                                                <p className='text-xs leading-[20px] text-gray-800 font-medium'>
+                                                    {paragraph}
+                                                </p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className='w-full h-[50%] relative mt-auto'>
+                                    <Image
+                                        src={card.image}
+                                        alt={`${card.title} ${card.italic}`}
+                                        fill
+                                        className='object-cover'
+                                    />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Desktop: original 6-col grid */}
+                    <div className='hidden md:grid md:grid-cols-6 gap-6 gap-y-8'>
                         {cards.map((card) => (
                             <div
                                 key={card.id}
                                 className={`${card.colSpan} bg-white text-black rounded-[30px] overflow-hidden flex flex-col justify-between ${card.id > 2 ? 'min-h-[500px] md:min-h-[500px]' : 'min-h-[400px] md:min-h-[500px]'} group hover:scale-105 transition-all duration-300`}
                             >
                                 <div className='p-8 md:p-10 h-[50%]'>
-                                    <h3 className='text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium  leading-[15px] tracking-tight'>
+                                    <h3 className='text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium leading-[15px] tracking-tight'>
                                         {card.italicPosition === 'before' && (
                                             <>
                                                 <span className='font-ppe italic tracking-tighter font-light'>{card.italic}</span>{' '}
@@ -203,7 +249,6 @@ const Innovationspace = () => {
                                     </h3>
 
                                     <div className='space-y-0 mt-6'>
-
                                         {card.description.split('\n\n').map((paragraph, idx, arr) => (
                                             <div key={idx} className={`relative pl-4 ${idx !== arr.length - 1 ? 'pb-4' : ''}`}>
                                                 <div className="w-0.5 h-full bg-[#0045FF] absolute left-0 top-0"></div>
@@ -215,7 +260,7 @@ const Innovationspace = () => {
                                     </div>
                                 </div>
 
-                                <div className={`w-full ${card.id > 2 ? 'h-[50%]' : 'h-[50%]'} relative mt-auto`}>
+                                <div className={`w-full h-[50%] relative mt-auto`}>
                                     <Image
                                         src={card.image}
                                         alt={`${card.title} ${card.italic}`}
@@ -226,6 +271,7 @@ const Innovationspace = () => {
                             </div>
                         ))}
                     </div>
+
                 </ContainerLayout>
             </div>
         </section>

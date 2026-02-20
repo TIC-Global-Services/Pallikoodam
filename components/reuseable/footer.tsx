@@ -8,14 +8,14 @@ const Footer = () => {
     const pathname = usePathname()
 
     const navLinks = [
-        { name: 'Home', href: '/' },
-        { name: 'Grammar of RAKS', href: '/grammar-of-raks' },
-        { name: 'Learning @ RAKS', href: '/learning-at-raks' },
+        { label: 'Home', href: '/' },
+        { label: 'Grammar of RAKS', href: '/grammar-of-raks' },
+        { label: 'Learning @ RAKS', href: '/learning-at-raks' },
         // { name: 'Hidden curriculum @ RAKS', href: '/hidden-curriculum-at-raks' },
-        { name: 'News & Events', href: '/news-and-events' },
-        { name: 'Admissions', href: '/admissions' },
-        { name: 'Careers', href: '/careers' },
-        { name: 'Contact us', href: '/contact' },
+        { label: 'News & Events', href: '/news-and-events' },
+        { label: 'Admissions', href: '/admissions' },
+        { label: 'Careers', href: '/careers' },
+        { label: 'Contact us', href: '/contact' },
     ]
 
     return (

@@ -27,36 +27,38 @@ const Campus = () => {
     ]
     const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>();
     return (
-        <ContainerLayout>
-            <section className="bg-white text-black pb-10">
-                {/* Header Section */}
-                <div ref={titleRef} className="mb-16">
-                    <h2 className="text-4xl md:text-[54px] font-medium mb-6">
-                        Stories from our <span className="font-ppe italic font-normal">Campus</span>
-                    </h2>
-                    <p className="text-2xl text-gray-800">A vibrant community where milestones, discoveries,<br /> and celebrations shine through every day.</p>
-                </div>
+        <div className="bg-white">
+            <ContainerLayout>
+                <section className="text-black pb-10">
+                    {/* Header Section */}
+                    <div ref={titleRef} className="mb-16">
+                        <h2 className="text-4xl md:text-[54px] font-medium mb-6">
+                            Stories from our <span className="font-ppe italic font-normal">Campus</span>
+                        </h2>
+                        <p className="text-2xl text-gray-800">A vibrant community where milestones, discoveries,<br /> and celebrations shine through every day.</p>
+                    </div>
 
-                {/* Grid Section */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {data.map((item, index) => (
-                        <div key={index} className="flex flex-col group">
-                            <div className="relative w-full aspect-4/5 overflow-hidden rounded-[2rem] mb-6">
-                                <SimpleParallax>
-                                    <Image
-                                        src={item.image}
-                                        alt={item.title}
-                                        fill
-                                        className={`object-cover transition-transform duration-700  ${index === 0 ? 'object-cover scale-95 group-hover:scale-90' : 'object-cover group-hover:scale-105'}`}
-                                    />
-                                </SimpleParallax>
+                    {/* Grid Section */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {data.map((item, index) => (
+                            <div key={index} className="flex flex-col group">
+                                <div className="relative w-full aspect-4/5 overflow-hidden rounded-[2rem] mb-6">
+                                    <SimpleParallax>
+                                        <Image
+                                            src={item.image}
+                                            alt={item.title}
+                                            fill
+                                            className={`object-cover transition-transform duration-700  ${index === 0 ? 'object-cover scale-95 group-hover:scale-90' : 'object-cover group-hover:scale-105'}`}
+                                        />
+                                    </SimpleParallax>
+                                </div>
+                                <h3 className="text-2xl font-medium">{item.title}</h3>
                             </div>
-                            <h3 className="text-2xl font-medium">{item.title}</h3>
-                        </div>
-                    ))}
-                </div>
-            </section>
-        </ContainerLayout>
+                        ))}
+                    </div>
+                </section>
+            </ContainerLayout>
+        </div>
 
     )
 }

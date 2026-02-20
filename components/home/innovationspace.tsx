@@ -188,7 +188,7 @@ const Innovationspace = () => {
                                 className={`${card.colSpan} bg-white text-black rounded-[30px] overflow-hidden flex flex-col justify-between ${card.id > 2 ? 'min-h-[400px] md:min-h-[400px]' : 'min-h-[400px] md:min-h-[500px]'} group hover:scale-105 transition-all duration-300`}
                             >
                                 <div className='p-8 md:p-10 h-[50%]'>
-                                    <h3 className='text-3xl md:text-4xl font-medium  leading-[15px] tracking-tight'>
+                                    <h3 className='text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium  leading-[15px] tracking-tight'>
                                         {card.italicPosition === 'before' && (
                                             <>
                                                 <span className='font-ppe italic tracking-tighter font-light'>{card.italic}</span>{' '}
@@ -207,7 +207,7 @@ const Innovationspace = () => {
                                         {card.description.split('\n\n').map((paragraph, idx, arr) => (
                                             <div key={idx} className={`relative pl-4 ${idx !== arr.length - 1 ? 'pb-4' : ''}`}>
                                                 <div className="w-0.5 h-full bg-[#0045FF] absolute left-0 top-0"></div>
-                                                <p className='text-sm md:text-base leading-[20px] text-gray-800 font-medium'>
+                                                <p className='text-sm md:text-xs lg:text-sm xl:text-base leading-[20px] text-gray-800 font-medium'>
                                                     {paragraph}
                                                 </p>
                                             </div>

@@ -172,28 +172,28 @@ const Shapingthefuture = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2  bg-white  gap-6 md:gap-10 max-w-[1400px] mx-auto">
 
                         {/* Vision Card */}
-                        <div className="bg-[#E9E9E9] text-black rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden  h-[60vh] md:h-[700px] flex flex-col items-start transition-transform hover:scale-[1.01] duration-500">
+                        <div className="bg-[#E9E9E9] text-black rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden  h-[60vh] md:h-[90vh] flex flex-col items-start transition-transform hover:scale-[1.01] duration-500">
                             <h4 className="text-xl md:text-6xl mb-8 font-medium">
                                 Our <span style={{ fontFamily: 'var(--font-ppe)' }} className="text-[#000086] font-normal italic">Vision</span>
                             </h4>
                             <div className="w-1 h-20 bg-blue-600/30 absolute left-8 top-8 hidden"></div> {/* Decorative line if needed */}
-                            <p className="text-gray-800 text-sm md:text-base leading-[20px] mb-auto max-w-lg z-10 font-normal">
+                            <p className="text-gray-800 text-sm lg:text-sm xl:text-base leading-[20px] mb-auto max-w-lg z-10 font-normal">
                                 <span className="border-l-3 border-[#23519D]  pl-4 block">
                                     Enabling learners to thrive With purpose and build a sustainable, equitable, and compassionate world.
                                 </span>
                             </p>
-                            <div className="absolute -bottom-[12%] left-[0%] w-full h-full scale-120">
+                            <div className="absolute lg:-bottom-[6%] xl:-bottom-[10%] left-[0%] w-full h-full scale-120">
                                 <Image src={vision} alt="School Building" fill className="object-contain object-bottom w-[500px] h-[500px]" />
                             </div>
                         </div>
 
                         {/* Mission Card */}
-                        <div className="bg-[#E9E9E9] text-black rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden  flex flex-col items-start h-[60vh] md:h-[700px]  transition-transform hover:scale-[1.01] duration-500">
+                        <div className="bg-[#E9E9E9] text-black rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden  flex flex-col items-start h-[60vh] md:h-[90vh]  transition-transform hover:scale-[1.01] duration-500">
                             <div>
                                 <h4 className="text-xl md:text-6xl mb-4 font-medium">
                                     Our <span style={{ fontFamily: 'var(--font-ppe)' }} className="text-[#000086] font-normal italic">Mission</span>
                                 </h4>
-                                <ol className="text-gray-800 text-xs md:text-base border-l-3 border-[#23519D]  pl-4 leading-[22px] mb-auto max-w-lg z-10 font-normal list-decimal list-inside space-y-2">
+                                <ol className="text-gray-800 text-xs lg:text-sm xl:text-lg border-l-3 border-[#23519D]  pl-4 leading-[22px] mb-auto max-w-lg z-10 font-normal list-decimal list-inside space-y-2">
                                     <li>Promote inquiry-based, experiential learning and critical thinking through rigorous academic standards.</li>
                                     <li>Nurturing lifelong learners for human flourishing.</li>
                                     <li>Develop leadership skills with a global outlook and nurture cross-cultural collaboration.</li>
@@ -201,7 +201,7 @@ const Shapingthefuture = () => {
                                     <li>Ensure physical well being, health, and character building through sports and holistic development.</li>
                                 </ol>
                             </div>
-                            <div className="absolute -bottom-[20%] left-[0%] w-full h-full scale-100">
+                            <div className="absolute -bottom-[15%] lg:-bottom-[18%] xl:-bottom-[20%] left-[0%] w-full h-full scale-100">
                                 <Image src={image3} alt="School Building" fill className="object-contain object-bottom w-[100px] h-[100px]" />
                             </div>
                         </div>

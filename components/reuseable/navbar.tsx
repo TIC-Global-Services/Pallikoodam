@@ -46,6 +46,46 @@ const navbar = () => {
         }
     }, [isHome]);
 
+    const closeMenu = () => {
+        if (!menuOpen) return;
+        setMenuOpen(false);
+
+        gsap.to(menuItemsRef.current?.children || [], {
+            y: -10,
+            opacity: 0,
+            stagger: 0.03,
+            duration: 0.2,
+            ease: "power2.in",
+        });
+
+        gsap.to(overlayRef.current, {
+            opacity: 0,
+            y: -20,
+            duration: 0.3,
+            ease: "power3.in",
+            onComplete: () => {
+                gsap.set(overlayRef.current, {
+                    pointerEvents: "none",
+                    visibility: "hidden",
+                });
+            },
+        });
+    };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (menuOpen) {
+                closeMenu();
+            }
+        };
+
+        if (menuOpen) {
+            window.addEventListener('scroll', handleScroll);
+        }
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [menuOpen]);
+
     const toggleMenu = () => {
         if (!overlayRef.current) return;
 
@@ -85,28 +125,7 @@ const navbar = () => {
                 },
             );
         } else {
-            setMenuOpen(false);
-
-            gsap.to(menuItemsRef.current?.children || [], {
-                y: -10,
-                opacity: 0,
-                stagger: 0.03,
-                duration: 0.2,
-                ease: "power2.in",
-            });
-
-            gsap.to(overlayRef.current, {
-                opacity: 0,
-                y: -20,
-                duration: 0.3,
-                ease: "power3.in",
-                onComplete: () => {
-                    gsap.set(overlayRef.current, {
-                        pointerEvents: "none",
-                        visibility: "hidden",
-                    });
-                },
-            });
+            closeMenu();
         }
     };
     const updateLightSection = () => {
@@ -155,10 +174,14 @@ const navbar = () => {
 
 
     const menuItems = [
-        { name: 'HOME', href: '/' },
-        { name: 'ABOUT US', href: '/about' },
-        { name: 'ACADEMICS', href: '/academics' },
-        { name: 'CONTACT', href: '/contact' },
+        { name: 'Home', href: '/' },
+        { name: 'Grammar of RAKS', href: '/grammar-of-raks' },
+        { name: 'Learning @ RAKS', href: '/learning-at-raks' },
+        { name: 'Hidden curriculum @ RAKS', href: '/hidden-curriculum-at-raks' },
+        { name: 'News & Events', href: '/news-and-events' },
+        { name: 'Admissions', href: '/admissions' },
+        { name: 'Careers', href: '/careers' },
+        { name: 'Contact us', href: '/contact' },
     ];
 
     return (
@@ -222,7 +245,7 @@ const navbar = () => {
                                                         <Link
                                                             href={item.href}
                                                             onClick={toggleMenu}
-                                                            className="text-[clamp(16px,10vw,2rem)] font-[500] text-white hover:text-gray-400 transition-colors duration-300 block relative group flex items-center justify-between"
+                                                            className="text-[clamp(16px,10vw,1.5rem)] font-[500] text-white hover:text-gray-400 transition-colors duration-300 block relative group flex items-center justify-between"
                                                         >
                                                             {item.name}
                                                             {isActive && (

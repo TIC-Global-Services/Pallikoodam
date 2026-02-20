@@ -14,14 +14,16 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden">
       <Hero />
-      <Campustour />
-      <Differencewecreate />
-      <Shapingthefuture />
-      <Curricullam/>
-      <ProgressiveLearner />
-      <Innovationspace/>
-      <Wayofteaching/>
-      <Campus/>
+      <div className="relative z-10">
+        <Campustour />
+        <Differencewecreate />
+        <Shapingthefuture />
+        <Curricullam />
+        <ProgressiveLearner />
+        <Innovationspace />
+        <Wayofteaching />
+        <Campus />
+      </div>
     </div>
   );
 }

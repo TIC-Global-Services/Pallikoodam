@@ -31,33 +31,35 @@ interface IconData {
 }
 
 const iconsData: IconData[] = [
-    { src: icon11, top: '15%', right: '-10%', size: 800, rotate: 40 }, // DNA
-    { src: icon10, top: '28%', right: '1%', size: 800, rotate: -15 }, // Paint Brush
-    { src: icon9, top: '40%', right: '-10%', size: 800, rotate: 10 }, // Soccer Ball
-    { src: icon6, top: '25%', right: '25%', size: 800, rotate: 4 }, // Shuttlecock
-    { src: icon7, top: '30%', right: '8%', size: 1000, rotate: -10 }, // Chess Knight
-    { src: icon5, top: '37%', left: '10%', size: 900, rotate: 0 }, // bulb
-    { src: icon8, top: '18%', left: '35%', size: 800, rotate: 15 }, // Book
-    { src: icon4, top: '23%', left: '6%', size: 900, rotate: -30 }, // pencil
-    { src: icon3, top: '32%', left: '-3%', size: 900, rotate: 20 }, // Music
-    { src: icon1, top: '32%', left: '-24%', size: 1000, rotate: -5 }, // Globe
-    { src: icon2, top: '18%', left: '-18%', size: 1000, rotate: 10 }, // mouse
-    { src: icon12, top: '10%', right: '-25%', size: 900, rotate: 10 }, // Pink Cloud
+    { src: icon11, top: '15%', right: '1%', size: 800, rotate: 5 }, // DNA
+    { src: icon10, top: '0%', right: '5%', size: 1000, rotate: 5 }, // Paint Brush
+    { src: icon9, top: '54%', right: '1%', size: 800, rotate: 5 }, // Soccer Ball
+    { src: icon5, top: '54%', right: '-10%', size: 800, rotate: 5 }, // Soccer Ball
+    { src: icon3, top: '30%', right: '-8%', size: 800, rotate: 5 }, // Soccer Ball
+    { src: icon6, top: '2%', right: '40%', size: 800, rotate:5 }, // Shuttlecock
+    { src: icon7, top: '35%', right: '8%', size: 1000, rotate: 5 }, // Chess Knight
+    { src: icon5, top: '37%', left: '-10%', size: 900, rotate:5 }, // bulb
+    { src: icon8, top: '18%', left: '20%', size: 800, rotate: 5 }, // Book
+    { src: icon4, top: '2%', left: '-10%', size: 900, rotate: 5 }, // pencil
+    { src: icon3, top: '32%', left: '-20%', size: 900, rotate: 5 }, // Music
+    { src: icon1, top: '2%', left: '-34%', size: 1000, rotate: 5 }, // Globe
+    { src: icon2, top: '18%', left: '1%', size: 1000, rotate: 5 }, // mouse
+    { src: icon12, top: '10%', right: '-25%', size: 900, rotate: 5 }, // Pink Cloud
     // { src: icon13, top: '22%', left: '96%', size: 100, rotate: 20 }, // Pink Cloud
 ]
 const mobileiconsData: IconData[] = [
-    { src: icon11, top: '10%', left: '0%', size: 800, rotate: 40 }, // DNA
-    { src: icon10, top: '28%', left: '1%', size: 800, rotate: -15 }, // Paint Brush
-    { src: icon9, top: '40%', left: '20%', size: 800, rotate: 10 }, // Soccer Ball
-    { src: icon6, top: '25%', left: '45%', size: 800, rotate: 4 }, // Shuttlecock
-    { src: icon7, top: '30%', left: '50%', size: 1000, rotate: -10 }, // Chess Knight
+    { src: icon11, top: '10%', left: '0%', size: 800, rotate: 0 }, // DNA
+    { src: icon10, top: '28%', left: '1%', size: 800, rotate:  0 }, // Paint Brush
+    { src: icon9, top: '40%', left: '20%', size: 800, rotate: 0 }, // Soccer Ball
+    { src: icon6, top: '25%', left: '45%', size: 800, rotate: 0 }, // Shuttlecock
+    { src: icon7, top: '50%', left: '50%', size: 1000, rotate: 0 }, // Chess Knight
     { src: icon5, top: '47%', left: '50%', size: 900, rotate: 0 }, // bulb
-    { src: icon8, top: '18%', left: '65%', size: 800, rotate: 15 }, // Book
-    { src: icon4, top: '7%', left: '80%', size: 900, rotate: -30 }, // pencil
-    { src: icon3, top: '7%', left: '-1%', size: 900, rotate: 20 }, // Music
-    { src: icon1, top: '2%', left: '10%', md: '-24%', size: 1000, rotate: -5 }, // Globe
-    { src: icon2, top: '0%', left: '-18%', size: 1000, rotate: 10 }, // mouse
-    { src: icon12, top: '5%', left: '80%', size: 900, rotate: 10 }, // Pink Cloud
+    { src: icon8, top: '18%', left: '65%', size: 800, rotate: 0 }, // Book
+    { src: icon4, top: '7%', left: '80%', size: 900, rotate: 0 }, // pencil
+    { src: icon3, top: '7%', left: '-1%', size: 900, rotate: 0 }, // Music
+    { src: icon1, top: '2%', left: '10%', md: '-24%', size: 1000, rotate: 0 }, // Globe
+    { src: icon2, top: '0%', left: '-18%', size: 1000, rotate: 0 }, // mouse
+    { src: icon12, top: '-40%', left: '80%', size: 900, rotate: 0 }, // Pink Cloud
     // { src: icon13, top: '22%', left: '96%', size: 100, rotate: 20 }, // Pink Cloud
 ]
 
@@ -81,9 +83,9 @@ const campustour = () => {
             if (!icon || !activeIcons[i]) return
 
             gsap.to(icon, {
-                y: 'random(-20, 20)',
-                x: 'random(-10, 10)',
-                rotation: `random(${(activeIcons[i].rotate || 0) - 10}, ${(activeIcons[i].rotate || 0) + 10})`,
+                y: 'random(-1, 1)   ',
+                x: 'random(-2, 2)',
+                rotation: `random(${(activeIcons[i].rotate || 0) - 0.5}, ${(activeIcons[i].rotate || 0) + 0.5})`,
                 duration: 'random(3, 5)',
                 repeat: -1,
                 yoyo: true,
@@ -95,12 +97,14 @@ const campustour = () => {
 
     return (
         <div className='bg-[#000086] rounded-t-[40px] min-h-screen overflow-hidden relative'>
-            {activeIcons.map((icon, i) => (
+          <div className='absolute xl:top-40 lg:top-30 md:top-20 top-10 w-full xl:-rotate-10 -rotate-15'>
+             <div className='relative h-[50vh]'>
+             {activeIcons.map((icon, i) => (
                 <div
                     key={i}
                     ref={(el) => { iconsRef.current[i] = el }}
-                    className="absolute z-10 pointer-events-none"
-                    style={{
+                    className="absolute h-10 z-0 pointer-events-none"
+                     style={{
                         top: icon.top,
                         left: icon.left,
                         right: icon.right,
@@ -143,13 +147,15 @@ const campustour = () => {
                     />
                 </div>
             ))}
+           </div>
+            </div>
 
             <ContainerLayout>
-                <div className='py-[5%]'>
+                <div className='py-[5%] relative z-20'>
 
                     <div ref={titleRef} className="flex flex-col gap-[10%]">
-                        <h1 className={`text-sm md:text-[4.5vh] tracking-tight leading-[40px] text-white font-medium`} >Step into a school where learning is intentional, relationships are meaningful,<br className='hidden xl:block' /> and every experience is designed to help children grow with confidence,<br /> curiosity and purpose.</h1>
-                        <h1 className={`text-sm md:text-[4.5vh] tracking-tight leading-[40px] text-white font-medium mt-8`}>Discover the values that guide us, the research that shapes us, and the vision<br className='hidden xl:block' /> that inspires us to create joyful, future-ready learning every single day.</h1>
+                        <h1 className={`text-sm md:text-2xl lg:text-3xl  xl:text-4xl tracking-tight  text-white font-medium`} >Step into a school where learning is intentional, relationships are meaningful,<br className='hidden xl:block' /> and every experience is designed to help children grow with confidence,<br /> curiosity and purpose.</h1>
+                        <h1 className={`text-sm md:text-2xl lg:text-3xl  xl:text-4xl   tracking-tight  text-white font-medium mt-8`}>Discover the values that guide us, the research that shapes us, and the vision<br className='hidden xl:block' /> that inspires us to create joyful, future-ready learning every single day.</h1>
                     </div>
 
                     <div className="mt-[5%]">

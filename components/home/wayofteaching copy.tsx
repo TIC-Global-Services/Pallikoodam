@@ -41,7 +41,7 @@ const Wayofteaching = () => {
                 const scrollMultiplier = isMobile
                     ? 40
                     : isSmallHeightDesktop
-                        ? 100
+                        ? 150
                         : 250;
 
                 const tl = gsap.timeline({
@@ -64,7 +64,7 @@ const Wayofteaching = () => {
 
                     tl.fromTo(
                         `.card-${index}`,
-                        { opacity: 0, yPercent: 100 },
+                        { opacity: 0, yPercent: 150 },
                         { opacity: 1, yPercent: index * offset, duration: 0.5 }
                     );
                 });

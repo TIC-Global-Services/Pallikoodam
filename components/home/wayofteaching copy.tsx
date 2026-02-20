@@ -41,8 +41,8 @@ const Wayofteaching = () => {
                 const scrollMultiplier = isMobile
                     ? 40
                     : isSmallHeightDesktop
-                        ? 50
-                        : 150;
+                        ? 100
+                        : 250;
 
                 const tl = gsap.timeline({
                     scrollTrigger: {

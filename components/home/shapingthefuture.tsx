@@ -169,40 +169,38 @@ const Shapingthefuture = () => {
                     </div>
 
                     {/* Vision & Mission Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-2  bg-white  gap-6 md:gap-10 max-w-[1400px] mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 bg-white gap-6 md:gap-10 max-w-[1400px] mx-auto">
 
                         {/* Vision Card */}
-                        <div className="bg-[#E9E9E9] text-black rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden  h-[60vh] md:h-[90vh] flex flex-col items-start transition-transform hover:scale-[1.01] duration-500">
-                            <h4 className="text-xl md:text-6xl mb-8 font-medium">
+                        <div className="bg-[#E9E9E9] text-black rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden flex flex-col items-start transition-transform hover:scale-[1.01] duration-500 min-h-[500px] md:min-h-[600px] lg:min-h-[650px] xl:min-h-[750px]">
+                            <h4 className="text-xl md:text-5xl lg:text-6xl mb-6 md:mb-8 font-medium">
                                 Our <span style={{ fontFamily: 'var(--font-ppe)' }} className="text-[#000086] font-normal italic">Vision</span>
                             </h4>
-                            <div className="w-1 h-20 bg-blue-600/30 absolute left-8 top-8 hidden"></div> {/* Decorative line if needed */}
-                            <p className="text-gray-800 text-sm lg:text-sm xl:text-base leading-[20px] mb-auto max-w-lg z-10 font-normal">
-                                <span className="border-l-3 border-[#23519D]  pl-4 block">
-                                    Enabling learners to thrive With purpose and build a sustainable, equitable, and compassionate world.
+                            <div className="w-1 h-20 bg-blue-600/30 absolute left-8 top-8 hidden"></div>
+                            <p className="text-gray-800 text-sm lg:text-base xl:text-lg leading-[22px] mb-auto max-w-lg z-10 font-normal">
+                                <span className="border-l-3 border-[#23519D] pl-4 block">
+                                    Enabling learners to <span className="font-ppe italic">&quot;Thrive With Purpose&quot;</span> and build a sustainable, equitable, and compassionate world.
                                 </span>
                             </p>
-                            <div className="absolute lg:-bottom-[6%] xl:-bottom-[10%] left-[0%] w-full h-full scale-120">
-                                <Image src={vision} alt="School Building" fill className="object-contain object-bottom w-[500px] h-[500px]" />
+                            <div className="absolute bottom-0 left-0 w-full h-[55%]">
+                                <Image src={vision} alt="School Building" fill className="object-contain object-bottom" />
                             </div>
                         </div>
 
                         {/* Mission Card */}
-                        <div className="bg-[#E9E9E9] text-black rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden  flex flex-col items-start h-[60vh] md:h-[90vh]  transition-transform hover:scale-[1.01] duration-500">
-                            <div>
-                                <h4 className="text-xl md:text-6xl mb-4 font-medium">
+                        <div className="bg-[#E9E9E9] text-black rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden flex flex-col items-start transition-transform hover:scale-[1.01] duration-500 min-h-[500px] md:min-h-[600px] lg:min-h-[500px] xl:min-h-[500px]">
+                            <div className="z-10 relative">
+                                <h4 className="text-xl md:text-5xl lg:text-6xl mb-4 md:mb-6 font-medium">
                                     Our <span style={{ fontFamily: 'var(--font-ppe)' }} className="text-[#000086] font-normal italic">Mission</span>
                                 </h4>
-                                <ol className="text-gray-800 text-xs lg:text-sm xl:text-lg border-l-3 border-[#23519D]  pl-4 leading-[22px] mb-auto max-w-lg z-10 font-normal list-decimal list-inside space-y-2">
-                                    <li>Promote inquiry-based, experiential learning and critical thinking through rigorous academic standards.</li>
-                                    <li>Nurturing lifelong learners for human flourishing.</li>
-                                    <li>Develop leadership skills with a global outlook and nurture cross-cultural collaboration.</li>
-                                    <li>Foster inclusivity, respect, and appreciation for India, its cultures, and its central place in the world.</li>
-                                    <li>Ensure physical well being, health, and character building through sports and holistic development.</li>
+                                <ol className="text-gray-800 text-sm lg:text-base xl:text-lg border-l-3 border-[#23519D] pl-4 leading-[26px] mb-auto max-w-lg z-10 font-normal list-decimal list-inside space-y-3">
+                                    <li>To nurture curious, compassionate, and courageous learners who <span className='font-ppe italic'>&quot;Thrive With Purpose.&quot;</span></li>
+                                    <li>To cultivate character, creativity, and critical thinking through meaningful, enquiry-driven experiences.</li>
+                                    <li>To empower every learner to act responsibly, lead ethically, and contribute positively to the world.</li>
                                 </ol>
                             </div>
-                            <div className="absolute -bottom-[15%] lg:-bottom-[18%] xl:-bottom-[20%] left-[0%] w-full h-full scale-100">
-                                <Image src={image3} alt="School Building" fill className="object-contain object-bottom w-[100px] h-[100px]" />
+                            <div className="absolute -bottom-12 scale-110 left-0 w-full h-[55%]">
+                                <Image src={image3} alt="School Building" fill className="object-contain object-bottom" />
                             </div>
                         </div>
 

@@ -31,7 +31,7 @@ const cards = [
         italic: "Labs",
         italicPosition: "after",
         description: "Here we don't imagine the future, we prototype it.\n\nLearners explore tools, materials, mechanisms, and real-world challenges transforming concepts through guided curiosity and fearless problem-solving.",
-        image: innovation2,
+        image: innovation3,
         colSpan: "md:col-span-3"
     },
     {
@@ -40,7 +40,7 @@ const cards = [
         italic: "Art",
         italicPosition: "before",
         description: "A sanctuary where colours, textures, and emotions breathe where learners experiment, express, and evolve understanding that art is not just a subject, but a language of identity, joy, and discovery.",
-        image: innovation3,
+        image: innovation4,
         colSpan: "md:col-span-2"
     },
     {
@@ -49,7 +49,7 @@ const cards = [
         italic: "Space",
         italicPosition: "after",
         description: "A playground of innovation where hands lead the mind.From tinkering to building, this is where ideas are tested, stretched, rebuilt, and celebrated turning creativity into capability.",
-        image: innovation4,
+        image: innovation2,
         colSpan: "md:col-span-2"
     },
     {
@@ -185,7 +185,7 @@ const Innovationspace = () => {
                         {cards.map((card) => (
                             <div
                                 key={card.id}
-                                className={`${card.colSpan} bg-white text-black rounded-[30px] overflow-hidden flex flex-col justify-between ${card.id > 2 ? 'min-h-[400px] md:min-h-[400px]' : 'min-h-[400px] md:min-h-[500px]'} group hover:scale-105 transition-all duration-300`}
+                                className={`${card.colSpan} bg-white text-black rounded-[30px] overflow-hidden flex flex-col justify-between ${card.id > 2 ? 'min-h-[500px] md:min-h-[500px]' : 'min-h-[400px] md:min-h-[500px]'} group hover:scale-105 transition-all duration-300`}
                             >
                                 <div className='p-8 md:p-10 h-[50%]'>
                                     <h3 className='text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium  leading-[15px] tracking-tight'>
@@ -215,7 +215,7 @@ const Innovationspace = () => {
                                     </div>
                                 </div>
 
-                                <div className={`w-full ${card.id > 2 ? 'h-[40%]' : 'h-[50%]'} relative mt-auto`}>
+                                <div className={`w-full ${card.id > 2 ? 'h-[50%]' : 'h-[50%]'} relative mt-auto`}>
                                     <Image
                                         src={card.image}
                                         alt={`${card.title} ${card.italic}`}

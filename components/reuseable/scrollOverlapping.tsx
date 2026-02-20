@@ -55,7 +55,7 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: isSmallHeight ? 'top 10%' : 'top 5%',
+                    start: isSmallHeight ? 'top 10%' : 'top 15%',
                     end: `+=${scrollMultiplier}%`,
                     pin: true,
                     scrub: isMobile ? 0.2 : 1,
@@ -87,7 +87,7 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
     }, [cards]);
 
     return (
-        <section ref={sectionRef} className="scroll-section min-h-screen  bg-background relative">
+        <section ref={sectionRef} className="scroll-section min-h-[70vh]  bg-background relative">
             <div className="w-full px-4 md:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-x-[20%] w-full items-start max-w-[1600px] mx-auto">
                     {/* Left Column: Static Text */}

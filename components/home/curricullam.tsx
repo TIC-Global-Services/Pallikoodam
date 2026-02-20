@@ -132,7 +132,7 @@ const curricullam = () => {
           {/* Second Card - National Curriculum */}
           <div
             ref={card2Ref}
-            className="md:absolute bg-black rounded-t-[40px] md:top-0 md:left-0 w-full md:h-full overflow-hidden shadow-2xl"
+            className="md:absolute bg-black rounded-t-[40px] md:-top-8 md:left-0 w-full md:h-full overflow-hidden shadow-2xl"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 h-full">
               {/* Left side - Text */}

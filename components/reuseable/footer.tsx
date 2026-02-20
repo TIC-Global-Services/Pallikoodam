@@ -8,14 +8,14 @@ const Footer = () => {
     const pathname = usePathname()
 
     const navLinks = [
-        { href: '/', label: 'Home' },
-        { href: '/about', label: 'About us' },
-        { href: '/admission', label: 'Admission' },
-        { href: '/academics', label: 'Academics' },
-        { href: '/news-events', label: 'News & Events' },
-        { href: '/resources', label: 'Resources' },
-        { href: '/work-with-us', label: 'Why Work with us' },
-        { href: '/contact', label: 'Contact us' },
+        { name: 'Home', href: '/' },
+        { name: 'Grammar of RAKS', href: '/grammar-of-raks' },
+        { name: 'Learning @ RAKS', href: '/learning-at-raks' },
+        // { name: 'Hidden curriculum @ RAKS', href: '/hidden-curriculum-at-raks' },
+        { name: 'News & Events', href: '/news-and-events' },
+        { name: 'Admissions', href: '/admissions' },
+        { name: 'Careers', href: '/careers' },
+        { name: 'Contact us', href: '/contact' },
     ]
 
     return (

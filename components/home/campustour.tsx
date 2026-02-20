@@ -41,7 +41,7 @@ const iconsData: IconData[] = [
     { src: icon5, top: '37%', left: '-10%', size: 900, rotate:5 }, // bulb
     { src: icon8, top: '18%', left: '20%', size: 800, rotate: 5 }, // Book
     { src: icon4, top: '2%', left: '-10%', size: 900, rotate: 5 }, // pencil
-    { src: icon3, top: '32%', left: '-20%', size: 900, rotate: 5 }, // Music
+    { src: icon3, top: '2%', left: '-20%', size: 900, rotate: 5 }, // Music
     { src: icon1, top: '2%', left: '-34%', size: 1000, rotate: 5 }, // Globe
     { src: icon2, top: '18%', left: '1%', size: 1000, rotate: 5 }, // mouse
     { src: icon12, top: '10%', right: '-25%', size: 900, rotate: 5 }, // Pink Cloud
@@ -97,7 +97,7 @@ const campustour = () => {
 
     return (
         <div className='bg-[#000086] rounded-t-[40px] min-h-screen overflow-hidden relative'>
-          <div className='absolute xl:top-40 lg:top-10 md:top-20 top-10 w-full xl:-rotate-10 -rotate-15'>
+          <div className='absolute xl:top-30 lg:-top-10 md:top-20 top-10 w-full xl:-rotate-10 -rotate-15'>
              <div className='relative h-[50vh]'>
              {activeIcons.map((icon, i) => (
                 <div

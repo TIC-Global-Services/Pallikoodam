@@ -19,7 +19,7 @@ const Footer = () => {
     ]
 
     return (
-        <footer className="bg-black text-white w-full py-20 px-4 md:px-8">
+        <footer className="bg-black text-white w-full py-20 px-4 md:px-[3%]">
             <div className="container mx-auto border border-white/40">
                 <div className="flex flex-col">
                     {/* Top Grid */}

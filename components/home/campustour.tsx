@@ -97,7 +97,7 @@ const campustour = () => {
 
     return (
         <div className='bg-[#000086] rounded-t-[40px] min-h-screen overflow-hidden relative'>
-          <div className='absolute xl:top-40 lg:top-30 md:top-20 top-10 w-full xl:-rotate-10 -rotate-15'>
+          <div className='absolute xl:top-40 lg:top-10 md:top-20 top-10 w-full xl:-rotate-10 -rotate-15'>
              <div className='relative h-[50vh]'>
              {activeIcons.map((icon, i) => (
                 <div
@@ -112,29 +112,29 @@ const campustour = () => {
                     }}
                 >
                     {i < 10 ?
-                        <div className='w-1 h-1 absolute top-30 bg-white m-3'></div>
+                        <div className='w-1 h-1 absolute -bottom-60 left-0 bg-white m-3'></div>
                         : null
                     }
                     {i < 10 ?
-                        <div className='w-1 h-1 absolute bottom-40 left-10 bg-white m-3'></div>
+                        <div className='w-1 h-1 absolute -bottom-90 left-10 bg-white m-3'></div>
                         : null
                     }
                     {i < 10 ?
-                        <div className='w-1 h-1 absolute bottom-50 left-10 bg-white m-3'></div>
+                        <div className='w-1 h-1 absolute -bottom-90 left-90 bg-white m-3'></div>
                         : null
                     }
                     {i < 10 ?
-                        <div className='w-1 h-1 absolute top-50 left-10 bg-white m-3'></div>
+                        <div className='w-1 h-1 absolute top-90 left-100 bg-white m-3'></div>
+                        : null
+                    }
+                    {/* {i < 10 ?
+                        <div className='w-1 h-1 absolute bottom-0 right-10 bg-white m-3'></div>
                         : null
                     }
                     {i < 10 ?
-                        <div className='w-1 h-1 absolute bottom-40 right-10 bg-white m-3'></div>
+                        <div className='w-1 h-1 absolute bottom-0 right-0 bg-white m-3'></div>
                         : null
-                    }
-                    {i < 10 ?
-                        <div className='w-1 h-1 absolute bottom-40 right-0 bg-white m-3'></div>
-                        : null
-                    }
+                    } */}
 
 
                     <Image

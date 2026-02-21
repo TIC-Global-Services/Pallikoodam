@@ -32,8 +32,8 @@ const Standout = () => {
     <div ref={sectionRef} className='bg-[#000086] rounded-t-[50px] md:rounded-t-[100px] min-h-[60vh] flex items-center justify-center relative overflow-hidden z-20'>
       <ContainerLayout>
         <div className='py-20 md:py-32 lg:py-40 max-w-6xl mx-auto text-center'>
-          <p className='text-xl md:text-3xl lg:text-[2.5rem] leading-[1.8] md:leading-[1.8] text-white font-medium'>
-            <span className='font-ppe font-normal italic'>RAKS Pallikkoodam</span> stands at the intersection of innovation and inspiration.<br className='hidden lg:block' />
+          <p className='text-xl md:text-3xl lg:text-[2.5rem] leading-relaxed text-white font-normal'>
+            <span className='font-ppe font-[300] italic'>RAKS Pallikkoodam</span> stands at the intersection of innovation and inspiration.<br className='hidden lg:block' />
             With a deep belief that &quot;
             <span className='relative inline-block'>
               <span className='relative z-10'>teaching is an artform,</span>

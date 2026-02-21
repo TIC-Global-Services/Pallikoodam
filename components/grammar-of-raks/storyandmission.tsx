@@ -21,8 +21,8 @@ const StoryAndMission = () => {
               Our <span className='font-ppe font-normal italic text-[#000086]'>Story & Mission</span>
             </h2>
             <div className='border-l-2 border-[#000086] pl-2 md:pl-3'>
-              <p className='text-base md:text-lg lg:text-xl text-black max-w-md leading-normal'>
-                RaK's Pallikkoodam was founded with a vision to offer holistic education rooted in 
+              <p className='text-base md:text-lg lg:text-2xl text-black max-w-lg leading-normal'>
+                RaKS Pallikkoodam was founded with a vision to offer holistic education rooted in 
                 curiosity, creativity, academic excellence, and character. Our mission is simple yet 
                 profound — to build a school where every child feels seen, heard, valued, and 
                 empowered to question, explore, and thrive with purpose.
@@ -53,7 +53,6 @@ const StoryAndMission = () => {
               Meet the minds behind <br /><span className='font-ppe font-normal italic text-[#000086]'>RaK's Pallikkoodam</span>
             </h2>
           <div className='relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh] rounded-2xl overflow-hidden '>
-            <SimpleParallax>
               <Image
               src={founder}
               alt="Swetha Krishnamurthy - Founder Director"
@@ -62,7 +61,7 @@ const StoryAndMission = () => {
               className='object-cover'
               placeholder='blur'
             />
-            </SimpleParallax>
+          
           </div>
 
           {/* Founder Message */}

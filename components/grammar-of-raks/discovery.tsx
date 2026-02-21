@@ -26,7 +26,7 @@ const Discovery = () => {
               Discovery <span className='font-ppe italic font-normal'>Assessment</span>
             </h2>
 
-            <p className='text-white/90 text-sm md:text-base  lg:text-xl max-w-2xl xl:text-2xl leading-relaxed mb-8 md:mb-12'>
+            <p className='text-white/90 text-sm md:text-base  lg:text-xl max-w-2xl xl:text-2xl leading-snug mb-8 md:mb-12'>
               Discover where your child's true interests and strengths lie.
               Identify learning gaps with clarity and understand how a
               modern, 21st-century learning approach can accelerate

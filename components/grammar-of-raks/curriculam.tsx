@@ -9,7 +9,7 @@ const Curriculam = () => {
     <section className='w-full bg-white py-[8vh] md:py-[12vh]'>
       <div className=' md:px-8'>
         {/* Title */}
-        <h2 className='text-3xl md:text-5xl pl-10 lg:text-6xl font-ppe italic font-normal mb-[0vh] md:mb-[8vh]'>
+        <h2 className='text-3xl md:text-5xl pl-10 lg:text-6xl font-ppe italic font-normal mb-2 md:mb-[8vh]'>
           Curriculum & Programmes
         </h2>
 

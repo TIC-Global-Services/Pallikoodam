@@ -13,7 +13,7 @@ const StoryAndMission = () => {
        <div className='bg-[#F5F5F5] rounded-2xl p-4 md:p-0 mb-[8vh] md:mb-[12vh]'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-12 items-center'>
           {/* Text Content */}
-           <h2 className='text-4xl md:text-5xl lg:text-5xl font-medium md:hidden'>
+           <h2 className='text-4xl md:text-5xl lg:text-5xl pt-5 font-medium md:hidden'>
               Our <span className='font-ppe font-normal italic text-[#000086]'>Story & Mission</span>
             </h2>
           <div className='order-2 lg:order-1 md:pl-[10%]'>
@@ -49,7 +49,7 @@ const StoryAndMission = () => {
       <div className=''>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-end'>
           {/* Founder Image */}
-           <h2 className='text-3xl md:text-5xl lg:text-5xl  md:hidden font-medium leading-relaxed'>
+           <h2 className='text-3xl md:text-5xl lg:text-5xl  md:hidden font-medium leading-tight'>
               Meet the minds behind <br /><span className='font-ppe font-normal italic text-[#000086]'>RAKS Pallikkoodam</span>
             </h2>
           <div className='relative w-full h-[50vh] md:h-[80vh] lg:h-[90vh] rounded-2xl overflow-hidden '>

@@ -6,7 +6,7 @@ import SimpleParallax from 'simple-parallax-js'
 
 const Discovery = () => {
   return (
-    <section className='w-full bg-white py-[8vh] md:py-[12vh]'>
+    <section className='w-full bg-white py-0 pb-10 md:py-[12vh]'>
       <div className='max-w-8xl mx-auto px-4 md:px-8'>
         <div className='relative w-full min-h-[400px] md:min-h-[500px] lg:h-[600px] rounded-2xl md:rounded-4xl overflow-hidden flex items-center'>
           {/* Background Image */}

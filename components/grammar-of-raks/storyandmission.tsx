@@ -3,6 +3,7 @@ import Image from 'next/image'
 import founder from '@/assets/grammar-of-raks/Swetha.jpg'
 import mission from '@/assets/home/campus-1.jpg'
 import ContainerLayout from '@/layout/ContainerLayout'
+import SimpleParallax from 'simple-parallax-js'
 
 const StoryAndMission = () => {
   return (
@@ -31,13 +32,15 @@ const StoryAndMission = () => {
 
           {/* Image */}
           <div className='order-1 lg:order-2 relative w-full h-[40vh] md:h-[50vh] lg:h-[60vh] md:rounded-r-2xl overflow-hidden '>
-            <Image
+          <SimpleParallax>
+              <Image
               src={mission}
               alt="RaK's Pallikkoodam students"
               fill
               className='object-cover'
               placeholder='blur'
             />
+          </SimpleParallax>
           </div>
         </div>
       </div>
@@ -50,7 +53,8 @@ const StoryAndMission = () => {
               Meet the minds behind <br /><span className='font-ppe font-normal italic text-[#000086]'>RaK's Pallikkoodam</span>
             </h2>
           <div className='relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh] rounded-2xl overflow-hidden '>
-            <Image
+            <SimpleParallax>
+              <Image
               src={founder}
               alt="Swetha Krishnamurthy - Founder Director"
               fill
@@ -58,6 +62,7 @@ const StoryAndMission = () => {
               className='object-cover'
               placeholder='blur'
             />
+            </SimpleParallax>
           </div>
 
           {/* Founder Message */}

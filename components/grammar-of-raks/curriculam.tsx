@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
 import cambridgeBuilding from '@/assets/grammar-of-raks/cambridge-curriculam.jpg'
+import SimpleParallax from 'simple-parallax-js'
 // import cambridgeLogo from 'cambridge-logo.png'
 
 const Curriculam = () => {
@@ -21,12 +22,14 @@ const Curriculam = () => {
             {/* Cambridge Logo & Title */}
             <div className='flex items-center gap-4 mb-5 md:mb-10'>
               <div className='relative w-16 h-16 md:w-20 md:h-20 shrink-0'>
-                <Image
+               <SimpleParallax>
+                 <Image
                   src="/cambridge-logo.png"
                   alt="Cambridge Assessment Logo"
                   fill
                   className="object-contain object-left"
                 />
+               </SimpleParallax>
               </div>
               <div>
                 <h3 className='text-2xl md:text-[2rem] lg:text-[2.2rem] xl:text-[2.5rem] text-gray-900 '>
@@ -37,13 +40,15 @@ const Curriculam = () => {
             </div>
 
             <div className='relative w-full md:hidden lg:w-[50%] min-h-[50vh] mb-5 lg:min-h-auto'>
-            <Image
+           <SimpleParallax>
+             <Image
               src={cambridgeBuilding}
               alt="Cambridge curriculum building"
               fill
               className='object-cover rounded-2xl'
               placeholder='blur'
             />
+           </SimpleParallax>
           </div>
 
             {/* Description & Programmes Container with Single Blue Line */}
@@ -78,14 +83,16 @@ const Curriculam = () => {
           </div>
 
           {/* Right Side - Building Image */}
-          <div className='relative w-full hidden md:block lg:w-[50%] min-h-[50vh] lg:min-h-auto'>
-            <Image
+          <div className='relative w-full overflow-hidden hidden md:block lg:w-[50%] min-h-[50vh] lg:min-h-auto'>
+           <SimpleParallax>
+             <Image
               src={cambridgeBuilding}
               alt="Cambridge curriculum building"
               fill
-              className='object-cover'
+              className='object-cover scale-90'
               placeholder='blur'
             />
+           </SimpleParallax>
           </div>
 
         </div>

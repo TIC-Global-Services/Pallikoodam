@@ -26,25 +26,26 @@ const navbar = () => {
     const menuSfxRef = useRef<HTMLAudioElement | null>(null);
 
     const pathname = usePathname();
-    const isHome = pathname === '/';
+    const isTransparentRoute = pathname === '/' || pathname === '/grammar-of-raks';
 
     useEffect(() => {
-        // Initialize menu sound effect (optional - add your sound file path)
-        // menuSfxRef.current = new Audio('/sounds/menu-click.mp3');
+        let trigger: globalThis.ScrollTrigger | null = null;
 
-        if (isHome) {
-            const trigger = ScrollTrigger.create({
-                trigger: "section", // First section is Hero
+        // Wait briefly for the new page's <section> to be mounted in the DOM
+        const timer = setTimeout(() => {
+            trigger = ScrollTrigger.create({
+                trigger: "section", // First section of any page
                 start: "bottom top",
                 onEnter: () => setIsHidden(true),
                 onLeaveBack: () => setIsHidden(false),
             });
+        }, 100);
 
-            return () => {
-                trigger.kill();
-            };
-        }
-    }, [isHome]);
+        return () => {
+            clearTimeout(timer);
+            if (trigger) trigger.kill();
+        };
+    }, [pathname]);
 
     const closeMenu = () => {
         if (!menuOpen) return;
@@ -186,7 +187,7 @@ const navbar = () => {
 
     return (
         <>
-            <nav className={`w-full z-50 transition-all duration-500  ${isHome ? `fixed top-0 left-0 bg-transparent ${isHidden ? '-translate-y-full' : 'translate-y-0'}` : 'relative bg-white'}`}>
+            <nav className={`fixed top-0 left-0 w-full z-50 transition-transform duration-500 ${isHidden ? '-translate-y-full' : 'translate-y-0'} ${isTransparentRoute ? 'bg-transparent text-white' : 'bg-white shadow-sm'}`}>
                 <ContainerLayout>
                     <div className="flex justify-between gap-4 items-center">
                         <Image src="/Raks_Logo.png" alt="RAKS_Logo.png" width={120} height={50} />

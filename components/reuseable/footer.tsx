@@ -62,7 +62,7 @@ const Footer = () => {
                     {/* Middle Section */}
                     <div className="grid grid-cols-1 lg:grid-cols-2">
                         {/* Subscribe */}
-                        <div className="p-8 lg:p-16 border-b lg:border-b-0 lg:border-r border-white/40 flex flex-col justify-center">
+                        <div className="p-8 lg:p-16 border-b lg:border-b-0 lg:border-r border-white/30 flex flex-col justify-center">
                             <h2 className="text-3xl md:text-5xl mb-10 leading-tight">Subscribe for our <br /> newsletters</h2>
                             <div className="relative max-w-md w-full">
                                 <input

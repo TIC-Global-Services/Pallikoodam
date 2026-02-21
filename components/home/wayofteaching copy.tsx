@@ -39,7 +39,7 @@ const Wayofteaching = () => {
                 const isSmallHeightDesktop = window.innerHeight < 768;
                 const offset = isSmallHeightDesktop ? 2 : 5;
                 const scrollMultiplier = isMobile
-                    ? 40
+                    ? 35
                     : isSmallHeightDesktop
                         ? 150
                         : 250;
@@ -93,23 +93,23 @@ const Wayofteaching = () => {
         <div className='bg-white'>
             <section
                 ref={sectionRef}
-                className="w-full bg-white rounded-t-[40px] font-sans min-h-[100svh] flex flex-col justify-start items-center overflow-hidden"
+                className="w-full bg-white rounded-t-[40px] font-sans pb-12 md:pb-0 md:min-h-svh flex flex-col justify-start items-center"
 
             >
                 <ContainerLayout>
-                    <div className='text-center mt-10 mb-6 md:mb-12'>
+                    <div className='text-center mt-10 mb-2 md:mb-12'>
                         <h1 ref={titleRef} className='text-3xl md:text-[54px] font-medium leading-tight tracking-tight text-black'>
                             RAKS way of <span className='font-ppe italic font-light'>Teaching & Learning</span>
                         </h1>
                     </div>
 
-                    <div className='relative w-full flex justify-center items-start' style={{ minHeight: 'clamp(400px, 55vh, 500px)' }}>
+                    <div className='relative w-full flex justify-center items-start' style={{ minHeight: 'clamp(300px, 50vh, 500px)' }}>
                         {data.map((item, index) => (
                             <div
                                 key={index}
                                 className={`card-${index} absolute top-0 w-full max-w-5xl rounded-[10px] overflow-hidden shadow-2xl origin-top bg-white`}
                                 style={{
-                                    height: 'clamp(400px, 50vh, 700px)',
+                                    height: 'clamp(300px, 50vh, 700px)',
                                     zIndex: index + 1,
                                 }}
                             >

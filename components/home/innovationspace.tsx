@@ -152,7 +152,7 @@ const Innovationspace = () => {
                 ))}
             </div> */}
 
-            <div className='w-full py-20 px-5 md:px-10 lg:px-20 text-white font-sans relative z-10'>
+            <div className='w-full md:py-20 py-5 px-5 md:px-10 lg:px-20 text-white font-sans relative z-10'>
                 {/* Header */}
                 <ContainerLayout>
                     <div className='flex justify-center items-center mb-16'>
@@ -168,7 +168,7 @@ const Innovationspace = () => {
                                 </span>
                             </span>
                         </h2> */}
-                        <h2 className='text-2xl md:text-5xl lg:text-6xl leading-[20px] md:leading-[20px] lg:leading-[40px] xl:leading-[58px] font-medium text-center -tracking-[2px]'>
+                        <h2 className='text-2xl md:text-5xl lg:text-6xl leading-[26px] md:leading-[20px] lg:leading-[40px] xl:leading-[58px] font-medium text-center md:-tracking-[2px] -tracking-[1px]'>
                             Innovative Spaces for <span className='font-ppe italic font-light'>Curious</span> <br className='block' />
                             <span ref={wrapperRef} className='relative inline-block px-2 ml-2'>
                                 <span
@@ -206,7 +206,7 @@ const Innovationspace = () => {
                                         {card.description.split('\n\n').map((paragraph, idx, arr) => (
                                             <div key={idx} className={`relative pl-4 ${idx !== arr.length - 1 ? 'pb-4' : ''}`}>
                                                 <div className="w-0.5 h-full bg-[#0045FF] absolute left-0 top-0"></div>
-                                                <p className='text-xs leading-[20px] text-gray-800 font-medium'>
+                                                <p className='text-xs leading-[16px] text-gray-800 font-medium'>
                                                     {paragraph}
                                                 </p>
                                             </div>

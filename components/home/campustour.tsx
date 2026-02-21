@@ -31,36 +31,36 @@ interface IconData {
 }
 
 const iconsData: IconData[] = [
-    { src: icon11, top: '15%', right: '1%', size: 800, rotate: 5 }, // DNA
-    { src: icon10, top: '0%', right: '5%', size: 1000, rotate: 5 }, // Paint Brush
-    { src: icon9, top: '54%', right: '1%', size: 800, rotate: 5 }, // Soccer Ball
-    { src: icon5, top: '54%', right: '-10%', size: 800, rotate: 5 }, // Soccer Ball
-    { src: icon3, top: '30%', right: '-8%', size: 800, rotate: 5 }, // Soccer Ball
-    { src: icon6, top: '2%', right: '40%', size: 800, rotate:5 }, // Shuttlecock
-    { src: icon7, top: '35%', right: '8%', size: 1000, rotate: 5 }, // Chess Knight
-    { src: icon5, top: '37%', left: '-10%', size: 900, rotate:5 }, // bulb
-    { src: icon8, top: '18%', left: '20%', size: 800, rotate: 5 }, // Book
-    { src: icon4, top: '2%', left: '-10%', size: 900, rotate: 5 }, // pencil
-    { src: icon3, top: '2%', left: '-20%', size: 900, rotate: 5 }, // Music
     { src: icon1, top: '2%', left: '-34%', size: 1000, rotate: 5 }, // Globe
     { src: icon2, top: '18%', left: '1%', size: 1000, rotate: 5 }, // mouse
+    { src: icon3, top: '30%', right: '-8%', size: 800, rotate: 5 }, // Music
+    { src: icon3, top: '2%', left: '-20%', size: 900, rotate: 5 }, // Music
+    { src: icon4, top: '2%', left: '-10%', size: 900, rotate: 5 }, // pencil
+    { src: icon5, top: '54%', right: '-10%', size: 800, rotate: 5 }, // bulb
+    { src: icon5, top: '37%', left: '-10%', size: 900, rotate: 5 }, // bulb
+    { src: icon6, top: '2%', right: '40%', size: 800, rotate: 5 }, // Shuttlecock
+    { src: icon7, top: '35%', right: '8%', size: 1000, rotate: 5 }, // Chess Knight
+    { src: icon8, top: '18%', left: '20%', size: 800, rotate: 5 }, // Book
+    { src: icon9, top: '54%', right: '1%', size: 800, rotate: 5 }, // Soccer Ball
+    { src: icon10, top: '0%', right: '5%', size: 1000, rotate: 5 }, // Paint Brush
+    { src: icon11, top: '15%', right: '1%', size: 800, rotate: 5 }, // DNA
     { src: icon12, top: '10%', right: '-25%', size: 900, rotate: 5 }, // Pink Cloud
     // { src: icon13, top: '22%', left: '96%', size: 100, rotate: 20 }, // Pink Cloud
 ]
 const mobileiconsData: IconData[] = [
-    { src: icon11, top: '10%', left: '0%', size: 800, rotate: 0 }, // DNA
-    { src: icon10, top: '28%', left: '1%', size: 800, rotate:  0 }, // Paint Brush
-    { src: icon9, top: '40%', left: '20%', size: 800, rotate: 0 }, // Soccer Ball
-    { src: icon6, top: '25%', left: '45%', size: 800, rotate: 0 }, // Shuttlecock
-    { src: icon7, top: '50%', left: '50%', size: 1000, rotate: 0 }, // Chess Knight
-    { src: icon5, top: '47%', left: '50%', size: 900, rotate: 0 }, // bulb
-    { src: icon8, top: '18%', left: '65%', size: 800, rotate: 0 }, // Book
-    { src: icon4, top: '7%', left: '80%', size: 900, rotate: 0 }, // pencil
-    { src: icon3, top: '7%', left: '-1%', size: 900, rotate: 0 }, // Music
-    { src: icon1, top: '2%', left: '10%', md: '-24%', size: 1000, rotate: 0 }, // Globe
-    { src: icon2, top: '0%', left: '-18%', size: 1000, rotate: 0 }, // mouse
-    { src: icon12, top: '-40%', left: '80%', size: 900, rotate: 0 }, // Pink Cloud
-    // { src: icon13, top: '22%', left: '96%', size: 100, rotate: 20 }, // Pink Cloud
+    { src: icon1, top: '-10%', left: '25%', size: 600, rotate: 2 }, // Globe
+    { src: icon2, top: '10%', left: '4%', size: 600, rotate: 3 }, // mouse
+    { src: icon3, top: '20%', left: '25%', size: 600, rotate: 2 }, // Music
+    { src: icon4, top: '35%', left: '3%', size: 600, rotate: 5 }, // pencil
+    { src: icon5, top: '50%', left: '25%', size: 600, rotate: 3 }, // bulb
+    { src: icon6, top: '60%', right: '-40%', size: 600, rotate: 5 }, // Shuttlecock
+    { src: icon7, top: '85%', right: '-70%', size: 600, rotate: 3 }, // Chess Knight
+    { src: icon8, top: '99%', left: '2%', size: 600, rotate: 3 }, // Book
+    { src: icon9, top: '85%', right: '-25%', size: 600, rotate: 2 }, // Soccer Ball
+    { src: icon10, top: '110%', right: '-10%', size: 600, rotate: 3 }, // Paint Brush
+    { src: icon11, top: '125%', right: '10%', size: 600, rotate: 5 }, // DNA
+    { src: icon12, top: '115%', left: '-10%', size: 600, rotate: 4 }, // Pink Cloud
+
 ]
 
 const campustour = () => {
@@ -97,37 +97,37 @@ const campustour = () => {
 
     return (
         <div className='bg-[#000086] rounded-t-[40px] min-h-screen overflow-hidden relative'>
-          <div className='absolute xl:top-30 lg:-top-10 md:top-20 top-10 w-full xl:-rotate-10 -rotate-15'>
-             <div className='relative h-[50vh]'>
-             {activeIcons.map((icon, i) => (
-                <div
-                    key={i}
-                    ref={(el) => { iconsRef.current[i] = el }}
-                    className="absolute h-10 z-0 pointer-events-none"
-                     style={{
-                        top: icon.top,
-                        left: icon.left,
-                        right: icon.right,
-                        width: icon.size,
-                    }}
-                >
-                    {i < 10 ?
-                        <div className='w-1 h-1 absolute -bottom-60 left-0 bg-white m-3'></div>
-                        : null
-                    }
-                    {i < 10 ?
-                        <div className='w-1 h-1 absolute -bottom-90 left-10 bg-white m-3'></div>
-                        : null
-                    }
-                    {i < 10 ?
-                        <div className='w-1 h-1 absolute -bottom-90 left-90 bg-white m-3'></div>
-                        : null
-                    }
-                    {i < 10 ?
-                        <div className='w-1 h-1 absolute top-90 left-100 bg-white m-3'></div>
-                        : null
-                    }
-                    {/* {i < 10 ?
+            <div className='absolute xl:top-30 lg:-top-10 md:top-20 -left-10 top-10 w-full xl:-rotate-10 rotate-10'>
+                <div className='relative h-[50vh]'>
+                    {activeIcons.map((icon, i) => (
+                        <div
+                            key={i}
+                            ref={(el) => { iconsRef.current[i] = el }}
+                            className="absolute h-10 z-0 pointer-events-none"
+                            style={{
+                                top: icon.top,
+                                left: icon.left,
+                                right: icon.right,
+                                width: icon.size,
+                            }}
+                        >
+                            {i < 10 ?
+                                <div className='w-1 h-1 absolute -bottom-60 left-0 bg-white m-3'></div>
+                                : null
+                            }
+                            {i < 10 ?
+                                <div className='w-1 h-1 absolute -bottom-90 left-10 bg-white m-3'></div>
+                                : null
+                            }
+                            {i < 10 ?
+                                <div className='w-1 h-1 absolute -bottom-90 left-90 bg-white m-3'></div>
+                                : null
+                            }
+                            {i < 10 ?
+                                <div className='w-1 h-1 absolute top-90 left-100 bg-white m-3'></div>
+                                : null
+                            }
+                            {/* {i < 10 ?
                         <div className='w-1 h-1 absolute bottom-0 right-10 bg-white m-3'></div>
                         : null
                     }
@@ -137,17 +137,17 @@ const campustour = () => {
                     } */}
 
 
-                    <Image
-                        src={icon.src}
-                        alt="icon"
-                        width={icon.size}
-                        height={icon.size}
-                        className="w-full h-auto drop-shadow-2xl"
-                        style={{ transform: `rotate(${icon.rotate}deg)` }}
-                    />
+                            <Image
+                                src={icon.src}
+                                alt="icon"
+                                width={icon.size}
+                                height={icon.size}
+                                className="w-full h-auto drop-shadow-2xl"
+                                style={{ transform: `rotate(${icon.rotate}deg)` }}
+                            />
+                        </div>
+                    ))}
                 </div>
-            ))}
-           </div>
             </div>
 
             <ContainerLayout>

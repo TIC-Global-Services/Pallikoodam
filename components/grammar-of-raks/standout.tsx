@@ -31,10 +31,10 @@ const Standout = () => {
   return (
     <div ref={sectionRef} className='bg-[#000086] rounded-t-[50px] md:rounded-t-[100px] min-h-[60vh] flex items-center justify-center relative overflow-hidden z-20'>
       <ContainerLayout>
-        <div className='py-20 md:py-32 lg:py-40 max-w-6xl mx-auto text-center'>
+        <div className='py-20 md:py-32 lg:py-40 md:max-w-6xl mx-auto text-center'>
           <p className='text-xl md:text-3xl lg:text-[2.5rem] leading-relaxed text-white font-normal'>
             <span className='font-ppe font-[300] italic'>RAKS Pallikkoodam</span> stands at the intersection of innovation and inspiration.<br className='hidden lg:block' />
-            With a deep belief that &quot;
+            With a deep belief that<br className='md:hidden' /> &quot;
             <span className='relative inline-block'>
               <span className='relative z-10'>teaching is an artform,</span>
               <img
@@ -45,7 +45,7 @@ const Standout = () => {
                 style={{ objectFit: 'fill' }}
               />
             </span>
-            &quot; we bring together educators, designers, and industry professionals to reimagine education. Our school is a living ecosystem of ideas, collaboration, and creativity, where every child &quot;<span className='font-ppe font-normal italic'>Thrives with Purpose.</span>&quot;
+            &quot; we bring together educators, designers, and industry professionals to reimagine education. Our school is a living ecosystem of ideas, collaboration, and creativity, where every child<br className='md:hidden' /> &quot;<span className='font-ppe font-normal italic'>Thrives with Purpose.</span>&quot;
           </p>
         </div>
       </ContainerLayout>

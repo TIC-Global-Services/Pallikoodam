@@ -49,15 +49,15 @@ const StoryAndMission = () => {
       <div className=''>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-end'>
           {/* Founder Image */}
-           <h2 className='text-3xl md:text-5xl lg:text-5xl  md:hidden font-medium '>
-              Meet the minds behind <br /><span className='font-ppe font-normal italic text-[#000086]'>RaK's Pallikkoodam</span>
+           <h2 className='text-3xl md:text-5xl lg:text-5xl  md:hidden font-medium leading-relaxed'>
+              Meet the minds behind <br /><span className='font-ppe font-normal italic text-[#000086]'>RAKS Pallikkoodam</span>
             </h2>
-          <div className='relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh] rounded-2xl overflow-hidden '>
+          <div className='relative w-full h-[50vh] md:h-[80vh] lg:h-[90vh] rounded-2xl overflow-hidden '>
               <Image
               src={founder}
               alt="Swetha Krishnamurthy - Founder Director"
               fill
-              style={{objectPosition:'50% 20%'}}
+              style={{objectPosition:'50% 35%'}}
               className='object-cover'
               placeholder='blur'
             />
@@ -67,10 +67,10 @@ const StoryAndMission = () => {
           {/* Founder Message */}
           
           <div>
-            <h2 className='text-4xl md:text-5xl lg:text-5xl hidden md:block font-medium mb-6 md:mb-8'>
-              Meet the minds behind <br /><span className='font-ppe font-normal italic text-[#000086]'>RaK's Pallikkoodam</span>
+            <h2 className='text-4xl md:text-5xl lg:text-5xl hidden md:block font-medium mb-6 md:mb-6 leading-tight'>
+              Meet the minds behind <br /><span className='font-ppe font-normal italic text-[#000086]'>RAKS Pallikkoodam</span>
             </h2>
-            <p className='text-base md:text-lg lg:text-xl text-gray-700 leading-normal mb-8 md:mb-10'>
+            <p className='text-base md:text-lg lg:text-2xl max-w-xl text-gray-700 leading-normal mb-8 md:mb-10'>
               Since founding Pallikkoodam in 2014, I have remained deeply committed to upholding 
               the highest standards of teaching and learning. My vision has always centered on 
               fostering student leadership, instilling strong values, and building a close-knit community 

@@ -50,7 +50,7 @@ const Curriculam = () => {
             {/* Description & Programmes Container with Single Blue Line */}
             <div className='border-l-2 border-[#4b71b8] pl-5 md:pl-6 space-y-6 md:space-y-8'>
 
-              <p className='text-sm md:text-base  leading-relaxed font-medium'>
+              <p className='text-sm md:text-xl  leading-relaxed font-medium'>
                 A globally trusted leader in international education,<br className='hidden md:block'/>
                 recognized by top universities across the UK, USA, Canada,<br className='hidden md:block'/>
                 India, and more than 150 countries.

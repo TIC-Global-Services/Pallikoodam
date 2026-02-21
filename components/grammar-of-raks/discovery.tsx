@@ -1,6 +1,8 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import discover from '@/assets/grammar-of-raks/discovery.jpg'
+import SimpleParallax from 'simple-parallax-js'
 
 const Discovery = () => {
   return (
@@ -9,13 +11,15 @@ const Discovery = () => {
         <div className='relative w-full min-h-[400px] md:min-h-[500px] lg:h-[600px] rounded-2xl md:rounded-4xl overflow-hidden flex items-center'>
           {/* Background Image */}
           <div className='absolute inset-0 w-full h-full'>
-            <Image
+            <SimpleParallax>
+              <Image
               src={discover}
               alt="Child taking an assessment"
               fill
               className='object-cover'
               placeholder='blur'
             />
+            </SimpleParallax>
             {/* Dark gradient overlay for text readability on the left */}
             <div className='absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent' />
           </div>
@@ -26,8 +30,8 @@ const Discovery = () => {
               Discovery <span className='font-ppe italic font-normal'>Assessment</span>
             </h2>
 
-            <p className='text-white/90 text-sm md:text-base  lg:text-xl max-w-2xl xl:text-2xl leading-snug mb-8 md:mb-12'>
-              Discover where your child's true interests and strengths lie.
+            <p className='text-white/90 text-sm md:text-base  lg:text-xl max-w-3xl xl:text-2xl leading-snug mb-8 md:mb-12'>
+              Discover where your child's true interests and strengths lie.<br className='hidden md:block'/>
               Identify learning gaps with clarity and understand how a
               modern, 21st-century learning approach can accelerate
               growth.

@@ -66,12 +66,12 @@ const Introducing = () => {
             <div className='flex flex-col items-start relative'>
               <span
                 ref={introRef}
-                className='absolute bottom-[90%] mb-1 md:mb-4 pr-1 md:pr-4 font-ppe italic text-xl md:text-3xl lg:text-5xl text-white whitespace-nowrap'
+                className='absolute bottom-[90%] mb-1 md:mb-4 pr-1 md:pr-4 font-ppe italic text-base md:text-3xl lg:text-5xl text-white whitespace-nowrap'
               >
                 Introducing
               </span>
               <h2
-                className='text-[3.5rem] md:text-[7rem] lg:text-[10rem] xl:text-[11.5rem] leading-none font-bold tracking-tight text-transparent [-webkit-text-stroke:1px_white] md:[-webkit-text-stroke:4px_white] lg:[-webkit-text-stroke:6px_white]'
+                className='text-[2.5rem] md:text-[7rem] lg:text-[10rem] xl:text-[11.5rem] leading-none font-bold tracking-tight text-transparent [-webkit-text-stroke:1px_white] md:[-webkit-text-stroke:4px_white] lg:[-webkit-text-stroke:6px_white]'
               >
                 SCH
               </h2>
@@ -102,7 +102,7 @@ const Introducing = () => {
 
             {/* L 2.0 Text */}
             <h2
-              className='text-[3.5rem] md:text-[7rem] lg:text-[10rem] xl:text-[11.5rem] leading-none font-bold tracking-tight text-transparent  [-webkit-text-stroke:1px_white] md:[-webkit-text-stroke:4px_white] lg:[-webkit-text-stroke:6px_white]'
+              className='text-[2.5rem] md:text-[7rem] lg:text-[10rem] xl:text-[11.5rem] leading-none font-bold tracking-tight text-transparent  [-webkit-text-stroke:1px_white] md:[-webkit-text-stroke:4px_white] lg:[-webkit-text-stroke:6px_white]'
             >
               L 2.0
             </h2>
@@ -112,7 +112,7 @@ const Introducing = () => {
       </div>
 
       {/* Bottom Paragraph */}
-      <div className='absolute bottom-[10vh] max-w-[90%] md:max-w-4xl px-4 md:px-6 text-center z-10'>
+      <div className='absolute bottom-[10%] max-w-[90%] md:max-w-4xl px-4 md:px-6 text-center z-10'>
         <p className='text-white/90 text-md md:text-base lg:text-2xl leading-relaxed font-normal'>
           RAKS Pallikkoodam reimagines learning with a bold, modern approach
           where curiosity leads, and creativity thrives. Classrooms become studios

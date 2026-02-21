@@ -31,7 +31,7 @@ const StoryAndMission = () => {
           </div>
 
           {/* Image */}
-          <div className='order-1 lg:order-2 relative w-full h-[40vh] md:h-[50vh] lg:h-[60vh] md:rounded-r-2xl overflow-hidden '>
+          <div className='order-1 lg:order-2 relative w-full h-[40vh] md:h-[50vh] lg:h-[60vh] rounded-2xl md:rounded-r-2xl overflow-hidden '>
           <SimpleParallax>
               <Image
               src={mission}

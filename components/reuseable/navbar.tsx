@@ -190,7 +190,9 @@ const navbar = () => {
             <nav className={`fixed top-0 left-0 w-full z-50 transition-transform duration-500 ${isHidden ? '-translate-y-full' : 'translate-y-0'} ${isTransparentRoute ? 'bg-transparent text-white' : 'bg-white shadow-sm'}`}>
                 <ContainerLayout>
                     <div className="flex justify-between gap-4 items-center">
-                        <Image href="/" src="/Raks_Logo.png" alt="RAKS_Logo.png" width={120} height={50} />
+                        <Link href="/">
+                            <Image src="/Raks_Logo.png" alt="RAKS_Logo.png" width={120} height={50} />
+                        </Link>
                         <div className="flex gap-10 items-center">
                             <button
                                 onClick={toggleAudio}

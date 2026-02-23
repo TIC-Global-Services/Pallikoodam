@@ -4,10 +4,10 @@ import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import innovation1 from '@/assets/home/innovationnew-1.jpg'
-import innovation2 from '@/assets/home/innovationnew-2.jpg'
-import innovation3 from '@/assets/home/innovationnew-3.jpg'
-import innovation4 from '@/assets/home/innovationnew-4.jpg'
-import innovation5 from '@/assets/home/innovationnew-5.jpg'
+import innovation2 from '@/assets/home/designtechnology.jpg'
+import innovation3 from '@/assets/home/artstudio.jpg'
+import innovation4 from '@/assets/home/innovationnew-2.jpg'
+import innovation5 from '@/assets/home/labs.jpg'
 import effectsvg from '@/assets/home/scroll_effect.png'
 import ContainerLayout from '@/layout/ContainerLayout'
 import ScrollReveal from '../reuseable/effects/Scrollreveal'
@@ -31,7 +31,7 @@ const cards = [
         italic: "Labs",
         italicPosition: "after",
         description: "Here we don't imagine the future, we prototype it.\n\nLearners explore tools, materials, mechanisms, and real-world challenges transforming concepts through guided curiosity and fearless problem-solving.",
-        image: innovation3,
+        image: innovation2,
         colSpan: "md:col-span-3"
     },
     {
@@ -40,7 +40,7 @@ const cards = [
         italic: "Art",
         italicPosition: "before",
         description: "A sanctuary where colours, textures, and emotions breathe where learners experiment, express, and evolve understanding that art is not just a subject, but a language of identity, joy, and discovery.",
-        image: innovation4,
+        image: innovation3,
         colSpan: "md:col-span-2"
     },
     {
@@ -49,7 +49,7 @@ const cards = [
         italic: "Space",
         italicPosition: "after",
         description: "A playground of innovation where hands lead the mind.From tinkering to building, this is where ideas are tested, stretched, rebuilt, and celebrated turning creativity into capability.",
-        image: innovation2,
+        image: innovation4,
         colSpan: "md:col-span-2"
     },
     {

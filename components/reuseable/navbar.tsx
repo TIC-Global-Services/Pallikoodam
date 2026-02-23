@@ -187,7 +187,7 @@ const navbar = () => {
 
     return (
         <>
-            <nav className={`fixed top-0 left-0 w-full z-50 transition-transform duration-500 ${isHidden ? '-translate-y-full' : 'translate-y-0'} ${isTransparentRoute ? 'bg-transparent text-white' : 'bg-white shadow-sm'}`}>
+            <nav className={`fixed top-0 left-0 w-full z-50 transition-transform duration-500 ${isHidden ? '-translate-y-full' : 'translate-y-0'} bg-transparent text-white`}>
                 <ContainerLayout>
                     <div className="flex justify-between gap-4 items-center">
                         <Link href="/">

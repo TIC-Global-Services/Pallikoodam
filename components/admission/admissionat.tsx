@@ -48,7 +48,7 @@ const AdmissionAt = () => {
                 </div>
 
                 {/* Right Image Desktop */}
-                <div className="hidden md:flex w-full md:w-1/2 order-2 md:order-2">
+                <div className="hidden md:flex h-full w-full md:w-1/2 order-2 md:order-2">
                     <Image
                         src={admissonimage}
                         alt="Admissions at RAKS Pallikkoodam"

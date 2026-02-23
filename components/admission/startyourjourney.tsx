@@ -1,6 +1,9 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useRef } from 'react'
 import ContainerLayout from '@/layout/ContainerLayout'
 import Image from 'next/image'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import enquiryImg from '@/assets/admission/enquiry.jpg'
 import interactImg from '@/assets/admission/intract.jpg'
@@ -43,86 +46,129 @@ const stages = [
 ]
 
 const StartYourJourney = () => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        if (!containerRef.current) return;
+
+        let ctx = gsap.context(() => {
+            const cards = cardsRef.current;
+
+            ScrollTrigger.matchMedia({
+                // Desktop and Desktop-like devices
+                "(min-width: 768px)": function () {
+
+                    let headerTop = 0;
+                    let gap = 0;
+
+                    // This matches the global navbar height plus padding calculations
+                    if (window.innerWidth >= 1280) { // xl
+                        headerTop = 30;
+                        gap = 110;
+                    } else if (window.innerWidth >= 1024) { // lg
+                        headerTop = 30;
+                        gap = 100;
+                    } else { // md
+                        headerTop = 30;
+                        gap = 85;
+                    }
+
+                    // Base offset: Pin directly under the main global navbar
+                    let baseOffset = headerTop;
+
+                    cards.forEach((card, i) => {
+                        if (!card) return;
+
+                        let topOffset = baseOffset + (i * gap);
+
+                        ScrollTrigger.create({
+                            trigger: card,
+                            start: `top ${topOffset}px`,
+                            endTrigger: containerRef.current,
+                            // Unpin when the bottom of the container reaches the bottom of this specific pinned card
+                            end: `bottom bottom`,
+                            pin: true,
+                            pinSpacing: false,
+                        });
+                    });
+                }
+            });
+        }, containerRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
         <ContainerLayout>
-            {/* Outer wrapper to contain the sticky scrolling area */}
-            <div className="relative w-full pb-16 md:pb-[15vh]">
+            <div ref={containerRef} className="relative w-full pb-16 md:pb-[10vh]">
 
-                {/* Header Section */}
-                <div className="md:sticky md:top-[80px] lg:top-[120px] bg-white z-20 pt-16 md:pt-24 pb-12 md:pb-16 lg:pb-20 border-b border-transparent shadow-[0_10px_10px_-10px_rgba(255,255,255,1)]">
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 mb-12 md:mb-16 lg:mb-20">
 
-                        {/* Left Title: "Admission Process" */}
-                        <div className="md:col-span-4 lg:col-span-4 flex items-start">
-                            <h2 className="text-[2.25rem] md:text-[2.75rem] lg:text-[3.5rem] font-medium text-[#111] leading-tight">
-                                <span className="font-ppe italic font-normal">Admission</span> Process
-                            </h2>
-                        </div>
-
-                        {/* Right Group: Title + Button */}
-                        <div className="md:col-span-8 lg:col-span-8 flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-6">
-                            <h2 className="text-[2rem] md:text-[2.5rem] lg:text-[3.25rem] font-medium leading-[1.1] text-[#111] max-w-xl">
-                                A Step-by-Step 4-Stage<br />
-                                Admission Process Guide
-                            </h2>
-                            <div className="shrink-0 flex items-start">
-                                <button className="bg-[#000080] text-white px-8 md:px-10 py-3 md:py-4 rounded font-medium text-sm hover:bg-blue-900 transition-colors">
-                                    Enquire Now
-                                </button>
-                            </div>
-                        </div>
-
+                    {/* Left Column (4 cols) */}
+                    <div className="md:col-span-4 lg:col-span-4 flex items-start">
+                        <h2 className="text-[2.25rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3.25rem] font-medium text-[#111] leading-tight">
+                            <span className="font-ppe italic font-normal">Admission</span> Process
+                        </h2>
                     </div>
-                </div>
 
+                    {/* Right Column (8 cols) */}
+                    <div className="md:col-span-8 lg:col-span-8 flex flex-col items-start gap-4 lg:gap-6">
+                        <h2 className="text-[1.75rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[3rem] font-medium leading-[1.1] text-[#111] max-w-2xl">
+                            A Step-by-Step 4-Stage<br />
+                            Admission Process Guide
+                        </h2>
+
+                        <button className="bg-[#000080] text-white px-6 lg:px-8 py-3 rounded font-medium text-[0.9rem] hover:bg-blue-900 transition-colors mt-2">
+                            Enquire Now
+                        </button>
+                    </div>
+
+                </div>
                 {/* Stacking Cards Section */}
                 <div className="relative z-10 w-full mt-4 md:mt-0">
                     {stages.map((stage, i) => (
                         <div
                             key={i}
-                            className={`bg-white border-t border-gray-300 pt-10 md:pt-14 pb-16 md:pb-20 shadow-[0_-5px_10px_-10px_rgba(0,0,0,0.1)] md:sticky`}
-                            style={{
-                                // Desktop sticky logic: 120 (navbar) + 240 (header) = 360 base. 90px increments for stacking headings.
-                                "--stick-base": "360px",
-                                "--stick-gap": "90px",
-                                top: `calc(var(--stick-base) + ${i} * var(--stick-gap))`
-                            } as React.CSSProperties}
+                            ref={(el) => { cardsRef.current[i] = el; }}
+                            className={`bg-white border-t border-gray-300 pt-6 md:pt-6 xl:pt-8 pb-8 md:pb-10 shadow-[0_-5px_10px_-10px_rgba(0,0,0,0.1)]`}
                         >
-                            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 w-full h-full">
+                            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 w-full h-full">
 
-                                {/* Col 1: Heading + First Text block */}
-                                <div className="md:col-span-4 flex flex-col min-h-full">
-                                    <h3 className="text-[2.5rem] md:text-[3rem] lg:text-[4rem] font-ppe italic leading-none text-[#111] mb-10 md:mb-[120px] lg:mb-[150px]">
+                                {/* Col 1 */}
+                                <div className="md:col-span-4 flex flex-col h-full">
+                                    <h3 className="text-[2.5rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3.5rem] font-ppe italic leading-none text-[#111] mb-6 xl:mb-8">
                                         {stage.title}
                                     </h3>
 
-                                    <div className="flex flex-col gap-6 md:mt-auto">
-                                        <p className="text-[#333] text-[1.05rem] md:text-[0.95rem] lg:text-base leading-relaxed max-w-sm">
+                                    <div className="flex flex-col gap-4 xl:gap-6 md:mt-auto">
+                                        <p className="text-[#333] text-[1rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1rem] leading-relaxed xl:leading-relaxed max-w-sm">
                                             {stage.desc1_1}
                                         </p>
-                                        <p className="text-[#333] text-[1.05rem] md:text-[0.95rem] lg:text-base leading-relaxed max-w-sm">
+                                        <p className="text-[#333] text-[1rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1rem] leading-relaxed xl:leading-relaxed max-w-sm">
                                             {stage.desc1_2}
                                         </p>
                                     </div>
                                 </div>
 
-                                {/* Col 2: Second Text block */}
-                                <div className="md:col-span-4 flex flex-col min-h-full">
-                                    {/* Push this text box to roughly horizontally align with the text in the first column */}
-                                    <div className="flex flex-col gap-6 mt-4 md:mt-auto md:mb-0">
-                                        <p className="text-[#333] text-[1.05rem] md:text-[0.95rem] lg:text-base leading-relaxed max-w-sm">
+                                {/* Col 2 */}
+                                <div className="md:col-span-4 flex flex-col h-full">
+                                    <div className="flex flex-col gap-4 mt-2 md:mt-auto">
+                                        <p className="text-[#333] text-[1rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1rem] leading-relaxed xl:leading-relaxed max-w-sm">
                                             {stage.desc2}
                                         </p>
                                     </div>
                                 </div>
 
-                                {/* Col 3: Image block */}
-                                <div className="md:col-span-4 h-auto min-h-[300px] md:min-h-[450px] lg:min-h-[550px] relative mt-10 md:mt-0">
+                                {/* Col 3 */}
+                                <div className="md:col-span-4 w-full relative mt-8 md:mt-0 aspect-video md:aspect-[4/3] lg:aspect-[4/3] overflow-hidden">
                                     <Image
                                         src={stage.img}
                                         alt={stage.title}
                                         fill
-                                        className="object-cover"
+                                        className="object-cover rounded-md lg:rounded-lg"
                                     />
                                 </div>
 

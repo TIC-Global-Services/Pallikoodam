@@ -81,7 +81,7 @@ const curricullam = () => {
                 
                   <div className="mb-5 md:hidden">
                     <Image
-                      src={image2}
+                      src={image1}
                       alt="CBSE curriculum students"
                       width={800}
                       height={500}

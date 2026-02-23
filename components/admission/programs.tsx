@@ -86,19 +86,19 @@ const Programs = () => {
     }, []);
 
     return (
-        <section className="bg-white w-full">
+        <section className="bg-white relative z-20 w-full mt-[8%]">
             <div
                 ref={containerRef}
-                className="w-full rounded-t-[40px] md:rounded-t-[60px] lg:rounded-t-[80px] bg-[#000080] text-white pt-16 md:pt-24 lg:pt-32 pb-24 md:pb-32 overflow-hidden"
+                className="w-full rounded-t-[40px] md:rounded-t-[60px] lg:rounded-t-[80px] bg-[#000080] text-white pt-16 md:pt-24 lg:pt-22 pb-24 md:pb-42  overflow-hidden"
             >
                 <ContainerLayout>
 
                     {/* Header text */}
                     <div className="max-w-6xl mb-24 md:mb-32">
-                        <h2 className="text-[2.25rem] md:text-[3rem] lg:text-[4rem] font-medium leading-tight mb-6 tracking-tight">
+                        <h2 className="text-[2rem] md:text-[3rem] lg:text-[4rem] font-medium leading-[1] mb-6 tracking-tight">
                             Discover the <span className="font-ppe italic font-normal">programmes</span> your <br className="hidden md:block" /> child can step into
                         </h2>
-                        <p className="text-[1.05rem] md:text-[2rem] leading-[1.6] tracking-[-0.02em] opacity-90">
+                        <p className="text-[1.05rem] md:text-[2rem] leading-[1.2] tracking-[-0.02em] opacity-90">
                             At RAKS Pallikkoodam, your child&apos;s learning pathway is purposeful, future-ready, and globally recognized nurturing confidence, creativity, and character at every stage.
                         </p>
                     </div>
@@ -117,7 +117,7 @@ const Programs = () => {
                                         [
                                     </span>
 
-                                    <h3 className="text-[1.75rem] md:text-[2.5rem] lg:text-[3rem] font-medium leading-tight px-0 whitespace-nowrap">
+                                    <h3 className="text-[1.2rem] md:text-[2.5rem] lg:text-[3rem] font-medium leading-tight px-0 whitespace-nowrap">
                                         {item.title}
                                     </h3>
 
@@ -139,7 +139,7 @@ const Programs = () => {
                                 </div>
 
                                 {/* Description */}
-                                <p className="text-center text-[0.95rem] md:text-[1.1rem] leading-relaxed max-w-xl opacity-90 px-4 relative z-10">
+                                <p className="text-center text-[0.95rem] md:text-[1.4rem] leading-tight max-w-xl opacity-90 px-4 relative z-10">
                                     {item.desc}
                                 </p>
                             </div>

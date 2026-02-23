@@ -5,10 +5,10 @@ import Image from 'next/image'
 
 const AdmissionAt = () => {
     return (
-        <ContainerLayout>
-            <div className="flex flex-col md:flex-row items-stretch gap-8 md:gap-16 py-12 md:py-24 mt-20">
+        // <ContainerLayout>
+            <div className="flex flex-col md:flex-row items-stretch gap-8 md:gap-16 px-[3%] py-[0%] md:py-[10%] md:mt-20">
                 {/* Left Content */}
-                <div className="w-full md:w-1/2 flex flex-col justify-between order-1 md:order-1 min-h-[450px]">
+                <div className="w-full md:w-1/2 flex flex-col justify-between order-1 md:order-1 md:min-h-[450px]">
                     {/* Mobile & Desktop Header */}
                     <div className="mb-6 md:mb-10 md:-translate-y-15">
                         <h2 className="text-[2.25rem] md:text-5xl lg:text-[4rem] leading-[1.1] md:leading-[60px] font-medium">
@@ -16,7 +16,7 @@ const AdmissionAt = () => {
                                 Admissions at <span className="font-ppe italic font-normal">RAKS</span>
                             </span>
                             <br />
-                            <span className="relative inline-block md:pb-1 mt-1 md:mt-2">
+                            <span className="relative inline-block md:pb-1 md:mt-2">
                                 <span className="font-ppe italic font-normal">Pallikkoodam</span>
                             </span>
                         </h2>
@@ -56,7 +56,7 @@ const AdmissionAt = () => {
                     />
                 </div>
             </div>
-        </ContainerLayout>
+        // </ContainerLayout>
     )
 }
 

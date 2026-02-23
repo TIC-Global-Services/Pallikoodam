@@ -64,7 +64,7 @@ const StartYourJourney = () => {
                     let headerTop = 0;
                     let gap = 0;
 
-                    // This matches the global navbar height plus padding calculations
+                    // This matchenos the global navbar height plus padding calculations
                     if (window.innerWidth >= 1280) { // xl
                         headerTop = 30;
                         gap = 110;
@@ -88,8 +88,8 @@ const StartYourJourney = () => {
                             trigger: card,
                             start: `top ${topOffset}px`,
                             endTrigger: containerRef.current,
-                            // Unpin when the bottom of the container reaches the bottom of this specific pinned card
-                            end: `bottom bottom`,
+                            // Keep the cards securely pinned until the container scrolls out of the viewport
+                            end: `bottom top`,
                             pin: true,
                             pinSpacing: false,
                         });
@@ -103,7 +103,7 @@ const StartYourJourney = () => {
 
     return (
         <ContainerLayout>
-            <div ref={containerRef} className="relative w-full pb-16 md:pb-[10vh]">
+            <div ref={containerRef} className="relative z-0 w-full pb-16 md:pb-[10%]">
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 mb-12 md:mb-16 lg:mb-20">
 
@@ -144,10 +144,10 @@ const StartYourJourney = () => {
                                     </h3>
 
                                     <div className="flex flex-col gap-4 xl:gap-6 md:mt-auto">
-                                        <p className="text-[#333] text-[1rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1rem] leading-relaxed xl:leading-relaxed max-w-sm">
+                                        <p className="text-[#333] text-[1rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1rem] leading-relaxed xl:leading-snug max-w-sm">
                                             {stage.desc1_1}
                                         </p>
-                                        <p className="text-[#333] text-[1rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1rem] leading-relaxed xl:leading-relaxed max-w-sm">
+                                        <p className="text-[#333] text-[1rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1rem] leading-relaxed xl:leading-snug max-w-sm">
                                             {stage.desc1_2}
                                         </p>
                                     </div>
@@ -156,7 +156,7 @@ const StartYourJourney = () => {
                                 {/* Col 2 */}
                                 <div className="md:col-span-4 flex flex-col h-full">
                                     <div className="flex flex-col gap-4 mt-2 md:mt-auto">
-                                        <p className="text-[#333] text-[1rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1rem] leading-relaxed xl:leading-relaxed max-w-sm">
+                                        <p className="text-[#333] text-[1rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1rem] leading-relaxed xl:leading-snug max-w-sm">
                                             {stage.desc2}
                                         </p>
                                     </div>

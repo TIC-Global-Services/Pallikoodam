@@ -6,7 +6,7 @@ import Image from 'next/image'
 const AdmissionAt = () => {
     return (
         // <ContainerLayout>
-            <div className="flex flex-col md:flex-row items-stretch gap-8 md:gap-16 px-[3%] py-[0%] md:py-[10%] md:mt-20">
+            <div className="flex flex-col md:flex-row items-stretch gap-8 md:gap-16 px-[3%] py-[10%] md:py-[10%] md:mt-20">
                 {/* Left Content */}
                 <div className="w-full md:w-1/2 flex flex-col justify-between order-1 md:order-1 md:min-h-[450px]">
                     {/* Mobile & Desktop Header */}

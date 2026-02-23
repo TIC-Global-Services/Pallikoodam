@@ -104,7 +104,7 @@ const Programs = () => {
                     </div>
 
                     {/* Programs List */}
-                    <div className="flex flex-col gap-32 md:gap-24 lg:gap-24">
+                    <div className="flex flex-col gap-10 md:gap-24 lg:gap-24">
                         {data.map((item, i) => (
                             <div
                                 key={i}

@@ -58,8 +58,8 @@ const StartYourJourney = () => {
             const cards = cardsRef.current;
 
             ScrollTrigger.matchMedia({
-                // Desktop and Desktop-like devices
-                "(min-width: 768px)": function () {
+                // All devices
+                "all": function () {
 
                     let headerTop = 0;
                     let gap = 0;

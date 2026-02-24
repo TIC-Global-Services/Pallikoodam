@@ -87,7 +87,7 @@ const Hero = () => {
             className="absolute inset-0 flex items-center justify-center pointer-events-none"
           >
             <div className="text-center text-white px-4">
-              <h1 className="text-[clamp(14px,4.2vw,3.4rem)] md:leading-[64px] tracking-tight">A<span className="font-ppe font-normal italic">Progressive</span> Teaching  And <br /> Learning Environment  Fousing <br /> On Human <span className="font-ppe italic font-normal">Generation</span></h1>
+              <h1 className="text-[clamp(14px,4.2vw,3.4rem)] md:leading-[64px] tracking-tight">A <span className="font-ppe font-normal italic">Progressive</span> Teaching  And <br /> Learning Environment  Fousing <br /> On Human <span className="font-ppe italic font-normal">Generation</span></h1>
             </div>
           </div>
         </div>

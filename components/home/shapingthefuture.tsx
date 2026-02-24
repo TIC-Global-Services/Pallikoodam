@@ -141,7 +141,7 @@ const Shapingthefuture = () => {
 
                         {/* RAKS Logo & Text */}
                         <div className="relative z-0 text-center w-full max-w-4xl mx-auto translate-z-0">
-                            <div className="relative w-full bg-white h-auto md:h-full md:mb-8 z-10 flex items-center justify-center leading-0 text-[0]">
+                            <div className="relative w-full bg-white h-auto md:h-full md:mb-0 z-10 flex items-center justify-center leading-0 text-[0]">
                                 <video
                                     src="/Animation_2_Logo.mp4"
                                     autoPlay

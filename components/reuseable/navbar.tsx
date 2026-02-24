@@ -26,7 +26,7 @@ const navbar = () => {
     const menuSfxRef = useRef<HTMLAudioElement | null>(null);
 
     const pathname = usePathname();
-    const isTransparentRoute = pathname === '/' || pathname === '/grammar-of-raks';
+    const isTransparentRoute = pathname === '/';
 
     useEffect(() => {
         let trigger: globalThis.ScrollTrigger | null = null;
@@ -182,12 +182,12 @@ const navbar = () => {
         { name: 'News & Events', href: '/news-and-events' },
         { name: 'Admissions', href: '/admissions' },
         { name: 'Careers', href: '/careers' },
-        { name: 'Contact us', href: '/contact' },
+        { name: 'Contact us', href: '/contact-us' },
     ];
 
     return (
         <>
-            <nav className={`fixed top-0 left-0 w-full z-50 transition-transform duration-500 ${isHidden ? '-translate-y-full' : 'translate-y-0'} bg-transparent text-white`}>
+            <nav className={`${pathname === '/' ? 'fixed' : 'absolute'} top-0 left-0 w-full z-50 transition-transform duration-500 ${isHidden ? '-translate-y-full' : '-translate-y-0'} bg-transparent text-white`}>
                 <ContainerLayout>
                     <div className="flex justify-between gap-4 items-center">
                         <Link href="/">

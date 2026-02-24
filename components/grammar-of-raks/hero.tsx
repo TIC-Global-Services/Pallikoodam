@@ -20,7 +20,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-[90%] mx-auto text-center px-4">
-        <h1 className="text-white text-[clamp(2rem,5vw,4.5rem)] leading-[1.2] tracking-tight font-medium">
+        <h1 className="text-white text-[clamp(2rem,5vw,4.5rem)] leading-[1] tracking-tight font-medium">
           A School With <span className="font-ppe italic font-normal">Purpose,</span>
           <br />
           Driven by <span className="font-ppe italic font-normal">Vision,</span>

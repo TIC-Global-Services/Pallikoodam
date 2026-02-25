@@ -112,7 +112,7 @@ const Empowering = () => {
                 </div>
 
                 {/* Cards Container */}
-                <div className="w-full px-4 relative flex justify-center items-start h-[500px] md:h-[600px]">
+                <div className="w-full px-4 relative flex justify-center items-start h-screen">
                     {/* Center anchor constraint so all cards start from exact same origin point */}
                     <div className="relative w-[250px] md:w-[280px] lg:w-[433px] h-[360px] md:h-[420px] lg:h-[560px]">
                         {data.map((item, index) => (

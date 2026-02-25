@@ -105,7 +105,7 @@ const Empowering = () => {
             >
                 {/* Title */}
                 <div className="text-center z-10 w-full px-4 mb-8 md:mb-16">
-                    <h2 className="text-[36px] md:text-[44px] lg:text-[56px] text-[#2C313E] leading-[1.1] font-medium tracking-tight">
+                    <h2 className="text-[36px] md:text-[44px] lg:text-[40px] text-[#2C313E] leading-[1.1] font-medium tracking-tight">
                         Empowering Learners Through <span className="font-ppe italic font-normal">Choice</span><br className="hidden md:block" />
                         <span className="font-ppe italic font-normal">and Clarity</span>
                     </h2>

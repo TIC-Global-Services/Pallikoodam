@@ -42,16 +42,16 @@ const currentopenings = () => {
 
                 {/* Header Section */}
                 <div className='mb-12'>
-                    <h2 className='text-3xl md:text-5xl lg:text-[48px] font-regular tracking-tight mb-4'>
+                    <h2 className='text-3xl md:text-5xl lg:text-[48px] font-regular tracking-tight mb-6'>
                         <span className='font-ppe italic font-normal'>Current</span> Open Positions
                     </h2>
-                    <p className='text-lg md:text-[32px] leading-[40px] font-regular tracking-tight'>
+                    <p className='text-lg md:text-[32px] leading-[1.1] font-[500] tracking-tight'>
                         Explore roles that match your<br />skills and passion.
                     </p>
                 </div>
 
                 {/* Accordion Table Component */}
-                <div className='w-full border-t border-black/20'>
+                <div className='w-full border-t-2 border-black/20'>
 
                     {/* Table Header */}
                     <div className='hidden md:grid grid-cols-12 gap-4 py-6 text-sm md:text-[34px] font-medium text-black uppercase tracking-wide border-b border-black/20'>

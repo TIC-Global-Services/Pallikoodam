@@ -21,8 +21,8 @@ const hero = () => {
 
             {/* Content */}
             <div className="relative z-10 w-full max-w-[90%] mx-auto text-center px-4">
-                <h1 className="text-white text-[clamp(2rem,5vw,4.5rem)] leading-[1.2] tracking-tight font-medium">
-                    Empowering Minds Through <br/> Meaningful<span className="font-ppe italic font-normal">Learning</span>
+                <h1 className="text-white text-[clamp(2rem,5vw,4.5rem)] leading-[1.1] tracking-tight font-medium">
+                    Empowering Minds Through <br/> Meaningful <span className="font-ppe italic font-normal">Learning</span>
                 </h1>
                 <p className='xl:text-3xl lg:text-2xl md:text-xl text-lg text-white max-w-5xl mx-auto mt-5'>
                    Education at RaK’s Pallikkoodam is thoughtfully designed for<br/> today’s world, where understanding matters more than<br/> memorising, and learning is both deeply human and future-ready.

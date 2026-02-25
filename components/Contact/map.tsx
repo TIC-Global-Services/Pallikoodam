@@ -39,6 +39,12 @@ const Map = () => {
                             We encourage parents to visit our campus to better understand our environment, teachers, and classrooms.
                         </p>
                     </div>
+
+                    {/* Schedule Button */}
+                    <button className="bg-[#000080] hover:bg-blue-900 transition-colors text-white text-[1rem] md:text-[1.1rem] font-medium px-8 md:px-12 py-3 md:py-4 rounded w-auto mt-2 md:mt-2 shadow-sm hover:shadow-md">
+                        Schedule A Campus Tour
+                    </button>
+
                 </div>
             </ContainerLayout>
         </section>

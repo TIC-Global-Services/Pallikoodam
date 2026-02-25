@@ -16,8 +16,7 @@ import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 import * as THREE from 'three';
 
 // replace with your own imports, see the usage snippet for details
-import cardGLB from '@/public/card.glb';
-import lanyard from '@/public/lanyard.png';
+import lanyard from '@/public/logo_banner.png';
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
@@ -124,7 +123,7 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
         linearDamping: 4
     };
 
-    const { nodes, materials } = useGLTF(cardGLB) as any;
+    const { nodes, materials } = useGLTF('/assets/contact/card.glb') as any;
     const texture = useTexture(typeof lanyard === 'string' ? lanyard : (lanyard as any).src);
     const [curve] = useState(
         () =>

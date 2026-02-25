@@ -135,19 +135,19 @@ const whowelookingfor = () => {
         <div ref={containerRef} className="relative w-full h-screen bg-white overflow-hidden flex flex-col items-center justify-center">
 
             {/* Intro Text */}
-            <div ref={introTextRef} className="absolute top-[8%] left-0 w-full text-center z-10 px-4">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tighter mb-2">
+            <div ref={introTextRef} className="absolute top-[8%] left-0 w-full text-center z-10 px-4 mb-5">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-regular tracking-tighter mb-4">
                     Who We&apos;re <span className="font-ppe italic">Looking For</span>
                 </h2>
-                <p className="text-lg md:text-xl lg:text-2xl font-light">
-                    Motivated educators ready <br className="md:hidden" /> to inspire.
+                <p className="text-lg md:text-xl lg:text-3xl font-normal">
+                    Motivated educators ready <br className="hidden md:block" /> to inspire.
                 </p>
             </div>
 
             {/* Image Layer */}
             <div
                 ref={imageWrapperRef}
-                className="relative z-0 w-[300px] h-[350px] md:w-[400px] md:h-[450px] rounded-[20px] overflow-hidden mt-[20vh]"
+                className="relative z-0 w-[300px] h-[350px] md:w-[400px] md:h-[450px] rounded-[20px] overflow-hidden mt-[30vh]"
             >
                 <Image
                     ref={imageRef}

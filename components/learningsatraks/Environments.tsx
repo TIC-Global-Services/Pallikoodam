@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import environments1 from '@/assets/learningatraks/environment-1.jpg'
-import environments2 from '@/assets/learningatraks/environment-1.jpg'
+import environments2 from '@/assets/learningatraks/environment-2.jpg'
 import environments3 from '@/assets/home/innovationnew-5.jpg'
 import icon1 from '@/assets/admission/books.png'
 import icon2 from '@/assets/admission/react.png'
@@ -97,7 +97,7 @@ const Environments = () => {
                                 <h2 className='text-[22px] lg:text-[28px] tracking-tight font-medium text-[#2C313E] leading-[1.2] mb-3 lg:mb-4 pt-2'>
                                     {feature.title}
                                 </h2>
-                                <div className='border-l-3  pl-4 py-1'>
+                                <div className='border-l-3  pl-2 py-1'>
                                     <p className='text-[#4B5563] text-[14px] lg:text-[15px] xl:text-[16px] leading-[1.4]'>
                                         {feature.description}
                                     </p>

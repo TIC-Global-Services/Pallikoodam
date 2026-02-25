@@ -14,7 +14,7 @@ const workwithus = () => {
                     A Supportive, Innovative Workplace That Helps You &quot;<span className='font-ppe italic font-light'>Grow and Thrive</span>&quot;
                 </h3>
 
-                <p className='text-base md:text-lg lg:text-2xl text-white/95 mb-10 leading-relaxed font-light'>
+                <p className='text-base md:text-lg lg:text-2xl text-white/95 mb-10 leading-[1.1] font-light'>
                     We nurture educators as thoughtfully as we nurture our learners. At RaK&apos;s, you are encouraged to question, create, collaborate, and continuously evolve, professionally and personally.
                 </p>
 

@@ -4,7 +4,7 @@ import herobanner from '@/assets/contact/contactimg.jpg'
 
 const ContactHero = () => {
   return (
-    <section className="sticky top-0 -z-10 w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    <section className="-z-10 w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
         <Image

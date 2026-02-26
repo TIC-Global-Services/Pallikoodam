@@ -7,7 +7,9 @@ const Map = () => {
     return (
         <section className="bg-white w-full flex flex-col pt-[10%]">
             {/* Full Width Map Embed */}
-            <div className="w-full h-[40vh] md:h-[50vh] lg:h-[60vh] max-h-[600px] bg-gray-100">
+            <div className="w-full h-[40vh] md:h-[50vh] lg:h-[60vh] max-h-[600px] bg-gray-100 relative">
+                {/* Optional overlay to allow scrolling over the map when not interacting */}
+                <div className="absolute inset-0 z-10 select-none hover:pointer-events-none pointer-events-auto" />
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15664.269414343806!2d77.02534575!3d11.03358055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857a224a10df1%3A0xe5495db6a04bfbea!2sRak&#39;s%20Pallikkoodam!5e0!3m2!1sen!2sus!4v1700681283624!5m2!1sen!2sus"
                     width="100%"
@@ -38,6 +40,11 @@ const Map = () => {
                         <p className="text-[1.25rem] md:text-[1.5rem] lg:text-[2rem] text-gray-500 font-medium leading-[1.4] text-center md:text-left">
                             We encourage parents to visit our campus to better understand our environment, teachers, and classrooms.
                         </p>
+                    </div>
+                    <div>
+                        <button className="bg-[#000086] text-white px-8 py-3 rounded-[6px] hover:bg-[#0000aa] transition-colors duration-300 font-medium text-[16px] xl:text-[18px] w-auto shadow-lg">
+                            Schedule a Campus Tour
+                        </button>
                     </div>
                 </div>
             </ContainerLayout>

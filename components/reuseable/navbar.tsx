@@ -135,18 +135,30 @@ const navbar = () => {
             setIsLightSection(isLight);
         });
     };
+
+    useEffect(() => {
+        window.addEventListener("scroll", updateLightSection);
+        updateLightSection();
+
+        return () => window.removeEventListener("scroll", updateLightSection);
+    }, []);
+
     const getSectionUnderNavbar = () => {
         const nav = document.querySelector("nav");
-        const sections = document.querySelectorAll("section");
+        const sections = Array.from(document.querySelectorAll("section"));
 
         if (!nav) return false;
 
         const y = nav.getBoundingClientRect().bottom + 1;
 
-        for (const section of sections) {
+        for (let i = sections.length - 1; i >= 0; i--) {
+            const section = sections[i];
             const rect = section.getBoundingClientRect();
 
             if (rect.top <= y && rect.bottom > y) {
+                if (pathname === '/' && i === 0) {
+                    return window.scrollY > 500;
+                }
                 return section.classList.contains("light");
             }
         }
@@ -205,20 +217,20 @@ const navbar = () => {
                                     <span
                                         className={
                                             isPlaying
-                                                ? "text-primary"
+                                                ? "text-black"
                                                 : isLightSection
                                                     ? "text-black"
-                                                    : "text-black"
+                                                    : "text-white"
                                         }
                                     >
                                         AUDIO
                                     </span>{" "}
                                     <span
                                         className={`font-bold ${isPlaying
-                                            ? "text-primary"
+                                            ? "text-black"
                                             : isLightSection
                                                 ? "text-black"
-                                                : "text-black"
+                                                : "text-white"
                                             }`}
                                     >
                                         {isPlaying ? "ON" : "OFF"}

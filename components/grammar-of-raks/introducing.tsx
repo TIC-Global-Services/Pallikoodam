@@ -16,12 +16,20 @@ const Introducing = () => {
   useEffect(() => {
     if (!containerRef.current) return
 
+    // Pin the container when it reaches the top
+    ScrollTrigger.create({
+      trigger: containerRef.current,
+      start: 'top top',
+      end: '+=100%',
+      pin: true,
+    })
+
+    // Animate as it enters the viewport and while pinned
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: 'top top',
-        end: '+=100%',
-        pin: true,
+        start: 'top bottom', // Start animation when it enters the viewport
+        end: '+=200%',       // 100vh to scroll into view + 100vh pinning duration
         scrub: 1,
       }
     })

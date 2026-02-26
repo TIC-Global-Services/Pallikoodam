@@ -32,14 +32,14 @@ const AudioWave = ({ isPlaying, isLightSection }: SineWaveProps) => {
 
       for (let i = 0; i <= points; i++) {
         const x = (i / points) * width;
-        
+
         // 1. Basic Sine Wave Calculation
         const sineValue = Math.sin(x * frequency + phaseRef.current);
 
         // 2. Attenuation (Windowing)
         // This makes the wave flat at the ends and tall in the middle (Sine Window)
         const progress = i / points;
-        const envelope = Math.sin(progress * Math.PI); 
+        const envelope = Math.sin(progress * Math.PI);
 
         // 3. Final Y Position
         const y = (height / 2) + (sineValue * amplitude * envelope);
@@ -48,7 +48,7 @@ const AudioWave = ({ isPlaying, isLightSection }: SineWaveProps) => {
       }
 
       pathRef.current.setAttribute("d", pathData);
-      
+
       // Keep loop running to handle pause/play smoothness
       animationIdRef.current = requestAnimationFrame(draw);
     };
@@ -60,25 +60,26 @@ const AudioWave = ({ isPlaying, isLightSection }: SineWaveProps) => {
     };
   }, [isPlaying]);
 
+
   return (
     <svg
       viewBox="0 0 180 100"
       className="w-full h-full mx-auto"
-      style={{ 
-        maxWidth: "32px", 
+      style={{
+        maxWidth: "32px",
         display: "block",
-        overflow: "visible" 
+        overflow: "visible"
       }}
     >
       <path
         ref={pathRef}
         fill="none"
         // Toggle color based on isLightSection
-        stroke={isPlaying ? "#000000" : (isLightSection ? "#000000" : "#000000")}
+        stroke={isPlaying ? "#000000" : (isLightSection ? "#000000" : "#ffffff")}
         strokeWidth="6"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="transition-colors duration-300" 
+        className="transition-colors duration-300"
       />
     </svg>
   );

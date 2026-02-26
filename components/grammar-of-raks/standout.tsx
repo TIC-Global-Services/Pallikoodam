@@ -33,7 +33,7 @@ const Standout = () => {
       <ContainerLayout>
         <div className='py-20 md:py-32 lg:py-40 md:max-w-8xl mx-auto text-center'>
           <p className='text-xl md:text-3xl lg:text-[2.5rem] leading-relaxed text-white font-normal'>
-            <span className='font-ppe font-[300] italic'>RAKS Pallikkoodam</span> stands at the intersection of innovation and inspiration.<br className='hidden md:block' />
+            <span className='font-ppe font-light italic'>RAKS Pallikkoodam</span> stands at the intersection of innovation and inspiration.<br className='hidden md:block' />
             With a deep belief that<br className='md:hidden' /> &quot;
             <span className='relative inline-block'>
               <span className='relative z-10'>teaching is an artform,</span>

@@ -13,6 +13,7 @@ interface Card {
     title: string;
     description: string;
     icon: React.ReactNode;
+    textColor: string;
     // badge?: React.ReactNode;
 }
 
@@ -116,7 +117,7 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
                                     }}
                                 >
                                     <div className="flex justify-between items-start w-full gap-3">
-                                        <h3 className="text-white text-[clamp(1.25rem,3vw,3rem)] font-medium tracking-tight font-inter-tight leading-tight max-w-[70%]">
+                                        <h3 className={`text-${card.textColor} text-[clamp(1.25rem,3vw,3rem)] font-medium tracking-tight font-inter-tight leading-tight max-w-[70%]`}>
                                             {card.title}
                                         </h3>
                                         <div className={`bg-white rounded-full flex items-center justify-center w-[clamp(2.5rem,8vw,4rem)] h-[clamp(2.5rem,8vw,4rem)] shrink-0 text-black ${index === 2 || index === 3 ? 'p-0' : 'p-2 md:p-3 lg:p-4'}`}>
@@ -125,7 +126,7 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
                                     </div>
 
                                     <div className="relative">
-                                        <p className="text-white font-inter-tight text-base md:text-[clamp(0.875rem,2vw,1.5rem)] leading-tight">
+                                        <p className={` text-${card.textColor} font-inter-tight text-base md:text-[clamp(0.875rem,2vw,1.5rem)] leading-tigh`}>
                                             {card.description}
                                         </p>
                                     </div>

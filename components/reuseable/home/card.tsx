@@ -37,10 +37,10 @@ export default function Card({
                     {/* Text Content */}
                     <div className={`z-10 relative h-full flex flex-col ${isTextTop ? 'justify-start' : 'justify-end'} pointer-events-none`}>
                         <div className={`${isTextTop ? 'mb-8' : 'mt-8'} pointer-events-auto`}>
-                            <h2 className={`text-xl md:text-[4.5vh]  font-mediumleading-[1.1] tracking-tight text-black mb-4 ${titleClassName}`}>
+                            <h2 className={`text-xl md:text-[4vh]  font-medium leading-[1.1] tracking-tight text-black mb-4 ${titleClassName}`}>
                                 {title}
                             </h2>
-                            <p className={`text-sm md:text-[2.3vh] leading-[16px] md:leading-[28px] text-gray-800 max-w-prose ${descriptionClassName}`}>
+                            <p className={`text-sm md:text-[2.3vh] leading-[16px] md:leading-[1.1]  max-w-prose ${descriptionClassName}`}>
                                 {description}
                             </p>
                         </div>

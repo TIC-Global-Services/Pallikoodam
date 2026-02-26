@@ -16,7 +16,7 @@ const hero = () => {
                     className="object-cover"
                 />
                 {/* Dark overlay for text readability */}
-                <div className="absolute inset-0 bg-black/60" />
+                <div className="absolute inset-0 bg-black/50" />
             </div>
 
             {/* Content */}

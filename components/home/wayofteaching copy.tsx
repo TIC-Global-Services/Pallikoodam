@@ -58,14 +58,14 @@ const Wayofteaching = () => {
 
                 data.forEach((_, index) => {
                     if (index === 0) {
-                        tl.set(`.card-${index}`, { opacity: 1, yPercent: 0 });
+                        tl.set(`.card-${index}`, { yPercent: 0 });
                         return;
                     }
 
                     tl.fromTo(
                         `.card-${index}`,
-                        { opacity: 0, yPercent: 150 },
-                        { opacity: 1, yPercent: index * offset, duration: 0.5 }
+                        { yPercent: 200 },
+                        { yPercent: index * offset, duration: 0.5 }
                     );
                 });
                 setTimeout(() => {
@@ -93,7 +93,7 @@ const Wayofteaching = () => {
         <div className='bg-white'>
             <section
                 ref={sectionRef}
-                className="w-full bg-white rounded-t-[40px] font-sans pb-12 md:pb-0 md:min-h-svh flex flex-col justify-start items-center"
+                className="w-full bg-white rounded-t-[40px] font-sans pb-12 md:pb-0 md:min-h-svh flex flex-col justify-start items-center overflow-hidden"
 
             >
                 <ContainerLayout>

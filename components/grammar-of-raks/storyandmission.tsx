@@ -14,11 +14,11 @@ const StoryAndMission = () => {
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-12 items-center'>
           {/* Text Content */}
            <h2 className='text-4xl md:text-5xl lg:text-5xl pt-5 font-medium md:hidden'>
-              Our <span className='font-ppe font-normal italic text-[#000086]'>Story & Mission</span>
+              Our <span className='font-ppe font-light italic text-[#000086]'>Story & Mission</span>
             </h2>
           <div className='order-2 lg:order-1 md:pl-[10%]'>
             <h2 className='text-4xl md:text-5xl lg:text-5xl hidden md:block font-medium mb-6 md:mb-8'>
-              Our <span className='font-ppe font-normal italic text-[#000086]'>Story & Mission</span>
+              Our <span className='font-ppe font-light italic text-[#000086]'>Story & Mission</span>
             </h2>
             <div className='border-l-2 border-[#000086] pl-2 md:pl-3'>
               <p className='text-base md:text-lg lg:text-2xl text-black max-w-lg leading-normal'>
@@ -49,8 +49,8 @@ const StoryAndMission = () => {
       <div className=''>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-end'>
           {/* Founder Image */}
-           <h2 className='text-3xl md:text-5xl lg:text-5xl  md:hidden font-medium leading-tight'>
-              Meet the minds behind <br /><span className='font-ppe font-normal italic text-[#000086]'>RAKS Pallikkoodam</span>
+           <h2 className='text-3xl md:text-5xl lg:text-5xl  md:hidden font-light leading-tight'>
+              Meet the minds behind <br /><span className='font-ppe font-light italic text-[#000086]'>RAKS Pallikkoodam</span>
             </h2>
           <div className='relative w-full h-[50vh] md:h-[80vh] lg:h-[90vh] rounded-2xl overflow-hidden '>
               <Image
@@ -67,8 +67,8 @@ const StoryAndMission = () => {
           {/* Founder Message */}
           
           <div>
-            <h2 className='text-4xl md:text-5xl lg:text-5xl hidden md:block font-medium mb-6 md:mb-6 leading-tight'>
-              Meet the minds behind <br /><span className='font-ppe font-normal italic text-[#000086]'>RAKS Pallikkoodam</span>
+            <h2 className='text-4xl md:text-5xl lg:text-5xl hidden md:block font-light mb-6 md:mb-6 leading-tight'>
+              Meet the minds behind <br /><span className='font-ppe font-light italic text-[#000086]'>RAKS Pallikkoodam</span>
             </h2>
             <p className='text-base md:text-lg lg:text-2xl max-w-xl text-gray-700 leading-normal mb-8 md:mb-10'>
               Since founding Pallikkoodam in 2014, I have remained deeply committed to upholding 
@@ -79,7 +79,7 @@ const StoryAndMission = () => {
               confident, responsible global citizens.
             </p>
             <div>
-              <p className='font-ppe italic text-2xl md:text-3xl tracking-tight text-gray-800 mb-2'>
+              <p className='font-ppe italic font-light text-2xl md:text-3xl tracking-tight text-gray-800 mb-2'>
                 Swetha Krishnamurthy
               </p>
               <p className='text-lg md:text-xl font-semibold text-gray-600'>

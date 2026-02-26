@@ -16,31 +16,36 @@ const ProgressiveLearner = () => {
             title: "Innovative Classrooms",
             description: "Classrooms that are designed to be versatile, warm, interactive spaces anchored in active learning.",
             icon: <Image src={icon1} alt="Innovative Classrooms" className="w-full h-full object-contain" />,
-            color: "#000086"
+            color: "#000086",
+            textColor: "white"
         },
         {
             title: "Innovation Labs",
             description: "Purpose-designed environments where ideas are tested, shaped, and brought to life",
             icon: <Image src={icon2} alt="Innovation Labs" className="w-full h-full object-contain" />,
-            color: "#C0B4FE"
+            color: "#C0B4FE",
+            textColor: "black"
         },
         {
             title: "POD Learning",
             description: "Here is where curiosity turns into collaboration and ideas find expression through deeper thinking.",
             icon: <Image src={icon3} alt="POD Learning" className="w-84 h-84 object-contain" />,
-            color: "#144840"
+            color: "#144840",
+            textColor: "white"
         },
         {
             title: "QUAD Learning",
             description: "A space designed for movement, collaboration, discovery, and presentations.",
             icon: <Image src={icon4} alt="QUAD Learning" className="w-full h-full object-contain" />,
-            color: "#FFCEC7"
+            color: "#FFCEC7",
+            textColor: "black"
         },
         {
             title: "Clifton Block (Library)",
             description: "A quiet, sunlit haven where stories, ideas, and possibilities wait to be discovered.",
             icon: <Image src={icon5} alt="QUAD Learning" className="w-full h-full object-contain" />,
-            color: "#196ED3"
+            color: "#196ED3",
+            textColor: "white"
         },
     ]
     return (

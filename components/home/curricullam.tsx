@@ -15,6 +15,7 @@ const curricullam = () => {
   const card2Ref = useRef<HTMLDivElement>(null);
   const text1Ref = useRef<HTMLDivElement>(null);
   const text2Ref = useRef<HTMLDivElement>(null);
+  const img1Ref = useRef<HTMLDivElement>(null);
   const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>();
   const { elementRef: titleRef2 } = useLetterReveal<HTMLHeadingElement>();
 
@@ -24,29 +25,27 @@ const curricullam = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=80%",
+          end: "+=100%",
           pin: true,
           scrub: 1,
         },
       });
 
-      // Initial state - first card visible, second card hidden
-      gsap.set(card1Ref.current, { opacity: 1, zIndex: 2 });
-      gsap.set(card2Ref.current, { opacity: 0, zIndex: 1 });
+      // Initial state - first card on top, second card below
+      gsap.set(card1Ref.current, { zIndex: 2 });
+      gsap.set(card2Ref.current, { zIndex: 1, opacity: 1 });
 
-      // Fade out first card and fade in second card
-      tl.to(card1Ref.current, {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.inOut",
+      // Split animation: left goes down, right goes up
+      tl.to(text1Ref.current, {
+        yPercent: 100,
+        ease: "none",
       }).to(
-        card2Ref.current,
+        img1Ref.current,
         {
-          opacity: 1,
-          duration: 0.5,
-          ease: "power2.inOut",
+          yPercent: -100,
+          ease: "none",
         },
-        "<",
+        "<"
       );
     }, sectionRef);
 
@@ -63,7 +62,7 @@ const curricullam = () => {
           {/* First Card - Cambridge */}
           <div
             ref={card1Ref}
-            className="absolute bg-black rounded-t-[40px] top-0 left-0 w-full h-full overflow-hidden shadow-2xl"
+            className="absolute bg-transparent top-0 left-0 w-full h-full overflow-hidden shadow-2xl"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 h-full">
               {/* Left side - Text */}
@@ -78,14 +77,14 @@ const curricullam = () => {
                   <h3 className="text-xl md:text-[clamp(2rem,4.5dvh,3.375rem)] font-ppe leading-[1.2] italic mb-6">
                     International
                   </h3>
-                
+
                   <div className="mb-5 md:hidden">
                     <Image
                       src={image1}
                       alt="CBSE curriculum students"
                       width={800}
                       height={500}
-                      className="object-cover rounded-2xl w-full h-auto"
+                      className="object-cover  w-full h-auto"
                     />
                   </div>
 
@@ -118,12 +117,12 @@ const curricullam = () => {
               </div>
 
               {/* Right side - Image (desktop only) */}
-              <div className="relative bg-[#000086] h-full hidden md:block">
+              <div ref={img1Ref} className="relative bg-[#000086] h-full hidden md:block">
                 <Image
                   src={image1}
                   alt="Cambridge curriculum students"
                   fill
-                  className="object-cover rounded-4xl"
+                  className="object-cover "
                 />
               </div>
             </div>
@@ -132,7 +131,7 @@ const curricullam = () => {
           {/* Second Card - National Curriculum */}
           <div
             ref={card2Ref}
-            className="absolute bg-black rounded-t-[40px] top-0 left-0 w-full h-full overflow-hidden shadow-2xl"
+            className="absolute bg-black  top-0 left-0 w-full h-full overflow-hidden shadow-2xl"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 h-full">
               {/* Left side - Text */}
@@ -154,7 +153,7 @@ const curricullam = () => {
                       alt="CBSE curriculum students"
                       width={800}
                       height={500}
-                      className="object-cover rounded-2xl w-full h-auto"
+                      className="object-cover w-full h-auto"
                     />
                   </div>
 
@@ -192,7 +191,7 @@ const curricullam = () => {
                   src={image2}
                   alt="CBSE curriculum students"
                   fill
-                  className="object-cover rounded-4xl"
+                  className="object-cover "
                 />
               </div>
             </div>

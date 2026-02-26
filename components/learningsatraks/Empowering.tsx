@@ -101,7 +101,7 @@ const Empowering = () => {
         <>
             <section
                 ref={containerRef}
-                className="sticky top-0 -z-10 w-full h-screen min-h-[600px] bg-white overflow-hidden py-16 flex flex-col items-center justify-center p-0 m-0"
+                className="sticky top-0 z-10 w-full h-screen min-h-[600px] bg-white overflow-hidden py-16 flex flex-col items-center justify-center p-0 m-0"
             >
                 {/* Title */}
                 <div className="text-center z-10 w-full px-4 mb-8 md:mb-16">

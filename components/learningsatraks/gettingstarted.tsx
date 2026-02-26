@@ -10,7 +10,15 @@ const gettingstarted = () => {
             <ContainerLayout>
                 <div className='relative bg-[#F5F5F5] rounded-[24px] overflow-hidden flex flex-col lg:flex-row shadow-sm'>
                     {/* Background Gradient Layer for the entire container */}
-                    <div className='absolute inset-0 bg-linear-to-br from-[#F5F5F5] via-[#ffffff] to-[#000086]  hidden md:block z-0 opacity-70' />
+                    <div className='absolute  inset-0 
+  bg-gradient-to-br 
+  from-[#ffffff] 
+  via-[#ffffff] 
+  to-[#000086]  
+  hidden md:block 
+  z-0 
+  opacity-90 
+  blur-[50px]' />
 
                     {/* Text Content - Left Side on Desktop, Bottom on Mobile */}
                     <div className='relative z-10 order-2 lg:order-2 flex-1 p-6 md:p-1 lg:pl-[3%] lg:pr-1 lg:py-16'>

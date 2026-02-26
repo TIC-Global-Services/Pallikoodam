@@ -98,10 +98,10 @@ const Empowering = () => {
     }, { scope: containerRef });
 
     return (
-        <>
+        <div className="relative w-full z-10 bg-white">
             <section
                 ref={containerRef}
-                className="sticky top-0 z-10 w-full h-screen min-h-[600px] bg-white overflow-hidden py-16 flex flex-col items-center justify-center p-0 m-0"
+                className="sticky top-0 w-full h-screen min-h-[600px] overflow-hidden py-16 flex flex-col items-center justify-center p-0 m-0"
             >
                 {/* Title */}
                 <div className="text-center z-10 w-full px-4 mb-8 md:mb-16">
@@ -148,7 +148,7 @@ const Empowering = () => {
                                     </div>
 
                                     {/* Description Box (Appears on hover) */}
-                                    <div className="absolute left-10 -translate-y-1/2 ml-4 w-[220px] md:w-[260px] bg-white p-4 md:p-5 shadow-2xl opacity-0 translate-x-4 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 group-hover:pointer-events-auto rounded-[8px]">
+                                    <div className="absolute left-10 -translate-y-1/2 ml-4 w-[220px] md:w-[260px] bg-white   p-4 md:p-5 shadow-2xl opacity-0 translate-x-4 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 group-hover:pointer-events-auto rounded-[8px]">
                                         <p className="text-[13px] md:text-[14px] leading-[1.5] text-[#2C313E] font-medium font-sans">
                                             {item.description}
                                         </p>
@@ -161,7 +161,7 @@ const Empowering = () => {
             </section>
             {/* Scroll Spacer to trigger animation before the next section overlaps */}
             <div ref={triggerRef} className="w-full h-[300vh]" />
-        </>
+        </div>
     )
 }
 

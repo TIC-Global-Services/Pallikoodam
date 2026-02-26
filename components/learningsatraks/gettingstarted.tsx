@@ -6,7 +6,7 @@ import SimpleParallax from 'simple-parallax-js'
 
 const gettingstarted = () => {
     return (
-        <section className='w-full bg-gray-50 py-[8vh] md:py-[12vh]'>
+        <section className='w-full  bg-gray-50 py-[8vh] md:py-[12vh]'>
             <ContainerLayout>
                 <div className='relative bg-[#F5F5F5] rounded-[24px] overflow-hidden flex flex-col lg:flex-row shadow-sm'>
                     {/* Background Gradient Layer for the entire container */}

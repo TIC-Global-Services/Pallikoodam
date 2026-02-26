@@ -137,7 +137,7 @@ const whowelookingfor = () => {
             {/* Intro Text */}
             <div ref={introTextRef} className="absolute top-[8%] left-0 w-full text-center z-10 px-4 mb-5">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-regular tracking-tighter mb-4">
-                    Who We&apos;re <span className="font-ppe italic">Looking For</span>
+                    Who We&apos;re <span className="font-ppe font-light italic">Looking For</span>
                 </h2>
                 <p className="text-lg md:text-xl lg:text-3xl font-normal">
                     Motivated educators ready <br className="hidden md:block" /> to inspire.

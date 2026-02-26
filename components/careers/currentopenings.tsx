@@ -43,7 +43,7 @@ const currentopenings = () => {
                 {/* Header Section */}
                 <div className='mb-12'>
                     <h2 className='text-3xl md:text-5xl lg:text-[48px] font-regular tracking-tight mb-6'>
-                        <span className='font-ppe italic font-normal'>Current</span> Open Positions
+                        <span className='font-ppe italic font-light'>Current</span> Open Positions
                     </h2>
                     <p className='text-lg md:text-[32px] leading-[1.1] font-[500] tracking-tight'>
                         Explore roles that match your<br />skills and passion.

@@ -27,15 +27,15 @@ const workwithus = () => {
                         </li>
                         <li className='flex items-start gap-3'>
                             <span className='w-1.5 h-1.5 rounded-full bg-white mt-2.5 shrink-0'></span>
-                            <span>Freedom to design meaningful <span className='font-ppe italic'>learning experiences</span></span>
+                            <span>Freedom to design meaningful <span className='font-ppe font-light italic'>learning experiences</span></span>
                         </li>
                         <li className='flex items-start gap-3'>
                             <span className='w-1.5 h-1.5 rounded-full bg-white mt-2.5 shrink-0'></span>
-                            <span>Continuous professional <span className='font-ppe italic'>growth and mentorship</span></span>
+                            <span>Continuous professional <span className='font-ppe font-light italic'>growth and mentorship</span></span>
                         </li>
                         <li className='flex items-start gap-3'>
                             <span className='w-1.5 h-1.5 rounded-full bg-white mt-2.5 shrink-0'></span>
-                            <span>A workplace where your <span className='font-ppe italic'>voice truly matters</span></span>
+                            <span>A workplace where your <span className='font-ppe font-light italic'>voice truly matters</span></span>
                         </li>
                     </ul>
                 </div>

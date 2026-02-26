@@ -190,7 +190,7 @@ const navbar = () => {
         { name: 'Home', href: '/' },
         { name: 'Grammar of RAKS', href: '/grammar-of-raks' },
         { name: 'Learning @ RAKS', href: '/learning-at-raks' },
-        // { name: 'Hidden curriculum @ RAKS', href: '/hidden-curriculum-at-raks' },
+        { name: 'Hidden curriculum @ RAKS', href: '/hiddencurricular-at-raks' },
         { name: 'News & Events', href: '/news-and-events' },
         { name: 'Admissions', href: '/admissions' },
         { name: 'Careers', href: '/careers' },

@@ -21,7 +21,7 @@ const ContactHero = () => {
       {/* Content */}
       <div className="relative z-10 w-full flex justify-center text-center px-4">
         <h1 className="text-white text-[clamp(2rem,5vw,4.5rem)] leading-[1.1]  tracking-tight font-medium">
-          Reach Out to <br/><span className="font-ppe italic font-normal">RAKS Pallikkoodam</span>
+          Reach Out to <br/><span className="font-ppe italic font-light">RAKS Pallikkoodam</span>
         </h1>
       </div>
     </section>

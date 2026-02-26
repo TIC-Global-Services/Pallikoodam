@@ -105,17 +105,17 @@ const StartYourJourney = () => {
         <ContainerLayout>
             <div ref={containerRef} className="relative z-0 w-full pb-16 md:pb-[10%]">
 
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 mb-12 md:mb-16 lg:mb-20">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-10 mb-12 md:mb-16 lg:mb-20">
 
                     {/* Left Column (4 cols) */}
-                    <div className="md:col-span-4 lg:col-span-4 flex items-start">
+                    <div className="md:col-span-4 lg:col-span-4 flex jus items-start">
                         <h2 className="text-[2.25rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3.25rem] font-medium text-[#111] leading-tight">
-                            <span className="font-ppe italic font-normal">Admission</span> Process
+                            <span className="font-ppe italic font-light">Admission</span> Process
                         </h2>
                     </div>
 
                     {/* Right Column (8 cols) */}
-                    <div className="md:col-span-8 lg:col-span-8 flex flex-col items-start gap-4 lg:gap-6">
+                    <div className="md:col-span-8 lg:col-span-8 flex flex-col items-start xl:pl-[10%] gap-4 lg:gap-6">
                         <h2 className="text-[1.75rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[3rem] font-medium leading-[1.1] text-[#111] max-w-2xl">
                             A Step-by-Step 4-Stage<br />
                             Admission Process Guide
@@ -139,7 +139,7 @@ const StartYourJourney = () => {
 
                                 {/* Col 1 */}
                                 <div className="md:col-span-4 flex flex-col h-full">
-                                    <h3 className="text-[2.5rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3.5rem] font-ppe italic leading-none text-[#111] mb-6 xl:mb-8">
+                                    <h3 className="text-[2.5rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3.5rem] font-ppe font-light italic leading-none text-[#111] mb-6 xl:mb-8">
                                         {stage.title}
                                     </h3>
 

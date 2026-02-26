@@ -22,7 +22,7 @@ const Hero = () => {
             <div className="relative z-10 w-full max-w-[90%] mx-auto text-center px-4">
                 <h1 className="text-white text-[clamp(2rem,5vw,4.5rem)] leading-[1.2] tracking-tight font-medium">
                     Join Our Team<br />
-                    of <span className="font-ppe italic font-normal">Inspiring Educators</span>
+                    of <span className="font-ppe italic font-light">Inspiring Educators</span>
                 </h1>
                 <p className='xl:text-3xl lg:text-2xl md:text-xl text-lg text-white max-w-5xl mx-auto mt-5'>
                     At RaK’s Pallikkoodam, education is not a role, it is a shared responsibility and a lived purpose. We are a community of educators who believe learning happens everywhere, curiosity deserves space, and every child’s journey matters.

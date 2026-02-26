@@ -13,11 +13,11 @@ const AdmissionAt = () => {
                     <div className="mb-6 md:mb-10 md:-translate-y-15">
                         <h2 className="text-[2.25rem] md:text-5xl lg:text-[4rem] leading-[1.1] md:leading-[60px] font-medium">
                             <span className="relative inline-block md:pb-1">
-                                Admissions at <span className="font-ppe italic font-normal">RAKS</span>
+                                Admissions at <span className="font-ppe italic font-light">RAKS</span>
                             </span>
                             <br />
                             <span className="relative inline-block md:pb-1 md:mt-2">
-                                <span className="font-ppe italic font-normal">Pallikkoodam</span>
+                                <span className="font-ppe italic font-light">Pallikkoodam</span>
                             </span>
                         </h2>
                     </div>
@@ -42,7 +42,7 @@ const AdmissionAt = () => {
                     <div className="order-4 mt-auto flex justify-end -translate-y-10 md:justify-start md:translate-y-20">
                         <h3 className="text-[1.5rem] md:text-[3rem] lg:text-[4rem] font-medium text-right md:text-left leading-[1.1] text-[#111]">
                             Start<br />
-                            Your <span className="font-ppe italic font-normal">Journey</span>
+                            Your <span className="font-ppe italic font-light">Journey</span>
                         </h3>
                     </div>
                 </div>

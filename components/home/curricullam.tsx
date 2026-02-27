@@ -17,7 +17,7 @@ const curricullam = () => {
   const text2Ref = useRef<HTMLDivElement>(null);
   const img1Ref = useRef<HTMLDivElement>(null);
   const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>();
-  const { elementRef: titleRef2 } = useLetterReveal<HTMLHeadingElement>();
+  const { elementRef: titleRef2, triggerAnimation: triggerAnimation2 } = useLetterReveal<HTMLHeadingElement>(0.1, false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -28,6 +28,11 @@ const curricullam = () => {
           end: "+=100%",
           pin: true,
           scrub: 1,
+          onUpdate: (self) => {
+            if (self.progress > 0.15) {
+              triggerAnimation2();
+            }
+          },
         },
       });
 
@@ -70,7 +75,7 @@ const curricullam = () => {
                 ref={text1Ref}
                 className="bg-[#000086] p-8 md:p-12 flex flex-col justify-center text-white overflow-y-auto"
               >
-                <div ref={titleRef2}>
+                <div ref={titleRef}>
                   <h2 className="text-2xl md:text-[clamp(2.5rem,5dvh,3.375rem)] leading-[1.2] mb-2">
                     Cambridge
                   </h2>
@@ -88,7 +93,7 @@ const curricullam = () => {
                     />
                   </div>
 
-                  <div ref={titleRef2} className="">
+                  <div className="">
                     <p className="font-light italic font-ppe text-sm md:text-xl">
                       Cambridge @ RAKS
                     </p>
@@ -139,7 +144,7 @@ const curricullam = () => {
                 ref={text2Ref}
                 className="bg-[#000086] p-8 md:p-12 flex flex-col text-white justify-center overflow-y-auto"
               >
-                <div ref={titleRef}>
+                <div ref={titleRef2}>
                   <h2 className="text-2xl md:text-[clamp(2.5rem,5dvh,3.375rem)] leading-[1.2] mb-2">
                     National Curriculum
                   </h2>
@@ -157,7 +162,7 @@ const curricullam = () => {
                     />
                   </div>
 
-                  <div ref={titleRef} className="">
+                  <div className="">
                     <p className="font-light italic font-ppe text-sm md:text-xl">
                       CBSE @ RAKS
                     </p>

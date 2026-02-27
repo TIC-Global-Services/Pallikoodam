@@ -120,7 +120,7 @@ const Introducing = () => {
       </div>
 
       {/* Bottom Paragraph */}
-      <div className='absolute bottom-[10%] max-w-[90%] md:max-w-4xl px-4 md:px-6 text-center z-10'>
+      <div className='absolute bottom-[8%] max-w-[90%] md:max-w-4xl px-4 md:px-6 text-center z-10'>
         <p className='text-white/90 text-md md:text-base lg:text-2xl leading-relaxed font-normal'>
           RAKS Pallikkoodam reimagines learning with a bold, modern approach
           where curiosity leads, and creativity thrives. Classrooms become studios

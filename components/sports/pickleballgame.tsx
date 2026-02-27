@@ -25,8 +25,8 @@ const SingleBall: React.FC<BallProps> = ({ id, speed, top, direction, onPop, onC
         const el = ballRef.current;
         if (!el) return;
 
-        const startX = direction === 'ltr' ? -150 : window.innerWidth + 150;
-        const endX = direction === 'ltr' ? window.innerWidth + 150 : -150;
+        const startX = direction === 'ltr' ? -250 : window.innerWidth + 250;
+        const endX = direction === 'ltr' ? window.innerWidth + 250 : -250;
 
         const tween = gsap.fromTo(el,
             { x: startX, rotation: 0 },

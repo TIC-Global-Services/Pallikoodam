@@ -26,11 +26,11 @@ const developement = () => {
 
           {/* Content Overlay */}
           <div className='relative z-10 w-full px-6 md:px-12 lg:px-20 max-w-4xl py-12 md:py-0'>
-            <h2 className='text-3xl md:text-5xl lg:text-6xl text-white mb-10 tracking-tight font-medium'>
-              21st-Century Skills & Holistic <span className='font-ppe italic font-normal'>Development</span>
+            <h2 className='text-3xl md:text-5xl lg:text-5xl  text-white mb-10 leading-[1.1] tracking-tight font-medium'>
+              21st-Century Skills & <br/> Holistic <span className='font-ppe italic font-normal'>Development</span>
             </h2>
 
-            <p className='text-white/90 text-sm md:text-base  lg:text-xl max-w-lg xl:text-[1.6rem] leading-snug mb-8 md:mb-12'>
+            <p className='text-white/90 text-sm md:text-base  lg:text-xl max-w-xl xl:text-[1.6rem]  mb-8 md:mb-12'>
               At Rak’s Pallikkoodam, we aim to nurture more than academic excellence. Through our approach, students develop modern competencies such as creativity, collaboration, digital literacy, communication, and critical thinking, all essential for today's global world.<br/> Alongside core academics, we emphasize social, emotional, and ethical growth, preparing learners not just for exams, but for life beyond school.
             </p>
           </div>

@@ -8,17 +8,10 @@ const gettingstarted = () => {
     return (
         <section className='w-full  bg-gray-50 py-[8vh] md:py-[12vh]'>
             <ContainerLayout>
-                <div className='relative bg-[#F5F5F5] rounded-[24px] overflow-hidden flex flex-col lg:flex-row shadow-sm'>
+                <div className='relative bg-[#E9E9E9] rounded-[24px] overflow-hidden flex flex-col lg:flex-row shadow-sm'>
                     {/* Background Gradient Layer for the entire container */}
-                    <div className='absolute  inset-0 
-  bg-gradient-to-br 
-  from-[#ffffff] 
-  via-[#ffffff] 
-  to-[#000086]  
-  hidden md:block 
-  z-0 
-  opacity-90 
-  blur-[50px]' />
+                    <div className='absolute bottom-[-30%] right-[-40%] w-[60%] h-[60%] 
+      bg-[#000086] opacity-80 rounded-full blur-[130px]' />
 
                     {/* Text Content - Left Side on Desktop, Bottom on Mobile */}
                     <div className='relative z-10 order-2 lg:order-2 flex-1 p-6 md:p-1 lg:pl-[3%] lg:pr-1 lg:py-16'>
@@ -29,24 +22,24 @@ const gettingstarted = () => {
                         </h2>
                         {/* Desktop Title */}
                         <h2 className='text-[44px] lg:text-[56px] hidden lg:block font-medium mb-6 md:mb-8 leading-[1.1] tracking-tight'>
-                            Getting <span className='font-ppe font-normal italic'>Started</span> & Next<br />
-                            <span className='font-ppe font-normal italic'>Steps</span>
+                            Getting <span className='font-ppe font-light italic'>Started</span> & Next<br />
+                            <span className='font-ppe font-light italic'>Steps</span>
                         </h2>
 
                         <div className='pl-4 md:pl-0 mb-8'>
-                            <p className='text-base md:text-lg lg:text-2xl text-black max-w-2xl leading-[1.2] mb-8'>
-                                If you're exploring the right academic pathway for your child at RaK's, we invite you to:
+                            <p className='text-base md:text-lg lg:text-2xl text-black font-medium tracking-tight max-w-2xl leading-[1.2] mb-8'>
+                                If you're exploring the right academic pathway for your child at RAKS, we invite you to:
                             </p>
 
-                            <ol className='list-decimal list-outside pl-4 space-y-3 md:space-y-4 max-w-2xl text-black text-[14px] md:text-[16px] lg:text-[18px] font-medium'>
+                            <ol className='list-decimal list-outside pl-6 space-y-3 md:space-y-2 max-w-2xl text-black text-[14px] md:text-[16px] lg:text-[18px] font-medium'>
                                 <li className='pl-2 leading-snug'>Discover our curriculum options</li>
                                 <li className='pl-2 leading-snug'>Visit our campus and experience learning in action</li>
                                 <li className='pl-2 leading-snug'>Connect with our admissions team for guidance on enrolment, grade placement, and programme choices</li>
                             </ol>
                         </div>
 
-                        <p className='text-black text-[18px] md:text-[22px] lg:text-[24px] leading-[1.1] mb-10 font-medium max-w-3xl'>
-                            Because choosing a school is not just about<br/> academics, it's about <span className='font-ppe italic font-normal'>"Belonging, Purpose, and Possibility."</span>
+                        <p className='text-black text-[18px] md:text-[22px] lg:text-[24px] leading-[1.1] mb-10 tracking-tight font-medium max-w-3xl'>
+                            Because choosing a school is not just about<br /> academics, it's about <span className='font-ppe italic font-light'>"Belonging, Purpose, and Possibility."</span>
                         </p>
 
                         <div>

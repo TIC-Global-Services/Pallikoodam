@@ -98,14 +98,11 @@ const Empowering = () => {
     }, { scope: containerRef });
 
     return (
-        <div className="relative w-full z-10 bg-white">
-            <section
-                ref={containerRef}
-                className="sticky top-0 w-full h-screen min-h-[600px] overflow-hidden py-16 flex flex-col items-center justify-center p-0 m-0"
-            >
+        <div className="relative w-full z-10 bg-white" style={{ marginBottom: "-100vh" }}>
+            <section ref={containerRef} className="sticky top-0 w-full h-screen overflow-hidden py-20 flex flex-col items-center justify-center p-0 m-0">
                 {/* Title */}
-                <div className="text-center z-10 w-full px-4 mb-8 md:mb-16">
-                    <h2 className="text-[36px] md:text-[44px] lg:text-[40px] text-[#2C313E] leading-[1.1] font-medium tracking-tight">
+                <div className="text-center z-10 w-full px-4 mb-4 md:mb-10 mt-auto md:mt-0 pt-4 md:pt-0">
+                    <h2 className="text-[32px] md:text-[44px] lg:text-[54px] text-[#2C313E] leading-[1.1] font-medium tracking-tight">
                         Empowering Learners Through <span className="font-ppe italic font-normal">Choice</span><br className="hidden md:block" />
                         <span className="font-ppe italic font-normal">and Clarity</span>
                     </h2>
@@ -143,8 +140,8 @@ const Empowering = () => {
                                 {/* Plus Icon and Hover Tooltip */}
                                 <div className="absolute left-4 top-1/2 -translate-y-1/2 z-20 group-hover:z-30 border rounded-full border-dashed p-1 border-white">
                                     {/* The Plus Button */}
-                                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#001D6E] text-white flex items-center justify-center shadow-lg border-[1.5px] border-white/30 group-hover:bg-[#2563EB] transition-colors duration-300">
-                                        <Plus size={20} className="text-white" />
+                                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#001D6E] text-white flex items-center justify-center shadow-lg border-[1.5px] border-white/30 group-hover:bg-white group-hover:text-black transition-colors duration-300">
+                                        <Plus size={20} className="text-white group-hover:text-black" />
                                     </div>
 
                                     {/* Description Box (Appears on hover) */}
@@ -161,6 +158,8 @@ const Empowering = () => {
             </section>
             {/* Scroll Spacer to trigger animation before the next section overlaps */}
             <div ref={triggerRef} className="w-full h-[300vh]" />
+            {/* Additional Spacer to keep Empowering pinned while Environments slides over it */}
+            <div className="w-full h-screen" />
         </div>
     )
 }

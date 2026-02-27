@@ -1,10 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 
-export const useLetterReveal = <T extends HTMLElement = HTMLElement>(threshold: number = 0.1) => {
+export const useLetterReveal = <T extends HTMLElement = HTMLElement>(
+  threshold: number = 0.1,
+  autoStart: boolean = true
+) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
   const elementRef = useRef<T>(null);
   const originalContentRef = useRef<string | null>(null);
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
     // Detect mobile or tablet device (up to 1024px)
@@ -18,14 +22,22 @@ export const useLetterReveal = <T extends HTMLElement = HTMLElement>(threshold: 
     return () => window.removeEventListener('resize', checkMobileOrTablet);
   }, []);
 
+  const triggerAnimation = () => {
+    const isMobile = window.innerWidth < 1024;
+    if (elementRef.current && !isMobile && !hasAnimated.current) {
+      applyLetterRevealAnimation(elementRef.current);
+      hasAnimated.current = true;
+    }
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
           // Apply letter-by-letter animation
-          if (elementRef.current && !isMobileOrTablet) {
-            applyLetterRevealAnimation(elementRef.current);
+          if (autoStart) {
+            triggerAnimation();
           }
         }
       },
@@ -123,5 +135,5 @@ export const useLetterReveal = <T extends HTMLElement = HTMLElement>(threshold: 
     });
   };
 
-  return { elementRef, isVisible };
+  return { elementRef, isVisible, triggerAnimation };
 };

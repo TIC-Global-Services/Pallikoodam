@@ -94,7 +94,7 @@ const Environments = () => {
                                         className="object-contain scale-[1.5] lg:scale-[15]" // 'scale' increases visual size without breaking grid layout space
                                     />
                                 </div>
-                                <h2 className='text-[22px] lg:text-[28px] tracking-tight font-medium text-[#2C313E] leading-[1.2] mb-3 lg:mb-4 pt-2'>
+                                <h2 className='text-[22px] lg:text-[24px] tracking-tight font-medium text-[#2C313E] leading-[1.2] mb-3 lg:mb-4 pt-2'>
                                     {feature.title}
                                 </h2>
                                 <div className='border-l-3  pl-2 py-1'>

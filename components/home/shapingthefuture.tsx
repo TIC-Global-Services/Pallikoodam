@@ -109,7 +109,7 @@ const Shapingthefuture = () => {
     }
 
     return (
-        <section className='relative bg-white md:mt-24' ref={containerRef}>
+        <section className='relative bg-white ' ref={containerRef}>
             {/* <div className="absolute top-0 left-0 w-full -translate-y-[99%] flex overflow-hidden pointer-events-none z-20 leading-0">
                 {Array.from({ length: bubbleCount }).map((_, index) => (
                     <div
@@ -169,7 +169,7 @@ const Shapingthefuture = () => {
                     </div>
 
                     {/* Vision & Mission Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 bg-white gap-6 md:gap-10 max-w-[1400px] mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 bg-white gap-6 md:gap-10">
 
                         {/* Vision Card */}
                         <div className="bg-[#E9E9E9] text-black rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden flex flex-col items-start transition-transform hover:scale-[1.01] duration-500 min-h-[500px] md:min-h-[600px] lg:min-h-[650px] xl:min-h-[750px]">

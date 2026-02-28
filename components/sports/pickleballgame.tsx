@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import ballImg from '@/assets/sports/pickleball.png';
 
 interface BallProps {
@@ -45,7 +46,7 @@ const SingleBall: React.FC<BallProps> = ({ id, speed, top, direction, onPop, onC
             tween.kill();
         };
     }, []); // Removed [speed, direction, id] to prevent killing tween on re-renders
-
+    
     return (
         <div
             ref={ballRef}
@@ -69,6 +70,60 @@ const PickleballGame = () => {
     const [score, setScore] = useState(0);
     const scoreRef = useRef(0);
     const nextIdRef = useRef(5);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+            const origin = document.getElementById('sports-pickleball-text');
+            const target = document.getElementById('target-pickleball-text');
+
+            if (!origin || !target) return;
+
+            // Ensure the origin stays on top during animation and sets its pivot to left-center
+            gsap.set(origin, { zIndex: 50, position: 'relative', transformOrigin: "left center" });
+
+            gsap.to(origin, {
+                scrollTrigger: {
+                    trigger: target,
+                    start: "top 95%",
+                    end: "top 45%",
+                    scrub: true,
+                    invalidateOnRefresh: true,
+                    onEnter: () => gsap.set(target, { opacity: 0 }),
+                    onLeave: () => {
+                        gsap.set(target, { opacity: 1 });
+                        gsap.set(origin, { opacity: 0 });
+                    },
+                    onEnterBack: () => {
+                        gsap.set(target, { opacity: 0 });
+                        gsap.set(origin, { opacity: 1 });
+                    }
+                },
+                x: () => {
+                    const tRect = target.getBoundingClientRect();
+                    const oRect = origin.getBoundingClientRect();
+                    const currentX = gsap.getProperty(origin, "x") as number;
+                    return tRect.left - (oRect.left - currentX);
+                },
+                y: () => {
+                    const tRect = target.getBoundingClientRect();
+                    const oRect = origin.getBoundingClientRect();
+                    const currentY = gsap.getProperty(origin, "y") as number;
+                    return (tRect.top + tRect.height / 2) - (oRect.top + oRect.height / 2 - currentY);
+                },
+                scale: () => {
+                    const tSize = parseFloat(window.getComputedStyle(target).fontSize) || 1;
+                    const oSize = parseFloat(window.getComputedStyle(origin).fontSize) || 1;
+                    return tSize / oSize;
+                },
+                color: () => window.getComputedStyle(target).color,
+                ease: "none"
+            });
+        });
+
+        return () => ctx.revert();
+    }, []);
 
     const createRandomBall = (currentScore: number, existingBalls: { top: number }[]) => {
         const baseSpeed = Math.max(2.5, 5 - (currentScore * 0.2));
@@ -135,7 +190,7 @@ const PickleballGame = () => {
     };
 
     return (
-        <section className="relative w-full py-32 bg-white overflow-hidden select-none">
+        <section id="pickleball-game-section" className="relative w-full py-32 bg-white overflow-x-clip select-none">
 
             {/* Background Balls Area */}
             <div className="absolute inset-0 w-full h-full pointer-events-none">
@@ -153,12 +208,12 @@ const PickleballGame = () => {
             </div>
 
             {/* Center Text Content */}
-            <div className="relative z-10 max-w-7xl mx-auto text-center px-4 md:px-8 flex flex-col items-center justify-center pointer-events-none">
-                <h2 className="text-[clamp(2.5rem,4vw,3.5rem)] font-normal text-black mb-6 whitespace-nowrap">
-                    Introducing <span className="font-ppe italic font-light text-[#000086]">Pickleball</span>
+            <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 flex flex-col items-center justify-center pointer-events-none">
+                <h2 className="flex items-center justify-center gap-2 md:gap-4 text-[clamp(2.5rem,4vw,3.5rem)] font-normal text-black mb-6 whitespace-nowrap">
+                    <span>Introducing</span> <span id="target-pickleball-text" className="font-ppe italic mt-3 font-light text-[#000086] opacity-0">Pickleball</span>
                 </h2>
 
-                <p className="text-gray-800 text-sm md:text-base lg:text-[2rem] leading-[1.2] mb-12">
+                <p className="text-gray-800 text-sm md:text-base text-center lg:text-[2rem] leading-[1.2] mb-12">
                     Pickleball, the newest addition to the RAKS sports programme, blends agility, strategy, coordination, and fun while promoting inclusive participation, quick decision-making, strong team communication, and <br /> <span className="font-ppe italic font-lightF">lifelong fitness habits.</span>
                 </p>
 

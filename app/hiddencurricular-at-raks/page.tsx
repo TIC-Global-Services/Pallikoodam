@@ -4,6 +4,7 @@ import Ourphilosophy from '@/components/sports/ourphilosophy'
 import SportsBasedLearning from '@/components/sports/sportsbasedlearning'
 import SportsArena from '@/components/sports/sportsarena'
 import Pickleballgame from '@/components/sports/pickleballgame'
+import Sportsforlife from '@/components/sports/sportsforlife'
 
 const page = () => {
   return (
@@ -13,6 +14,7 @@ const page = () => {
         <SportsBasedLearning/>
         <SportsArena/>
         <Pickleballgame/>
+        <Sportsforlife/>
     </div>
   )
 }

@@ -25,9 +25,11 @@ const curricullam = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=100%",
+          end: "+=150%",
           pin: true,
           scrub: 1,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
           onUpdate: (self) => {
             if (self.progress > 0.15) {
               triggerAnimation2();
@@ -60,7 +62,7 @@ const curricullam = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-white mt-20 h-dvh"
+      className="relative w-full bg-white mt-20 min-h-screen"
     >
       <div className="w-full h-full">
         <div className="relative w-full h-full">

@@ -180,11 +180,12 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
 
             if (dragged || hovered) {
                 // Spring back to face forward when interacted with
-                card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
+                // Calculate the closest front-facing angle to prevent violent unwinding
+                const targetY = Math.round(rot.y / (Math.PI * 2)) * (Math.PI * 2);
+                card.current.setAngvel({ x: ang.x, y: ang.y - (rot.y - targetY) * 0.25, z: ang.z });
             } else {
                 // Keep spinning on the Y-axis continuously when idle
-                // We provide a continuous positive force to maintain rotation
-                card.current.setAngvel({ x: ang.x, y: 1.5, z: ang.z });
+                card.current.setAngvel({ x: ang.x, y: 0.5, z: ang.z });
             }
         }
     });

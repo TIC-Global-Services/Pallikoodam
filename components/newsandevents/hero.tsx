@@ -25,7 +25,7 @@ const hero = () => {
                     School life, at a <span className="font-ppe italic font-normal">glance</span>
                 </h1>
                 <p className='xl:text-3xl lg:text-2xl md:text-xl text-lg text-white max-w-5xl mx-auto mt-5'>
-                   Stay connected with the pulse of RaK’s Pallikkoodam where learning unfolds not just in classrooms, but across experiences, celebrations, conversations, and community moments.
+                    Stay connected with the pulse of RAKS Pallikkoodam where learning unfolds not just in classrooms, but across experiences, celebrations, conversations, and community moments.
                 </p>
             </div>
         </section>

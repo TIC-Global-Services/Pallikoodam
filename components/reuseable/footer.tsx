@@ -88,7 +88,7 @@ const Footer = () => {
 
             {/* Bottom bar */}
             <div className="container mx-auto px-4 lg:px-0 mt-8 flex flex-col md:flex-row justify-between text-base font-normal leading-[17px]">
-                <p className=''>© 2026 Rak’s Pallikoodam . All Rights Reserved.</p>
+                <p className=''>© 2026 RAKS Pallikoodam . All Rights Reserved.</p>
                 <Link href="https://www.theinternetcompany.one/" target="_blank">Designed & Developed by TIC Global Services</Link>
             </div>
         </footer>

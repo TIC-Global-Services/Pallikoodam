@@ -18,7 +18,7 @@ const Map = () => {
                     allowFullScreen={false}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Rak's Pallikkoodam Location Map"
+                    title="RAKS Pallikkoodam Location Map"
                 ></iframe>
             </div>
 

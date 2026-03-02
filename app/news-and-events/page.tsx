@@ -6,15 +6,20 @@ import Academics from '@/components/newsandevents/academics'
 import Media from '@/components/newsandevents/media'
 import Downloads from '@/components/newsandevents/downloads'
 
+export const metadata = {
+  title: "News & Events | RAKS Pallikoodam",
+  description: "Stay up to date with the latest news, events and media at RAKS Pallikoodam",
+};
+
 const page = () => {
   return (
     <div>
-        <Hero/>
-        <WhatsComing/>
-        <WhatHappening/> 
-        <Academics/>
-        <Media/>
-        <Downloads/>
+      <Hero />
+      <WhatsComing />
+      <WhatHappening />
+      <Academics />
+      <Media />
+      <Downloads />
     </div>
   )
 }

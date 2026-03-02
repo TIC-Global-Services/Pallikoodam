@@ -64,7 +64,7 @@ const ContactHero = () => {
                   Address
                 </div>
                 <div className="text-xs md:text-sm lg:text-base text-[#111] leading-[1.6] font-medium pt-8 mt-auto hidden sm:block">
-                  <strong className="block font-bold pb-1 text-sm md:text-base">Rak's Pallikkoodam</strong>
+                  <strong className="block font-bold pb-1 text-sm md:text-base">RAKS Pallikkoodam</strong>
                   774 Avinashi Road,<br />
                   V.O.C. Park Gate,<br />
                   Coimbatore - 641 018
@@ -76,14 +76,14 @@ const ContactHero = () => {
                 <div className="w-full aspect-4/3 lg:aspect-[1.1] relative rounded-[12px] md:rounded-lg overflow-hidden bg-gray-100 shadow-sm border border-black/5 shrink-0">
                   <Image
                     src={contactimg}
-                    alt="Rak's Pallikkoodam Building"
+                    alt="RAKS Pallikkoodam Building"
                     fill
                     className="object-cover"
                   />
                 </div>
                 {/* Mobile version of the address text, hidden on desktop */}
                 <div className="text-xs md:text-sm lg:text-base text-[#111] leading-[1.6] font-medium sm:hidden">
-                  <strong className="font-bold pb-1 text-sm md:text-base lg:text-lg">Rak's Pallikkoodam</strong>
+                  <strong className="font-bold pb-1 text-sm md:text-base lg:text-lg">RAKS Pallikkoodam</strong>
                   774 Avinashi Road,<br />
                   V.O.C. Park Gate,<br />
                   Coimbatore - 641 018

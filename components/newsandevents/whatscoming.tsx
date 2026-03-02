@@ -14,7 +14,7 @@ const whatscoming = () => {
         {
             id: 2,
             image: whatshappeing,
-            text: "Young Speaker Series, RaK's Resonance, Learners finding their voice, sharing ideas, stories, and perspectives with confidence and purpose.",
+            text: "Young Speaker Series, RAKS Resonance, Learners finding their voice, sharing ideas, stories, and perspectives with confidence and purpose.",
             imageTop: false
         },
         {

@@ -25,7 +25,7 @@ const Hero = () => {
                     of <span className="font-ppe italic font-light">Inspiring Educators</span>
                 </h1>
                 <p className='xl:text-3xl lg:text-2xl md:text-xl text-lg text-white max-w-5xl mx-auto mt-5'>
-                    At RaK’s Pallikkoodam, education is not a role, it is a shared responsibility and a lived purpose. We are a community of educators who believe learning happens everywhere, curiosity deserves space, and every child’s journey matters.
+                    At RAKS Pallikkoodam, education is not a role, it is a shared responsibility and a lived purpose. We are a community of educators who believe learning happens everywhere, curiosity deserves space, and every child’s journey matters.
                 </p>
                 <button className='bg-[#000086] text-white  px-6 py-3 rounded-lg mt-[3%]'>View open positions</button>
             </div>

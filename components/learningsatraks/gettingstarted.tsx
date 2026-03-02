@@ -54,7 +54,7 @@ const gettingstarted = () => {
                         <SimpleParallax>
                             <Image
                                 src={gettingstart}
-                                alt="RaK's Pallikkoodam students getting started"
+                                alt="RAKS Pallikkoodam students getting started"
                                 fill
                                 className='object-cover object-center'
                                 placeholder='blur'

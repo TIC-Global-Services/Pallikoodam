@@ -44,7 +44,7 @@ const workwithus = () => {
             <div className='w-full lg:w-1/2 relative min-h-[40vh] lg:min-h-full'>
                 <Image
                     src={workwithusimg}
-                    alt="Work with us at RaK's"
+                    alt="Work with us at RAKS"
                     fill
                     className="object-cover"
                 />

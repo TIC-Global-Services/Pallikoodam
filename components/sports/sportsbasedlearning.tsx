@@ -24,7 +24,7 @@ const SportsBasedLearning = () => {
                 scrollTrigger: {
                     trigger: sectionRef.current,
                     start: "top top",
-                    end: "+=300%", // Longer scroll duration for silky smooth wipes
+                    end: "+=150%", // Faster scroll duration
                     scrub: 1,
                     pin: true,
                 }

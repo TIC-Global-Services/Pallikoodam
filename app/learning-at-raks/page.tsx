@@ -6,15 +6,20 @@ import Environments from '@/components/learningsatraks/Environments'
 import Developement from '@/components/learningsatraks/developement'
 import Gettingstarted from '@/components/learningsatraks/gettingstarted'
 
+export const metadata = {
+  title: "Learning @ RAKS | RAKS Pallikoodam",
+  description: "Experience learning environments and philosophy at RAKS Pallikoodam",
+};
+
 const page = () => {
   return (
     <div>
-        <Hero/>
-        <Educationfortoday/>
-        <Empowering/>
-        <Environments/>
-        <Gettingstarted/>
-        {/* <Developement/> */}
+      <Hero />
+      <Educationfortoday />
+      <Empowering />
+      <Environments />
+      <Gettingstarted />
+      {/* <Developement/> */}
     </div>
   )
 }

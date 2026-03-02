@@ -5,8 +5,8 @@ import education from '@/assets/learningatraks/educationtoday.jpg'
 import { useLetterReveal } from '../reuseable/texteffect/useLetterReveal'
 
 const EducationForToday = () => {
-      const { elementRef: titleRef1 } = useLetterReveal<HTMLHeadingElement>();
-      const { elementRef: titleRef2 } = useLetterReveal<HTMLHeadingElement>();
+    const { elementRef: titleRef1 } = useLetterReveal<HTMLHeadingElement>();
+    const { elementRef: titleRef2 } = useLetterReveal<HTMLHeadingElement>();
     return (
         <section className="w-full overflow-hidden py-16 md:py-24 bg-white">
             <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8">
@@ -30,13 +30,13 @@ const EducationForToday = () => {
                                 alt="Students working on a project"
                                 width={800}
                                 height={600}
-                                style={{objectPosition:'30% 50%'}}
+                                style={{ objectPosition: '30% 50%' }}
                                 className="w-full h-full rounded-[12px] object-cover object-center"
                             />
                         </div>
                         <div ref={titleRef2} className='max-w-lg relative'>
                             <p className="text-[#4A4F5E] text-[15px]  md:text-base lg:text-xl leading-[1.2]">
-                                At Rak’s Pallikkoodam, education goes beyond textbooks. We follow a 21st-century, experiential and interdisciplinary approach, connecting subjects, encouraging curiosity, critical thinking, creativity, collaboration, and real-world learning.
+                                At RAKS Pallikkoodam, education goes beyond textbooks. We follow a 21st-century, experiential and interdisciplinary approach, connecting subjects, encouraging curiosity, critical thinking, creativity, collaboration, and real-world learning.
                             </p>
                         </div>
                     </div>

@@ -35,7 +35,7 @@ const Media = () => {
                             <span className="font-ppe italic font-normal">Media</span> & Highlights
                         </h2>
                         <p className="text-[#000000] text-sm md:text-base lg:text-2xl leading-[1.4] max-w-5xl font-medium">
-                            A living gallery of moments that matter, showcasing achievements, learning journeys, events, and stories that reflect the RaK's spirit.
+                            A living gallery of moments that matter, showcasing achievements, learning journeys, events, and stories that reflect the RAKS spirit.
                         </p>
                     </div>
 

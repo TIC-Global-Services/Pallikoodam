@@ -46,7 +46,7 @@ const SingleBall: React.FC<BallProps> = ({ id, speed, top, direction, onPop, onC
             tween.kill();
         };
     }, []); // Removed [speed, direction, id] to prevent killing tween on re-renders
-    
+
     return (
         <div
             ref={ballRef}
@@ -190,7 +190,7 @@ const PickleballGame = () => {
     };
 
     return (
-        <section id="pickleball-game-section" className="relative w-full py-32 bg-white overflow-x-clip select-none">
+        <section id="pickleball-game-section" className="sticky top-0 h-screen flex flex-col justify-center w-full bg-white overflow-x-clip select-none z-10">
 
             {/* Background Balls Area */}
             <div className="absolute inset-0 w-full h-full pointer-events-none">

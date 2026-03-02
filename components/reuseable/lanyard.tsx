@@ -123,7 +123,7 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
         linearDamping: 4
     };
 
-    const { nodes, materials } = useGLTF('/assets/contact/card.glb') as any;
+    const { nodes, materials } = useGLTF('./scene.glb') as any;
     const texture = useTexture(typeof lanyard === 'string' ? lanyard : (lanyard as any).src);
     const [curve] = useState(
         () =>
@@ -218,18 +218,57 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
                             drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation())));
                         }}
                     >
-                        <mesh geometry={nodes.card.geometry}>
-                            <meshPhysicalMaterial
-                                map={materials.base.map}
-                                map-anisotropy={16}
-                                clearcoat={isMobile ? 0 : 1}
-                                clearcoatRoughness={0.15}
-                                roughness={0.9}
-                                metalness={0.8}
-                            />
-                        </mesh>
-                        <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />
-                        <mesh geometry={nodes.clamp.geometry} material={materials.metal} />
+                        {nodes.card && (
+                            <mesh geometry={nodes.card.geometry}>
+                                {materials.base?.map ? (
+                                    <meshPhysicalMaterial
+                                        map={materials.base.map}
+                                        map-anisotropy={16}
+                                        clearcoat={isMobile ? 0 : 1}
+                                        clearcoatRoughness={0.15}
+                                        roughness={0.9}
+                                        metalness={0.8}
+                                    />
+                                ) : (
+                                    <meshPhysicalMaterial
+                                        clearcoat={isMobile ? 0 : 1}
+                                        clearcoatRoughness={0.15}
+                                        roughness={0.9}
+                                        metalness={0.8}
+                                    />
+                                )}
+                            </mesh>
+                        )}
+                        {nodes.clip && <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />}
+                        {nodes.clamp && <mesh geometry={nodes.clamp.geometry} material={materials.metal} />}
+
+                        {nodes.Mesh_0001 && (
+                            <group position={[0.835, -0.031, 0.437]} rotation={[-0.009, 0.002, 0.002]}>
+                                <mesh geometry={nodes.Mesh_0001.geometry}>
+                                    {materials['base.001']?.map ? (
+                                        <meshPhysicalMaterial
+                                            map={materials['base.001'].map}
+                                            map-anisotropy={16}
+                                            clearcoat={isMobile ? 0 : 1}
+                                            clearcoatRoughness={0.15}
+                                            roughness={0.9}
+                                            metalness={0.8}
+                                        />
+                                    ) : (
+                                        <meshPhysicalMaterial
+                                            clearcoat={isMobile ? 0 : 1}
+                                            clearcoatRoughness={0.15}
+                                            roughness={0.9}
+                                            metalness={0.8}
+                                        />
+                                    )}
+                                </mesh>
+                                {nodes.Mesh_0001_1 && <mesh geometry={nodes.Mesh_0001_1.geometry} material={materials['Material.002']} />}
+                                {nodes.Mesh_0001_2 && <mesh geometry={nodes.Mesh_0001_2.geometry} material={materials['Material.003']} />}
+                            </group>
+                        )}
+                        {nodes.clip001 && <mesh geometry={nodes.clip001.geometry} material={materials['metal.001']} position={[0.835, -0.031, 0.437]} material-roughness={0.3} />}
+                        {nodes.clamp001 && <mesh geometry={nodes.clamp001.geometry} material={materials['metal.001']} position={[0.835, -0.031, 0.437]} />}
                     </group>
                 </RigidBody>
             </group>

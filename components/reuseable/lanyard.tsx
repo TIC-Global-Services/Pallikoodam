@@ -177,7 +177,15 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
             band.current.geometry.setPoints(curve.getPoints(isMobile ? 16 : 32));
             ang.copy(card.current.angvel());
             rot.copy(card.current.rotation());
-            card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
+
+            if (dragged || hovered) {
+                // Spring back to face forward when interacted with
+                card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
+            } else {
+                // Keep spinning on the Y-axis continuously when idle
+                // We provide a continuous positive force to maintain rotation
+                card.current.setAngvel({ x: ang.x, y: 1.5, z: ang.z });
+            }
         }
     });
 

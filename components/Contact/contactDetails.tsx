@@ -21,7 +21,7 @@ const ContactDetails = () => {
             </div>
 
             {/* Middle - Lanyard */}
-            <div className="w-full lg:absolute lg:inset-0 lg:z-0 flex justify-center items-center pointer-events-none h-[60vh] lg:h-auto -my-10 lg:my-0">
+            <div className="w-full lg:absolute lg:inset-0 lg:z-20 flex justify-center items-center pointer-events-none h-[60vh] lg:h-auto -my-10 lg:my-0">
                 <div className="scale-[0.65] sm:scale-75 md:scale-90 lg:scale-[1.1] w-full flex justify-center items-center pointer-events-auto">
                     <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
                 </div>

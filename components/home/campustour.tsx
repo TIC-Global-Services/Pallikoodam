@@ -31,31 +31,28 @@ interface IconData {
 }
 
 const iconsData: IconData[] = [
-    { src: icon1, top: '2%', left: '-34%', size: 1000, rotate: 5 }, // Globe
-    { src: icon2, top: '18%', left: '1%', size: 1000, rotate: 5 }, // mouse
-    { src: icon3, top: '30%', right: '-8%', size: 800, rotate: 5 }, // Music
-    { src: icon3, top: '2%', left: '-20%', size: 900, rotate: 5 }, // Music
-    { src: icon4, top: '2%', left: '-10%', size: 900, rotate: 5 }, // pencil
-    { src: icon5, top: '54%', right: '-10%', size: 800, rotate: 5 }, // bulb
-    { src: icon5, top: '37%', left: '-10%', size: 900, rotate: 5 }, // bulb
-    { src: icon6, top: '2%', right: '40%', size: 800, rotate: 5 }, // Shuttlecock
-    { src: icon7, top: '35%', right: '8%', size: 1000, rotate: 5 }, // Chess Knight
-    { src: icon8, top: '18%', left: '20%', size: 800, rotate: 5 }, // Book
-    { src: icon9, top: '54%', right: '1%', size: 800, rotate: 5 }, // Soccer Ball
-    { src: icon10, top: '0%', right: '5%', size: 1000, rotate: 5 }, // Paint Brush
-    { src: icon11, top: '15%', right: '1%', size: 800, rotate: 5 }, // DNA
-    { src: icon12, top: '10%', right: '-25%', size: 900, rotate: 5 }, // Pink Cloud
-    // { src: icon13, top: '22%', left: '96%', size: 100, rotate: 20 }, // Pink Cloud
+    { src: icon1, top: '-40%', left: '-5%', size: 1000, rotate: 5 }, // Globe (Top left)
+    { src: icon7, top: '-30%', left: '-20%', size: 1000, rotate: -5 }, // Chat Bubbles (Top mid-left)
+    { src: icon2, top: '0%', left: '-25%', size: 1000, rotate: 5 }, // Mouse (Top mid)
+    { src: icon3, top: '20%', left: '-15%', size: 1000, rotate: -10 }, // Music (Top mid-right)
+    { src: icon4, top: '30%', left: '20%', size: 1000, rotate: 5 }, // Pencil (Top right)
+    { src: icon6, top: '25%', left: '40%', size: 1000, rotate: 5 }, // Chevron/Shuttlecock (Mid right)
+    { src: icon12, top: '-40%', right: '20%', size: 1000, rotate: 5 }, // Ruler (Bottom right)
+    { src: icon5, top: '-40%', right: '-5%', size: 1000, rotate: 5 }, // Bulb (Bottom mid-right)
+    { src: icon10, top: '-30%', right: '-25%', size: 1000, rotate: 5 }, // Paint Brush (Bottom mid)
+    { src: icon8, top: '-5%', right: '-20%', size: 1000, rotate: -5 }, // Book (Bottom mid-left)
+    { src: icon11, top: '20%', right: '-20%', size: 1000, rotate: -5 }, // DNA/Leaves (Bottom left)
+    { src: icon9, top: '25%', right: '30%', size: 1000, rotate: -5 }, // Soccer/Cursor (Mid left)
 ]
 const mobileiconsData: IconData[] = [
-    { src: icon1, top: '-10%', left: '25%', size: 600, rotate: 2 }, // Globe
+    { src: icon1, top: '80%', left: '5%', size: 600, rotate: 2 }, // Globe
     { src: icon2, top: '10%', left: '4%', size: 600, rotate: 3 }, // mouse
     { src: icon3, top: '20%', left: '25%', size: 600, rotate: 2 }, // Music
     { src: icon4, top: '35%', left: '3%', size: 600, rotate: 5 }, // pencil
     { src: icon5, top: '50%', left: '25%', size: 600, rotate: 3 }, // bulb
     { src: icon6, top: '60%', right: '-40%', size: 600, rotate: 5 }, // Shuttlecock
     { src: icon7, top: '85%', right: '-70%', size: 600, rotate: 3 }, // Chess Knight
-    { src: icon8, top: '99%', left: '2%', size: 600, rotate: 3 }, // Book
+    // { src: icon8, top: '99%', left: '2%', size: 600, rotate: 3 }, // Book
     { src: icon9, top: '85%', right: '-25%', size: 600, rotate: 2 }, // Soccer Ball
     { src: icon10, top: '110%', right: '-10%', size: 600, rotate: 3 }, // Paint Brush
     { src: icon11, top: '125%', right: '10%', size: 600, rotate: 5 }, // DNA
@@ -96,9 +93,9 @@ const campustour = () => {
     }, [activeIcons])
 
     return (
-        <div className='bg-[#000086] rounded-t-[40px] min-h-screen overflow-hidden relative'>
-            <div className='absolute xl:top-30 lg:-top-10 md:top-20 -left-10 top-10 w-full xl:-rotate-10 rotate-10'>
-                <div className='relative h-[50vh]'>
+        <div className='bg-[#000086] flex items-center rounded-t-[40px] min-h-screen overflow-hidden relative'>
+            <div className='absolute inset-0 w-full h-full pointer-events-none'>
+                <div className='relative w-full h-full'>
                     {activeIcons.map((icon, i) => (
                         <div
                             key={i}
@@ -151,14 +148,14 @@ const campustour = () => {
             </div>
 
             <ContainerLayout>
-                <div className='py-[5%] relative z-20'>
+                <div className='flex flex-col justify-center items-center relative z-20'>
 
-                    <div ref={titleRef} className="flex flex-col gap-[10%]">
-                        <h1 className={`text-sm md:text-2xl lg:text-3xl  xl:text-4xl tracking-tight  text-white font-medium`} >Step into a school where learning is intentional, relationships are meaningful,<br className='hidden xl:block' /> and every experience is designed to help children grow with confidence,<br /> curiosity and purpose.</h1>
-                        <h1 className={`text-sm md:text-2xl lg:text-3xl  xl:text-4xl   tracking-tight  text-white font-medium mt-8`}>Discover the values that guide us, the research that shapes us, and the vision<br className='hidden xl:block' /> that inspires us to create joyful, future-ready learning every single day.</h1>
+                    <div ref={titleRef} className="flex flex-col justify-center items-center gap-[10%]">
+                        <h1 className={`text-sm md:text-2xl text-center lg:text-3xl  xl:text-4xl tracking-tight  text-white font-medium`} >Step into a school where learning is intentional, relationships are meaningful,<br className='hidden xl:block' /> and every experience is designed to help children grow with confidence,<br /> curiosity and purpose.</h1>
+                        <h1 className={`text-sm md:text-2xl text-center lg:text-3xl  xl:text-4xl   tracking-tight  text-white font-medium mt-8`}>Discover the values that guide us, the research that shapes us, and the vision<br className='hidden xl:block' /> that inspires us to create joyful, future-ready learning every single day.</h1>
                     </div>
 
-                    <div className="mt-[5%]">
+                    <div className="mt-[5%] flex justify-center">
                         <button suppressHydrationWarning={true} className='bg-white text-[#000086] text-sm md:text-base lg:text-xl xl:text-2xl hover:scale-105 transition-all duration-300 font-medium px-4 py-3 capitalize rounded-md'>schedule a campus tour</button>
                     </div>
                 </div>

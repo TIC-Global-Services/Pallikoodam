@@ -8,7 +8,7 @@ const developement = () => {
   return (
     <section className='w-full py-0 pb-10 md:py-[12vh]'>
       <div className=''>
-        <div className='relative w-full h-[90vh] rounded-2xl md:rounded-4xl overflow-hidden flex items-center'>
+        <div className='relative w-full h-[70vh] md:h-[90vh] rounded-4xl md:rounded-4xl overflow-hidden flex items-center'>
           {/* Background Image */}
           <div className='absolute inset-0 w-full h-full'>
             {/* <SimpleParallax> */}

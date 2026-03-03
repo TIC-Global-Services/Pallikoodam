@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -16,6 +16,7 @@ if (typeof window !== 'undefined') {
 }
 
 const Empowering = () => {
+    const [activeTooltip, setActiveTooltip] = useState<number | null>(null)
     const containerRef = useRef<HTMLElement>(null)
     const triggerRef = useRef<HTMLDivElement>(null)
     const cardsRef = useRef<(HTMLDivElement | null)[]>([])
@@ -52,7 +53,8 @@ const Empowering = () => {
         });
 
         const duration = 2; // duration for one card to move all the way right-to-left
-        const staggerDelay = 0.4; // stagger between cards, reduced for smaller gaps
+        const isMobile = window.innerWidth < 768;
+        const staggerDelay = isMobile ? 0.8 : 0.4; // stagger between cards, larger gap for mobile
 
         cardsRef.current.forEach((card, index) => {
             const startTimeline = index * staggerDelay;
@@ -138,14 +140,22 @@ const Empowering = () => {
                                 </div>
 
                                 {/* Plus Icon and Hover Tooltip */}
-                                <div className="absolute left-4 top-1/2 -translate-y-1/2 z-20 group-hover:z-30 border rounded-full border-dashed p-1 border-white">
+                                <div
+                                    className="absolute left-4 top-1/2 -translate-y-1/2 z-20 md:group-hover:z-30 border rounded-full border-dashed p-1 border-white"
+                                    onClick={(e) => {
+                                        if (window.innerWidth < 768) {
+                                            e.stopPropagation();
+                                            setActiveTooltip(activeTooltip === index ? null : index);
+                                        }
+                                    }}
+                                >
                                     {/* The Plus Button */}
-                                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#001D6E] text-white flex items-center justify-center shadow-lg border-[1.5px] border-white/30 group-hover:bg-white group-hover:text-black transition-colors duration-300">
-                                        <Plus size={20} className="text-white group-hover:text-black" />
+                                    <div className={`w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#001D6E] text-white flex items-center justify-center shadow-lg border-[1.5px] border-white/30 md:group-hover:bg-white md:group-hover:text-black transition-colors duration-300 ${activeTooltip === index ? 'bg-white text-black' : ''}`}>
+                                        <Plus size={20} className={`text-white md:group-hover:text-black ${activeTooltip === index ? '!text-black' : ''}`} />
                                     </div>
 
                                     {/* Description Box (Appears on hover) */}
-                                    <div className="absolute left-10 -translate-y-1/2 ml-4 w-[220px] md:w-[260px] bg-white   p-4 md:p-5 shadow-2xl opacity-0 translate-x-4 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 group-hover:pointer-events-auto rounded-[8px]">
+                                    <div className={`absolute left-10 -translate-y-1/2 ml-4 w-[220px] md:w-[260px] bg-white   p-4 md:p-5 shadow-2xl translate-x-4 pointer-events-none transition-all duration-300 rounded-[8px] md:group-hover:opacity-100 md:group-hover:translate-x-0 md:group-hover:pointer-events-auto ${activeTooltip === index ? 'opacity-100 translate-x-0 pointer-events-auto' : 'opacity-0'}`}>
                                         <p className="text-[13px] md:text-[14px] leading-[1.5] text-[#2C313E] font-medium font-sans">
                                             {item.description}
                                         </p>

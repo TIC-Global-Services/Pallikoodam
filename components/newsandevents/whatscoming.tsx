@@ -46,13 +46,15 @@ const whatscoming = () => {
                         </h3>
 
                         {/* Grid of Highlights / Mobile Slider */}
-                        <div className="w-full overflow-x-auto snap-x snap-mandatory flex md:grid md:grid-cols-3 gap-6 md:gap-8 hide-scrollbar scrollbar-hide pb-4 md:pb-0">
+                        <div
+                            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                            className="flex md:grid md:grid-cols-3 gap-4 md:gap-10 overflow-x-auto md:overflow-visible snap-x snap-mandatory [&::-webkit-scrollbar]:hidden -mr-12 pr-12 md:mr-0 md:pr-0">
                             {highlights.map((item) => (
-                                <div key={item.id} className="flex flex-col gap-2 md:gap-4 shrink-0 w-[85vw] md:w-full snap-center md:snap-align-none">
+                                <div key={item.id} className="flex flex-col gap-3 md:gap-4 flex-none w-[85%] sm:w-[50%] md:w-auto snap-start md:snap-align-none">
                                     {item.imageTop ? (
                                         <>
                                             {/* Image Top */}
-                                            <div className="relative w-full aspect-[4/3] md:aspect-square rounded-[16px] md:rounded-[20px] overflow-hidden">
+                                            <div className="relative w-full aspect-square md:aspect-square rounded-[16px] md:rounded-[24px] overflow-hidden shadow-sm">
                                                 <Image
                                                     src={item.image}
                                                     alt="Event highlight"
@@ -60,19 +62,23 @@ const whatscoming = () => {
                                                     className="object-cover"
                                                 />
                                             </div>
-                                            {/* Text Bottom */}
-                                            <p className="text-[#000000] text-sm md:text-base lg:text-lg leading-[1.2] max-w-sm font-medium mt-1 md:mt-2">
-                                                {item.text}
-                                            </p>
+                                            <div className="flex flex-col gap-1">
+                                                <p className="text-[#000000] text-[15px] md:text-base lg:text-lg leading-[1.3] md:leading-[1.2] font-medium">
+                                                    {item.text}
+                                                </p>
+                                            </div>
                                         </>
                                     ) : (
-                                        <div className="flex flex-col-reverse md:flex-col gap-2 md:gap-4">
-                                            {/* Text Top */}
-                                            <p className="hidden md:block text-[#000000] text-sm md:text-base lg:text-lg leading-[1.2] max-w-sm font-medium mb-1 md:mb-2 mt-4 md:mt-0">
-                                                {item.text}
-                                            </p>
-                                            {/* Image Bottom */}
-                                            <div className="relative w-full aspect-[4/3] md:aspect-square rounded-[16px] md:rounded-[20px] overflow-hidden">
+                                        <div className="flex flex-col md:flex-col gap-3 md:gap-4">
+                                            {/* Text Top (Desktop ONLY) */}
+                                            <div className="hidden md:flex flex-col gap-1 mt-4 md:mt-0">
+                                                <p className="text-[#000000] text-[15px] md:text-base lg:text-lg leading-[1.3] md:leading-[1.2] font-medium">
+                                                    {item.text}
+                                                </p>
+                                            </div>
+
+                                            {/* Image Bottom (Desktop) / Image Top (Mobile) */}
+                                            <div className="relative w-full aspect-square md:aspect-square rounded-[16px] md:rounded-[24px] overflow-hidden shadow-sm">
                                                 <Image
                                                     src={item.image}
                                                     alt="Event highlight"
@@ -80,10 +86,13 @@ const whatscoming = () => {
                                                     className="object-cover"
                                                 />
                                             </div>
-                                            {/* Text Top (Mobile fallback) */}
-                                            <p className="md:hidden text-[#000000] text-sm md:text-base lg:text-lg leading-[1.2] max-w-sm font-medium mb-1 md:mb-2 mt-4 md:mt-0">
-                                                {item.text}
-                                            </p>
+
+                                            {/* Text Bottom (Mobile ONLY fallback) */}
+                                            <div className="md:hidden flex flex-col gap-1">
+                                                <p className="text-[#000000] text-[15px] md:text-base lg:text-lg leading-[1.3] md:leading-[1.2] font-medium">
+                                                    {item.text}
+                                                </p>
+                                            </div>
                                         </div>
                                     )}
                                 </div>

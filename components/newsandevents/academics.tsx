@@ -61,7 +61,7 @@ const academics = () => {
                         {/* Right Stacked Cards */}
                         <div className="flex flex-col gap-6 w-full lg:w-1/2">
                             {resourcesInfo.items.map((item) => (
-                                <div key={item.id} className="bg-[#E9E9E9] rounded-xl lg:rounded-2xl p-2 lg:p-4 flex flex-col sm:flex-row gap-6 h-full items-center sm:items-start">
+                                <div key={item.id} className="bg-[#E9E9E9] rounded-xl lg:rounded-2xl p-2 lg:p-4 flex flex-col sm:flex-row gap-6 h-full items-start sm:items-center">
                                     <div className="relative w-full sm:w-1/2 aspect-[4/4] rounded-xl overflow-hidden shrink-0">
                                         <Image
                                             src={item.image}
@@ -70,12 +70,12 @@ const academics = () => {
                                             className="object-cover"
                                         />
                                     </div>
-                                    <div className="flex flex-col justify-center sm:w-1/2 h-full gap-2">
+                                    <div className="flex flex-col justify-start md:justify-center sm:w-1/2 h-full gap-2">
                                         <h3 className="text-[#000000] text-lg lg:text-2xl leading-snug font-medium">
                                             {item.title}
                                         </h3>
                                         {item.list ? (
-                                            <ul className="text-[#6B7280] text-sm lg:text-xl space-y-1 font-medium">
+                                            <ul className="text-[#6B7280] text-sm lg:text-xl  space-y-1 font-medium">
                                                 {item.list.map((listItem, i) => (
                                                     <li key={i}>&bull; {listItem}</li>
                                                 ))}

@@ -15,8 +15,10 @@ const SportsBasedLearning = () => {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        let ctx = gsap.context(() => {
-            // Set initial off-screen positions for wiping panels and the text panel
+        let mm = gsap.matchMedia(sectionRef);
+
+        mm.add("(min-width: 768px)", () => {
+            // Desktop: Full animation sequence
             gsap.set('.img-panel-2, .img-panel-3', { yPercent: 100 });
             gsap.set('.text-panel-3', { autoAlpha: 0, y: 30 }); // Start slightly lower
 
@@ -38,18 +40,40 @@ const SportsBasedLearning = () => {
             tl.to('.img-panel-3', { yPercent: 0, ease: "none" }, "wipe2")
                 .to('.text-panel-3', { autoAlpha: 1, y: 0, ease: "none" }, "wipe2")
                 .to(textRef.current, { y: "40vh", ease: "none" }, "wipe2");
+        });
 
-        }, sectionRef);
+        mm.add("(max-width: 767px)", () => {
+            // Mobile: Content fixed, only images scroll
+            gsap.set('.img-panel-2, .img-panel-3', { yPercent: 100 });
+            gsap.set('.text-panel-3', { autoAlpha: 1, y: 0 }); // Already visible
+            gsap.set(textRef.current, { y: 0 }); // Fixed text
 
-        return () => ctx.revert();
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top top",
+                    end: "+=150%",
+                    scrub: 1,
+                    pin: true,
+                }
+            });
+
+            // Wipe up Panel 2
+            tl.to('.img-panel-2', { yPercent: 0, ease: "none" }, "wipe1");
+
+            // Wipe up Panel 3
+            tl.to('.img-panel-3', { yPercent: 0, ease: "none" }, "wipe2");
+        });
+
+        return () => mm.revert();
     }, []);
 
     return (
         <section ref={sectionRef} className="w-full h-screen bg-white relative overflow-hidden flex items-center">
-            <div className="max-w-7xl mx-auto w-full h-full flex px-4 md:px-8">
+            <div className="max-w-7xl mx-auto w-full h-full flex max-md:flex-col px-4 md:px-8">
 
                 {/* Left Column - Sticky Text */}
-                <div className="w-1/2 h-full flex flex-col pt-[20vh] md:pt-[25vh]">
+                <div className="w-1/2 max-md:w-full h-full max-md:h-auto flex flex-col pt-[20vh] md:pt-[25vh] max-md:pt-4">
                     <div ref={textRef} className="animated-text">
                         <h2 className="text-[clamp(2.5rem,4vw,4.5rem)] text-black leading-[1.05] font-normal">
                             Sports-Based <br />
@@ -59,13 +83,13 @@ const SportsBasedLearning = () => {
                 </div>
 
                 {/* Right Column - Wiping Images */}
-                <div className="w-1/2 h-full relative flex flex-col justify-center items-start pl-4 md:pl-8">
+                <div className="w-1/2 max-md:w-full h-full relative flex flex-col justify-center max-md:justify-start items-start pl-4 md:pl-8 max-md:pl-0 max-md:mt-6">
 
                     {/* The image stack container */}
-                    <div className="relative w-[95%] flex flex-col">
+                    <div className="relative w-[95%] max-md:w-full flex flex-col">
 
                         {/* Wiping bounds */}
-                        <div className="relative w-full aspect-[5/3] rounded shadow-sm overflow-hidden z-20">
+                        <div className="wiping-bounds-container relative w-full aspect-[5/3] max-md:aspect-4/3 rounded max-md:rounded-[16px] shadow-sm overflow-hidden z-20">
 
                             {/* Panel 1 */}
                             <div className="absolute inset-0 z-10 bg-gray-50">

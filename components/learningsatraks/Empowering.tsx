@@ -101,9 +101,9 @@ const Empowering = () => {
 
     return (
         <div className="relative w-full z-10 bg-white" style={{ marginBottom: "-100vh" }}>
-            <section ref={containerRef} className="sticky top-0 w-full h-screen overflow-hidden py-20 flex flex-col items-center justify-center p-0 m-0">
+            <section ref={containerRef} className="sticky top-0 w-full h-dvh lg:h-screen overflow-hidden pt-20 flex flex-col items-center justify-start pb-10">
                 {/* Title */}
-                <div className="text-center z-10 w-full px-4 mb-4 md:mb-10 mt-auto md:mt-0 pt-4 md:pt-0">
+                <div className="text-center z-10 w-full px-4 mb-4 lg:mb-10 shrink-0">
                     <h2 className="text-[32px] md:text-[44px] lg:text-[54px] text-[#2C313E] leading-[1.1] font-medium tracking-tight">
                         Empowering Learners Through <span className="font-ppe italic font-normal">Choice</span><br className="hidden md:block" />
                         <span className="font-ppe italic font-normal">and Clarity</span>
@@ -111,7 +111,7 @@ const Empowering = () => {
                 </div>
 
                 {/* Cards Container */}
-                <div className="w-full px-4 relative flex justify-center items-start h-screen">
+                <div className="w-full px-4 relative flex justify-center items-center flex-1 min-h-0">
                     {/* Center anchor constraint so all cards start from exact same origin point */}
                     <div className="relative w-[250px] md:w-[280px] lg:w-[433px] h-[360px] md:h-[420px] lg:h-[560px]">
                         {data.map((item, index) => (
@@ -151,7 +151,7 @@ const Empowering = () => {
                                 >
                                     {/* The Plus Button */}
                                     <div className={`w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#001D6E] text-white flex items-center justify-center shadow-lg border-[1.5px] border-white/30 md:group-hover:bg-white md:group-hover:text-black transition-colors duration-300 ${activeTooltip === index ? 'bg-white text-black' : ''}`}>
-                                        <Plus size={20} className={`text-white md:group-hover:text-black ${activeTooltip === index ? '!text-black' : ''}`} />
+                                        <Plus size={20} className={`text-white md:group-hover:text-black ${activeTooltip === index ? 'text-black!' : ''}`} />
                                     </div>
 
                                     {/* Description Box (Appears on hover) */}

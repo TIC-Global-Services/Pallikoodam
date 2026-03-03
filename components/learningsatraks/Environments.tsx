@@ -103,10 +103,10 @@ const Environments = () => {
 
                     {/* Right side Stacked Cards 2 and 3, each spanning 2 rows */}
                     {features.slice(1).map((feature) => (
-                        <div key={feature.id} className='lg:col-span-3 w-full h-auto flex flex-col sm:flex-row bg-[#F3F4F6] rounded-[24px] lg:rounded-[32px] p-4 lg:p-6 gap-4 lg:gap-8 shadow-lg'>
+                        <div key={feature.id} className='lg:col-span-3 w-full h-auto flex flex-col sm:flex-row bg-[#F3F4F6] rounded-[24px] lg:rounded-[32px] p-0 lg:p-6 gap-4 lg:gap-8 shadow-lg'>
                             {/* Text content left */}
-                            <div className='flex-1 flex flex-col justify-center px-2 lg:px-1 py-2 lg:py-4'>
-                                <div className='shrink-0 w-10 h-10 px-10  mb-2 relative flex items-start justify-start overflow-visible'>
+                            <div className='flex-1 flex flex-col justify-center px-3 lg:px-1 py-4 lg:py-4'>
+                                <div className='shrink-0 w-10 h-10 px-10  md:mb-2 relative flex items-start justify-start overflow-visible'>
                                     <Image
                                         src={feature.icon}
                                         alt=""
@@ -124,7 +124,7 @@ const Environments = () => {
                                 </div>
                             </div>
                             {/* Image right */}
-                            <div className='relative w-full sm:w-[50%] h-[200px] sm:h-full min-h-[200px] max-h-[300px] lg:max-h-none rounded-[16px] lg:rounded-[24px] overflow-hidden shrink-0'>
+                            <div className='relative w-full sm:w-[50%] h-[200px] sm:h-full min-h-[200px] max-h-[300px] lg:max-h-none rounded-b-2xl  md:rounded-[24px] overflow-hidden shrink-0'>
                                 <Image
                                     src={feature.image}
                                     alt=""

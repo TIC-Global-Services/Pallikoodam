@@ -19,14 +19,14 @@ const WhatHappeing = () => {
             image: comingup2,
             title: "Pongal Celebrations",
             text: "Honouring tradition, gratitude, and cultural roots through hands-on experiences and shared festivities.",
-            marginTop: "md:mt-32 mt-8"
+            marginTop: "md:mt-32 mt-0"
         },
         {
             id: 3,
             image: comingup3,
             title: "Sports Day",
             text: "Celebrating teamwork, resilience, and the spirit of play, on and off the field.",
-            marginTop: "md:mt-64 mt-8"
+            marginTop: "md:mt-64 mt-0"
         }
     ];
 
@@ -38,10 +38,12 @@ const WhatHappeing = () => {
                         What's <span className="font-ppe italic font-normal">coming up</span>
                     </h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
+                    <div
+                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                        className="flex md:grid md:grid-cols-3 gap-4 md:gap-10 overflow-x-auto md:overflow-visible snap-x snap-mandatory [&::-webkit-scrollbar]:hidden -mr-12 pr-12 md:mr-0 md:pr-0">
                         {highlights.map((item) => (
-                            <div key={item.id} className={`flex flex-col gap-4 ${item.marginTop}`}>
-                                <div className="relative w-full aspect-[4/3] md:aspect-square rounded-[16px] md:rounded-[24px] overflow-hidden shadow-sm">
+                            <div key={item.id} className={`flex flex-col gap-3 md:gap-4 flex-none w-[85%] sm:w-[50%] md:w-auto snap-start ${item.marginTop}`}>
+                                <div className="relative w-full aspect-square md:aspect-square rounded-[16px] md:rounded-[24px] overflow-hidden shadow-sm">
                                     <Image
                                         src={item.image}
                                         alt={item.title}
@@ -49,11 +51,11 @@ const WhatHappeing = () => {
                                         className="object-cover"
                                     />
                                 </div>
-                                <div>
-                                    <p className="text-[#000000] text-sm md:text-base lg:text-lg leading-[1.2] font-medium mb-1">
+                                <div className="flex flex-col gap-1">
+                                    <p className="text-[#000000] text-[15px] md:text-base lg:text-lg leading-[1.3] md:leading-[1.2] font-medium">
                                         {item.title}
                                     </p>
-                                    <p className="text-[#000000] text-sm md:text-base lg:text-lg leading-[1.2] font-medium max-w-sm">
+                                    <p className="text-[#000000] text-[15px] md:text-base lg:text-lg leading-[1.4] md:leading-[1.2] font-normal md:font-medium max-w-[95%] md:max-w-sm">
                                         {item.text}
                                     </p>
                                 </div>

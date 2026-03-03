@@ -42,10 +42,10 @@ const currentopenings = () => {
 
                 {/* Header Section */}
                 <div className='mb-12'>
-                    <h2 className='text-3xl md:text-5xl lg:text-[48px] font-regular tracking-tight mb-6'>
+                    <h2 className='text-2xl md:text-5xl lg:text-[48px] font-regular tracking-tight mb-2 md:mb-6'>
                         <span className='font-ppe italic font-light'>Current</span> Open Positions
                     </h2>
-                    <p className='text-lg md:text-[32px] leading-[1.1] font-[500] tracking-tight'>
+                    <p className='text-base md:text-[32px] leading-[1.1] font-[500] tracking-tight'>
                         Explore roles that match your<br />skills and passion.
                     </p>
                 </div>
@@ -54,7 +54,7 @@ const currentopenings = () => {
                 <div className='w-full border-t-2 border-black/20'>
 
                     {/* Table Header */}
-                    <div className='hidden md:grid grid-cols-12 gap-4 py-6 text-sm md:text-[34px] font-medium text-black uppercase tracking-wide border-b border-black/20'>
+                    <div className='grid grid-cols-12 gap-4 py-6 text-sm md:text-[34px] font-medium text-black uppercase tracking-wide border-b border-black/20'>
                         <div className='col-span-6 lg:col-span-7'>POSITION</div>
                         <div className='col-span-3 lg:col-span-3'>LOCATION</div>
                         <div className='col-span-3 lg:col-span-2'>TYPE</div>
@@ -72,31 +72,29 @@ const currentopenings = () => {
                                 {/* Visible Clickable Row */}
                                 <div
                                     onClick={() => toggleAccordion(idx)}
-                                    className='w-full cursor-pointer py-6 grid grid-cols-1 md:grid-cols-12 gap-y-2 gap-x-4 items-center group'
+                                    className='w-full cursor-pointer py-4 md:py-6 grid grid-cols-12 md:grid-cols-12 gap-x-2 md:gap-x-4 items-center group'
                                 >
-                                    <div className='md:col-span-6 lg:col-span-7 leading-[30px] text-lg md:text-2xl lg:text-[30px] font-normal'>
+                                    <div className='col-span-6 md:col-span-6 lg:col-span-7 leading-[1.2] md:leading-[30px] text-[13px] md:text-2xl lg:text-[30px] font-normal pr-2 md:pr-0'>
                                         {job.position}
                                     </div>
 
                                     {/* Location & Type Container for Mobile Flow */}
-                                    <div className='md:col-span-6 lg:col-span-5 grid grid-cols-2 lg:grid-cols-5 gap-4 items-center'>
-                                        <div className='lg:col-span-3 leading-[30px] text-base md:text-[1.9rem] font-normal text-black/80'>
+                                    <div className='col-span-6 md:col-span-6 lg:col-span-5 grid grid-cols-2 lg:grid-cols-5 gap-2 md:gap-4 items-center'>
+                                        <div className='lg:col-span-3 leading-[1.2] md:leading-[30px] text-[13px] md:text-[1.9rem] font-normal text-black/80'>
                                             {job.location}
                                         </div>
-                                        <div className='lg:col-span-2 flex justify-between items-center text-base md:text-[1.9rem] font-normal text-black/80'>
+                                        <div className='lg:col-span-2 flex justify-between items-center text-[13px] md:text-[1.9rem] font-normal text-black/80'>
                                             <span>{job.type}</span>
-                                            <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-black text-white' : 'bg-black/10 text-black group-hover:bg-black  group-hover:text-white'}`}>
+                                            <div className={`w-5 h-5 md:w-8 md:h-8 rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0 ml-1 md:ml-0 ${isOpen ? 'bg-black text-white' : 'bg-black/50 md:bg-black/10 text-white md:text-black group-hover:bg-black group-hover:text-white'}`}>
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
-                                                    width="16"
-                                                    height="16"
                                                     viewBox="0 0 24 24"
                                                     fill="none"
                                                     stroke="currentColor"
                                                     strokeWidth="2"
                                                     strokeLinecap="round"
                                                     strokeLinejoin="round"
-                                                    className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : 'rotate-0'}`}
+                                                    className={`w-3 h-3 md:w-4 md:h-4 transition-transform duration-300 transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}
                                                 >
                                                     <path d="M12 5v14M19 12l-7 7-7-7" />
                                                 </svg>

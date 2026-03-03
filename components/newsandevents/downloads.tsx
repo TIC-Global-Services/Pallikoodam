@@ -38,11 +38,13 @@ const downloads = () => {
 
                     {/* Image Grid / Slider */}
                     {/* On mobile: horizontal scrolling flex container with snap-x. On md+: grid container */}
-                    <div className="w-full overflow-x-auto snap-x snap-mandatory flex md:grid md:grid-cols-3 gap-4 md:gap-6 hide-scrollbar pb-4 md:pb-0">
+                    <div
+                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                        className="w-full overflow-x-auto snap-x snap-mandatory flex md:grid md:grid-cols-3 gap-4 md:gap-6 hide-scrollbar scrollbar-hide [&::-webkit-scrollbar]:hidden -mr-12 pr-12 md:mr-0 md:pr-0">
                         {mediaImages.map((item) => (
                             <div
                                 key={item.id}
-                                className="relative w-[85vw] md:w-full shrink-0 aspect-[4/4] rounded-[16px] overflow-hidden snap-center md:snap-align-none"
+                                className="relative w-[85%] sm:w-[50%] md:w-full shrink-0 aspect-[4/4] rounded-[16px] overflow-hidden snap-start md:snap-align-none"
                             >
                                 <Image
                                     src={item.image}

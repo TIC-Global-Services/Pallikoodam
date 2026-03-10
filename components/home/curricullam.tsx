@@ -24,7 +24,7 @@ const curricullam = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top top",
+          start: "top+=1 top",
           end: "+=150%",
           pin: true,
           scrub: 1,
@@ -54,15 +54,27 @@ const curricullam = () => {
         },
         "<"
       );
+      requestAnimationFrame(() => ScrollTrigger.refresh());
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
+  useEffect(() => {
+  const handleLoad = () => {
+    ScrollTrigger.refresh();
+  };
+
+  window.addEventListener("load", handleLoad);
+
+  return () => {
+    window.removeEventListener("load", handleLoad);
+  };
+}, []);
 
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-white mt-20 min-h-screen"
+      className="relative w-full bg-white mt-20 h-screen"
     >
       <div className="w-full h-full">
         <div className="relative w-full h-full">

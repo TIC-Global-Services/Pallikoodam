@@ -45,18 +45,18 @@ const iconsData: IconData[] = [
     { src: icon9, top: '25%', right: '30%', size: 1000, rotate: -5 }, // Soccer/Cursor (Mid left)
 ]
 const mobileiconsData: IconData[] = [
-    { src: icon1, top: '80%', left: '5%', size: 600, rotate: 2 }, // Globe
-    { src: icon2, top: '10%', left: '4%', size: 600, rotate: 3 }, // mouse
-    { src: icon3, top: '20%', left: '25%', size: 600, rotate: 2 }, // Music
-    { src: icon4, top: '35%', left: '3%', size: 600, rotate: 5 }, // pencil
-    { src: icon5, top: '50%', left: '25%', size: 600, rotate: 3 }, // bulb
-    { src: icon6, top: '60%', right: '-40%', size: 600, rotate: 5 }, // Shuttlecock
-    { src: icon7, top: '85%', right: '-70%', size: 600, rotate: 3 }, // Chess Knight
-    // { src: icon8, top: '99%', left: '2%', size: 600, rotate: 3 }, // Book
-    { src: icon9, top: '85%', right: '-25%', size: 600, rotate: 2 }, // Soccer Ball
-    { src: icon10, top: '110%', right: '-10%', size: 600, rotate: 3 }, // Paint Brush
-    { src: icon11, top: '125%', right: '10%', size: 600, rotate: 5 }, // DNA
-    { src: icon12, top: '115%', left: '-10%', size: 600, rotate: 4 }, // Pink Cloud
+ { src: icon1, top: '-20%', left: '-30%', size: 600, rotate: 5 }, // Globe (Top left)
+    { src: icon7, top: '-10%', left: '10%', size: 600, rotate: -5 }, // Chat Bubbles (Top mid-left)
+    { src: icon2, top: '10%', left: '10%', size: 600, rotate: 5 }, // Mouse (Top mid)
+    { src: icon3, top: '20%', left: '10%', size: 600, rotate: -10 }, // Music (Top mid-right)
+    { src: icon4, top: '40%', left: '10%', size: 600, rotate: 5 }, // Pencil (Top right)
+    { src: icon6, top: '50%', left: '-30%', size: 600, rotate: 5 }, // Chevron/Shuttlecock (Mid right)
+    // { src: icon12, top: '-40%', right: '20%', size: 600, rotate: 5 }, // Ruler (Bottom right)
+    // { src: icon5, top: '-40%', right: '-5%', size: 600, rotate: 5 }, // Bulb (Bottom mid-right)
+    // { src: icon10, top: '-30%', right: '-25%', size: 600, rotate: 5 }, // Paint Brush (Bottom mid)
+    // { src: icon8, top: '-5%', right: '-20%', size: 600, rotate: -5 }, // Book (Bottom mid-left)
+    // { src: icon11, top: '20%', right: '-20%', size: 600, rotate: -5 }, // DNA/Leaves (Bottom left)
+    // { src: icon9, top: '25%', right: '30%', size: 600, rotate: -5 }, 
 
 ]
 

@@ -39,7 +39,7 @@ const Wayofteaching = () => {
                 const isSmallHeightDesktop = window.innerHeight < 768;
                 const offset = isSmallHeightDesktop ? 2 : 5;
                 const scrollMultiplier = isMobile
-                    ? 35
+                    ? 120
                     : isSmallHeightDesktop
                         ? 150
                         : 250;

@@ -130,12 +130,12 @@ const SportsArena = () => {
 
         return (
             <div key={index} className={`arena-item w-full flex justify-center cursor-pointer ${isPickleball ? 'no-parallax' : ''}`}>
-                <div className={`relative flex items-center flex-row w-full ${isPickleball ? 'max-w-[400px] sm:max-w-[460px] md:max-w-[520px]' : 'max-w-[280px] sm:max-w-[340px] md:max-w-[450px]'}`}>
+                <div className={`relative flex items-center flex-row w-full ${isPickleball ? 'max-w-[350px] sm:max-w-[460px] md:max-w-[520px]' : 'max-w-[280px] sm:max-w-[340px] md:max-w-[450px]'}`}>
 
                     {!isTextRight && !hideTitle && (
                         <h3
                             id={isPickleball ? 'sports-pickleball-text' : undefined}
-                            className={`font-ppe italic font-normal text-xl md:text-2xl text-black mr-4 md:mr-6 whitespace-nowrap ${isPickleball ? 'sports-pickleball-text' : ''}`}
+                            className={`font-ppe italic font-normal text-base md:text-2xl text-black mr-2 md:mr-6 whitespace-nowrap ${isPickleball ? 'sports-pickleball-text' : ''}`}
                         >
                             {item.title}
                         </h3>
@@ -153,7 +153,7 @@ const SportsArena = () => {
                     {isTextRight && !hideTitle && (
                         <h3
                             id={isPickleball ? 'sports-pickleball-text' : undefined}
-                            className={`font-ppe italic font-normal text-xl md:text-2xl text-black ml-4 md:ml-6 whitespace-nowrap ${isPickleball ? 'sports-pickleball-text' : ''}`}
+                            className={`font-ppe italic font-normal text-base md:text-2xl text-black ml-2 md:ml-6 whitespace-nowrap ${isPickleball ? 'sports-pickleball-text' : ''}`}
                         >
                             {item.title}
                         </h3>
@@ -182,7 +182,7 @@ const SportsArena = () => {
     };
 
     return (
-        <section ref={containerRef} className="w-full py-24 bg-white text-black relative z-20">
+        <section ref={containerRef} className="w-full md:py-24 bg-white text-black relative z-20">
             <div className="px-4 md:px-8 text-center mb-16 md:mb-32">
                 <h2 className="text-2xl md:text-[clamp(3.4rem,3vw,4rem)] font-medium mb-2">
                     International-Standard <span className="font-ppe italic font-normal">Sports Arenas</span>
@@ -193,13 +193,13 @@ const SportsArena = () => {
             </div>
 
             {/* Grid for normal items */}
-            <div className="max-w-6xl mx-auto px-4 sm:px-8 md:px-16 flex flex-col md:flex-row gap-12 md:gap-8 pb-16">
+            <div className="max-w-6xl mx-auto px-2 sm:px-8 md:px-16 flex flex-row gap-4 md:gap-8 pb-16">
                 {/* Left Column (Even indices, excluding Pickleball) */}
-                <div className="flex-1 flex flex-col gap-24 md:gap-48 mt-0">
+                <div className="flex-1 flex flex-col gap-12 md:gap-48 mt-0">
                     {data.filter(item => item.title !== "Pickleball").map((item, index) => (index % 2 === 0 ? renderItem(item, index) : null))}
                 </div>
                 {/* Right Column (Odd indices, excluding Pickleball) */}
-                <div className="flex-1 flex flex-col gap-24 md:gap-48 mt-12 md:mt-48">
+                <div className="flex-1 flex flex-col gap-12 md:gap-48 mt-20 md:mt-48">
                     {data.filter(item => item.title !== "Pickleball").map((item, index) => (index % 2 !== 0 ? renderItem(item, index) : null))}
                 </div>
             </div>

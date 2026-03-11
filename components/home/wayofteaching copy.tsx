@@ -64,7 +64,7 @@ const Wayofteaching = () => {
 
                     tl.fromTo(
                         `.card-${index}`,
-                        { yPercent: 200 },
+                        { yPercent: 250 },
                         { yPercent: index * offset, duration: 0.5 }
                     );
                 });
@@ -93,7 +93,7 @@ const Wayofteaching = () => {
         <div className='bg-white'>
             <section
                 ref={sectionRef}
-                className="w-full bg-white rounded-t-[40px] font-sans pb-12 md:pb-0 md:min-h-svh flex flex-col justify-start items-center overflow-hidden"
+                className="w-full bg-white rounded-t-[40px] font-sans pb-2 md:pb-0 md:min-h-svh flex flex-col justify-start items-center overflow-hidden"
 
             >
                 <ContainerLayout>
@@ -103,13 +103,12 @@ const Wayofteaching = () => {
                         </h1>
                     </div>
 
-                    <div className='relative w-full flex justify-center items-start' style={{ minHeight: 'clamp(300px, 50vh, 500px)' }}>
+                    <div className='relative w-full flex justify-center items-start min-h-[75vh] sm:min-h-[70vh] md:min-h-[clamp(300px,50vh,500px)]'>
                         {data.map((item, index) => (
                             <div
                                 key={index}
-                                className={`card-${index} absolute top-0 w-full max-w-5xl rounded-[10px] overflow-hidden shadow-2xl origin-top bg-white`}
+                                className={`card-${index} absolute top-0 w-full max-w-5xl rounded-[10px] overflow-hidden shadow-2xl origin-top bg-white h-[65vh] sm:h-[70vh] md:h-[clamp(300px,50vh,700px)]!`}
                                 style={{
-                                    height: 'clamp(300px, 50vh, 700px)',
                                     zIndex: index + 1,
                                 }}
                             >
@@ -127,10 +126,10 @@ const Wayofteaching = () => {
 
                                     {/* Content */}
                                     <div className='absolute bottom-0 left-0 w-full p-6 md:p-14 text-white'>
-                                        <h2 className='text-2xl md:text-5xl font-medium mb-2 md:mb-4 max-w-4xl leading-tight'>
+                                        <h2 className='text-[2.2rem] leading-[1.1] md:text-5xl font-medium mb-3 md:mb-4 max-w-4xl tracking-tight'>
                                             {item.title}
                                         </h2>
-                                        <p className='text-base md:text-xl text-gray-200 max-w-md font-light'>
+                                        <p className='text-[1.1rem] md:text-xl text-gray-200 max-w-md font-light leading-snug tracking-wide'>
                                             {item.description}
                                         </p>
                                     </div>

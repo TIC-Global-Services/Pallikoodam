@@ -31,7 +31,7 @@ const Campus = () => {
             <ContainerLayout>
                 <section className="text-black py-0 pb-10">
                     {/* Header Section */}
-                    <div ref={titleRef} className="mb-10 md:mb-16">
+                    <div ref={titleRef} className="mb-10 md:mb-16 -mt-8 md:mt-0">
                         <h2 className="text-2xl md:text-[54px] font-medium mb-2 md:mb-6">
                             Stories from our <span className="font-ppe italic font-normal">Campus</span>
                         </h2>

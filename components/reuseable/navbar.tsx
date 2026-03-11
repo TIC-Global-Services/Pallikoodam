@@ -189,11 +189,11 @@ const navbar = () => {
     const menuItems = [
         { name: 'Home', href: '/' },
         { name: 'Grammar of RAKS', href: '/grammar-of-raks' },
-        { name: 'Learning @ RAKS', href: '/learning-at-raks' },
-        { name: 'Hidden curriculum @ RAKS', href: '/hiddencurricular-at-raks' },
-        { name: 'News & Events', href: '/news-and-events' },
         { name: 'Admissions', href: '/admissions' },
+        { name: 'Learning @ RAKS', href: '/learning-at-raks' },
+        { name: 'Hidden Curriculum @ RAKS', href: '/hiddencurricular-at-raks' },
         { name: 'Careers', href: '/careers' },
+        { name: 'News & Events', href: '/news-and-events' },
         { name: 'Contact us', href: '/contact-us' },
     ];
 
@@ -203,7 +203,7 @@ const navbar = () => {
                 <ContainerLayout>
                     <div className="flex justify-between gap-4 items-center">
                         <Link href="/">
-                            <Image src="/Raks_Logo.png" alt="RAKS_Logo.png" width={120} height={50} />
+                            <Image src="/Raks_Logo.png" alt="RAKS_Logo.png" width={120} height={50} className="cursor-pointer w-20 h-10  md:w-[100px] md:h-[50px]"/>
                         </Link>
                         <div className="flex gap-10 items-center">
                             <button
@@ -248,11 +248,11 @@ const navbar = () => {
                                 {/* Dropdown Menu */}
                                 <div
                                     ref={overlayRef}
-                                    className="absolute top-full right-0 mt-2 bg-[#000086] rounded-2xl shadow-2xl invisible pointer-events-none overflow-hidden"
-                                    style={{ minWidth: '380px' }}
+                                    className="absolute top-full right-0 mt-4 bg-[#000086] rounded-3xl shadow-2xl invisible pointer-events-none overflow-hidden w-[85vw] max-w-[320px] sm:max-w-[400px]"
+
                                 >
-                                    <div className="p-6 py-10">
-                                        <ul ref={menuItemsRef} className="space-y-4">
+                                    <div className="px-6 py-8 sm:p-10 sm:py-12">
+                                        <ul ref={menuItemsRef} className="flex flex-col gap-4 sm:gap-5">
                                             {menuItems.map((item) => {
                                                 const isActive = pathname === item.href;
                                                 return (
@@ -260,11 +260,11 @@ const navbar = () => {
                                                         <Link
                                                             href={item.href}
                                                             onClick={toggleMenu}
-                                                            className="text-[clamp(16px,10vw,1.5rem)] font-[500] text-white hover:text-gray-400 transition-colors duration-300 block relative group flex items-center justify-between"
+                                                            className="group flex flex-row items-center justify-between text-[1.4rem] sm:text-[1.8rem] font-medium text-white hover:text-white/70 transition-colors duration-300 leading-[1.2]"
                                                         >
-                                                            {item.name}
+                                                            <span className="pr-4 tracking-tight">{item.name}</span>
                                                             {isActive && (
-                                                                <span className="inline-block w-3 h-3 bg-white rounded-full group-hover:bg-gray-400 transition-colors"></span>
+                                                                <span className="inline-block w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full transition-colors shrink-0"></span>
                                                             )}
                                                         </Link>
                                                     </li>

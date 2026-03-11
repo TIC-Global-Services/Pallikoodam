@@ -48,15 +48,15 @@ const mobileiconsData: IconData[] = [
  { src: icon1, top: '-20%', left: '-30%', size: 600, rotate: 5 }, // Globe (Top left)
     { src: icon7, top: '-10%', left: '10%', size: 600, rotate: -5 }, // Chat Bubbles (Top mid-left)
     { src: icon2, top: '10%', left: '10%', size: 600, rotate: 5 }, // Mouse (Top mid)
-    { src: icon3, top: '20%', left: '10%', size: 600, rotate: -10 }, // Music (Top mid-right)
-    { src: icon4, top: '40%', left: '10%', size: 600, rotate: 5 }, // Pencil (Top right)
-    { src: icon6, top: '50%', left: '-30%', size: 600, rotate: 5 }, // Chevron/Shuttlecock (Mid right)
-    // { src: icon12, top: '-40%', right: '20%', size: 600, rotate: 5 }, // Ruler (Bottom right)
-    // { src: icon5, top: '-40%', right: '-5%', size: 600, rotate: 5 }, // Bulb (Bottom mid-right)
-    // { src: icon10, top: '-30%', right: '-25%', size: 600, rotate: 5 }, // Paint Brush (Bottom mid)
-    // { src: icon8, top: '-5%', right: '-20%', size: 600, rotate: -5 }, // Book (Bottom mid-left)
-    // { src: icon11, top: '20%', right: '-20%', size: 600, rotate: -5 }, // DNA/Leaves (Bottom left)
-    // { src: icon9, top: '25%', right: '30%', size: 600, rotate: -5 }, 
+    { src: icon3, top: '30%', left: '10%', size: 600, rotate: -10 }, // Music (Top mid-right)
+    { src: icon4, top: '45%', left: '10%', size: 600, rotate: 5 }, // Pencil (Top right)
+    { src: icon6, top: '60%', left: '-40%', size: 600, rotate: 5 }, // Chevron/Shuttlecock (Mid right)
+    { src: icon12, top: '10%', left: '-50%', size: 600, rotate: 5 }, // Ruler (Bottom right)
+    { src: icon5, top: '-10%', left: '-50%', size: 600, rotate: 5 }, // Bulb (Bottom mid-right)
+    { src: icon10, top: '30%', left: '-60%', size: 600, rotate: 5 }, // Paint Brush (Bottom mid)
+    { src: icon8, top: '40%', left: '-50%', size: 600, rotate: -5 }, // Book (Bottom mid-left)
+    { src: icon11, top: '60%', left: '0%', size: 600, rotate: -5 }, // DNA/Leaves (Bottom left)
+    // { src: icon9, top: '80%', left: '-50%', size: 600, rotate: -5 }, 
 
 ]
 

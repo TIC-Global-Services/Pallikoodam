@@ -1,9 +1,13 @@
+import Beyoudclassroom from '@/components/grammar-of-raks/beyoudclassroom'
 import Curriculam from '@/components/grammar-of-raks/curriculam'
 import Discovery from '@/components/grammar-of-raks/discovery'
 import Hero from '@/components/grammar-of-raks/hero'
 import Introducing from '@/components/grammar-of-raks/introducing'
+import Raksvalue from '@/components/grammar-of-raks/raksvalue'
 import Standout from '@/components/grammar-of-raks/standout'
 import Storyandmission from '@/components/grammar-of-raks/storyandmission'
+import Whatwedoatraks from '@/components/grammar-of-raks/whatwedoatraks'
+import Raksinstitution from '@/components/grammar-of-raks/raksinstitution'
 import React from 'react'
 
 export const metadata = {
@@ -13,13 +17,17 @@ export const metadata = {
 
 const page = () => {
   return (
-    <div>
+    <div className=''>
       <Hero />
       <Standout />
       <Storyandmission />
-      <Introducing />
-      <Curriculam />
-      <Discovery />
+      <Raksvalue />
+      <Whatwedoatraks />
+      <Raksinstitution />
+       <Beyoudclassroom />
+      {/* <Introducing /> */}
+      {/* <Curriculam />
+      <Discovery /> */}
     </div>
   )
 }

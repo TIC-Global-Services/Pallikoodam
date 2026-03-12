@@ -1,92 +1,96 @@
 'use client'
 import Image from 'next/image'
-import founder from '@/assets/grammar-of-raks/Swetha.jpg'
-import mission from '@/assets/home/campus-1.jpg'
+import founder from '@/assets/grammar-of-raks/SwethaKrishnamurthy.jpg'
+import founder2 from '@/assets/grammar-of-raks/Mr.MichaelJoseph.jpg'
 import ContainerLayout from '@/layout/ContainerLayout'
-import SimpleParallax from 'simple-parallax-js'
 
 const StoryAndMission = () => {
   return (
-    <section className='w-full bg-gray-50 py-[8vh] md:py-[12vh]'>
-      {/* Story & Mission Section */}
+    <section className='w-full bg-white py-[8vh] md:py-[12vh]'>
       <ContainerLayout>
-        <div className='bg-[#F5F5F5] rounded-2xl p-4 md:p-0 mb-[8vh] md:mb-[12vh]'>
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-12 items-center'>
-            {/* Text Content */}
-            <h2 className='text-4xl md:text-5xl lg:text-5xl pt-5 font-medium md:hidden'>
-              Our <span className='font-ppe font-light italic text-[#000086]'>Story & Mission</span>
+        {/* Founder Section */}
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-[10vh] md:mb-[15vh]'>
+          {/* Founder Image */}
+          <div className='relative w-full h-full rounded-2xl overflow-hidden'>
+            <Image
+              src={founder}
+              alt="Swetha Krishnamurthy - Founder Director"
+              fill
+              style={{ objectPosition: 'center 20%' }}
+              className='object-cover'
+              placeholder='blur'
+            />
+          </div>
+
+          {/* Founder Message */}
+          <div className='flex flex-col justify-center'>
+            <h2 className='text-4xl md:text-5xl lg:text-5xl font-medium mb-6 md:mb-8 tracking-tight'>
+              <span className='font-ppe font-light italic text-[#000086]'>Founder&apos;s</span> Note
             </h2>
-            <div className='order-2 lg:order-1 md:pl-[10%]'>
-              <h2 className='text-4xl md:text-5xl lg:text-5xl hidden md:block font-medium mb-6 md:mb-8'>
-                Our <span className='font-ppe font-light italic text-[#000086]'>Story & Mission</span>
-              </h2>
-              <div className='border-l-2 border-[#000086] pl-2 md:pl-3'>
-                <p className='text-base md:text-lg lg:text-2xl text-black max-w-lg leading-normal'>
-                  RaKS Pallikkoodam was founded with a vision to offer holistic education rooted in
-                  curiosity, creativity, academic excellence, and character. Our mission is simple yet
-                  profound — to build a school where every child feels seen, heard, valued, and
-                  empowered to question, explore, and thrive with purpose.
+
+            <div className='space-y-4 md:space-y-6'>
+              <div>
+                <p className='text-base md:text-[1.1rem] lg:text-2xl text-black mb-1 leading-relaxed'>
+                  At RAKS Institutions, we began with a simple yet powerful question:
+                </p>
+                <p className='text-base md:text-[1.1rem] lg:text-2xl text-gray-500 leading-relaxed'>
+                  What kind of learning environment allows children and educators to <span className='italic font-medium text-gray-800'>truly thrive?</span>
                 </p>
               </div>
+
+              <p className='text-base md:text-[1.1rem] lg:text-[1.75rem] text-black leading-[1.1]'>
+                Our journey has been one of listening to children, teachers, families, and the spaces we inhabit. We believe that when learners are trusted, when educators are empowered, and when environments are thoughtfully designed, learning becomes meaningful and lasting.
+              </p>
+
+              <p className='text-base md:text-[1.4rem] lg:text-[1.75rem] text-black leading-[1.1]'>
+                RAKS Institutions is not built on speed or scale alone, but on intentional growth, integrity, and purpose. Every decision we make is guided by what serves the learner best, today and in the years to come.
+              </p>
             </div>
 
-            {/* Image */}
-            <div className='order-1 lg:order-2 relative w-full h-[40vh] md:h-[50vh] lg:h-[60vh] rounded-2xl md:rounded-r-2xl overflow-hidden '>
-              <SimpleParallax>
-                <Image
-                  src={mission}
-                  alt="RAKS Pallikkoodam students"
-                  fill
-                  className='object-cover'
-                  placeholder='blur'
-                />
-              </SimpleParallax>
+            <div className='mt-8 md:mt-10'>
+              <p className='font-ppe italic font-light text-2xl md:text-3xl tracking-tight text-black mb-1'>
+                Swetha Krishnamurthy
+              </p>
+              <p className='text-sm md:text-base font-bold text-gray-700'>
+                Founder Director
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Founder Section */}
-        <div className=''>
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-end'>
-            {/* Founder Image */}
-            <h2 className='text-3xl md:text-5xl lg:text-5xl  md:hidden font-light leading-tight'>
-              Meet the minds behind <br /><span className='font-ppe font-light italic text-[#000086]'>RAKS Pallikkoodam</span>
+        {/* Head of School Section */}
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center'>
+          {/* Text Content */}
+          <div className='order-2 lg:order-1 flex flex-col justify-center'>
+            <h2 className='text-4xl md:text-5xl lg:text-5xl font-medium mb-6 md:mb-8 tracking-tight leading-[1.1]'>
+              <span className='font-ppe font-light italic text-[#000086]'>Head of School note,</span> RAKS Pallikkoodam School of Excellence
             </h2>
-            <div className='relative w-full h-[50vh] md:h-[80vh] lg:h-[90vh] rounded-2xl overflow-hidden '>
-              <Image
-                src={founder}
-                alt="Swetha Krishnamurthy - Founder Director"
-                fill
-                style={{ objectPosition: '50% 35%' }}
-                className='object-cover'
-                placeholder='blur'
-              />
 
-            </div>
-
-            {/* Founder Message */}
-
-            <div>
-              <h2 className='text-4xl md:text-5xl lg:text-5xl hidden md:block font-light mb-6 md:mb-6 leading-tight'>
-                Meet the minds behind <br /><span className='font-ppe font-light italic text-[#000086]'>RAKS Pallikkoodam</span>
-              </h2>
-              <p className='text-base md:text-lg lg:text-2xl max-w-xl text-gray-700 leading-normal mb-8 md:mb-10'>
-                Since founding Pallikkoodam in 2014, I have remained deeply committed to upholding
-                the highest standards of teaching and learning. My vision has always centered on
-                fostering student leadership, instilling strong values, and building a close-knit community
-                where every learner feels seen and supported. I believe education should be
-                meaningful and hands-on, an experience that empowers students to grow into
-                confident, responsible global citizens.
+            <div className='space-y-4 md:space-y-6'>
+              <p className='text-base md:text-[1.1rem] lg:text-[1.75rem] text-black leading-[1.1]'>
+                Mr. Michael Joseph Purcell brings 25+ years of experience in teaching and international school leadership. Trained in engineering and physics in the United States, he has taught mathematics, science, and interdisciplinary subjects while also coaching school sports.
               </p>
-              <div>
-                <p className='font-ppe italic font-light text-2xl md:text-3xl tracking-tight text-gray-800 mb-2'>
-                  Swetha Krishnamurthy
-                </p>
-                <p className='text-lg md:text-xl font-semibold text-gray-600'>
-                  Founder Director
-                </p>
-              </div>
+
+              <p className='text-base md:text-[1.1rem] lg:text-[1.75rem] text-black leading-[1.1]'>
+                A contributor to the International Baccalaureate Organization, he has led initiatives in digital citizenship, web literacy, academic integrity, and open-source learning.
+              </p>
+
+              <p className='text-base md:text-[1.1rem] lg:text-[1.75rem] text-black leading-[1.1]'>
+                His global experience includes leadership roles at Mahindra United World College of India, NIST International School, and KC High International School, and he serves on the Governing Board of Edubridge International School, Mumbai.
+              </p>
             </div>
+          </div>
+
+          {/* Image */}
+          <div className='order-1 lg:order-2 relative w-full h-full rounded-2xl overflow-hidden'>
+            <Image
+              src={founder2}
+              alt="Mr. Michael Joseph Purcell - Head of School"
+              fill
+              style={{ objectPosition: 'center 10%' }}
+              className='object-cover'
+              placeholder='blur'
+            />
           </div>
         </div>
       </ContainerLayout>

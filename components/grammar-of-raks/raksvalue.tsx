@@ -88,7 +88,7 @@ const RaksValue = () => {
                     ease: 'none',
                     scrollTrigger: {
                         trigger: outerRef.current,
-                        start: () => `top+=${(i + 0.4) * window.innerHeight} top`,
+                        start: () => `top+=${(i + 0.9) * window.innerHeight} top`,
                         end: () => `top+=${(i + 1) * window.innerHeight} top`,
                         scrub: true,
                         onEnter: () => setActive(i + 1),
@@ -135,7 +135,7 @@ const RaksValue = () => {
                                     src={card.bg}
                                     alt={card.title}
                                     fill
-                                    className={`object-cover transition-opacity duration-700 ease-in-out ${active ? 'opacity-100' : 'opacity-0'}`}
+                                    className={`object-cover transition-opacity duration-300 ease-in-out ${active ? 'opacity-100' : 'opacity-0'}`}
                                     style={{ zIndex: active ? 1 : 0 }}
                                     placeholder="blur"
                                 />
@@ -162,7 +162,7 @@ const RaksValue = () => {
                                         key={card.id}
                                         onMouseEnter={() => onCardHover(sIdx, cIdx)}
                                         onMouseLeave={() => onCardHover(sIdx, null)}
-                                        className="flex-1 flex flex-col justify-end p-4 md:p-8 border-r border-t border-[#ffffff40] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer overflow-hidden"
+                                        className="flex-1 flex flex-col justify-end p-4 md:p-8 border-r border-t border-[#ffffff40] transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer overflow-hidden"
                                         style={{
                                             height: isHovered ? '50vh' : '35vh',
                                             backgroundColor: isHovered ? 'rgba(40,40,40,0.6)' : 'rgba(0,0,0,0.2)',

@@ -62,7 +62,7 @@ const WhatWeDoAtRaks = () => {
                     ease: 'none',
                     scrollTrigger: {
                         trigger: outerRef.current,
-                        start: () => `top+=${(i + 0.5) * window.innerHeight} top`,
+                        start: () => `top+=${(i + 0.9) * window.innerHeight} top`,
                         end: () => `top+=${(i + 1) * window.innerHeight} top`,
                         scrub: true,
                         onEnter: () => setActiveIndex(i + 1),

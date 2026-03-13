@@ -174,7 +174,7 @@ const Shapingthefuture = () => {
                         {/* Vision Card */}
                         <div className="bg-[#E9E9E9] text-black rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden flex flex-col items-start transition-transform hover:scale-[1.01] duration-500 min-h-[500px] md:min-h-[600px] lg:min-h-[650px] xl:min-h-[750px]">
                             <h4 className="text-xl md:text-5xl lg:text-6xl mb-6 md:mb-8 font-medium">
-                                Our <span style={{ fontFamily: 'var(--font-ppe)' }} className="text-[#000086] font-normal italic">Vision</span>
+                                Our <span style={{ fontFamily: 'var(--font-ppe)' }} className="text-[#000086] font-light italic">Vision</span>
                             </h4>
                             <div className="w-1 h-20 bg-blue-600/30 absolute left-8 top-8 hidden"></div>
                             <p className="text-gray-800 text-sm lg:text-base xl:text-lg leading-[22px] mb-auto max-w-lg z-10 font-normal">
@@ -191,10 +191,10 @@ const Shapingthefuture = () => {
                         <div className="bg-[#E9E9E9] text-black rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden flex flex-col items-start transition-transform hover:scale-[1.01] duration-500 min-h-[500px] md:min-h-[600px] lg:min-h-[500px] xl:min-h-[500px]">
                             <div className="z-10 relative">
                                 <h4 className="text-xl md:text-5xl lg:text-6xl mb-4 md:mb-6 font-medium">
-                                    Our <span style={{ fontFamily: 'var(--font-ppe)' }} className="text-[#000086] font-normal italic">Mission</span>
+                                    Our <span style={{ fontFamily: 'var(--font-ppe)' }} className="text-[#000086] font-light italic">Mission</span>
                                 </h4>
                                 <ol className="text-gray-800 text-sm leading-[16px] lg:text-base xl:text-lg border-l-3 border-[#23519D] pl-4 md:leading-[26px] mb-auto max-w-lg z-10 font-normal list-decimal list-inside space-y-3">
-                                    <li>To nurture curious, compassionate, and courageous learners who <span className='font-ppe italic'>&quot;Thrive With Purpose.&quot;</span></li>
+                                    <li>To nurture curious, compassionate, and courageous learners who <span className='font-ppe font-light italic'>&quot;Thrive With Purpose.&quot;</span></li>
                                     <li>To cultivate character, creativity, and critical thinking through meaningful, enquiry-driven experiences.</li>
                                     <li>To empower every learner to act responsibly, lead ethically, and contribute positively to the world.</li>
                                 </ol>

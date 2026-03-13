@@ -116,7 +116,7 @@ const ShapingthefutureCP = () => {
                     <div className="bg-[#F4F4F4] text-black rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden  flex flex-col items-start  transition-transform hover:scale-[1.01] duration-500">
                         <div>
                             <h4 className="text-4xl md:text-6xl mb-8 font-medium">
-                                Our <span style={{ fontFamily: 'var(--font-ppe)' }} className="text-[#000086] font-normal italic">Mission</span>
+                                Our <span style={{ fontFamily: 'var(--font-ppe)' }} className="text-[#000086] font-light italic">Mission</span>
                             </h4>
                             <p className="text-gray-800 text-sm md:text-base leading-relaxed mb-auto max-w-lg z-10 font-normal">
                                 <span className="border-l-4 border-blue-800/40 pl-4 block">

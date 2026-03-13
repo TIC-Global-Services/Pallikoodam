@@ -65,7 +65,7 @@ const Empowering = () => {
                     x: "100vw",        // Start offscreen right
                     y: 400,            // Start down at the bottom of the curve
                     rotation: 15,      // Pre-arched angle
-                    opacity: 0,        // Starts invisible
+                    opacity: 1,        // Starts invisible
                     scale: 0.2         // Starts very small
                 },
                 {
@@ -90,7 +90,7 @@ const Empowering = () => {
             tl.to(card, {
                 y: 400,                // Symmetrical end: back down
                 rotation: -15,         // Opposite arched angle
-                opacity: 0,            // Fade out to invisible
+                opacity: 1,            // Fade out to invisible
                 scale: 0.2,            // Shrink back down to very small
                 ease: "sine.in",       // rounded roll-off from the peak
                 duration: duration / 2
@@ -103,7 +103,7 @@ const Empowering = () => {
         <div className="relative w-full z-10 bg-white" style={{ marginBottom: "-100vh" }}>
             <section ref={containerRef} className="sticky top-0 w-full h-dvh lg:h-screen overflow-hidden pt-20 flex flex-col items-center justify-center pb-10">
                 {/* Title */}
-                <div className="text-center translate-y-20 z-10 w-full px-4 shrink-0">
+                <div className="text-center  z-10 w-full px-4 shrink-0">
                     <h2 className="text-[32px] mb-3 md:text-[44px] lg:text-[54px] text-[#2C313E] leading-[1.1] font-medium tracking-tight">
                         Cambridge International  <span className="font-ppe italic font-normal">Curriculum</span>
                     </h2>
@@ -111,7 +111,7 @@ const Empowering = () => {
                 </div>
 
                 {/* Cards Container */}
-                <div className="w-full px-4 -translate-y-50 relative flex justify-center items-center flex-1 min-h-0 z-10">
+                <div className="w-full px-4 -translate-y-30 relative flex justify-center items-center flex-1 min-h-0 z-10">
                     {/* Center anchor constraint so all cards start from exact same origin point */}
                     <div className="relative w-[250px] md:w-[280px] lg:w-[433px] h-[360px] md:h-[420px] lg:h-[560px]">
                         {data.map((item, index) => (

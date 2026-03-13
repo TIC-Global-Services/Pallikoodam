@@ -15,7 +15,7 @@ const Footer = () => {
         { label: 'News & Events', href: '/news-and-events' },
         { label: 'Admissions', href: '/admissions' },
         { label: 'Careers', href: '/careers' },
-        { label: 'Contact us', href: '/contact' },
+        { label: 'Contact us', href: '/contact-us' },
     ]
 
     return (

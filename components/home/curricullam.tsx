@@ -24,7 +24,7 @@ const curricullam = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top+=1 top",
+          start: "top top",
           end: "+=150%",
           pin: true,
           scrub: 1,

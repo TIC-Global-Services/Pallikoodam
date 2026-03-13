@@ -33,60 +33,57 @@ const Wayofteaching = () => {
     const { elementRef: titleRef } = useLineReveal<HTMLHeadingElement>();
 
     useEffect(() => {
-        const initGsap = async () => {
-            const ctx = gsap.context(() => {
-                const isMobile = window.innerWidth < 768;
-                const isSmallHeightDesktop = window.innerHeight < 768;
-                const offset = isSmallHeightDesktop ? 2 : 5;
-                const scrollMultiplier = isMobile
-                    ? 120
-                    : isSmallHeightDesktop
-                        ? 150
-                        : 250;
+        const ctx = gsap.context(() => {
+            const isMobile = window.innerWidth < 768;
+            const isSmallHeightDesktop = window.innerHeight < 768;
+            const offset = isSmallHeightDesktop ? 2 : 5;
+            const scrollMultiplier = isMobile
+                ? 120
+                : isSmallHeightDesktop
+                    ? 150
+                    : 250;
 
-                const tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: sectionRef.current,
-                        start: 'top top',
-                        end: `+=${scrollMultiplier}%`,
-                        pin: true,
-                        scrub: isMobile ? 0.2 : 1,
-                        anticipatePin: 1,
-                        invalidateOnRefresh: true,
-                    },
-                });
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: 'top top',
+                    end: `+=${scrollMultiplier}%`,
+                    pin: true,
+                    scrub: isMobile ? 0.2 : 1,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true,
+                },
+            });
 
-                data.forEach((_, index) => {
-                    if (index === 0) {
-                        tl.set(`.card-${index}`, { yPercent: 0 });
-                        return;
-                    }
+            data.forEach((_, index) => {
+                if (index === 0) {
+                    tl.set(`.card-${index}`, { yPercent: 0 });
+                    return;
+                }
 
-                    tl.fromTo(
-                        `.card-${index}`,
-                        { yPercent: 250 },
-                        { yPercent: index * offset, duration: 0.5 }
-                    );
-                });
-                setTimeout(() => {
-                    ScrollTrigger.refresh();
-                }, 100);
-            }, sectionRef);
-            const handleResize = () => ScrollTrigger.refresh();
+                tl.fromTo(
+                    `.card-${index}`,
+                    { yPercent: 250 },
+                    { yPercent: index * offset, duration: 0.5 }
+                );
+            });
+            setTimeout(() => {
+                ScrollTrigger.refresh();
+            }, 100);
+        }, sectionRef);
 
-            window.addEventListener('resize', handleResize);
-            window.addEventListener('orientationchange', handleResize);
-            window.addEventListener('load', handleResize);
+        const handleResize = () => ScrollTrigger.refresh();
 
-            return () => {
-                window.removeEventListener('resize', handleResize);
-                window.removeEventListener('orientationchange', handleResize);
-                window.removeEventListener('load', handleResize);
-                ctx.revert();
-            };
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('orientationchange', handleResize);
+        window.addEventListener('load', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('orientationchange', handleResize);
+            window.removeEventListener('load', handleResize);
+            ctx.revert();
         };
-
-        initGsap();
     }, []);
 
     return (

@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LetterRevealWrapper from "@/components/reuseable/texteffect/LetterRevealWrapper";
 import { useLetterReveal } from "../reuseable/texteffect/useLetterReveal";
+import { useLoading } from "@/context/LoadingContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,6 +14,7 @@ const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>();
+  const { setHeroVideoLoaded } = useLoading();
 
   useEffect(() => {
     if (!spacerRef.current || !containerRef.current || !videoRef.current || !textRef.current) return;
@@ -79,6 +81,7 @@ const Hero = () => {
             muted
             loop
             playsInline
+            onLoadedData={() => setHeroVideoLoaded(true)}
             className="w-full h-full object-cover"
           />
 

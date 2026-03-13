@@ -27,13 +27,15 @@ const Wayofteaching = () => {
     const sectionRef = useRef<HTMLElement>(null)
 
     useEffect(() => {
+        let ctx: any;
+
         // Ensure GSAP is loaded
         const initGsap = async () => {
             const gsap = (await import('gsap')).default
             const ScrollTrigger = (await import('gsap/ScrollTrigger')).default
             gsap.registerPlugin(ScrollTrigger)
 
-            const ctx = gsap.context(() => {
+            ctx = gsap.context(() => {
                 const isMobile = window.innerWidth < 768;
                 const isSmallHeightDesktop = window.innerWidth >= 768 && window.innerHeight < 768;
                 const offset = isSmallHeightDesktop ? 2 : 5;
@@ -71,11 +73,13 @@ const Wayofteaching = () => {
                     ScrollTrigger.refresh();
                 }, 100);
             }, sectionRef);
-
-            return () => ctx.revert();
         };
 
         initGsap();
+
+        return () => {
+            if (ctx) ctx.revert();
+        };
     }, []);
 
     return (

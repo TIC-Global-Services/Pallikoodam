@@ -6,7 +6,8 @@ import Navbar from "@/components/reuseable/navbar";
 import Footer from "@/components/reuseable/footer";
 import { ppe } from '@/font'
 import SmoothScroller from "@/layout/SmoothScroller";
-
+import Loader from "@/components/reuseable/Loader";
+import { LoadingProvider } from "@/context/LoadingContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -32,12 +33,14 @@ export default function RootLayout({
         className={`${inter.variable} ${ppe.variable} antialiased`}
         suppressHydrationWarning
       >
-        <SmoothScroller>
-          <Navbar />
-          {children}
-          <Footer />
-        </SmoothScroller>
-
+        <LoadingProvider>
+          <Loader />
+          <SmoothScroller>
+            <Navbar />
+            {children}
+            <Footer />
+          </SmoothScroller>
+        </LoadingProvider>
       </body>
     </html>
   );

@@ -14,7 +14,7 @@ const gettingstarted = () => {
                         Getting <span className='font-ppe font-normal italic'>Started</span> & Next Steps
                     </h2>
                     <div className='absolute bottom-[-30%] right-[-40%] w-[60%] h-[60%] 
-      bg-[#000086] opacity-80 rounded-full blur-[130px]' />
+      bg-[#000086] opacity-70 rounded-full blur-[130px]' />
 
                     {/* Text Content - Left Side on Desktop, Bottom on Mobile */}
                     <div className='relative z-10 order-2 lg:order-2 flex-1 p-2 md:p-1  lg:pl-[3%] lg:pr-1 lg:py-16'>

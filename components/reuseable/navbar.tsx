@@ -31,6 +31,9 @@ const navbar = () => {
     useEffect(() => {
         let trigger: globalThis.ScrollTrigger | null = null;
 
+        // Immediately show navbar when route changes
+        setIsHidden(false);
+
         // Wait briefly for the new page's <section> to be mounted in the DOM
         const timer = setTimeout(() => {
             trigger = ScrollTrigger.create({

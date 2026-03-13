@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -52,6 +52,14 @@ const sectionsData = [
 const RaksValue = () => {
     const outerRef = useRef<HTMLDivElement>(null);
     const [hovered, setHovered] = useState<(number | null)[]>(sectionsData.map(() => 0));
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const check = () => setIsMobile(window.innerWidth < 768);
+        check();
+        window.addEventListener('resize', check);
+        return () => window.removeEventListener('resize', check);
+    }, []);
 
     const onCardHover = (sectionIdx: number, cardIdx: number | null) => {
         setHovered(prev => prev.map((v, i) => (i === sectionIdx ? cardIdx : v)));
@@ -153,27 +161,39 @@ const RaksValue = () => {
                             </h3>
                         </div>
 
-                        {/* Cards strip — pinned to bottom, grows vertically on hover */}
-                        <div className="absolute bottom-0 left-0 w-full flex items-end" style={{ zIndex: 3 }}>
+                        {/* Cards strip — pinned to bottom */}
+                        <div
+                            className="absolute bottom-0 left-0 w-full"
+                            style={{
+                                zIndex: 3,
+                                display: isMobile && section.cards.length === 4 ? 'grid' : 'flex',
+                                gridTemplateColumns: isMobile && section.cards.length === 4 ? '1fr 1fr' : undefined,
+                                alignItems: 'flex-end',
+                            }}
+                        >
                             {section.cards.map((card, cIdx) => {
                                 const isHovered = hovered[sIdx] === cIdx;
                                 return (
                                     <div
                                         key={card.id}
-                                        onMouseEnter={() => onCardHover(sIdx, cIdx)}
-                                        onMouseLeave={() => onCardHover(sIdx, 0)}
-                                        className="flex-1 flex flex-col justify-end p-4 md:p-8 border-r border-t border-[#ffffff40] transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer overflow-hidden"
+                                        onMouseEnter={() => !isMobile && onCardHover(sIdx, cIdx)}
+                                        onMouseLeave={() => !isMobile && onCardHover(sIdx, 0)}
+                                        onClick={() => isMobile && onCardHover(sIdx, cIdx)}
+                                        className="flex flex-col justify-end p-4 md:p-8 border-r border-t border-[#ffffff40] transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer overflow-hidden"
                                         style={{
-                                            height: isHovered ? '50vh' : '35vh',
+                                            flex: (!isMobile || section.cards.length === 4) ? '1' : (isHovered ? '2.5' : '1'),
+                                            height: isMobile
+                                                ? (section.cards.length === 4 ? '28vw' : '40vw')
+                                                : (isHovered ? '50vh' : '35vh'),
                                             backgroundColor: isHovered ? 'rgba(40,40,40,0.6)' : 'rgba(0,0,0,0.2)',
                                             backdropFilter: isHovered ? 'blur(12px)' : 'blur(0px)',
                                             WebkitBackdropFilter: isHovered ? 'blur(12px)' : 'blur(0px)',
                                         }}
                                     >
-                                        <h4 className="text-2xl md:text-3xl lg:text-[2.5rem] text-white font-ppe font-light italic mb-2 md:mb-4">
+                                        <h4 className="text-lg md:text-3xl lg:text-[2.5rem] text-white font-ppe font-light italic mb-1 md:mb-4">
                                             {card.title}
                                         </h4>
-                                        <p className={`text-white text-xs md:text-base lg:text-lg leading-[1.2] transition-all duration-500 ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-80 translate-y-2'}`}>
+                                        <p className={`text-white text-xs md:text-base lg:text-lg leading-[1.2] transition-all duration-500 ${isHovered ? 'opacity-100 translate-y-0' : isMobile ? 'opacity-0 hidden' : 'opacity-80 translate-y-2'}`}>
                                             {card.desc}
                                         </p>
                                     </div>

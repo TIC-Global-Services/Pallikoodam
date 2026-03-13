@@ -74,14 +74,12 @@ const BeyondTheClassroom = () => {
   return (
     <section className="w-full bg-white pb-20 overflow-hidden">
       <ContainerLayout>
-        {/* Title */}
         <div className="text-center mb-10 md:mb-8">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight">
             <span className="font-ppe font-light italic">Beyond </span>The Classroom
           </h2>
         </div>
 
-        {/* ============ MOBILE CAROUSEL ============ */}
         <div className="md:hidden relative">
           <div 
             className="flex transition-transform duration-500 ease-out"

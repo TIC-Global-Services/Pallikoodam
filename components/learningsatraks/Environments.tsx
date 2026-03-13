@@ -14,28 +14,28 @@ const Environments = () => {
     const outcomesCards = [
         {
             id: 1,
-            title: <><span className='font-ppe italic pr-1 font-normal'>Learner</span> Outcomes</>,
+            title: <><span className='font-ppe italic pr-1 font-light'>Learner</span> Outcomes</>,
             description: "Learning outcomes reflect growth, understanding, and agency, showcased through visible thinking, portfolios, and curated project documentation rather than grades alone.",
             image: environments1,
             imagePosition: "left"
         },
         {
             id: 2,
-            title: <>Resources for <span className='font-ppe italic pl-1 font-normal'>Parents</span></>,
+            title: <>Resources for <span className='font-ppe italic pl-1 font-light'>Parents</span></>,
             description: "We engage families through curriculum orientations, learning reflections, and guidance to support growth at home.",
             image: environments1,
             imagePosition: "left"
         },
         {
             id: 3,
-            title: <><span className='font-ppe italic pr-1 font-normal'>Assessment</span></>,
+            title: <><span className='font-ppe italic pr-1 font-light'>Assessment</span></>,
             description: "Assessment @ RAKS is continuous, reflective, and growth-focused, using observations, projects, and feedback to guide meaningful learning progress.",
             image: environments3,
             imagePosition: "right"
         },
         {
             id: 4,
-            title: <>Resources for <span className='font-ppe italic pl-1 font-normal'>Learners</span></>,
+            title: <>Resources for <span className='font-ppe italic pl-1 font-light'>Learners</span></>,
             description: "A robust wellbeing and guidance framework supports learners through academic support, counselling, mentorship, and safe, inclusive spaces for growth and dialogue.",
             image: environments3,
             imagePosition: "right"

@@ -13,8 +13,8 @@ const workwithus = () => {
             <div className='w-full flex flex-col-reverse lg:flex-row min-h-[50vh]'>
                 <div className='w-full lg:w-1/2 flex flex-col justify-center px-6 md:px-14 lg:pl-20 xl:pl-10 pb-16 pt-4 lg:py-24 xl:py-32 text-white'>
                     {/* Desktop Title */}
-                    <h2 className='text-[54px] font-normal mb-6 leading-tight hidden lg:block'>
-                        Why <span className='font-ppe italic font-light'>Work</span> with us
+                    <h2 className='text-[54px] font-normal mb-6 tracking-tight hidden lg:block'>
+                        Why<span className='font-ppe italic font-light'>Work</span> with us
                     </h2>
 
                     <h3 className='text-xl md:text-2xl lg:text-[32px] font-medium mb-8 leading-snug'>

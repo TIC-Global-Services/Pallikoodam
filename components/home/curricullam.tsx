@@ -38,11 +38,9 @@ const curricullam = () => {
         },
       });
 
-      // Initial state - first card on top, second card below
       gsap.set(card1Ref.current, { zIndex: 2 });
       gsap.set(card2Ref.current, { zIndex: 1, opacity: 1 });
 
-      // Split animation: left goes down, right goes up
       tl.to(text1Ref.current, {
         yPercent: 100,
         ease: "none",
@@ -56,25 +54,25 @@ const curricullam = () => {
       );
       requestAnimationFrame(() => ScrollTrigger.refresh());
     }, sectionRef);
-
+    ScrollTrigger.refresh();
     return () => ctx.revert();
   }, []);
-  useEffect(() => {
-  const handleLoad = () => {
-    ScrollTrigger.refresh();
-  };
+//   useEffect(() => {
+//   const handleLoad = () => {
+//     ScrollTrigger.refresh();
+//   };
 
-  window.addEventListener("load", handleLoad);
+//   window.addEventListener("load", handleLoad);
 
-  return () => {
-    window.removeEventListener("load", handleLoad);
-  };
-}, []);
+//   return () => {
+//     window.removeEventListener("load", handleLoad);
+//   };
+// }, []);
 
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-white mt-20 h-screen"
+      className="relative w-full bg-white mt-20 min-h-screen"
     >
       <div className="w-full h-full">
         <div className="relative w-full h-full">

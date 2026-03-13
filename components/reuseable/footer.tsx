@@ -77,7 +77,7 @@ const Footer = () => {
                             </div>
                         </div>
                         {/* Logo */}
-                        <div className="relative h-[300px] lg:h-auto overflow-hidden flex items-center justify-center bg-black -mr-px px-10 -mb-px">
+                        <div className="relative h-[300px] lg:h-auto overflow-hidden flex items-center justify-center bg-black -ml-px lg:ml-0 -mr-px px-10 -mb-px">
                             <div className="relative w-full h-full min-h-[300px] p-8">
                                 <Image src="/logo.png" alt="RAKS" fill className="object-contain" />
                             </div>

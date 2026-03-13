@@ -26,8 +26,8 @@ const sectionsData = [
         title: "The 3 Ps: People, Places, Practices",
         cards: [
             { id: "people", title: "People", desc: "Children, Educators, And Families Together Shape The RAKS Community.", bg: img1 },
-            { id: "places", title: "Places", desc: "Spaces That Inspire Trust, Connection, Curiosity, And Calm.", bg: img2 },
-            { id: "practices", title: "Practices", desc: "Meaningful And Intentional Approaches Driven By Choice And Shared Agency.", bg: img3 },
+            { id: "places", title: "Places", desc: "Purpose-built spaces that invite exploration, creativity, and collaboration.", bg: img2 },
+            { id: "practices", title: "Practices", desc: "Project-based and experiential learning empowers learners to solve real-world challenges.", bg: img3 },
         ],
     },
     {
@@ -35,14 +35,14 @@ const sectionsData = [
         cards: [
             { id: "rituals", title: "Rituals", desc: "Circle Time, Story Assemblies, And Community Gatherings To Celebrate Values, Belonging And Identity.", bg: img4 },
             { id: "routines", title: "Routines", desc: "Clear, Predictable Habits — Like Self-Care And Rest Cycles That Cultivate Calm And Focus.", bg: img5 },
-            { id: "rhythms", title: "Rhythms", desc: "The Natural Flow Of Time, Learning And Play That Align With Children's Evolving Needs.", bg: img6 },
+            { id: "rhythms", title: "Rhythms", desc: "The annual rhythmic beat of our calendar bringing the RAKS community together. .", bg: img6 },
         ],
     },
     {
         title: "The 4 Es: Empathy, Ethics, Excellence, Evolution",
         cards: [
             { id: "empathy", title: "Empathy", desc: "Learning Is Built On Care, Connection, And Emotional Literacy.", bg: img7 },
-            { id: "ethics", title: "Ethics", desc: "Integrity, Fairness, And Responsibility Guide Every Choice.", bg: img8 },
+            { id: "ethics", title: "Ethics", desc: "Integrity, fairness, and responsibility guide every choice.", bg: img8 },
             { id: "excellence", title: "Excellence", desc: "Striving For The Highest Standards While Valuing People And Purpose.", bg: img9 },
             { id: "evolution", title: "Evolution", desc: "Learning Is Dynamic, Reflective, And Continuously Growing.", bg: img10 },
         ],
@@ -147,7 +147,7 @@ const RaksValue = () => {
 
                         {/* Section title */}
                         <div className="absolute top-8 left-4 md:top-20 md:left-[2vw] px-4" style={{ zIndex: 3 }}>
-                            <h3 className="text-3xl md:text-5xl lg:text-[3.5rem] text-white font-normal tracking-wide">
+                            <h3 className="text-3xl md:text-5xl lg:text-[3.5rem] text-white font-normal tracking-tight">
                                 <span className="font-ppe font-light italic">{section.title.split(':')[0]}:</span>
                                 {section.title.split(':')[1]}
                             </h3>

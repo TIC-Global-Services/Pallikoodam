@@ -20,20 +20,20 @@ const institutionData = [
     },
     {
         number: "03",
-        title: "RAKS International",
-        description: "A Cambridge-Affiliated International Programme Designed To Foster Global Perspectives, Critical Thinking, And Academic Excellence.",
+        title: "RAKS Pallikkoodam – \n School of Excellence",
+        description: "Cambridge International school offering globally aligned academic pathways",
         image: earlyyears, // Replace with actual image
     },
     {
         number: "04",
-        title: "RAKS After School",
-        description: "Extended Learning Programmes That Blend Sports, Arts, And Life Skills To Complement The School Day.",
+        title: "RAKS Academy",
+        description: "A vibrant sports ecosystem building skill, discipline, and character.",
         image: earlyyears, // Replace with actual image
     },
     {
         number: "05",
-        title: "RAKS Community",
-        description: "A Network Of Families, Educators, And Partners United By A Common Vision For Meaningful Education.",
+        title: "RAKS Visionary Hub",
+        description: "A centre for innovation, mentor development, and future-focused education.",
         image: earlyyears, // Replace with actual image
     },
 ];
@@ -72,10 +72,10 @@ const RaksInstitution = () => {
         <section className="w-full bg-white py-16 md:py-24">
             <ContainerLayout>
                 {/* Section heading */}
-                <div className="mb-16 md:mb-24 max-w-5xl mx-auto">
-                    <p className="text-lg md:text-2xl lg:text-[1.75rem] text-center text-black leading-[1.4]">
+                <div className="mb-16 md:mb-24 max-w-6xl mx-auto">
+                    <p className="text-lg md:text-2xl lg:text-[2rem] font-regular text-center text-black leading-[1.4]">
                         <span className="font-ppe font-light italic">RAKS Institutions</span>{' '}
-                        brings together multiple learning pathways under a shared commitment to purposeful education and human flourishing.
+                        brings together multiple learning pathways under a<br className='hidden md:block'/> shared commitment to purposeful education and human flourishing.
                     </p>
                 </div>
 
@@ -97,7 +97,7 @@ const RaksInstitution = () => {
                                     <div className="flex gap-6 md:gap-10">
                                         {/* Number */}
                                         <div className="shrink-0">
-                                            <span className="text-3xl md:text-4xl lg:text-5xl font-ppe font-light tracking-tight">
+                                            <span className="text-3xl md:text-4xl lg:text-5xl whitespace-pre-line font-ppe font-light tracking-tight">
                                                 {item.number}
                                                 <span className="text-3xl md:text-4xl lg:text-5xl xl:text-[3.5rem]">/{total}</span>
                                             </span>
@@ -105,10 +105,10 @@ const RaksInstitution = () => {
 
                                         {/* Text content */}
                                         <div>
-                                            <h3 className="text-xl md:text-2xl lg:text-[2rem] font-ppe font-light italic text-black mb-3 md:mb-4">
+                                            <h3 className="text-xl md:text-2xl lg:text-[2rem] whitespace-pre-line font-ppe font-light italic text-black mb-3 md:mb-4">
                                                 {item.title}
                                             </h3>
-                                            <p className="text-sm md:text-base lg:text-[1.5rem] text-gray-600 leading-[1.5] max-w-md">
+                                            <p className="text-sm md:text-base lg:text-[1.5rem] font-[500] leading-[1.5] max-w-lg">
                                                 {item.description}
                                             </p>
                                         </div>

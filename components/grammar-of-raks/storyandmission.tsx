@@ -6,7 +6,7 @@ import ContainerLayout from '@/layout/ContainerLayout'
 
 const StoryAndMission = () => {
   return (
-    <section className='w-full bg-white py-[8vh] md:py-[12vh]'>
+    <section className='w-full bg-white py-[10] md:py-[20]'>
       <ContainerLayout>
         {/* Founder Section */}
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-[10vh] md:mb-[15vh]'>
@@ -34,7 +34,7 @@ const StoryAndMission = () => {
                   At RAKS Institutions, we began with a simple yet powerful question:
                 </p>
                 <p className='text-base md:text-[1.1rem] lg:text-2xl text-gray-500 leading-relaxed'>
-                  What kind of learning environment allows children and educators to <span className='italic font-medium text-gray-800'>truly thrive?</span>
+                  What kind of learning environment allows children and educators to <span className='italic font-light font-ppe text-gray-800'>truly thrive?</span>
                 </p>
               </div>
 

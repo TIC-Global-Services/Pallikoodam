@@ -17,7 +17,7 @@ import batmitton from '@/assets/sports/Badminton.jpg';
 const SportsArena = () => {
     const data = [
         { image: tennis, title: "Tennis" },
-        { image: batmitton, title: "Batmitton" },
+        { image: batmitton, title: "Badminton" },
         { image: football, title: "Football" },
         { image: basketball, title: "Basketball" },
         { image: Equestrian, title: "Equestrian" },

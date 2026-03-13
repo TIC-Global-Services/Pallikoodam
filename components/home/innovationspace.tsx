@@ -84,50 +84,71 @@ const Innovationspace = () => {
     }, []);
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger)
-        const ctx = gsap.context(() => {
-            gsap.set(highlightRef.current, {
-                scaleX: 0,
-                transformOrigin: "left center"
-            })
+        gsap.registerPlugin(ScrollTrigger);
+        let ctx: gsap.Context;
 
-            gsap.to(highlightRef.current, {
-                scaleX: 1.3,
-                duration: 1.2,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: "top 55%",
-                    toggleActions: "play none none reverse"
-                }
-            })
-            if (bubblesRef.current.length > 0) {
-                gsap.set(bubblesRef.current, {
-                    scaleY: 0,
-                    transformOrigin: "bottom center"
-                });
+        const initAnimation = () => {
+            ctx = gsap.context(() => {
+                gsap.set(highlightRef.current, {
+                    scaleX: 0,
+                    transformOrigin: "left center"
+                })
 
-                gsap.to(bubblesRef.current, {
-                    scaleY: 1,
-                    stagger: {
-                        each: 0.1,
-                        from: "edges",
-                        amount: 1.5
-                    },
+                gsap.to(highlightRef.current, {
+                    scaleX: 1.3,
+                    duration: 1.2,
                     ease: "power2.out",
                     scrollTrigger: {
-                        trigger: containerRef.current,
-                        start: "top 100%",
-                        end: "top 60%",
-                        scrub: 1,
-                        toggleActions: "play reverse play reverse"
+                        trigger: wrapperRef.current, // Use the specific text wrapper for accurate triggering
+                        start: "top 80%",
+                        toggleActions: "play none none reverse",
+                        invalidateOnRefresh: true,
                     }
-                });
-            }
+                })
+                
+                if (bubblesRef.current.length > 0) {
+                    gsap.set(bubblesRef.current, {
+                        scaleY: 0,
+                        transformOrigin: "bottom center"
+                    });
 
-        }, containerRef)
+                    gsap.to(bubblesRef.current, {
+                        scaleY: 1,
+                        stagger: {
+                            each: 0.1,
+                            from: "edges",
+                            amount: 1.5
+                        },
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: containerRef.current,
+                            start: "top 100%",
+                            end: "top 60%",
+                            scrub: 1,
+                            toggleActions: "play reverse play reverse",
+                            invalidateOnRefresh: true,
+                        }
+                    });
+                }
+                ScrollTrigger.refresh();
+            }, containerRef)
+        };
 
-        return () => ctx.revert()
+        // Delay GSAP setup slightly to ensure DOM dimensions and fonts are fully settled
+        const timer = setTimeout(initAnimation, 100);
+
+        const handleResize = () => ScrollTrigger.refresh();
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('orientationchange', handleResize);
+        window.addEventListener('load', handleResize);
+
+        return () => {
+            clearTimeout(timer);
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('orientationchange', handleResize);
+            window.removeEventListener('load', handleResize);
+            if (ctx) ctx.revert();
+        }
     }, [bubbleCount])
 
 

@@ -32,59 +32,80 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
     const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>();
 
     useEffect(() => {
-        const ctx = gsap.context(() => {
-            const isMobile = window.innerWidth < 768;
-            const isSmallHeight = window.innerHeight < 700;
-            const isSmallHeightDesktop = window.innerWidth >= 768 && isSmallHeight;
+        let ctx: gsap.Context;
 
-            // Adjust offset based on screen size
-            let offset = 5;
-            if (isSmallHeight && isMobile) {
-                offset = 1;
-            } else if (isSmallHeightDesktop) {
-                offset = 2;
-            }
+        const initAnimation = () => {
+            ctx = gsap.context(() => {
+                const isMobile = window.innerWidth < 768;
+                const isSmallHeight = window.innerHeight < 700;
+                const isSmallHeightDesktop = window.innerWidth >= 768 && isSmallHeight;
 
-            // Adjust scroll multiplier for better control
-            let scrollMultiplier = 150;
-            if (isMobile) {
-                scrollMultiplier = isSmallHeight ? 90 : 95;
-            } else if (isSmallHeightDesktop) {
-                scrollMultiplier = 100;
-            }
-
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: isSmallHeight ? 'top 10%' : 'top 15%',
-                    end: `+=${scrollMultiplier}%`,
-                    pin: true,
-                    scrub: isMobile ? 0.2 : 1,
-                    anticipatePin: 1,
-                },
-            });
-
-            // Set initial state for first card immediately
-            gsap.set(`.card-0`, { yPercent: 0, xPercent: 0, rotation: 0 });
-
-            // Set other cards below the view initially
-            cards.forEach((_, index) => {
-                if (index > 0) {
-                    gsap.set(`.card-${index}`, { yPercent: 250, xPercent: 10, rotation: -20 });
+                // Adjust offset based on screen size
+                let offset = 5;
+                if (isSmallHeight && isMobile) {
+                    offset = 1;
+                } else if (isSmallHeightDesktop) {
+                    offset = 2;
                 }
-            });
 
-            cards.forEach((_, index) => {
-                if (index === 0) return;
+                // Adjust scroll multiplier for better control
+                let scrollMultiplier = 150;
+                if (isMobile) {
+                    scrollMultiplier = isSmallHeight ? 90 : 95;
+                } else if (isSmallHeightDesktop) {
+                    scrollMultiplier = 100;
+                }
 
-                tl.to(
-                    `.card-${index}`,
-                    { yPercent: index * offset, xPercent: 0, rotation: 0, duration: 0.4, ease: "power2.out" }
-                );
-            });
-        }, sectionRef);
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: isSmallHeight ? 'top 10%' : 'top 15%',
+                        end: `+=${scrollMultiplier}%`,
+                        pin: true,
+                        scrub: isMobile ? 0.2 : 1,
+                        anticipatePin: 1,
+                        invalidateOnRefresh: true, // Re-calc on resize
+                    },
+                });
 
-        return () => ctx.revert();
+                // Set initial state for first card immediately
+                gsap.set(`.card-0`, { yPercent: 0, xPercent: 0, rotation: 0 });
+
+                // Set other cards below the view initially
+                cards.forEach((_, index) => {
+                    if (index > 0) {
+                        gsap.set(`.card-${index}`, { yPercent: 250, xPercent: 10, rotation: -20 });
+                    }
+                });
+
+                cards.forEach((_, index) => {
+                    if (index === 0) return;
+
+                    tl.to(
+                        `.card-${index}`,
+                        { yPercent: index * offset, xPercent: 0, rotation: 0, duration: 0.4, ease: "power2.out" }
+                    );
+                });
+                
+                // Final refresh after setup
+                ScrollTrigger.refresh();
+            }, sectionRef);
+        };
+
+        // Defer calculation slightly to ensure fonts/images are rendered
+        const timer = setTimeout(initAnimation, 100);
+
+        // Add robust resize handler
+        const handleResize = () => ScrollTrigger.refresh();
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('orientationchange', handleResize);
+
+        return () => {
+            clearTimeout(timer);
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('orientationchange', handleResize);
+            if (ctx) ctx.revert();
+        };
     }, [cards]);
 
     return (

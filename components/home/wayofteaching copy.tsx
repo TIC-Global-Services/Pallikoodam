@@ -33,44 +33,48 @@ const Wayofteaching = () => {
     const { elementRef: titleRef } = useLineReveal<HTMLHeadingElement>();
 
     useEffect(() => {
-        const ctx = gsap.context(() => {
-            const isMobile = window.innerWidth < 768;
-            const isSmallHeightDesktop = window.innerHeight < 768;
-            const offset = isSmallHeightDesktop ? 2 : 5;
-            const scrollMultiplier = isMobile
-                ? 120
-                : isSmallHeightDesktop
-                    ? 150
-                    : 250;
+        let ctx: gsap.Context;
 
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: 'top top',
-                    end: `+=${scrollMultiplier}%`,
-                    pin: true,
-                    scrub: isMobile ? 0.2 : 1,
-                    anticipatePin: 1,
-                    invalidateOnRefresh: true,
-                },
-            });
+        const initAnimation = () => {
+            ctx = gsap.context(() => {
+                const isMobile = window.innerWidth < 768;
+                const isSmallHeightDesktop = window.innerHeight < 768;
+                const offset = isSmallHeightDesktop ? 2 : 5;
+                const scrollMultiplier = isMobile
+                    ? 120
+                    : isSmallHeightDesktop
+                        ? 150
+                        : 250;
 
-            data.forEach((_, index) => {
-                if (index === 0) {
-                    tl.set(`.card-${index}`, { yPercent: 0 });
-                    return;
-                }
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: 'top top',
+                        end: `+=${scrollMultiplier}%`,
+                        pin: true,
+                        scrub: isMobile ? 0.2 : 1,
+                        anticipatePin: 1,
+                        invalidateOnRefresh: true,
+                    },
+                });
 
-                tl.fromTo(
-                    `.card-${index}`,
-                    { yPercent: 250 },
-                    { yPercent: index * offset, duration: 0.5 }
-                );
-            });
-            setTimeout(() => {
+                data.forEach((_, index) => {
+                    if (index === 0) {
+                        tl.set(`.card-${index}`, { yPercent: 0 });
+                        return;
+                    }
+
+                    tl.fromTo(
+                        `.card-${index}`,
+                        { yPercent: 250 },
+                        { yPercent: index * offset, duration: 0.5 }
+                    );
+                });
                 ScrollTrigger.refresh();
-            }, 100);
-        }, sectionRef);
+            }, sectionRef);
+        };
+
+        const timer = setTimeout(initAnimation, 100);
 
         const handleResize = () => ScrollTrigger.refresh();
 
@@ -79,10 +83,11 @@ const Wayofteaching = () => {
         window.addEventListener('load', handleResize);
 
         return () => {
+            clearTimeout(timer);
             window.removeEventListener('resize', handleResize);
             window.removeEventListener('orientationchange', handleResize);
             window.removeEventListener('load', handleResize);
-            ctx.revert();
+            if (ctx) ctx.revert();
         };
     }, []);
 

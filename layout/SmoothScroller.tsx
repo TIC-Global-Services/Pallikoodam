@@ -14,66 +14,37 @@ const SmoothScroller = ({ children }: LenisProviderProps) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    /* ---------------------------------------------------
-       1. Allow browser native scroll restoration
-    --------------------------------------------------- */
     if ("scrollRestoration" in history) {
-      history.scrollRestoration = "auto"; // <-- important
+      history.scrollRestoration = "manual"; // Manual prevents browser from fighting Lenis
     }
 
-    /* ---------------------------------------------------
-       2. Initialize Lenis AFTER the browser restores scroll
-    --------------------------------------------------- */
-    requestAnimationFrame(() => {
-      const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        wheelMultiplier: 1,
-        syncTouch: false,
-        autoRaf: false, // <-- changed (important!)
-      });
-
-      lenisRef.current = lenis;
-
-      lenis.on("scroll", () => ScrollTrigger.update());
-
-      /* ---------------------------------------------------
-         3. Proper GSAP scrollerProxy that doesn't override
-            browser's scroll on page load
-      --------------------------------------------------- */
-      ScrollTrigger.scrollerProxy(document.body, {
-        scrollTop(value) {
-          if (value !== undefined) {
-            // allow browser's native scroll restore FIRST
-            lenis.scrollTo(value, { immediate: true });
-          }
-          return window.scrollY;
-        },
-        getBoundingClientRect() {
-          return {
-            top: 0,
-            left: 0,
-            width: window.innerWidth,
-            height: window.innerHeight,
-          };
-        },
-      });
-
-      /* ---------------------------------------------------
-         4. Manual RAF so Lenis doesn't fight scroll restore
-      --------------------------------------------------- */
-      function raf(time: number) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-
-      ScrollTrigger.addEventListener("refresh", () => lenis.resize());
-      ScrollTrigger.refresh();
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      wheelMultiplier: 1,
+      syncTouch: false,
     });
+
+    lenisRef.current = lenis;
+
+    // Sync Lenis scroll with GSAP ScrollTrigger
+    lenis.on("scroll", ScrollTrigger.update);
+
+    // Add Lenis's requestAnimationFrame (raf) to GSAP's ticker
+    // This ensures smooth synchronization between GSAP animations and Lenis scrolling
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    // Disable GSAP's lag smoothing to avoid jumps during scrolling
+    gsap.ticker.lagSmoothing(0);
+
+    // Auto-refresh ScrollTrigger on window load/resize
+    ScrollTrigger.refresh();
 
     return () => {
       lenisRef.current?.destroy();
+      gsap.ticker.remove(lenis.raf);
       ScrollTrigger.killAll();
     };
   }, []);

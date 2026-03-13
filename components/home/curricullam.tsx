@@ -20,54 +20,60 @@ const curricullam = () => {
   const { elementRef: titleRef2, triggerAnimation: triggerAnimation2 } = useLetterReveal<HTMLHeadingElement>(0.1, false);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "+=150%",
-          pin: true,
-          scrub: 1,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-          onUpdate: (self) => {
-            if (self.progress > 0.15) {
-              triggerAnimation2();
-            }
+    let ctx: gsap.Context;
+
+    const initAnimation = () => {
+      ctx = gsap.context(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "+=150%",
+            pin: true,
+            scrub: 1,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+            onUpdate: (self) => {
+              if (self.progress > 0.15) {
+                triggerAnimation2();
+              }
+            },
           },
-        },
-      });
+        });
 
-      gsap.set(card1Ref.current, { zIndex: 2 });
-      gsap.set(card2Ref.current, { zIndex: 1, opacity: 1 });
+        gsap.set(card1Ref.current, { zIndex: 2 });
+        gsap.set(card2Ref.current, { zIndex: 1, opacity: 1 });
 
-      tl.to(text1Ref.current, {
-        yPercent: 100,
-        ease: "none",
-      }).to(
-        img1Ref.current,
-        {
-          yPercent: -100,
+        tl.to(text1Ref.current, {
+          yPercent: 100,
           ease: "none",
-        },
-        "<"
-      );
-      requestAnimationFrame(() => ScrollTrigger.refresh());
-    }, sectionRef);
-    ScrollTrigger.refresh();
-    return () => ctx.revert();
+        }).to(
+          img1Ref.current,
+          {
+            yPercent: -100,
+            ease: "none",
+          },
+          "<"
+        );
+        ScrollTrigger.refresh();
+      }, sectionRef);
+    };
+
+    const timer = setTimeout(initAnimation, 100);
+
+    const handleResize = () => ScrollTrigger.refresh();
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("orientationchange", handleResize);
+    window.addEventListener("load", handleResize);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("orientationchange", handleResize);
+      window.removeEventListener("load", handleResize);
+      if (ctx) ctx.revert();
+    };
   }, []);
-//   useEffect(() => {
-//   const handleLoad = () => {
-//     ScrollTrigger.refresh();
-//   };
-
-//   window.addEventListener("load", handleLoad);
-
-//   return () => {
-//     window.removeEventListener("load", handleLoad);
-//   };
-// }, []);
 
   return (
     <section

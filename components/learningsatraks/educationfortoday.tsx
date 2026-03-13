@@ -9,14 +9,13 @@ const EducationForToday = () => {
     const { elementRef: titleRef2 } = useLetterReveal<HTMLHeadingElement>();
     return (
         <section className="w-full overflow-hidden py-16 md:py-24 bg-white">
-            <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8">
+            <div className="w-full mx-auto px-4 md:px-8">
                 <div className="flex flex-col lg:flex-col">
 
                     {/* Title Area */}
-                    <div ref={titleRef1} className="w-full flex-shrink-0">
+                    <div ref={titleRef1} className="w-full flex-shrink-0 translate-x-60">
                         <h2 className="text-[#2C313E] text-[36px] md:text-[44px] lg:text-[48px] xl:text-[56px] leading-[1.1] font-medium tracking-tight">
-                            Rethinking <span className='font-ppe font-normal italic'>Education</span> for<br className="hidden lg:block" />
-                            Today’s <span className='font-ppe font-normal italic'>World</span>
+                            Boards We <br /><span className='font-ppe font-normal italic'>Offer</span>
                         </h2>
                     </div>
 
@@ -34,9 +33,16 @@ const EducationForToday = () => {
                                 className="w-full h-full rounded-[12px] object-cover object-center"
                             />
                         </div>
-                        <div ref={titleRef2} className='max-w-lg relative'>
+                        <div ref={titleRef2} className='max-w-md relative'>
+                            <p className="text-[#4A4F5E] text-[15px] mb-5  md:text-base lg:text-xl leading-[1.2]">
+                                RAKS follows two carefully chosen curricula that align with our vision for holistic, future-ready education:
+                            </p>
+                            <p className="text-[#4A4F5E] text-[15px] mb-5  md:text-base lg:text-xl leading-[1.2]">
+                                Cambridge International Curriculum
+                                National Curriculum (India)
+                            </p>
                             <p className="text-[#4A4F5E] text-[15px]  md:text-base lg:text-xl leading-[1.2]">
-                                At RAKS Pallikkoodam, education goes beyond textbooks. We follow a 21st-century, experiential and interdisciplinary approach, connecting subjects, encouraging curiosity, critical thinking, creativity, collaboration, and real-world learning.
+                                This dual-curriculum approach allows us to nurture global perspectives while remaining rooted in national educational values and contexts.
                             </p>
                         </div>
                     </div>

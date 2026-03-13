@@ -101,24 +101,24 @@ const Empowering = () => {
 
     return (
         <div className="relative w-full z-10 bg-white" style={{ marginBottom: "-100vh" }}>
-            <section ref={containerRef} className="sticky top-0 w-full h-dvh lg:h-screen overflow-hidden pt-20 flex flex-col items-center justify-start pb-10">
+            <section ref={containerRef} className="sticky top-0 w-full h-dvh lg:h-screen overflow-hidden pt-20 flex flex-col items-center justify-center pb-10">
                 {/* Title */}
-                <div className="text-center z-10 w-full px-4 mb-4 lg:mb-10 shrink-0">
-                    <h2 className="text-[32px] md:text-[44px] lg:text-[54px] text-[#2C313E] leading-[1.1] font-medium tracking-tight">
-                        Empowering Learners Through <span className="font-ppe italic font-normal">Choice</span><br className="hidden md:block" />
-                        <span className="font-ppe italic font-normal">and Clarity</span>
+                <div className="text-center translate-y-20 z-10 w-full px-4 shrink-0">
+                    <h2 className="text-[32px] mb-3 md:text-[44px] lg:text-[54px] text-[#2C313E] leading-[1.1] font-medium tracking-tight">
+                        Cambridge International  <span className="font-ppe italic font-normal">Curriculum</span>
                     </h2>
+                    <p className="max-w-4xl mx-auto text-base md:text-2xl lg:text-[2rem] leading-[1.2]">The Cambridge International Curriculum at RAKS nurtures the whole child, fostering curiosity, confidence, and independent thinking. Learning is active and experiential, enabling learners to explore, collaborate, and grow with purpose.</p>
                 </div>
 
                 {/* Cards Container */}
-                <div className="w-full px-4 relative flex justify-center items-center flex-1 min-h-0">
+                <div className="w-full px-4 -translate-y-50 relative flex justify-center items-center flex-1 min-h-0 z-10">
                     {/* Center anchor constraint so all cards start from exact same origin point */}
                     <div className="relative w-[250px] md:w-[280px] lg:w-[433px] h-[360px] md:h-[420px] lg:h-[560px]">
                         {data.map((item, index) => (
                             <div
                                 key={index}
                                 ref={(el) => { cardsRef.current[index] = el }}
-                                className="empowering-card absolute inset-0 shrink-0 rounded-[12px] md:rounded-[16px] overflow-visible group cursor-pointer  transition-colors duration-300"
+                                className={`empowering-card absolute inset-0 shrink-0 rounded-[12px] md:rounded-[16px] overflow-visible group cursor-pointer transition-colors duration-300 ${activeTooltip === index ? 'z-50' : 'hover:z-40 md:hover:z-50'}`}
                                 style={{ willChange: 'transform, opacity' }}
                             >
                                 <Image

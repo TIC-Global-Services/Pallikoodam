@@ -51,7 +51,7 @@ const sectionsData = [
 
 const RaksValue = () => {
     const outerRef = useRef<HTMLDivElement>(null);
-    const [hovered, setHovered] = useState<(number | null)[]>(sectionsData.map(() => null));
+    const [hovered, setHovered] = useState<(number | null)[]>(sectionsData.map(() => 0));
 
     const onCardHover = (sectionIdx: number, cardIdx: number | null) => {
         setHovered(prev => prev.map((v, i) => (i === sectionIdx ? cardIdx : v)));
@@ -161,7 +161,7 @@ const RaksValue = () => {
                                     <div
                                         key={card.id}
                                         onMouseEnter={() => onCardHover(sIdx, cIdx)}
-                                        onMouseLeave={() => onCardHover(sIdx, null)}
+                                        onMouseLeave={() => onCardHover(sIdx, 0)}
                                         className="flex-1 flex flex-col justify-end p-4 md:p-8 border-r border-t border-[#ffffff40] transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer overflow-hidden"
                                         style={{
                                             height: isHovered ? '50vh' : '35vh',

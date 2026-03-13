@@ -10,7 +10,7 @@ const gettingstarted = () => {
             <ContainerLayout>
                 <div className='relative bg-[#E9E9E9] rounded-[24px] overflow-hidden flex flex-col lg:flex-row shadow-sm'>
                     {/* Background Gradient Layer for the entire container */}
-                    <h2 className='md:text-[36px] text-base  md:hidden px-10 py-5 flex justify-center items-center  font-medium lg:hidden leading-[1.1] mb-6 tracking-normal'>
+                    <h2 className='md:text-[36px] text-2xl  md:hidden md:px-10 py-5 flex justify-center items-center  font-medium lg:hidden leading-[1.1] mb-6 tracking-normal'>
                         Getting <span className='font-ppe font-normal italic'>Started</span> & Next Steps
                     </h2>
                     <div className='absolute bottom-[-30%] right-[-40%] w-[60%] h-[60%] 

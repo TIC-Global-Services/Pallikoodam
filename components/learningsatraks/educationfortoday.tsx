@@ -13,7 +13,7 @@ const EducationForToday = () => {
                 <div className="flex flex-col lg:flex-col">
 
                     {/* Title Area */}
-                    <div ref={titleRef1} className="w-full flex-shrink-0 translate-x-60">
+                    <div ref={titleRef1} className="w-full flex-shrink-0 md:translate-x-60">
                         <h2 className="text-[#2C313E] text-[36px] md:text-[44px] lg:text-[48px] xl:text-[56px] leading-[1.1] font-medium tracking-tight">
                             Boards We <br /><span className='font-ppe font-normal italic'>Offer</span>
                         </h2>

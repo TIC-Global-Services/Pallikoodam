@@ -56,14 +56,14 @@ const Environments = () => {
                 {/* <div className='grid grid-cols-1 lg:grid-cols-6  gap-4 lg:gap-6 pb-6 relative'>
 
                      {/* Card 1: Left column, large vertical card spanning 4 rows */}
-                    {/*  */}
+                {/*  */}
 
 
                 {/* Outcomes and Resources Section */}
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 pb-12 relative'>
                     {outcomesCards.map((card) => (
-                        <div key={card.id} className='bg-[#F3F4F6] h-[40vh] rounded-[24px] lg:rounded-[20px] overflow-hidden flex flex-col md:flex-row w-full shadow-lg p-2 md:p-3'>
-                            <div className={`w-full md:w-[45%] h-full   relative shrink-0 rounded-xl md:rounded-[20px] overflow-hidden ${card.imagePosition === 'right' ? 'md:order-2' : 'md:order-1'}`}>
+                        <div key={card.id} className='bg-[#F3F4F6] h-auto md:h-[40vh] rounded-[24px] lg:rounded-[20px] overflow-hidden flex flex-col md:flex-row w-full shadow-lg p-2 md:p-3'>
+                            <div className={`w-full md:w-[45%] h-[180px] md:h-full relative shrink-0 rounded-xl md:rounded-[20px] overflow-hidden ${card.imagePosition === 'right' ? 'md:order-2' : 'md:order-1'}`}>
                                 <Image
                                     src={card.image}
                                     alt=""

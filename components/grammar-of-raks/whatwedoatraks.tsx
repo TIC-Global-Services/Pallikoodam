@@ -137,13 +137,17 @@ const WhatWeDoAtRaks = () => {
     return (
         <>
             {/* Title section */}
-            <section className="w-full bg-white md:py-[20]">
-                <ContainerLayout>
+            <section className="w-full bg-white md:py-[0]">
+                {/* <ContainerLayout>
                     <h2 className="text-[2rem] md:text-5xl lg:text-[3.5rem] font-medium tracking-tight leading-[1.1]">
                         WHY, HOW, WHERE, And With WHOM We Do WHAT We Do{' '}
                         <span className="font-ppe font-light italic text-[#000086]">@RAKS</span>
                     </h2>
-                </ContainerLayout>
+                    <p className="text-base md:text-xl lg:text-2xl text-black max-w-5xl leading-[1.2]">
+                        We organise our philosophy around the 3 P's, 3 R's, and 4 E's, frameworks that keep
+                        learning future-ready, meaningful, and active.
+                    </p>
+                </ContainerLayout> */}
             </section>
 
             {/* ============ MOBILE CAROUSEL ============ */}

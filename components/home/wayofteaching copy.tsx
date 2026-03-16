@@ -128,10 +128,10 @@ const Wayofteaching = () => {
 
                                     {/* Content */}
                                     <div className='absolute bottom-0 left-0 w-full p-6 md:p-14 text-white'>
-                                        <h2 className='text-[2.2rem] leading-[1.1] md:text-5xl font-medium mb-3 md:mb-4 max-w-4xl tracking-tight'>
+                                        <h2 className='text-[2.2rem] leading-[1.1] md:text-5xl font-medium mb-3 md:mb-5 max-w-4xl tracking-tight'>
                                             {item.title}
                                         </h2>
-                                        <p className='text-[1.1rem] md:text-xl text-gray-200 max-w-md font-light leading-snug tracking-wide'>
+                                        <p className='text-[1.1rem] md:text-xl text-gray-200 max-w-md font-light leading-[1.2] lg:leading-[24px] tracking-wide'>
                                             {item.description}
                                         </p>
                                     </div>

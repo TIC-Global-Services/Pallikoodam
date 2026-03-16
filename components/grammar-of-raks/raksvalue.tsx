@@ -23,7 +23,7 @@ if (typeof window !== 'undefined') {
 
 const sectionsData = [
     {
-        title: "The 3 Ps: People, Places, Practices",
+        title: "The 3 P's: People, Places, Practices",
         cards: [
             { id: "people", title: "People", desc: "Children, Educators, And Families Together Shape The RAKS Community.", bg: img1 },
             { id: "places", title: "Places", desc: "Purpose-built spaces that invite exploration, creativity, and collaboration.", bg: img2 },
@@ -31,7 +31,7 @@ const sectionsData = [
         ],
     },
     {
-        title: "The 3 Rs: Rituals, Routines, Rhythms",
+        title: "The 3 R's: Rituals, Routines, Rhythms",
         cards: [
             { id: "rituals", title: "Rituals", desc: "Circle Time, Story Assemblies, And Community Gatherings To Celebrate Values, Belonging And Identity.", bg: img4 },
             { id: "routines", title: "Routines", desc: "Clear, Predictable Habits — Like Self-Care And Rest Cycles That Cultivate Calm And Focus.", bg: img5 },
@@ -39,7 +39,7 @@ const sectionsData = [
         ],
     },
     {
-        title: "The 4 Es: Empathy, Ethics, Excellence, Evolution",
+        title: "The 4 E's: Empathy, Ethics, Excellence, Evolution",
         cards: [
             { id: "empathy", title: "Empathy", desc: "Learning Is Built On Care, Connection, And Emotional Literacy.", bg: img7 },
             { id: "ethics", title: "Ethics", desc: "Integrity, fairness, and responsibility guide every choice.", bg: img8 },
@@ -118,7 +118,7 @@ const RaksValue = () => {
                         <span className="font-ppe font-light italic text-[#000086]">RAKS</span> Values
                     </h2>
                     <p className="text-base md:text-xl lg:text-2xl text-black max-w-5xl leading-[1.2]">
-                        We organise our philosophy around the 3 Ps, 3 Rs, and 4 Es, frameworks that keep
+                        We organise our philosophy around the 3 P's, 3 R's, and 4 E's, frameworks that keep
                         learning future-ready, meaningful, and active.
                     </p>
                 </ContainerLayout>

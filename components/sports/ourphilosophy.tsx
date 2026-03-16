@@ -28,7 +28,7 @@ const OurPhilosophy = () => {
                             <h3 className="text-xl md:text-[2rem] font-medium mb-3 text-black">
                                 Why Sports Matter at <span className="font-ppe italic font-light  text-[#000086] tracking-wide">RAKS</span>
                             </h3>
-                            <p className="text-gray-800 text-base md:text-2xl leading-[1.3] font-medium max-w-lg">
+                            <p className="text-gray-800 text-base md:text-lg leading-[1.3] font-medium max-w-lg">
                                 Sports shape discipline, resilience, teamwork, leadership, and confidence. Every learner trains under expert coaches, where effort, character, and growth matter as much as results.
                             </p>
                         </div>
@@ -38,7 +38,7 @@ const OurPhilosophy = () => {
                             <h3 className="text-xl md:text-[2rem] font-medium mb-3 text-black">
                                 Morning <span className="font-ppe italic font-light text-[#000086] tracking-wide">Sports</span> & After-School <span className="font-ppe italic font-light text-[#000086] tracking-wide">Sports</span>
                             </h3>
-                            <p className="text-gray-800 text-base md:text-2xl leading-[1.3] font-medium max-w-lg">
+                            <p className="text-gray-800 text-base md:text-lg leading-[1.3] font-medium max-w-lg">
                                 Sports shape discipline, resilience, teamwork, leadership, and confidence. Every learner trains under expert coaches, where effort, character, and growth matter as much as results.
                             </p>
                         </div>

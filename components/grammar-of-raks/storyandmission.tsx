@@ -36,7 +36,7 @@ const StoryAndMission = () => {
 
             <div className='space-y-2 md:space-y-6'>
               <div>
-                <p className='text-base md:text-[1.1rem] lg:text-2xl text-black mb-1 leading-relaxed text-left'>
+                <p className='text-base md:text-[1.1rem] lg:text-2xl text-black mb-1 leading-[1.2] text-left'>
                   At RAKS Institutions, we began with a simple yet powerful question:
                 </p>
                 <p className='text-base md:text-[1.1rem] lg:text-2xl text-gray-500 leading-[1.2] text-left'>
@@ -44,11 +44,11 @@ const StoryAndMission = () => {
                 </p>
               </div>
 
-              <p className='text-base md:text-[1.1rem] lg:text-[1.75rem] text-black leading-[1.1] text-left'>
+              <p className='text-base md:text-[1.1rem] lg:text-2xl text-black leading-[1.1] text-left'>
                 Our journey has been one of listening to children, teachers, families, and the spaces we inhabit. We believe that when learners are trusted, when educators are empowered, and when environments are thoughtfully designed, learning becomes meaningful and lasting.
               </p>
 
-              <p className='text-base md:text-[1.4rem] lg:text-[1.75rem] text-black leading-[1.1] text-left'>
+              <p className='text-base md:text-[1.4rem] lg:text-2xl text-black leading-[1.1] text-left'>
                 RAKS Institutions is not built on speed or scale alone, but on intentional growth, integrity, and purpose. Every decision we make is guided by what serves the learner best, today and in the years to come.
               </p>
             </div>
@@ -57,7 +57,7 @@ const StoryAndMission = () => {
               <p className='font-ppe italic font-light text-2xl md:text-3xl tracking-tight text-black mb-1'>
                 Swetha Krishnamurthy
               </p>
-              <p className='text-sm md:text-base font-bold text-gray-700'>
+              <p className='text-md md:text-xl  font-medium text-gray-700'>
                 Founder Director
               </p>
             </div>
@@ -91,15 +91,15 @@ const StoryAndMission = () => {
             </h2>
 
             <div className='space-y-4 md:space-y-6'>
-              <p className='text-base md:text-[1.1rem] lg:text-[1.75rem] text-black leading-[1.1] text-left'>
+              <p className='text-base md:text-[1.1rem] lg:text-2xl text-black leading-[1.1] text-left'>
                 Mr. Michael Joseph Purcell brings 25+ years of experience in teaching and international school leadership. Trained in engineering and physics in the United States, he has taught mathematics, science, and interdisciplinary subjects while also coaching school sports.
               </p>
 
-              <p className='text-base md:text-[1.1rem] lg:text-[1.75rem] text-black leading-[1.1] text-left'>
+              <p className='text-base md:text-[1.1rem] lg:text-2xl text-black leading-[1.1] text-left'>
                 A contributor to the International Baccalaureate Organization, he has led initiatives in digital citizenship, web literacy, academic integrity, and open-source learning.
               </p>
 
-              <p className='text-base md:text-[1.1rem] lg:text-[1.75rem] text-black leading-[1.1] text-left'>
+              <p className='text-base md:text-[1.1rem] lg:text-2xl text-black leading-[1.1] text-left'>
                 His global experience includes leadership roles at Mahindra United World College of India, NIST International School, and KC High International School, and he serves on the Governing Board of Edubridge International School, Mumbai.
               </p>
             </div>

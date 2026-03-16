@@ -133,7 +133,7 @@ const RaksInstitution = () => {
                             </h3>
 
                             {/* Description */}
-                            <p className="text-center text-xl font-medium leading-[1.5] text-gray-700 max-w-xs mx-auto">
+                            <p className="text-center text-xl font-medium leading-[1.2] text-gray-700 max-w-xs mx-auto">
                                 {item.description}
                             </p>
                         </div>
@@ -185,7 +185,7 @@ const RaksInstitution = () => {
                                             <h3 className="text-xl md:text-2xl lg:text-[2rem] whitespace-pre-line font-ppe font-light italic text-black mb-3 md:mb-4">
                                                 {item.title}
                                             </h3>
-                                            <p className="text-sm md:text-base lg:text-[1.5rem] font-[500] leading-[1.5] max-w-lg">
+                                            <p className="text-sm md:text-base lg:text-[1.5rem] font-[500] leading-[1.3] max-w-lg">
                                                 {item.description}
                                             </p>
                                         </div>

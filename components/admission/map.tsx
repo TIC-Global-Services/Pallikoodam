@@ -5,7 +5,7 @@ import tickicon from '@/assets/home/icons/tickicon.png'
 
 const Map = () => {
     return (
-        <section className="bg-white w-full flex flex-col pt-[10%]">
+        <section className="bg-white w-full flex flex-col">
             {/* Full Width Map Embed */}
             <div className="w-full h-[40vh] md:h-[50vh] lg:h-[60vh] max-h-[600px] bg-gray-100 relative">
                 {/* Optional overlay to allow scrolling over the map when not interacting */}

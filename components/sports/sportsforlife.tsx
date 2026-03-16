@@ -91,7 +91,7 @@ const SportsForLife = () => {
             Beyond <span className="font-ppe font-light italic">School</span>, Beyond the <span className="font-ppe font-light italic">Game</span>
           </h3>
 
-          <p className="animate-text text-[1.1rem] md:text-[1.3rem] lg:text-[1.8rem] leading-relaxed max-w-5xl md:leading-[1.8] text-white/90 font-light px-2 md:px-10">
+          <p className="animate-text text-[1.1rem] md:text-[1.3rem] lg:text-[1.8rem] leading-relaxed max-w-5xl md:leading-[1.1] text-white/90 font-medium px-2 md:px-10">
             Sports at RAKS prepare learners not just for competition, but for life. Through consistent practice, they internalise commitment and self-discipline, respect for themselves and others, the value of effort over instant success, and a growth mindset that prioritises progress. Sport becomes a lifelong companion, nurturing wellbeing, balance, and resilience well into adulthood.
           </p>
         </div>

@@ -151,8 +151,8 @@ const campustour = () => {
                 <div className='flex flex-col justify-center items-center relative z-20'>
 
                     <div ref={titleRef} className="flex flex-col justify-center items-center gap-[10%]">
-                        <h1 className={`text-sm md:text-2xl text-center lg:text-3xl  xl:text-4xl leading-[1.2] tracking-tight  text-white font-medium`} >Step into a school where learning is intentional, relationships are meaningful,<br className='hidden xl:block' /> and every experience is designed to help children grow with confidence,<br /> curiosity and purpose.</h1>
-                        <h1 className={`text-sm md:text-2xl text-center lg:text-3xl  xl:text-4xl leading-[1.2] tracking-tight  text-white font-medium mt-8`}>Discover the values that guide us, the research that shapes us, and the vision<br className='hidden xl:block' /> that inspires us to create joyful, future-ready learning every single day.</h1>
+                        <h1 className={`text-sm md:text-2xl text-center lg:text-3xl  xl:text-4xl leading-[1.2] tracking-[-2.19px]  text-white font-[400]`} >Step into a school where learning is intentional, relationships are meaningful,<br className='hidden xl:block' /> and every experience is designed to help children grow with confidence,<br /> curiosity and purpose.</h1>
+                        <h1 className={`text-sm md:text-2xl text-center lg:text-3xl  xl:text-4xl leading-[1.2] tracking-[-2.19px]  text-white font-[400] mt-8`}>Discover the values that guide us, the research that shapes us, and the vision<br className='hidden xl:block' /> that inspires us to create joyful, future-ready learning every single day.</h1>
                     </div>
 
                     <div className="mt-[5%] flex justify-center">

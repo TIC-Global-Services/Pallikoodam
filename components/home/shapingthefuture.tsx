@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
-import vision from "@/assets/home/visionimg.jpg"
-import image3 from '@/assets/home/campus-3.jpg'
+import vision from "@/assets/home/visionimgnew.png"
+import image3 from '@/assets/home/campus-3new.png'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -182,7 +182,7 @@ const Shapingthefuture = () => {
                                     Enabling learners to <span className="font-ppe italic">&quot;Thrive With Purpose&quot;</span> and build a sustainable, equitable, and compassionate world.
                                 </span>
                             </p>
-                            <div className="absolute bottom-0 left-0 w-full h-[55%]">
+                            <div className="absolute bottom-10 scale-120 left-0 w-full h-[55%]">
                                 <Image src={vision} alt="School Building" fill className="object-contain object-bottom" />
                             </div>
                         </div>
@@ -199,7 +199,9 @@ const Shapingthefuture = () => {
                                     <li>To empower every learner to act responsibly, lead ethically, and contribute positively to the world.</li>
                                 </ol>
                             </div>
-                            <div className="absolute -bottom-12 scale-110 left-0 w-full h-[55%]">
+                           
+                            <div className="absolute bottom-10 scale-120 left-0 w-full h-[55%]">
+                                <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#E9E9E9] to-transparent z-12" />
                                 <Image src={image3} alt="School Building" fill className="object-contain object-bottom" />
                             </div>
                         </div>

@@ -40,7 +40,7 @@ const AdmissionAt = () => {
 
                     {/* Start Your Journey */}
                     <div className="order-4 mt-auto flex justify-end -translate-y-10 md:justify-start md:translate-y-20">
-                        <h3 className="text-[1.5rem] md:text-[3rem] lg:text-[4rem] font-medium text-right md:text-left leading-[1.1] text-[#111]">
+                        <h3 className="text-[1.5rem] md:text-[3rem] lg:text-[4rem] font-medium text-right tracking-[-0.01em] md:text-left leading-[1.1] text-[#111]">
                             Start<br />
                             Your <span className="font-ppe italic font-light">Journey</span>
                         </h3>

@@ -193,9 +193,7 @@ const curricullam = () => {
                       confidence.
                     </p>
                     <p className="leading-[26px] mt-10 text-sm tracking-tight md:text-2xl">
-                      At <span className="font-ppe font-light">RAKS </span>
-                      CBSE evolves into a pathway of rigour, purpose, and
-                      meaningful mastery.
+                      At <span className="font-ppe font-light">RAKS</span> CBSE evolves into a pathway of rigour, purpose, and meaningful mastery.
                     </p>
                   </div>
                 </div>

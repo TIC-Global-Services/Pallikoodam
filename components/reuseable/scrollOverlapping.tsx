@@ -147,7 +147,7 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
                                     </div>
 
                                     <div className="relative">
-                                        <p className={` text-${card.textColor} font-inter-tight text-base md:text-[clamp(0.875rem,2vw,1.5rem)] leading-tigh`}>
+                                        <p className={` text-${card.textColor} font-inter-tight text-base md:text-[clamp(0.875rem,2vw,1.5rem)] leading-tight`}>
                                             {card.description}
                                         </p>
                                     </div>

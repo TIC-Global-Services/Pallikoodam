@@ -152,7 +152,7 @@ const BeyondTheClassroom = () => {
                   </h3>
                 </div>
               </div>
-              <p className="text-sm md:text-base text-gray-800 leading-relaxed font-medium">
+              <p className="text-sm md:text-base text-gray-800 leading-[1.25] font-medium">
                 {item.description}
               </p>
             </div>

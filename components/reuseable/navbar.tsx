@@ -189,6 +189,21 @@ const navbar = () => {
     };
 
 
+    const [isOpen, setIsOpen] = useState<boolean | null>(null);
+
+    useEffect(() => {
+        const checkStatus = () => {
+            const now = new Date();
+            const hours = now.getHours();
+            // User requested 9 - 4
+            setIsOpen(hours >= 9 && hours < 16);
+        };
+
+        checkStatus();
+        const interval = setInterval(checkStatus, 60000); // Update every minute
+        return () => clearInterval(interval);
+    }, []);
+
     const menuItems = [
         { name: 'Home', href: '/' },
         { name: 'Grammar of RAKS', href: '/grammar-of-raks' },
@@ -209,6 +224,21 @@ const navbar = () => {
                             <Image src="/Raks_Logo.png" alt="RAKS_Logo.png" width={120} height={50} className="cursor-pointer w-20 h-10  md:w-[100px] md:h-[50px]"/>
                         </Link>
                         <div className="flex gap-10 items-center">
+                            {/* Status Indicator */}
+                            {isOpen !== null && (
+                                <div className="hidden lg:flex flex-col items-end gap-0 uppercase">
+                                    <div className="flex items-center gap-2">
+                                        <div className={`w-2.5 h-2.5 rounded-full ${isOpen ? 'bg-[#00FF00]' : 'bg-[#FF0000]'}`} />
+                                        <span className={`text-[12px] md:text-sm font-bold tracking-wider ${isLightSection ? 'text-black' : 'text-white'}`}>
+                                            {isOpen ? 'OPEN' : 'CLOSED'} — 9AM - 4PM
+                                        </span>
+                                    </div>
+                                    <span className={`text-[10px] md:text-[11px] font-medium tracking-tight opacity-80 ${isLightSection ? 'text-black' : 'text-white'}`}>
+                                        COIMBATORE, INDIA
+                                    </span>
+                                </div>
+                            )}
+
                             <button
                                 onClick={toggleAudio}
                                 suppressHydrationWarning={true}

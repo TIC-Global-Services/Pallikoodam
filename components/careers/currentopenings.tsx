@@ -45,7 +45,7 @@ const currentopenings = () => {
                     <h2 className='text-2xl md:text-5xl lg:text-[48px] font-regular tracking-tight mb-2 md:mb-6'>
                         <span className='font-ppe italic font-light'>Current</span> Open Positions
                     </h2>
-                    <p className='text-base md:text-[32px] leading-[1.1] font-[500] tracking-tight'>
+                    <p className='text-base md:text-lg lg:text-lg leading-[1.3] font-medium tracking-tight'>
                         Explore roles that match your<br />skills and passion.
                     </p>
                 </div>

@@ -139,7 +139,7 @@ const whowelookingfor = () => {
                 <h2 className="text-2xl md:text-5xl lg:text-6xl font-regular tracking-tighter mb-2 md:mb-4">
                     Who We&apos;re <span className="font-ppe font-light italic">Looking For</span>
                 </h2>
-                <p className="text-base md:text-xl lg:text-3xl font-normal">
+                <p className="text-base md:text-xl lg:text-lg leading-[1.3] font-normal">
                     Motivated educators ready <br className="hidden md:block" /> to inspire.
                 </p>
             </div>
@@ -185,7 +185,7 @@ const whowelookingfor = () => {
                     <div className="w-full md:w-3/4 lg:w-1/2 ml-auto">
                         <p
                             ref={descriptionRef}
-                            className="text-lg md:text-2xl  leading-[30px] font-light"
+                            className="text-lg md:text-lg  leading-[1.3] font-light"
                         >
                             {roles[0].description}
                         </p>

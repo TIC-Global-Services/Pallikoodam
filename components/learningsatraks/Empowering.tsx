@@ -107,7 +107,7 @@ const Empowering = () => {
                     <h2 className="text-[32px] mb-3 md:text-[44px] lg:text-[54px] text-[#2C313E] leading-[1.1] font-medium tracking-tight">
                         Cambridge International  <span className="font-ppe italic font-normal">Curriculum</span>
                     </h2>
-                    <p className="max-w-4xl mx-auto text-base md:text-2xl lg:text-[2rem] leading-[1.2]">The Cambridge International Curriculum at RAKS nurtures the whole child, fostering curiosity, confidence, and independent thinking. Learning is active and experiential, enabling learners to explore, collaborate, and grow with purpose.</p>
+                    <p className="max-w-4xl mx-auto text-base md:text-2xl lg:text-[1.125rem] leading-[1.2]">The Cambridge International Curriculum at RAKS nurtures the whole child, fostering curiosity, confidence, and independent thinking. Learning is active and experiential, enabling learners to explore, collaborate, and grow with purpose.</p>
                 </div>
 
                 {/* Cards Container */}

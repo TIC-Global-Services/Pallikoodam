@@ -209,7 +209,7 @@ const Innovationspace = () => {
                                 className='snap-start shrink-0 w-[80vw] bg-white text-black rounded-[30px] overflow-hidden flex flex-col justify-between min-h-[420px]'
                             >
                                 <div className='p-6 h-[50%]'>
-                                    <h3 className='text-base font-medium leading-tight tracking-tight mb-4'>
+                                    <h3 className='text-lg font-medium leading-tight tracking-tight mb-4'>
                                         {card.italicPosition === 'before' && (
                                             <>
                                                 <span className='font-ppe italic tracking-tighter font-light'>{card.italic}</span>{' '}
@@ -227,7 +227,7 @@ const Innovationspace = () => {
                                         {card.description.split('\n\n').map((paragraph, idx, arr) => (
                                             <div key={idx} className={`relative pl-4 ${idx !== arr.length - 1 ? 'pb-4' : ''}`}>
                                                 <div className="w-0.5 h-full bg-[#0045FF] absolute left-0 top-0"></div>
-                                                <p className='text-xs leading-[16px] text-gray-800 font-medium'>
+                                                <p className='text-lg leading-[16px] text-gray-800 font-medium'>
                                                     {paragraph}
                                                 </p>
                                             </div>
@@ -273,7 +273,7 @@ const Innovationspace = () => {
                                         {card.description.split('\n\n').map((paragraph, idx, arr) => (
                                             <div key={idx} className={`relative pl-4 ${idx !== arr.length - 1 ? 'pb-4' : ''}`}>
                                                 <div className="w-0.5 h-full bg-[#0045FF] absolute left-0 top-0"></div>
-                                                <p className='text-sm md:text-xs lg:text-sm xl:text-base leading-[20px] text-gray-800 font-medium'>
+                                                <p className='text-sm md:text-xs lg:text-lg xl:text-lg leading-[20px] text-gray-800 font-medium'>
                                                     {paragraph}
                                                 </p>
                                             </div>

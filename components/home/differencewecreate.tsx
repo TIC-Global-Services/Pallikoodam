@@ -55,7 +55,7 @@ const DifferenceWeCreate = () => {
       <div className="flex flex-col gap-10 rounded-t-[40px] overflow-hidden bg-white py-8 md:py-14">
         <div ref={titleRef} className='flex flex-col md:gap-10 px-[3%]'>
           <h1 className='md:text-[54px] text-[32px] font-medium tracking-tighter leading-[64px]'>The <span className='text-[#000086] font-ppe italic font-light'>Difference</span> We Create</h1>
-          <p className='text-sm md:text-[clamp(16px,5vw,1.2rem)]  leading-[24px] md:max-w-[50%]'>Discover what sets <span>RAKS Pallikkoodam</span> apart—a future-focused learning community where every space, every mentor, and every experience is thoughtfully designed with purpose and care.</p>
+          <p className='text-sm md:text-[clamp(16px,5vw,1.125rem)]  leading-[24px] md:max-w-[50%]'>Discover what sets <span>RAKS Pallikkoodam</span> apart—a future-focused learning community where every space, every mentor, and every experience is thoughtfully designed with purpose and care.</p>
         </div>
 
         {/* Desktop layout */}

@@ -131,7 +131,7 @@ const Wayofteaching = () => {
                                         <h2 className='text-[2.2rem] leading-[1.1] md:text-5xl font-medium mb-3 md:mb-5 max-w-4xl tracking-tight'>
                                             {item.title}
                                         </h2>
-                                        <p className='text-[1.1rem] md:text-xl text-gray-200 max-w-md font-light leading-[1.2] lg:leading-[24px] tracking-wide'>
+                                        <p className='text-[1.1rem] md:text-lg text-gray-200 max-w-md font-light leading-[1.2] lg:leading-[1.2] tracking-wide'>
                                             {item.description}
                                         </p>
                                     </div>

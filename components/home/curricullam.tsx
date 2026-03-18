@@ -115,7 +115,7 @@ const curricullam = () => {
                     <p className="font-light italic font-ppe text-sm md:text-xl">
                       Cambridge @ RAKS
                     </p>
-                    <p className="md:leading-[26px] tracking-tight text-base md:text-[clamp(16px,10vw,1.5rem)]">
+                    <p className="md:leading-[26px] tracking-tight text-base md:text-[clamp(16px,10vw,1.125rem)]">
                       A pathway that nurtures inquiry, reflection, and
                       independent thinking.
                       <br /> Its global framework pairs seamlessly with our
@@ -123,7 +123,7 @@ const curricullam = () => {
                       encouraging learners to question, explore, create, and
                       connect ideas with real-world meaning.
                     </p>
-                    <p className="leading-[26px] mt-10 text-base tracking-tight md:text-[clamp(16px,10vw,1.5rem)]">
+                    <p className="leading-[26px] mt-10 text-base tracking-tight md:text-[clamp(16px,10vw,1.125rem)]">
                       At <span className="font-ppe font-light">RAKS </span>
                       Cambridge becomes more than a curriculum. It becomes a
                       journey of agency, voice, and courageous curiosity.
@@ -184,7 +184,7 @@ const curricullam = () => {
                     <p className="font-light italic font-ppe text-sm md:text-xl">
                       CBSE @ RAKS
                     </p>
-                    <p className="leading-[26px] tracking-tight text-sm md:text-2xl">
+                    <p className="leading-[26px] tracking-tight text-sm md:text-lg">
                       A strong, structured academic pathway that builds clarity,
                       discipline, and conceptual depth.
                       <br /> When blended with our experiential, hands-on
@@ -192,7 +192,7 @@ const curricullam = () => {
                       understand, apply, question, and express learning with
                       confidence.
                     </p>
-                    <p className="leading-[26px] mt-10 text-sm tracking-tight md:text-2xl">
+                    <p className="leading-[26px] mt-10 text-sm tracking-tight md:text-lg">
                       At <span className="font-ppe font-light">RAKS</span> CBSE evolves into a pathway of rigour, purpose, and meaningful mastery.
                     </p>
                   </div>

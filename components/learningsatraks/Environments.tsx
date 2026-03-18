@@ -76,7 +76,7 @@ const Environments = () => {
                                     {card.title}
                                 </h2>
                                 <div className='border-l-3 border-[#2C313E] pl-4 py-1'>
-                                    <p className='text-[#4B5563] text-[15px] xl:text-[16px] leading-[1.4]'>
+                                    <p className='text-[#4B5563] text-sm xl:text-lg leading-[1.4]'>
                                         {card.description}
                                     </p>
                                 </div>

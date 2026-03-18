@@ -30,7 +30,7 @@ const gettingstarted = () => {
                         </h2>
 
                         <div className='pl-1 md:pl-0 mb-8'>
-                            <p className='text-base md:text-lg lg:text-2xl text-black font-medium tracking-tight max-w-2xl leading-[1.2] mb-8'>
+                            <p className='text-base md:text-lg lg:text-lg text-black font-medium tracking-tight max-w-2xl leading-[1.2] mb-8'>
                                 If you're exploring the right academic pathway for your child at RAKS, we invite you to:
                             </p>
 
@@ -41,7 +41,7 @@ const gettingstarted = () => {
                             </ol>
                         </div>
 
-                        <p className='text-black text-[18px] md:text-[22px] lg:text-[24px] leading-[1.1] mb-5 md:mb-10 tracking-tight font-medium max-w-3xl'>
+                        <p className='text-black text-sm md:text-lg lg:text-lg leading-[1.3] mb-5 md:mb-10 tracking-tight font-medium max-w-3xl'>
                             Because choosing a school is not just about<br /> academics, it's about <span className='font-ppe italic font-light'>"Belonging, Purpose, and Possibility."</span>
                         </p>
 

@@ -30,7 +30,7 @@ const developement = () => {
               21st-Century Skills & <br /> Holistic <span className='font-ppe italic font-normal'>Development</span>
             </h2>
 
-            <p className='text-white/90 text-sm md:text-base  lg:text-xl max-w-xl xl:text-[1.6rem]  mb-8 md:mb-12'>
+            <p className='text-white/90 text-sm md:text-base  lg:text-lg max-w-xl xl:text-[1.125rem]  mb-8 md:mb-12'>
               At RAKS Pallikkoodam, we aim to nurture more than academic excellence. Through our approach, students develop modern competencies such as creativity, collaboration, digital literacy, communication, and critical thinking, all essential for today's global world.<br /> Alongside core academics, we emphasize social, emotional, and ethical growth, preparing learners not just for exams, but for life beyond school.
             </p>
           </div>

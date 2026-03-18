@@ -117,7 +117,7 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
                         <h2 className="text-[32px] md:text-[clamp(1.25rem,4vw,3.4rem)] tracking-tight leading-[36px] md:leading-[58px] font-medium w-full font-hoves-pro mb-4 md:mb-6 lg:mb-8">
                             {heading}
                         </h2>
-                        <p className='text-base md:text-[clamp(0.875rem,2vw,1.25rem)] md:leading-[120%] leading-[20px] max-w-full lg:max-w-xl font-regular font-inter-tight'>
+                        <p className='text-base md:text-[clamp(0.875rem,2vw,1.125rem)] md:leading-[120%] leading-[20px] max-w-full lg:max-w-xl font-regular font-inter-tight'>
                             {paragraph}
                         </p>
                     </div>
@@ -147,7 +147,7 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
                                     </div>
 
                                     <div className="relative">
-                                        <p className={` text-${card.textColor} font-inter-tight text-base md:text-[clamp(0.875rem,2vw,1.5rem)] leading-tight`}>
+                                        <p className={` text-${card.textColor} font-inter-tight text-base md:text-[clamp(0.875rem,2vw,1.125rem)] leading-tight`}>
                                             {card.description}
                                         </p>
                                     </div>

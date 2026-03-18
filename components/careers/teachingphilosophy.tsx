@@ -34,7 +34,7 @@ const teachingphilosophy = () => {
                         <h2 className="text-4xl md:text-5xl lg:text-[56px] font-normal leading-tight mb-4 tracking-tight shadow-sm">
                             Our Teaching <span className="font-ppe italic font-light">Philosophy</span>
                         </h2>
-                        <p className="text-xl md:text-2xl lg:text-[28px] font-light leading-snug lg:w-4/5 text-white/95">
+                        <p className="text-xl md:text-lg lg:text-lg font-light leading-snug lg:w-4/5 text-white/95">
                             Guided by <span className="font-ppe italic font-light">inquiry, creativity, and respect</span> for every learner&apos;s journey.
                         </p>
                     </div>

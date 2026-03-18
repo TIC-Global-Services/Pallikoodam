@@ -13,7 +13,7 @@ const ContactDetails = () => {
                     Experience Our <span className="italic font-ppe font-normal">School</span><br />
                     Environment Firsthand
                 </h2>
-                <p className="text-lg md:text-2xl  max-w-lg leading-[20px] md:leading-relaxed font-normal">
+                <p className="text-lg md:text-lg  max-w-lg leading-[1.3] md:leading-relaxed font-normal">
                     There is something special about seeing learning come alive. We invite you to
                     visit our campus and experience the warmth, spaces, and spirit that define
                     life at RaK&apos;s.
@@ -32,23 +32,23 @@ const ContactDetails = () => {
                 <div className="bg-[#EBEBEB] lg:bg-transparent rounded-2xl lg:rounded-none p-6 md:p-8 lg:p-0 flex flex-col space-y-5 lg:space-y-8">
 
                     <div className="space-y-4">
-                        <h3 className="text-lg lg:text-3xl font-medium lg:font-semibold text-black mb-2">Email</h3>
-                        <p className="text-gray-800 text-sm lg:text-xl">
+                        <h3 className="text-lg lg:text-xl font-medium lg:font-semibold text-black mb-2">Email</h3>
+                        <p className="text-gray-800 text-sm lg:text-lg">
                             <span className="font-medium lg:font-semibold text-base lg:text-xl text-black tracking-wide">For Admissions:</span><br className="block lg:hidden" /> <span className="inline-block mt-0.5 lg:inline lg:mt-0">admissions@rakspallikkoodam.com</span>
                         </p>
-                        <p className="text-gray-800 text-sm lg:text-xl">
+                        <p className="text-gray-800 text-sm lg:text-lg">
                             <span className="font-medium lg:font-semibold text-base lg:text-xl text-black tracking-wide">For Enquiries:</span><br className="block lg:hidden" /> <span className="inline-block mt-0.5 lg:inline lg:mt-0">info@rakspallikkoodam.com</span>
                         </p>
                     </div>
 
                     <div className="flex gap-2 items-center">
-                        <h3 className="text-base lg:text-3xl font-medium lg:font-semibold text-black">Phone:</h3>
-                        <p className="text-gray-800 text-sm lg:text-xl lg:mt-1 tracking-wide">9XXXX XXXXX</p>
+                        <h3 className="text-base lg:text-xl font-medium lg:font-semibold text-black">Phone:</h3>
+                        <p className="text-gray-800 text-sm lg:text-lg lg:mt-1 tracking-wide">9XXXX XXXXX</p>
                     </div>
 
                     <div className="flex gap-2 items-start">
-                        <p className="text-gray-800 text-sm lg:text-xl leading-relaxed lg:mt-1">
-                            <strong className="text-base lg:text-3xl font-medium lg:font-semibold text-black pr-1 lg:pr-0">Address:</strong> RAKS Pallikkoodam,<br />
+                        <p className="text-gray-800 text-sm lg:text-lg leading-relaxed lg:mt-1">
+                            <strong className="text-base lg:text-xl font-medium lg:font-semibold text-black pr-1 lg:pr-0">Address:</strong> RAKS Pallikkoodam,<br />
                             774 Avinashi Road, V.O.C. Park Gate,<br />
                             Coimbatore - 641 018
                         </p>

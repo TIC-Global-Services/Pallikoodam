@@ -1,12 +1,9 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useRef } from "react";
 import LetterRevealWrapper from "@/components/reuseable/texteffect/LetterRevealWrapper";
 import { useLetterReveal } from "../reuseable/texteffect/useLetterReveal";
 import { useLoading } from "@/context/LoadingContext";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useHeroAnimation } from "@/hooks/useHeroAnimation";
 
 const Hero = () => {
   const spacerRef = useRef<HTMLDivElement>(null);
@@ -14,61 +11,10 @@ const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>();
-  const { setHeroVideoLoaded } = useLoading();
+  const { setHeroVideoLoaded, isGlobalAudioEnabled } = useLoading();
 
-  useEffect(() => {
-    if (!spacerRef.current || !containerRef.current || !videoRef.current || !textRef.current) return;
-
-    const video = videoRef.current;
-    const text = textRef.current;
-
-    // Set initial state
-    gsap.set(text, { opacity: 0 });
-
-    // Create scroll animation
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: spacerRef.current,
-        start: "top top",
-        end: () => "+=" + window.innerHeight * 1.5,
-        scrub: 1,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    ScrollTrigger.create({
-      trigger: spacerRef.current,
-      start: "top top",
-      end: "bottom top",
-      onLeave: () => {
-        if (containerRef.current) gsap.set(containerRef.current, { autoAlpha: 0 });
-      },
-      onEnterBack: () => {
-        if (containerRef.current) gsap.set(containerRef.current, { autoAlpha: 1 });
-      },
-    });
-
-    // Animate video from fullscreen to reduced size with rounded corners
-    tl.to(video, {
-      width: "65%",
-      height: "65vh",
-      borderRadius: "24px",
-      ease: "power2.inOut",
-    })
-      // Fade in text after video reaches final size
-      .to(
-        text,
-        {
-          opacity: 1,
-          duration: 0.3,
-        },
-        "-=0.2",
-      );
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
+  // Encapsulated GSAP Animations
+  useHeroAnimation(spacerRef, containerRef, videoRef, textRef);
 
   return (
     <div ref={spacerRef} className="relative h-[250vh]">
@@ -76,9 +22,9 @@ const Hero = () => {
         <div className="flex items-center justify-center h-full w-full">
           <video
             ref={videoRef}
-            src="/hero_section.mp4"
+            src="/Admission compressed (2).mp4"
             autoPlay
-            muted
+            muted={!isGlobalAudioEnabled}
             loop
             playsInline
             onLoadedData={() => setHeroVideoLoaded(true)}

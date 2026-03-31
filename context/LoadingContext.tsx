@@ -1,19 +1,43 @@
 'use client';
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useMemo, useCallback, useEffect, ReactNode } from 'react';
+import { usePathname } from 'next/navigation';
 
 interface LoadingContextType {
     heroVideoLoaded: boolean;
     setHeroVideoLoaded: (loaded: boolean) => void;
+    isGlobalAudioEnabled: boolean;
+    setIsGlobalAudioEnabled: (enabled: boolean) => void;
 }
 
 const LoadingContext = createContext<LoadingContextType | undefined>(undefined);
 
 export function LoadingProvider({ children }: { children: ReactNode }) {
-    const [heroVideoLoaded, setHeroVideoLoaded] = useState(false);
+    const [heroVideoLoaded, setHeroVideoLoadedState] = useState(false);
+    const [isGlobalAudioEnabled, setIsGlobalAudioEnabledState] = useState(false);
+    const pathname = usePathname();
+
+    useEffect(() => {
+        setIsGlobalAudioEnabledState(false);
+    }, [pathname]);
+
+    const setHeroVideoLoaded = useCallback((loaded: boolean) => {
+        setHeroVideoLoadedState(loaded);
+    }, []);
+
+    const setIsGlobalAudioEnabled = useCallback((enabled: boolean) => {
+        setIsGlobalAudioEnabledState(enabled);
+    }, []);
+
+    const value = useMemo(() => ({
+        heroVideoLoaded,
+        setHeroVideoLoaded,
+        isGlobalAudioEnabled,
+        setIsGlobalAudioEnabled
+    }), [heroVideoLoaded, isGlobalAudioEnabled, setHeroVideoLoaded, setIsGlobalAudioEnabled]);
 
     return (
-        <LoadingContext.Provider value={{ heroVideoLoaded, setHeroVideoLoaded }}>
+        <LoadingContext.Provider value={value}>
             {children}
         </LoadingContext.Provider>
     );

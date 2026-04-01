@@ -18,30 +18,30 @@ const stages = [
     {
         title: 'Enquire',
         img: enquiryImg,
-        desc1_1: defaultDesc1_1,
-        desc1_2: defaultDesc1_2,
-        desc2: defaultDesc2,
+        desc1_1: "Reach out to us and tell us a little about your child, we’ll understand their needs, guide you through the next steps, and help you get started with the right support.",
+        // desc1_2: defaultDesc1_2,
+        // desc2: defaultDesc2,
     },
     {
         title: 'Interact',
         img: interactImg,
-        desc1_1: defaultDesc1_1,
-        desc1_2: defaultDesc1_2,
-        desc2: defaultDesc2,
+        desc1_1: "Meet our team and experience the RAKS approach to learning, where thoughtful guidance, curiosity, and a nurturing environment come together to help every child grow with confidence.",
+        // desc1_2: defaultDesc1_2,
+        // desc2: defaultDesc2,
     },
     {
         title: 'Assess',
         img: assessImg,
-        desc1_1: defaultDesc1_1,
-        desc1_2: defaultDesc1_2,
-        desc2: defaultDesc2,
+        desc1_1: "We take the time to truly understand your child, their strengths, readiness, and unique learning needs, so every step forward feels natural and well-supported.",
+        // desc1_2: defaultDesc1_2,
+        // desc2: defaultDesc2,
     },
     {
         title: 'Welcome',
         img: welcomeImg,
-        desc1_1: defaultDesc1_1,
-        desc1_2: defaultDesc1_2,
-        desc2: defaultDesc2,
+        desc1_1: "Join our community and begin a journey where learning is meaningful, purposeful, and designed to truly make a difference in your child’s growth.",
+        // desc1_2: defaultDesc1_2,
+        // desc2: defaultDesc2,
     }
 ]
 
@@ -136,34 +136,33 @@ const StartYourJourney = () => {
                             className={`bg-white border-t border-gray-300 pt-6 md:pt-6 xl:pt-8 pb-8 md:pb-10 shadow-[0_-5px_10px_-10px_rgba(0,0,0,0.1)]`}
                         >
                             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 w-full h-full">
-
                                 {/* Col 1 */}
                                 <div className="md:col-span-4 flex flex-col h-full">
                                     <h3 className="text-[2.5rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3.5rem] font-ppe font-light italic leading-none text-[#111] mb-6 xl:mb-8">
                                         {stage.title}
                                     </h3>
+                                    <p className="text-[#333] text-[1rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1.5rem] leading-relaxed xl:leading-snug max-w-sm">
+                                        {stage.desc1_1}
+                                    </p>
+                                    <div className="flex flex-col justify-center gap-4 xl:gap-6 md:mt-auto">
 
-                                    <div className="flex flex-col gap-4 xl:gap-6 md:mt-auto">
-                                        <p className="text-[#333] text-[1rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1rem] leading-relaxed xl:leading-snug max-w-sm">
-                                            {stage.desc1_1}
-                                        </p>
-                                        <p className="text-[#333] text-[1rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1rem] leading-relaxed xl:leading-snug max-w-sm">
+                                        {/* <p className="text-[#333] text-[1rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1rem] leading-relaxed xl:leading-snug max-w-sm">
                                             {stage.desc1_2}
-                                        </p>
+                                        </p> */}
                                     </div>
                                 </div>
 
                                 {/* Col 2 */}
                                 <div className="md:col-span-4 flex flex-col h-full">
                                     <div className="flex flex-col gap-4 mt-2 md:mt-auto">
-                                        <p className="text-[#333] text-[1rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1rem] leading-relaxed xl:leading-snug max-w-sm">
+                                        {/* <p className="text-[#333] text-[1rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1rem] leading-relaxed xl:leading-snug max-w-sm">
                                             {stage.desc2}
-                                        </p>
+                                        </p> */}
                                     </div>
                                 </div>
 
                                 {/* Col 3 */}
-                                <div className="md:col-span-4 w-full relative mt-8 md:mt-0 aspect-video md:aspect-[4/3] lg:aspect-[4/3] overflow-hidden">
+                                <div className="md:col-span-4 w-full relative mt-8 md:mt-0 aspect-video md:aspect-[2/2] lg:aspect-[2/2] overflow-hidden">
                                     <Image
                                         src={stage.img}
                                         alt={stage.title}

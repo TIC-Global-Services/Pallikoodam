@@ -98,9 +98,9 @@ const Navbar = () => {
                                 <span
                                     className={
                                         isGlobalAudioEnabled
-                                            ? "text-white"
+                                            ? "text-[#000086]"
                                             : isLightSection
-                                                ? "text-white"
+                                                ? "text-[#000086]"
                                                 : "text-[#000086]"
                                     }
                                 >
@@ -108,9 +108,9 @@ const Navbar = () => {
                                 </span>{" "}
                                 <span
                                     className={`font-bold ${isGlobalAudioEnabled
-                                        ? "text-white"
+                                        ? "text-[#000086]"
                                         : isLightSection
-                                            ? "text-white"
+                                            ? "text-[#000086]"
                                             : "text-[#000086]"
                                         }`}
                                 >

@@ -32,9 +32,9 @@ const AdmissionAt = () => {
                     </div>
 
                     {/* Paragraph */}
-                    <div className="order-3 mb-8 md:mb-8 md:pl-10 max-w-sm md:max-w-md lg:max-w-lg">
-                        <p className="text-[#555] text-[1.05rem] md:text-lg lg:text-[1.2rem] leading-tight">
-                            Choosing the right school is a big step — and we're here to guide you at every stage. At RAKS Pallikkoodam, we help families understand our philosophy, programmes, and learning environment so they can make an informed, confident choice.
+                    <div className="order-3 mb-8 md:mb-8 md:pl-10 max-w-sm md:max-w-md lg:max-w-xl">
+                        <p className="text-[#717580] text-[1.05rem] md:text-lg lg:text-[1.2rem] leading-tight">
+                            Your child’s future begins with a simple step: joining a school where heart meets purpose and learning inspires action.  Our admissions process is designed to be transparent, welcoming, and supportive, ensuring families feel informed and confident at every stage.
                         </p>
                     </div>
 

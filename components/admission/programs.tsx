@@ -12,24 +12,24 @@ import alevels from '@/assets/admission/asalevel.jpg'
 
 const data = [
     {
-        title: "Cambridge early years",
+        title: "Early years",
         image: cambridge,
-        desc: "A playful, discovery-led start that builds early curiosity, communication, and essential learning skills."
+        desc: "A warm, Reggio-Emilia inspired, play-based beginning that nurtures curiosity, emotional security, and joyful exploration, laying strong foundations for lifelong learning."
     },
     {
-        title: "Cambridge Primary & Lower Secondary",
+        title: "Primary",
         image: cambridgeprimary,
-        desc: "A robust foundation fostering critical thinking, subject knowledge, and a love for continuous learning."
+        desc: "A concept-driven programme that builds strong literacy and numeracy, encourages inquiry, and develops confident, curious learners with a lasting love for learning."
     },
     {
-        title: "IGCSE",
+        title: "Middle School",
         image: igcse,
-        desc: "A globally recognized curriculum that empowers students with in-depth subject mastery and independent analytical skills."
+        desc: "A globally respected programme that deepens conceptual understanding, critical thinking, collaboration, and real-world connections across disciplines."
     },
     {
-        title: "AS&A Levels",
+        title: "Upper Secondary",
         image: alevels,
-        desc: "Advanced academic preparation focusing on specialized knowledge, pre-university readiness, and global perspectives."
+        desc: "IGCSE: An internationally recognised qualification that develops independent thinking, clear communication, and academic rigour.\n\nAS & A Levels: Advanced pathways that empower learners to specialise, excel, and gain entry to leading universities worldwide preparing them to lead with confidence and purpose."
     }
 ]
 
@@ -139,7 +139,7 @@ const Programs = () => {
                                 </div>
 
                                 {/* Description */}
-                                <p className="text-center text-[0.95rem] md:text-[1.4rem] leading-tight max-w-xl opacity-90 px-4 relative z-10">
+                                <p className="text-center text-[0.95rem] md:text-[1.4rem] leading-tight max-w-xl whitespace-pre-line opacity-90 px-4 relative z-10">
                                     {item.desc}
                                 </p>
                             </div>

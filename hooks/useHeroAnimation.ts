@@ -42,9 +42,11 @@ export function useHeroAnimation(
                     end: 'bottom top',
                     onLeave: () => {
                         if (container) gsap.set(container, { autoAlpha: 0 });
+                        if (video) video.pause();
                     },
                     onEnterBack: () => {
                         if (container) gsap.set(container, { autoAlpha: 1 });
+                        if (video) video.play().catch(() => {});
                     },
                 });
 
@@ -53,6 +55,7 @@ export function useHeroAnimation(
                     width: '65%',
                     height: '65vh',
                     borderRadius: '24px',
+                    volume: 0,
                     ease: 'power2.inOut',
                 }).to(
                     text,

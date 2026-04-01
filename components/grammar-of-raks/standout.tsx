@@ -31,13 +31,16 @@ const Standout = () => {
   return (
     <div ref={sectionRef} className='bg-[#000086] rounded-t-[50px] md:rounded-t-[100px] min-h-[60vh] flex items-center justify-center relative overflow-hidden z-20'>
       <ContainerLayout>
-        <div className='py-20 md:py-32 lg:py-40 md:max-w-8xl mx-auto text-center'>
+        <div className='py-20 md:py-32 lg:py-40 md:max-w-6xl mx-auto text-center'>
           <p className='text-xl md:text-3xl lg:text-[2.5rem] leading-[1.4] tracking-tight space-y-5 text-white font-normal'>
-            <span className='font-ppe font-light italic'>Together, We Thrive</span><br className='hidden md:block' /> Founded in 2014, RAKS Institutions is a dynamic learning ecosystem nurturing confident, curious, and capable learners.<br className='md:hidden' />
+            <span className='font-ppe font-light italic'>Together, We Thrive</span><br className='hidden md:block' /> Founded in 2014, RAKS Institutions nurtures confident, curious, and capable learners. Rooted in the PSG legacym and guided by the Vision of the Vidhya Niketan Group of Schools<br className='md:hidden' />
           </p>
-          <p className='text-xl md:text-3xl lg:text-[2.5rem] mt-5 leading-[1.2] tracking-tight space-y-5 text-white font-normal'>
-                       Legacy of the  <span className='relative inline-block '>
-              <span className='relative z-10'>PSG Group of Institutions</span>
+          <p className='text-xl md:text-3xl lg:text-[2.5rem] mt-5 leading-[1.2] tracking-tight space-y-5 text-white font-normal'>   
+            .<br className='md:hidden' /><span className=''></span><br className='hidden md:block' />
+          </p>
+          <p className='text-xl mt-5 md:text-3xl lg:text-[2.5rem] leading-[1.4] space-y-5 text-white font-normal'>
+             <span className='relative inline-block '>
+              <span className='relative z-10'>Through experiential learning </span>
               <img
                 ref={underlineRef}
                 src="/underline.svg"
@@ -46,10 +49,8 @@ const Standout = () => {
                 style={{ objectFit: 'fill' }}
               />
             </span>
-            <br /> Guided by the Vision of the Vidhya Niketan Group of Schools.<br className='md:hidden' /><span className=''></span><br className='hidden md:block' />
-          </p>
-          <p className='text-xl mt-5 md:text-3xl lg:text-[2.5rem] leading-[1.4] space-y-5 text-white font-normal'> Through experiential learning and strong school–family partnerships, learners grow with confidence, curiosity, and purpose.</p>
-          <p className='text-xl mt-5 md:text-3xl lg:text-[2.5rem] leading-[1.4] space-y-5 text-white font-normal'>At RAKS, education is not merely taught, it is experienced and lived.</p>
+              and strong school–family partnerships, learners grow with confidence, curiosity, and purpose. @ RAKS</p>
+          {/* <p className='text-xl mt-5 md:text-3xl lg:text-[2.5rem] leading-[1.4] space-y-5 text-white font-normal'></p> */}
         </div>
       </ContainerLayout>
     </div>

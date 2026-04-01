@@ -38,8 +38,7 @@ const EducationForToday = () => {
                                 RAKS follows two carefully chosen curricula that align with our vision for holistic, future-ready education:
                             </p>
                             <p className="text-[#4A4F5E] text-sm mb-5  md:text-base lg:text-lg leading-[1.2]">
-                                Cambridge International Curriculum
-                                National Curriculum (India)
+                                Cambridge International <br /> Curriculum National Curriculum (India)
                             </p>
                             <p className="text-[#4A4F5E] text-sm  md:text-base lg:text-lg leading-[1.2]">
                                 This dual-curriculum approach allows us to nurture global perspectives while remaining rooted in national educational values and contexts.

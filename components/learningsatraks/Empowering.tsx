@@ -24,19 +24,19 @@ const Empowering = () => {
     const data = [
         {
             title: <>Cambridge <span className='font-ppe italic font-normal'>Early years</span></>,
-            description: "Strong fundamentals in literacy, numeracy, and inquiry-based learning that nurture independent and curious thinkers.",
+            description: "Inspired by the Reggio Emilia approach, children learn through play, inquiry, and exploration in environments designed as the “third teacher”",
             image: empowering1
         }, {
             title: <><span className='font-ppe italic font-normal'>Primary</span> School</>,
-            description: "Strong fundamentals in literacy, numeracy, and inquiry-based learning that nurture independent and curious thinkers.",
+            description: "Learners build strong foundations in literacy, numeracy, and thinking through active, inquiry-driven learning",
             image: empowering2
         }, {
             title: <><span className='font-ppe italic font-normal'>Middle</span> School</>,
-            description: "Strong fundamentals in literacy, numeracy, and inquiry-based learning that nurture independent and curious thinkers.",
+            description: "Personalised, future-focused learning supports informed academic choices and meaningful real-world pathways.",
             image: empowering3
         }, {
             title: <><span className='font-ppe italic font-normal'>Senior Secondary</span> School</>,
-            description: "Strong fundamentals in literacy, numeracy, and inquiry-based learning that nurture independent and curious thinkers.",
+            description: "Learners develop agency and independent thinking through problem-based learning, research, and interdisciplinary exploration",
             image: empowering4
         }
     ]
@@ -104,7 +104,7 @@ const Empowering = () => {
             <section ref={containerRef} className="sticky top-0 w-full h-dvh lg:h-screen overflow-hidden pt-20 flex flex-col items-center justify-center pb-10">
                 {/* Title */}
                 <div className="text-center  z-10 w-full px-4 shrink-0">
-                    <h2 className="text-[32px] mb-3 md:text-[44px] lg:text-[54px] text-[#2C313E] leading-[1.1] font-medium tracking-tight">
+                    <h2 className="text-[32px] mb-3 md:text-[44px] lg:text-[44px] text-[#2C313E] leading-[1.1] font-medium tracking-tight">
                         Cambridge International  <span className="font-ppe italic font-normal">Curriculum</span>
                     </h2>
                     <p className="max-w-4xl mx-auto text-base md:text-2xl lg:text-[1.125rem] leading-[1.2]">The Cambridge International Curriculum at RAKS nurtures the whole child, fostering curiosity, confidence, and independent thinking. Learning is active and experiential, enabling learners to explore, collaborate, and grow with purpose.</p>

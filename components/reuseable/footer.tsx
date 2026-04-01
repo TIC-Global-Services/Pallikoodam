@@ -11,7 +11,7 @@ const Footer = () => {
         { label: 'Home', href: '/' },
         { label: 'Grammar of RAKS', href: '/grammar-of-raks' },
         { label: 'Learning @ RAKS', href: '/learning-at-raks' },
-        { name: 'Hidden curriculum @ RAKS', href: '/hidden-curriculum-at-raks' },
+        { label: 'Hidden curriculum @ RAKS', href: '/hidden-curriculum-at-raks' },
         { label: 'News & Events', href: '/news-and-events' },
         { label: 'Admissions', href: '/admissions' },
         { label: 'Careers', href: '/careers' },

@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
-import vision from "@/assets/home/visionimgnew.png"
+import vision from "@/assets/home/visionnewimg.png"
 import image3 from '@/assets/home/campus-3new.png'
 import Image from 'next/image'
 import gsap from 'gsap'
@@ -182,8 +182,8 @@ const Shapingthefuture = () => {
                                     Enabling learners to <span className="font-ppe italic">&quot;Thrive With Purpose&quot;</span> and build a sustainable, equitable, and compassionate world.
                                 </span>
                             </p>
-                            <div className="absolute bottom-10 scale-120 left-0 w-full h-[55%]">
-                                <Image src={vision} alt="School Building" fill className="object-contain object-bottom" />
+                            <div className="absolute bottom-10 scale-120 left-0 w-full h-[65%]">
+                                <Image src={vision} alt="School Building" fill className="object-cover" />
                             </div>
                         </div>
 

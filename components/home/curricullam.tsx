@@ -118,7 +118,7 @@ const curricullam = () => {
                     <p className="md:leading-[26px] tracking-tight text-base md:text-[clamp(16px,10vw,1.125rem)]">
                       A pathway that nurtures inquiry, reflection, and
                       independent thinking.
-                      <br /> Its global framework pairs seamlessly with our
+                      <br /><br/> Its global framework pairs seamlessly with our
                       active, project-based learning, research-led approach
                       encouraging learners to question, explore, create, and
                       connect ideas with real-world meaning.
@@ -186,7 +186,7 @@ const curricullam = () => {
                     </p>
                     <p className="leading-[26px] tracking-tight text-sm md:text-lg">
                       A strong, structured academic pathway that builds clarity,
-                      discipline, and conceptual depth.
+                      discipline, and conceptual depth.<br/>
                       <br /> When blended with our experiential, hands-on
                       methodology, CBSE becomes dynamic helping learners
                       understand, apply, question, and express learning with

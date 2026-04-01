@@ -34,7 +34,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <LoadingProvider>
-          <Loader />
+          {/* <Loader /> */}
           <SmoothScroller>
             <Navbar />
             {children}

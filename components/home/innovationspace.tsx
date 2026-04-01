@@ -189,7 +189,7 @@ const Innovationspace = () => {
                                 </span>
                             </span>
                         </h2> */}
-                        <h2 className='text-2xl md:text-5xl lg:text-6xl leading-[26px] md:leading-[20px] lg:leading-[40px] xl:leading-[58px] font-medium text-center md:-tracking-[2px] -tracking-[1px]'>
+                        <h2 className='text-2xl md:text-5xl lg:text-5xl leading-[26px] md:leading-[20px] lg:leading-[40px] xl:leading-[58px] font-medium text-center md:-tracking-[2px] -tracking-[1px]'>
                             Innovative Spaces for <span className='font-ppe italic font-light'>Curious</span> <br className='block' />
                             <span ref={wrapperRef} className='relative inline-block px-2 ml-2'>
                                 <span

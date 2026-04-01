@@ -75,7 +75,7 @@ const AudioWave = ({ isPlaying, isLightSection }: SineWaveProps) => {
         ref={pathRef}
         fill="none"
         // Toggle color based on isLightSection
-        stroke={isPlaying ? "#000000" : (isLightSection ? "#000000" : "#ffffff")}
+        stroke={isPlaying ? "#ffffff" : (isLightSection ? "#ffffff" : "#000086")}
         strokeWidth="6"
         strokeLinecap="round"
         strokeLinejoin="round"

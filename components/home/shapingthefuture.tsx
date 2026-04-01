@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
-import vision from "@/assets/home/visionnewimg.png"
+import vision from "@/assets/home/visionnewimg-1.png"
 import image3 from '@/assets/home/campus-3new.png'
 import Image from 'next/image'
 import gsap from 'gsap'
@@ -173,7 +173,7 @@ const Shapingthefuture = () => {
 
                         {/* Vision Card */}
                         <div className="bg-[#E9E9E9] text-black rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden flex flex-col items-start transition-transform hover:scale-[1.01] duration-500 min-h-[500px] md:min-h-[600px] lg:min-h-[650px] xl:min-h-[750px]">
-                            <h4 className="text-xl md:text-5xl lg:text-6xl mb-6 md:mb-8 font-medium">
+                            <h4 className="text-xl md:text-5xl lg:text-5xl mb-6 md:mb-8 font-medium">
                                 Our <span style={{ fontFamily: 'var(--font-ppe)' }} className="text-[#000086] font-light italic">Vision</span>
                             </h4>
                             <div className="w-1 h-20 bg-blue-600/30 absolute left-8 top-8 hidden"></div>
@@ -190,7 +190,7 @@ const Shapingthefuture = () => {
                         {/* Mission Card */}
                         <div className="bg-[#E9E9E9] text-black rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden flex flex-col items-start transition-transform hover:scale-[1.01] duration-500 min-h-[500px] md:min-h-[600px] lg:min-h-[500px] xl:min-h-[500px]">
                             <div className="z-10 relative">
-                                <h4 className="text-xl md:text-5xl lg:text-6xl mb-4 md:mb-6 font-medium">
+                                <h4 className="text-xl md:text-5xl lg:text-5xl mb-4 md:mb-6 font-medium">
                                     Our <span style={{ fontFamily: 'var(--font-ppe)' }} className="text-[#000086] font-light italic">Mission</span>
                                 </h4>
                                 <ol className="text-gray-800 text-sm leading-[16px] lg:text-base xl:text-lg border-l-3 border-[#23519D] pl-4 md:leading-[26px] mb-auto max-w-lg z-10 font-normal list-decimal list-inside space-y-3">

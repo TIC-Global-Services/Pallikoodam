@@ -69,7 +69,7 @@ const SportsBasedLearning = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="w-full h-screen bg-white relative overflow-hidden flex items-center">
+        <section ref={sectionRef} className="w-full h-screen bg-white relative flex items-center">
             <div className="max-w-7xl mx-auto w-full h-full flex max-md:flex-col px-4 md:px-8">
 
                 {/* Left Column - Sticky Text */}
@@ -86,10 +86,10 @@ const SportsBasedLearning = () => {
                 <div className="w-1/2 max-md:w-full h-full relative flex flex-col justify-center max-md:justify-start items-start pl-4 md:pl-8 max-md:pl-0 max-md:mt-6">
 
                     {/* The image stack container */}
-                    <div className="relative w-[95%] max-md:w-full flex flex-col">
+                    <div className="relative w-[95%] lg:w-[85%] max-md:w-full h-[90vh] md:h-full md:py-[8vh] lg:py-[10vh] max-md:h-auto flex flex-col">
 
                         {/* Wiping bounds */}
-                        <div className="wiping-bounds-container relative w-full aspect-[5/3] max-md:aspect-4/3 rounded max-md:rounded-[16px] shadow-sm overflow-hidden z-20">
+                        <div className="wiping-bounds-container shrink relative w-full flex-1 max-md:flex-none max-md:aspect-4/3 min-h-[25vh] rounded max-md:rounded-[16px] shadow-sm overflow-hidden z-20">
 
                             {/* Panel 1 */}
                             <div className="absolute inset-0 z-10 bg-gray-50">
@@ -109,7 +109,7 @@ const SportsBasedLearning = () => {
                         </div>
 
                         {/* Text under Panel 3 (in DOM flow so it never gets cut off) */}
-                        <div className="text-panel-3 relative w-full z-10 pt-6 cursor-default pointer-events-auto bg-transparent">
+                        <div className="text-panel-3 shrink-0 relative w-full z-10 pt-6 cursor-default pointer-events-auto bg-transparent">
                             <h3 className="text-2xl md:text-[2rem] font-medium text-black mb-4">
                                 <span className="font-ppe italic font-normal">Learning</span> Through Movement
                             </h3>
@@ -124,7 +124,7 @@ const SportsBasedLearning = () => {
                                     <li>Build meaningful collaboration across team and individual sports.</li>
                                 </ul>
                             </div>
-                            <button className="bg-[#000086] text-white px-8 py-3 rounded text-sm font-medium hover:bg-blue-900 transition-colors">
+                            <button className="bg-[#000086] text-white px-8 py-3 rounded text-sm font-medium hover:bg-blue-900 transition-colors block w-max">
                                 Sports Learning
                             </button>
                         </div>

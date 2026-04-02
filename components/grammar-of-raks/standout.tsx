@@ -33,14 +33,14 @@ const Standout = () => {
       <ContainerLayout>
         <div className='py-20 md:py-32 lg:py-40 md:max-w-6xl mx-auto text-center'>
           <p className='text-xl md:text-3xl lg:text-[2.5rem] leading-[1.4] tracking-tight space-y-5 text-white font-normal'>
-            <span className='font-ppe font-light italic'>Together, We Thrive</span><br className='hidden md:block' /> Founded in 2014, RAKS Institutions nurtures confident, curious, and capable learners. Rooted in the PSG legacy and guided by the Vision of the Vidhya Niketan Group of Schools<br className='md:hidden' />
+            <span className='font-ppe font-light italic'>Together, We Thrive</span><br className='hidden md:block' /> Founded in 2014, RAKS Institutions nurtures confident, curious, and capable learners. Rooted in the PSG legacy and guided by the Vision of the Vidhya Niketan Group of Schools <br className='md:hidden' />
           </p>
           <p className='text-xl md:text-3xl lg:text-[2.5rem] mt-5 leading-[1.2] tracking-tight space-y-5 text-white font-normal'>   
             <br className='md:hidden' /><span className=''></span><br className='hidden md:block' />
           </p>
           <p className='text-xl mt-5 md:text-3xl lg:text-[2.5rem] leading-[1.4] space-y-5 text-white font-normal'>
-             <span className='relative inline-block '>
-              <span className='relative z-10'>Through experiential learning </span>
+            Through <span className='relative inline-block '>
+              <span className='relative z-10'> Experiential learning </span>
               <img
                 ref={underlineRef}
                 src="/underline.svg"

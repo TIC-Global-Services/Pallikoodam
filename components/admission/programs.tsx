@@ -29,7 +29,7 @@ const data = [
     {
         title: "Upper Secondary",
         image: alevels,
-        desc: "IGCSE: An internationally recognised qualification that develops independent thinking, clear communication, and academic rigour.\n\nAS & A Levels: Advanced pathways that empower learners to specialise, excel, and gain entry to leading universities worldwide preparing them to lead with confidence and purpose."
+        desc: "<strong>IGCSE:</strong> An internationally recognised qualification that develops independent thinking, clear communication, and academic rigour.\n\n<strong>AS & A Levels:</strong> Advanced pathways that empower learners to specialise, excel, and gain entry to leading universities worldwide preparing them to lead with confidence and purpose."
     }
 ]
 
@@ -127,7 +127,7 @@ const Programs = () => {
                                 </div>
 
                                 {/* Image Wrapper */}
-                                <div className="program-img-wrapper relative w-full aspect-[4/3] rounded-xl md:rounded-2xl overflow-hidden mb-6 md:mb-8 shadow-2xl bg-[#000050] mx-auto z-0">
+                                <div className="program-img-wrapper relative w-full aspect-[4/3] rounded-xl md:rounded-2xl overflow-hidden mb-6 md:mb-5 shadow-2xl bg-[#000050] mx-auto z-0">
                                     <Image
                                         src={item.image}
                                         alt={item.title}
@@ -139,9 +139,10 @@ const Programs = () => {
                                 </div>
 
                                 {/* Description */}
-                                <p className="text-center text-[0.95rem] md:text-[1.4rem] leading-tight max-w-xl whitespace-pre-line opacity-90 px-4 relative z-10">
-                                    {item.desc}
-                                </p>
+                                <div 
+                                    className="text-center text-[0.95rem] md:text-[1.4rem] leading-tight max-w-xl whitespace-pre-line opacity-90 px-4 relative z-10"
+                                    dangerouslySetInnerHTML={{ __html: item.desc }}
+                                />
                             </div>
                         ))}
                     </div>

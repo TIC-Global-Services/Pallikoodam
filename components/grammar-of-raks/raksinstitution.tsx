@@ -4,6 +4,7 @@ import Image, { StaticImageData } from 'next/image';
 import ContainerLayout from '@/layout/ContainerLayout';
 
 import earlyyears from '@/assets/grammar-of-raks/early-years.jpg';
+import Link from 'next/link';
 
 const institutionData = [
     {
@@ -11,30 +12,35 @@ const institutionData = [
         title: "RAKS Early Years",
         description: "Rooted in the Reggio Emilia philosophy and affiliated with the Cambridge Early Years Programme, offering inquiry-led, child-centred early learning.",
         image: earlyyears,
+        href:"/learning-at-raks"
     },
     {
         number: "02",
         title: "RAKS Pallikkoodam",
         description: "A CBSE-affiliated school following the national curriculum, focused on conceptual understanding, learner agency, and holistic development.",
         image: earlyyears, // Replace with actual image
+        href:"/learning-at-raks"
     },
     {
         number: "03",
-        title: "RAKS Pallikkoodam – \n School of Excellence",
+        title: "RAKS Pallikkoodam  \n School of Excellence",
         description: "Cambridge international school offering globally aligned academic pathways",
         image: earlyyears, // Replace with actual image
+        href:"/learning-at-raks"
     },
     {
         number: "04",
         title: "RAKS Academy",
         description: "A vibrant sports ecosystem building skill, discipline, and character.",
         image: earlyyears, // Replace with actual image
+        href:"/learning-at-raks"
     },
     {
         number: "05",
         title: "RAKS Visionary Hub",
         description: "A centre for innovation, mentor development, and future-focused education.",
         image: earlyyears, // Replace with actual image
+        href:"/learning-at-raks"
     },
 ];
 
@@ -136,6 +142,9 @@ const RaksInstitution = () => {
                             <p className="text-center text-xl font-medium leading-[1.2] text-gray-700 max-w-xs mx-auto">
                                 {item.description}
                             </p>
+                           <div className='flex justify-center'>
+                             <Link href={item.href}> <button className="mt-4 bg-[#000086] text-white px-4 py-2 rounded-md">Know More</button></Link>
+                            </div>
                         </div>
                     ))}
 
@@ -188,6 +197,7 @@ const RaksInstitution = () => {
                                             <p className="text-sm md:text-base lg:text-[1.5rem] font-[500] leading-[1.3] max-w-lg">
                                                 {item.description}
                                             </p>
+                                            <Link href={item.href}> <button className="mt-4 bg-[#000086] text-white px-4 py-2 rounded-md">Know More</button></Link>
                                         </div>
                                     </div>
                                 </div>

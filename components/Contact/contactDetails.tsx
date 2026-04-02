@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Lanyard from '../reuseable/lanyard';
+import Link from 'next/link';
 
 const ContactDetails = () => {
     return (
@@ -43,14 +44,13 @@ const ContactDetails = () => {
 
                     <div className="flex gap-2 items-center">
                         <h3 className="text-base lg:text-xl font-medium lg:font-semibold text-black">Phone:</h3>
-                        <p className="text-gray-800 text-sm lg:text-lg lg:mt-1 tracking-wide">9XXXX XXXXX</p>
+                        <Link href="tel:+917538898333"> <p className="text-gray-800 text-sm lg:text-lg lg:mt-1 tracking-wide">+91 75388 98333</p></Link>
                     </div>
 
                     <div className="flex gap-2 items-start">
                         <p className="text-gray-800 text-sm lg:text-lg leading-relaxed lg:mt-1">
                             <strong className="text-base lg:text-xl font-medium lg:font-semibold text-black pr-1 lg:pr-0">Address:</strong> RAKS Pallikkoodam,<br />
-                            774 Avinashi Road, V.O.C. Park Gate,<br />
-                            Coimbatore - 641 018
+                            Codissia Trade Fair Complex Rd, Peelamedu, Civil Aerodrome Post, Coimbatore, Tamil Nadu 641014
                         </p>
                     </div>
 

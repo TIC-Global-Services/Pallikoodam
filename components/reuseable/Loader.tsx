@@ -2,12 +2,20 @@
 import React, { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useLoading } from '@/context/LoadingContext';
+import Image from 'next/image';
+import bgImage1 from '@/assets/home/bg-image-1.png';
+import bgImage2 from '@/assets/home/bg-image-2.png';
+import bgImage3 from '@/assets/home/bg-image-3.png';
+import bgImage4 from '@/assets/home/bg-image-4.png';
 
 export default function Loader() {
     const pathname = usePathname();
     const { heroVideoLoaded } = useLoading();
     const [isLoading, setIsLoading] = useState(false);
     const [progress, setProgress] = useState(0);
+    const [iconIndex, setIconIndex] = useState(0);
+
+    const icons = [bgImage1, bgImage2, bgImage3, bgImage4];
 
     // Initial load state and route change state
     useEffect(() => {
@@ -41,15 +49,34 @@ export default function Loader() {
         return () => clearInterval(interval);
     }, [pathname, heroVideoLoaded]);
 
+    // Cycling icons effect
+    useEffect(() => {
+        if (!isLoading) return;
+        const iconInterval = setInterval(() => {
+            setIconIndex(prev => (prev + 1) % icons.length);
+        }, 200); // Change icon every 200ms
+        return () => clearInterval(iconInterval);
+    }, [isLoading, icons.length]);
+
     if (!isLoading) return null;
 
     return (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-[url('/loaderimage.jpeg')] bg-cover bg-center transition-opacity duration-500 ease-in-out">
-            <div className="absolute inset-0 bg-black/60"></div>
-            <div className="relative z-10 flex flex-col items-center justify-center space-y-4">
-                <div className="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin"></div>
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#000086] transition-opacity duration-500 ease-in-out">
+            <div className="relative z-10 flex flex-col items-center justify-center space-y-6">
+                {/* Changing Icons Loader */}
+                <div className="w-[50vw] h-[20vh] translate-x-[1/2] bottom-[-15%] absolute overflow-hidden">
+                    <Image
+                        src={icons[iconIndex]}
+                        alt={`loading-icon-${iconIndex}`}
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                </div>
+
                 <div className="flex items-center space-x-2">
                     <h2 className="text-white text-xl md:text-2xl font-light tracking-widest font-ppe uppercase">Loading</h2>
+                    {/* Optionally keep progress percentage if you want, or just wait for 100 on the icons */}
                     <span className="text-white text-xl md:text-2xl font-light font-ppe">{progress}%</span>
                 </div>
             </div>

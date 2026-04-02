@@ -44,8 +44,9 @@ export default function Loader() {
     if (!isLoading) return null;
 
     return (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#000086] transition-opacity duration-500 ease-in-out">
-            <div className="flex flex-col items-center justify-center space-y-4">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-[url('/loaderimage.jpeg')] bg-cover bg-center transition-opacity duration-500 ease-in-out">
+            <div className="absolute inset-0 bg-black/60"></div>
+            <div className="relative z-10 flex flex-col items-center justify-center space-y-4">
                 <div className="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin"></div>
                 <div className="flex items-center space-x-2">
                     <h2 className="text-white text-xl md:text-2xl font-light tracking-widest font-ppe uppercase">Loading</h2>

@@ -5,6 +5,7 @@ import SportsBasedLearning from '@/components/sports/sportsbasedlearning'
 import SportsArena from '@/components/sports/sportsarena'
 import Pickleballgame from '@/components/sports/pickleballgame'
 import Sportsforlife from '@/components/sports/sportsforlife'
+import Marquee from '@/components/sports/marquee'
 
 export const metadata = {
   title: "Hidden Curriculum @ RAKS | RAKS Pallikoodam",
@@ -20,6 +21,7 @@ const page = () => {
       <SportsArena />
       <Pickleballgame />
       <Sportsforlife />
+      <Marquee/>
     </div>
   )
 }

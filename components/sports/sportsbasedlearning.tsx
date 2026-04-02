@@ -113,9 +113,17 @@ const SportsBasedLearning = () => {
                             <h3 className="text-2xl md:text-[2rem] font-medium text-black mb-4">
                                 <span className="font-ppe italic font-normal">Learning</span> Through Movement
                             </h3>
-                            <p className="text-gray-800 mb-6 text-sm lg:text-lg leading-relaxed w-full">
-                                At RAKS, sports are intentionally designed as learning experiences, learners engage in structured sporting experiences that cultivate goal-setting and self-reflection, deepen their understanding of rules, fairness, and respect, strengthen their ability to handle both success and failure with grace, and build meaningful collaboration across team and individual sports.
-                            </p>
+                            <div className="text-gray-800 mb-6 text-sm lg:text-[1.1rem] leading-relaxed w-full">
+                                <p className="mb-3">
+                                    At RAKS, sports are intentionally designed as learning experiences, learners engage in structured sporting experiences that cultivate:
+                                </p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>Goal-setting and self-reflection</li>
+                                    <li>Deepen their understanding of rules, fairness, and respect</li>
+                                    <li>Strengthen their ability to handle both success and failure with grace</li>
+                                    <li>Build meaningful collaboration across team and individual sports.</li>
+                                </ul>
+                            </div>
                             <button className="bg-[#000086] text-white px-8 py-3 rounded text-sm font-medium hover:bg-blue-900 transition-colors">
                                 Sports Learning
                             </button>

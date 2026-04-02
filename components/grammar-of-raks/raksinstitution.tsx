@@ -9,19 +9,19 @@ const institutionData = [
     {
         number: "01",
         title: "RAKS Early Years",
-        description: "Rooted In The Reggio Emilia Philosophy And Affiliated With The Cambridge Early Years Programme, Offering Inquiry-Led, Child-Centred Early Learning.",
+        description: "Rooted in the Reggio Emilia philosophy and affiliated with the Cambridge Early Years Programme, offering inquiry-led, child-centred early learning.",
         image: earlyyears,
     },
     {
         number: "02",
         title: "RAKS Pallikkoodam",
-        description: "A CBSE-Affiliated School Following The National Curriculum, Focused On Conceptual Understanding, Learner Agency, And Holistic Development.",
+        description: "A CBSE-affiliated school following the national curriculum, focused on conceptual understanding, learner agency, and holistic development.",
         image: earlyyears, // Replace with actual image
     },
     {
         number: "03",
         title: "RAKS Pallikkoodam – \n School of Excellence",
-        description: "Cambridge International school offering globally aligned academic pathways",
+        description: "Cambridge international school offering globally aligned academic pathways",
         image: earlyyears, // Replace with actual image
     },
     {

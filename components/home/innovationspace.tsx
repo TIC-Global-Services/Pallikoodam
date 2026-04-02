@@ -39,7 +39,7 @@ const cards = [
         title: "Studios",
         italic: "Art",
         italicPosition: "before",
-        description: "A sanctuary where colours, textures, and emotions breathe where learners experiment, express, and evolve understanding that art is not just a subject, but a language of identity, joy, and discovery.",
+        description: "A sanctuary where colours, textures, and emotions breathe... where learners experiment, express, and evolve understanding that art is not just a subject, but a language of identity, joy, and discovery.",
         image: innovation3,
         colSpan: "md:col-span-2"
     },
@@ -48,7 +48,7 @@ const cards = [
         title: "Maker's",
         italic: "Space",
         italicPosition: "after",
-        description: "A playground of innovation where hands lead the mind.From tinkering to building, this is where ideas are tested, stretched, rebuilt, and celebrated turning creativity into capability.",
+        description: "A playground of innovation where hands lead the mind.\nFrom tinkering to building, this is where ideas are tested, stretched, rebuilt, and celebrated turning creativity into capability.",
         image: innovation4,
         colSpan: "md:col-span-2"
     },
@@ -273,7 +273,7 @@ const Innovationspace = () => {
                                         {card.description.split('\n\n').map((paragraph, idx, arr) => (
                                             <div key={idx} className={`relative pl-4 ${idx !== arr.length - 1 ? 'pb-4' : ''}`}>
                                                 <div className="w-0.5 h-full bg-[#0045FF] absolute left-0 top-0"></div>
-                                                <p className='text-sm md:text-xs lg:text-lg xl:text-lg leading-[20px] text-gray-800 font-medium'>
+                                                <p className='text-sm md:text-xs lg:text-lg xl:text-lg leading-[20px] whitespace-pre-line text-gray-800 font-medium'>
                                                     {paragraph}
                                                 </p>
                                             </div>

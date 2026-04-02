@@ -43,18 +43,20 @@ const Footer = () => {
                         </div>
                         {/* Socials */}
                         <div className="p-8 border-b md:border-b-0 border-white/40 lg:border-r flex flex-col gap-3 font-light text-gray-300">
-                            <Link href="/" className="hover:text-white">LinkedIn</Link>
-                            <Link href="/" className="hover:text-white">Instagram</Link>
-                            <Link href="/" className="hover:text-white">Facebook</Link>
+                            <Link href="https://www.linkedin.com/company/pallikkoodam" className="hover:text-white">LinkedIn</Link>
+                            <Link href="https://www.instagram.com/pallikkoodamcoimbatore" className="hover:text-white">Instagram</Link>
+                            <Link href="https://www.facebook.com/PallikkoodamCoimbatore" className="hover:text-white">Facebook</Link>
+                            <Link href="https://x.com/raks_lil?s=08" className="hover:text-white">X</Link>
+                            <Link href="https://www.youtube.com/c/LilandRaksPallikkoodam" className="hover:text-white">Youtube</Link>
                         </div>
                         {/* Address */}
                         <div className="p-8 border-b md:border-b-0 border-white/40 lg:border-r font-light text-gray-300">
-                            <p className="max-w-[200px] leading-relaxed">774 Avinashi Road, V.O.C. Park Gate, Coimbatore - 641 018</p>
+                            <p className="max-w-[200px] leading-relaxed">Codissia Trade Fair Complex Rd, Peelamedu, Civil Aerodrome Post, Coimbatore, Tamil Nadu 641014</p>
                         </div>
                         {/* Contact */}
                         <div className="p-8 font-light text-gray-300">
-                            <p>+91 XXXXX XXXXX</p>
-                            <p className="mt-1">info@RAKSpallikkoodam.com</p>
+                           <Link href="tel:+917538898333"> <p>+91 75388 98333</p></Link>
+                            <Link href="mailto:[EMAIL_ADDRESS]" className="mt-1" >[EMAIL_ADDRESS]</Link>
                         </div>
                     </div>
 

@@ -56,7 +56,7 @@ const Footer = () => {
                         {/* Contact */}
                         <div className="p-8 font-light text-gray-300">
                            <Link href="tel:+917538898333"> <p>+91 75388 98333</p></Link>
-                            <Link href="mailto:[EMAIL_ADDRESS]" className="mt-1" >[EMAIL_ADDRESS]</Link>
+                            <Link href="mailto:Admissions@rakspallikkoodam.com" className="mt-1" >Admissions@rakspallikkoodam.com</Link>
                         </div>
                     </div>
 

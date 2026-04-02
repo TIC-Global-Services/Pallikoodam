@@ -87,7 +87,8 @@ const Navbar = () => {
                             </div>
                         )}
 
-                        <button
+                       <div className={`${pathname === '/' ? 'block' : 'hidden'}`}>
+                         <button
                             onClick={toggleAudio}
                             suppressHydrationWarning={true}
                             className="group flex flex-col items-center justify-center mx-auto gap-2 cursor-pointer"
@@ -118,6 +119,7 @@ const Navbar = () => {
                                 </span>
                             </p>
                         </button>
+                       </div>
 
                         <Link href={'/admissions'} className=" hidden md:flex bg-[#000086] hover:bg-[#0c0cbc] text-white py-2 px-4 rounded-md transition-colors duration-200  items-center justify-center gap-2 cursor-pointer font-normal uppercase  text-sm md:text-base">
                             Admission

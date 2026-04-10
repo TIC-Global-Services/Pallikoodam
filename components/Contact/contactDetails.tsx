@@ -11,7 +11,7 @@ const ContactDetails = () => {
             {/* Left Content */}
             <div className="order-1 lg:order-none w-full lg:w-1/2 flex flex-col space-y-6 z-10 px-6 sm:px-12 lg:pl-20 py-12 lg:py-20">
                 <h2 className="text-4xl md:text-5xl lg:text-[3.2rem] font-medium text-black leading-tight tracking-tight">
-                    Experience Our <span className="italic font-ppe font-normal">School</span><br />
+                    Experience Our <span className="italic font-ppe font-normal">School </span><br className='hidden md:block' />
                     Environment Firsthand
                 </h2>
                 <p className="text-lg md:text-lg  max-w-lg leading-[1.3] md:leading-relaxed font-normal">

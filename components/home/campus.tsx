@@ -35,7 +35,7 @@ const Campus = () => {
                         <h2 className="text-2xl md:text-5xl font-medium mb-2 tracking-tight md:mb-6">
                             Stories from our <span className="font-ppe italic font-normal">Campus</span>
                         </h2>
-                        <p className="text-sm md:text-base lg:text-lg xl:text-lg text-gray-800">A vibrant community where milestones, discoveries,<br /> and celebrations shine through every day.</p>
+                        <p className="text-sm md:text-base lg:text-lg xl:text-lg text-gray-800">A vibrant community where milestones, discoveries,<br className='hidden md:block'/> and celebrations shine through every day.</p>
                     </div>
 
                     {/* Mobile: horizontal swipe slider */}

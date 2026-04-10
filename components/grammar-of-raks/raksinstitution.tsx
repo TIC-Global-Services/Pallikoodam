@@ -5,21 +5,26 @@ import ContainerLayout from '@/layout/ContainerLayout';
 
 import earlyyears from '@/assets/grammar-of-raks/early-years.jpg';
 import Link from 'next/link';
+import image1 from '@/assets/grammar-of-raks/raks_early_years.png';
+import image2 from '@/assets/grammar-of-raks/early_years.jpg';
+// import image3 from '@/assets/grammar-of-raks/academy.png';
+import image4 from '@/assets/grammar-of-raks/academy.png';
+import image5 from '@/assets/grammar-of-raks/visionary.png';
 
 const institutionData = [
     {
         number: "01",
         title: "RAKS Early Years",
         description: "Rooted in the Reggio Emilia philosophy and affiliated with the Cambridge Early Years Programme, offering inquiry-led, child-centred early learning.",
-        image: earlyyears,
-        href:"/learning-at-raks"
+        image: image1,
+        href:"/"
     },
     {
         number: "02",
         title: "RAKS Pallikkoodam",
         description: "A CBSE-affiliated school following the national curriculum, focused on conceptual understanding, learner agency, and holistic development.",
-        image: earlyyears, // Replace with actual image
-        href:"/learning-at-raks"
+        image: image2, // Replace with actual image
+        href:"/"
     },
     {
         number: "03",
@@ -32,15 +37,15 @@ const institutionData = [
         number: "04",
         title: "RAKS Academy",
         description: "A vibrant sports ecosystem building skill, discipline, and character.",
-        image: earlyyears, // Replace with actual image
-        href:"/learning-at-raks"
+        image: image4, // Replace with actual image
+        href:"/"
     },
     {
         number: "05",
         title: "RAKS Visionary Hub",
         description: "A centre for innovation, mentor development, and future-focused education.",
-        image: earlyyears, // Replace with actual image
-        href:"/learning-at-raks"
+        image: "/", // Replace with actual image
+        href:''
     },
 ];
 
@@ -111,7 +116,7 @@ const RaksInstitution = () => {
                     </p>
                 </div>
 
-                {/* ============ MOBILE CAROUSEL ============ */}
+                
                 <div
                     className="md:hidden relative"
                     onTouchStart={handleTouchStart}

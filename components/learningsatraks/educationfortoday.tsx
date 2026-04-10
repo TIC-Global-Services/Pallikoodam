@@ -37,7 +37,7 @@ const EducationForToday = () => {
                             <p className="text-[#4A4F5E] text-sm mb-5  md:text-base lg:text-lg leading-[1.2]">
                                 RAKS follows two carefully chosen curricula that align with our vision for holistic, future-ready education:
                             </p>
-                            <p className="text-[#4A4F5E] text-sm mb-5  md:text-base lg:text-lg leading-[1.2]">
+                            <p className="text-[#4A4F5E] text-sm mb-5 font-ppe font-light md:text-base lg:text-lg leading-[1.2]">
                                 Cambridge International <br /> Curriculum National Curriculum (India)
                             </p>
                             <p className="text-[#4A4F5E] text-sm  md:text-base lg:text-lg leading-[1.2]">

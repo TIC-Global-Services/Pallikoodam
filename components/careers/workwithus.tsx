@@ -17,17 +17,17 @@ const workwithus = () => {
                         Why<span className='font-ppe italic font-light'>Work</span> with us
                     </h2>
 
-                    <h3 className='text-xl md:text-2xl lg:text-[32px] font-medium mb-8 leading-snug'>
-                        A Supportive, Innovative Workplace That Helps You &quot;<span className='font-ppe italic font-light'>Grow and Thrive</span>&quot;
+                    <h3 className='text-xl md:text-2xl px-2 lg:text-3xl font-medium mb-8 leading-snug'>
+                        A supportive, interactive workplace that helps you <span className='font-ppe italic font-light'>thrive</span>
                     </h3>
 
                     <p className='text-base md:text-lg lg:text-lg text-white/95 mb-10 leading-[1.1] font-light'>
-                        We nurture educators as thoughtfully as we nurture our learners. At RaK&apos;s, you are encouraged to question, create, collaborate, and continuously evolve, professionally and personally.
+                        Collaborate, experiment, and learn in an environment designed for professional and personal growth.
                     </p>
 
                     <div className=''>
-                        <p className='text-lg md:text-xl font-medium mb-6'>What you can expect:</p>
-                        <ul className='space-y-4 text-base md:text-lg font-normal'>
+                        <p className='text-lg md:text-xl font-medium mb-6'>Motivated educators ready to <span className='font-ppe italic font-light'>inspire</span></p>
+                        {/* <ul className='space-y-4 text-base md:text-lg font-normal'>
                             <li className='flex items-start gap-3'>
                                 <span className='w-1.5 h-1.5 rounded-full bg-white mt-2.5 shrink-0'></span>
                                 <span>A culture rooted in <span className='font-ppe italic'>trust, respect, and shared ownership</span></span>
@@ -44,7 +44,8 @@ const workwithus = () => {
                                 <span className='w-1.5 h-1.5 rounded-full bg-white mt-2.5 shrink-0'></span>
                                 <span>A workplace where your <span className='font-ppe font-light italic'>voice truly matters</span></span>
                             </li>
-                        </ul>
+                        </ul> */}
+                        <p className='text-base md:text-xl lg:text-lg text-white max-w-xl leading-[1.1] font-light'>We seek passionate educators who spark curiosity, nurture creativity, and make every learner’s journey meaningful.</p>
                     </div>
                 </div>
 

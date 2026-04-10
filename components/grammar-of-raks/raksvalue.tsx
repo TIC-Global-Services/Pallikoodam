@@ -6,16 +6,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import ContainerLayout from '@/layout/ContainerLayout';
 
-import img1 from '@/assets/home/campus-1.jpg';
-import img2 from '@/assets/home/campus-2.jpg';
-import img3 from '@/assets/home/campus-3.jpg';
-import img4 from '@/assets/home/artstudio.jpg';
-import img5 from '@/assets/home/labs.jpg';
-import img6 from '@/assets/home/stack-1.jpg';
-import img7 from '@/assets/home/stack-2.jpg';
-import img8 from '@/assets/home/stack-3.jpg';
-import img9 from '@/assets/home/cambridgeimg.jpg';
-import img10 from '@/assets/home/national-curriculamimg.jpg';
+import img1 from '@/assets/grammar-of-raks/People.png';
+import img2 from '@/assets/grammar-of-raks/Places.png';
+import img3 from '@/assets/grammar-of-raks/Purpose.png';
+import img4 from '@/assets/grammar-of-raks/Routines.png';
+import img5 from '@/assets/grammar-of-raks/Rituals.png';
+import img6 from '@/assets/grammar-of-raks/Rhythm.png';
+import img7 from '@/assets/grammar-of-raks/Empathy.png';
+import img8 from '@/assets/grammar-of-raks/Ethics.png';
+import img9 from '@/assets/grammar-of-raks/Excellence.png';
+import img10 from '@/assets/grammar-of-raks/Evolution.png';
 
 if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
@@ -130,9 +130,9 @@ const RaksValue = () => {
                 style={{ height: `${(sectionsData.length + 1) * 100}vh` }}
                 className="relative w-full"
             >
-                <div className="sticky top-0 w-full h-screen overflow-hidden bg-black">
+                <div className="sticky top-0  w-full h-screen  overflow-hidden bg-white">
                 {sectionsData.map((section, sIdx) => (
-                    <div key={sIdx} className="raks-panel absolute inset-0">
+                    <div key={sIdx} className="raks-panel absolute inset-0 bg-white">
 
                         {/* Background images */}
                         {section.cards.map((card, cIdx) => {
@@ -142,8 +142,8 @@ const RaksValue = () => {
                                     key={card.id}
                                     src={card.bg}
                                     alt={card.title}
-                                    fill
-                                    className={`object-cover transition-opacity duration-300 ease-in-out ${active ? 'opacity-100' : 'opacity-0'}`}
+                                    
+                                    className={`object-contain bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  transition-opacity duration-300 ease-in-out ${active ? 'opacity-100' : 'opacity-0'}`}
                                     style={{ zIndex: active ? 1 : 0 }}
                                     placeholder="blur"
                                 />

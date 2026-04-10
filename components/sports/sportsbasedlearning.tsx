@@ -117,7 +117,7 @@ const SportsBasedLearning = () => {
                                 <p className="mb-3">
                                     At RAKS, sports are intentionally designed as learning experiences, learners engage in structured sporting experiences that cultivate:
                                 </p>
-                                <ul className="list-disc pl-5 space-y-1">
+                                <ul className="list-disc pl-5 leading-normal">
                                     <li>Goal-setting and self-reflection</li>
                                     <li>Deepen their understanding of rules, fairness, and respect</li>
                                     <li>Strengthen their ability to handle both success and failure with grace</li>

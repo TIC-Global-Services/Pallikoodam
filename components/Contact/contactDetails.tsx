@@ -17,12 +17,12 @@ const ContactDetails = () => {
                 <p className="text-lg md:text-lg  max-w-lg leading-[1.3] md:leading-relaxed font-normal">
                     There is something special about seeing learning come alive. We invite you to
                     visit our campus and experience the warmth, spaces, and spirit that define
-                    life at RaK&apos;s.
+                    life at RAKS.
                 </p>
             </div>
 
             {/* Middle - Lanyard */}
-            <div className="order-3 lg:order-none w-full lg:absolute lg:inset-0 lg:z-20 flex justify-center items-center pointer-events-none h-[60vh] lg:h-auto -my-10 lg:my-0">
+            <div className="order-3 hidden  lg:order-none w-full lg:absolute lg:inset-0 lg:z-20 md:flex justify-center items-center pointer-events-none h-[60vh] lg:h-auto -my-10 lg:my-0">
                 <div className="scale-[0.8] sm:scale-75 md:scale-90 lg:scale-[1.1] w-full flex justify-center items-center pointer-events-auto">
                     <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
                 </div>

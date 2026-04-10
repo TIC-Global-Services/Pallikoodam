@@ -6,6 +6,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import ContainerLayout from '@/layout/ContainerLayout';
 import tempbg from '@/assets/grammar-of-raks/whatwedobg.jpg';
+import why from '@/assets/home/visionimg.jpg';
+import how from '@/assets/grammar-of-raks/how_we_do.png';
+import where from '@/assets/grammar-of-raks/where_we_do.png';
+import whom from '@/assets/grammar-of-raks/with_whom_we_do.jpg';
 
 if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
@@ -15,22 +19,22 @@ const slidesData = [
     {
         title: "WHY we do what we do @ RAKS",
         subtitle: "Because thriving is a collective journey.",
-        bg: tempbg,
+        bg: why,
     },
     {
         title: "HOW we do what we do @RAKS",
         subtitle: "Through purposeful pedagogy, project-based learning, hands on, minds on approach, inquiry, and reflective practices.",
-        bg: tempbg,
+        bg: how,
     },
     {
         title: "WHERE we do what we do @RAKS",
         subtitle: "In purpose-built spaces designed for exploration, collaboration, and creativity.",
-        bg: tempbg,
+        bg: where,
     },
     {
         title: "With whom we do what we do @RAKS",
         subtitle: "Together with learners, families, educators, and communities, building a culture of care, courage, and curiosity.",
-        bg: tempbg,
+        bg: whom,
     },
 ];
 

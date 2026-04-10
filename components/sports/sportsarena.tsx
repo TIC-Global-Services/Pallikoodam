@@ -43,7 +43,6 @@ const SportsArena = () => {
                 const img = item.querySelector('img');
 
                 if (imgContainer && img && !item.classList.contains('no-parallax')) {
-                    // Inner image parallax
                     gsap.fromTo(img,
                         { yPercent: -15, scale: 1.15 },
                         {
@@ -60,7 +59,6 @@ const SportsArena = () => {
                     );
                 }
 
-                // Fade Up Reveal for the whole item
                 gsap.fromTo(item,
                     { opacity: 0, y: 80 },
                     {
@@ -77,23 +75,19 @@ const SportsArena = () => {
                 );
             });
 
-            // Global Mouse Parallax for the entire section
             const section = containerRef.current;
             if (section) {
-                // Now getting the whole arena-item instead of just the image
                 const getItems = () => Array.from(section.querySelectorAll('.arena-item'))
                     .filter(el => !el.classList.contains('no-parallax')) as HTMLElement[];
 
                 const handleGlobalMouseMove = (e: MouseEvent) => {
                     const rect = section.getBoundingClientRect();
-                    // Normalize X and Y across the entire screen section (-1 to 1)
                     const x = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
                     const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
 
                     const itemsToMove = getItems();
-                    // Shift the whole component based on mouse position
                     gsap.to(itemsToMove, {
-                        x: x * 30, // Max shift of 30px
+                        x: x * 30,
                         y: y * 30,
                         duration: 0.8,
                         ease: "power3.out"
@@ -102,7 +96,6 @@ const SportsArena = () => {
 
                 const handleGlobalMouseLeave = () => {
                     const itemsToMove = getItems();
-                    // Reset all items when mouse leaves the section
                     gsap.to(itemsToMove, { x: 0, y: 0, duration: 1.2, ease: "power3.out" });
                 };
 
@@ -123,8 +116,6 @@ const SportsArena = () => {
     }, []);
 
     const renderItem = (item: any, index: number, hideTitle: boolean = false, reduceOpacity: boolean = false) => {
-        // Even indices: text on right (image on left)
-        // Odd indices: text on left (image on right)
         const isTextRight = index % 2 === 0;
         const isPickleball = item.title === 'Pickleball';
 

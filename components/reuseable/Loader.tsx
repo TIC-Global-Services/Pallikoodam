@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { useLoading } from '@/context/LoadingContext';
 import Image from 'next/image';
@@ -10,15 +10,30 @@ import bgImage4 from '@/assets/home/bg-image-4.png';
 
 export default function Loader() {
     const pathname = usePathname();
-    const { heroVideoLoaded } = useLoading();
+    const { heroVideoLoaded, isFirstLoad, setIsFirstLoad } = useLoading();
     const [isLoading, setIsLoading] = useState(false);
     const [progress, setProgress] = useState(0);
     const [iconIndex, setIconIndex] = useState(0);
 
     const icons = [bgImage1, bgImage2, bgImage3, bgImage4];
 
+    const heroVideoLoadedRef = useRef(heroVideoLoaded);
+    const pathnameRef = useRef(pathname);
+
+    useEffect(() => {
+        heroVideoLoadedRef.current = heroVideoLoaded;
+        pathnameRef.current = pathname;
+    }, [heroVideoLoaded, pathname]);
+
     // Initial load state and route change state
     useEffect(() => {
+        if (!isFirstLoad) {
+            setIsLoading(false);
+            return;
+        }
+
+        console.log("Hero video loaded status:", heroVideoLoadedRef.current);
+
         setIsLoading(true);
         setProgress(0);
 
@@ -27,27 +42,35 @@ export default function Loader() {
         const steps = duration / intervalTime;
         let currentStep = 0;
 
+        const maxWaitTime = 5000; // 5 seconds fallback
+        const startTime = Date.now();
+
         const interval = setInterval(() => {
             currentStep++;
             let calculatedProgress = Math.floor((currentStep / steps) * 100);
 
-            // If we are on the home page, stall at 99% until the video loads
-            if (pathname === '/' && !heroVideoLoaded) {
+            const timeElapsed = Date.now() - startTime;
+
+            // If we are on the home page, stall at 99% until the video loads or timeout hits
+            if (pathnameRef.current === '/' && !heroVideoLoadedRef.current && timeElapsed < maxWaitTime) {
                 calculatedProgress = Math.min(99, calculatedProgress);
             } else {
-                calculatedProgress = Math.min(100, calculatedProgress);
+                calculatedProgress = Math.min(100, Math.max(calculatedProgress, 100)); // Ensure it hits 100 if sequence finishes or fallback hits
             }
 
             setProgress(calculatedProgress);
 
             if (calculatedProgress === 100) {
                 clearInterval(interval);
-                setTimeout(() => setIsLoading(false), 200); // Small buffer after hitting 100
+                setTimeout(() => {
+                    setIsLoading(false);
+                    setIsFirstLoad(false);
+                }, 200); // Small buffer after hitting 100
             }
         }, intervalTime);
 
         return () => clearInterval(interval);
-    }, [pathname, heroVideoLoaded]);
+    }, [isFirstLoad, setIsFirstLoad]);
 
     // Cycling icons effect
     useEffect(() => {

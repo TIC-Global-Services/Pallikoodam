@@ -134,7 +134,6 @@ const Innovationspace = () => {
             }, containerRef)
         };
 
-        // Delay GSAP setup slightly to ensure DOM dimensions and fonts are fully settled
         const timer = setTimeout(initAnimation, 100);
 
         const handleResize = () => ScrollTrigger.refresh();
@@ -227,7 +226,7 @@ const Innovationspace = () => {
                                         {card.description.split('\n\n').map((paragraph, idx, arr) => (
                                             <div key={idx} className={`relative pl-4 ${idx !== arr.length - 1 ? 'pb-4' : ''}`}>
                                                 <div className="w-0.5 h-full bg-[#0045FF] absolute left-0 top-0"></div>
-                                                <p className='text-lg leading-[16px] text-gray-800 font-medium'>
+                                                <p className='text-sm leading-[16px] text-gray-800 font-medium'>
                                                     {paragraph}
                                                 </p>
                                             </div>
@@ -273,7 +272,7 @@ const Innovationspace = () => {
                                         {card.description.split('\n\n').map((paragraph, idx, arr) => (
                                             <div key={idx} className={`relative pl-4 ${idx !== arr.length - 1 ? 'pb-4' : ''}`}>
                                                 <div className="w-0.5 h-full bg-[#0045FF] absolute left-0 top-0"></div>
-                                                <p className='text-sm md:text-xs lg:text-lg xl:text-lg leading-[20px] whitespace-pre-line text-gray-800 font-medium'>
+                                                <p className='text-cd md:text-xs lg:text-lg xl:text-lg leading-[20px] whitespace-pre-line text-gray-800 font-medium'>
                                                     {paragraph}
                                                 </p>
                                             </div>

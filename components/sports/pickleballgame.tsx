@@ -209,7 +209,7 @@ const PickleballGame = () => {
 
             {/* Center Text Content */}
             <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 flex flex-col items-center justify-center pointer-events-none">
-                <h2 className="flex items-center justify-center gap-2 md:gap-4 text-[clamp(2.5rem,4vw,3.5rem)] font-normal text-black mb-6 whitespace-nowrap">
+                <h2 className="flex items-center justify-center gap-2 md:gap-4 text-[clamp(2rem,4vw,3.5rem)] font-normal text-black mb-6 whitespace-nowrap">
                     <span>Introducing</span> <span id="target-pickleball-text" className="font-ppe italic mt-3 font-light text-[#000086] opacity-0">Pickleball</span>
                 </h2>
 

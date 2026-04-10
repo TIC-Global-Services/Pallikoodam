@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
-import founder from '@/assets/grammar-of-raks/SwethaKrishnamurthy.jpg'
-import founder2 from '@/assets/grammar-of-raks/Mr.MichaelJoseph.jpg'
+import founder from '@/assets/grammar-of-raks/Swetha_Krishnamurthy.png'
+import founder2 from '@/assets/grammar-of-raks/Mr_MichaelJoseph.png'
 import ContainerLayout from '@/layout/ContainerLayout'
 
 const StoryAndMission = () => {

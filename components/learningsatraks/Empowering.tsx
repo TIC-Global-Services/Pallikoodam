@@ -32,11 +32,11 @@ const Empowering = () => {
             image: empowering2
         }, {
             title: <><span className='font-ppe italic font-normal'>Middle</span> School</>,
-            description: "Personalised, future-focused learning supports informed academic choices and meaningful real-world pathways.",
+            description: "Learners develop agency and independent thinking through problem-based learning, research, and interdisciplinary exploration",
             image: empowering3
         }, {
             title: <><span className='font-ppe italic font-normal'>Senior Secondary</span> School</>,
-            description: "Learners develop agency and independent thinking through problem-based learning, research, and interdisciplinary exploration",
+            description: "Personalised, future-focused learning supports informed academic choices and meaningful real-world pathways.",
             image: empowering4
         }
     ]

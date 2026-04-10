@@ -123,7 +123,7 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
         linearDamping: 4
     };
 
-    const { nodes, materials } = useGLTF('./scene.glb') as any;
+    const { nodes, materials } = useGLTF('./card_updated.glb') as any;
     const texture = useTexture(typeof lanyard === 'string' ? lanyard : (lanyard as any).src);
     const [curve] = useState(
         () =>

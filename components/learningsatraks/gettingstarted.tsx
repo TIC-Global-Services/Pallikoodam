@@ -35,14 +35,14 @@ const gettingstarted = () => {
                             </p>
 
                             <ol className='list-decimal list-outside pl-4 md:pl-6 space-y-3 md:space-y-2 max-w-2xl text-black text-[14px] md:text-[16px] lg:text-[18px] font-medium'>
-                                <li className='pl-2 leading-snug'>Discover our curriculum options</li>
-                                <li className='pl-2 leading-snug'>Visit our campus and experience learning in action</li>
-                                <li className='pl-2 leading-snug'>Connect with our admissions team for guidance on enrolment, grade placement, and programme choices</li>
+                                <li className='pl-2 leading-snug'>Explore future-ready curriculum options</li>
+                                <li className='pl-2 leading-snug'>Visit our campus and witness inspired learning</li>
+                                <li className='pl-2 leading-snug'>Talk to our admissions team for clear, guided next steps</li>
                             </ol>
                         </div>
 
                         <p className='text-black text-sm md:text-lg lg:text-lg leading-[1.3] mb-5 md:mb-10 tracking-tight font-medium max-w-3xl'>
-                            Because choosing a school is not just about<br /> academics, it's about <span className='font-ppe italic font-light'>"Belonging, Purpose, and Possibility."</span>
+                           More than a school, RAKS is where your child finds <br className='hidden md:block' /> <span className='font-ppe italic font-light'>direction, confidence, and a true sense of belonging.</span>
                         </p>
 
                         <div className='mb-10 md:mb-0'>

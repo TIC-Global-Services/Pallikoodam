@@ -22,8 +22,8 @@ const Hero = () => {
                 <h1 className="text-white text-[clamp(2rem,5vw,3.4rem)] leading-[1.1]  tracking-tight font-medium">
                     Sports as the<span className="font-ppe italic font-normal">Hidden Curriculum @ RAKS</span>
                 </h1>
-                <p className="text-white text-[clamp(1rem,2vw,2rem)] max-w-4xl mx-auto leading-[1.1]  tracking-tight font-medium">
-                    At RAKS, sports are not an add-on, they are a way of learning life itself. Through structured play, competition, and reflection, learners develop character, discipline, and lifelong skills that extend far beyond the field.
+                <p className="text-white text-[clamp(1rem,2vw,2rem)] max-w-4xl mx-auto leading-[1.1]  md:tracking-tight font-medium">
+                   <span className='font-ppe underline italic font-light'>At RAKS, sports are not an add-on, they are a way of learning life itself.</span> Through structured play, competition, and reflection, learners develop character, discipline, and lifelong skills that extend far beyond the field.
                 </p>
             </div>
         </section>

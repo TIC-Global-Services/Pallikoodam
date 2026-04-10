@@ -44,7 +44,7 @@ const institutionData = [
         number: "05",
         title: "RAKS Visionary Hub",
         description: "A centre for innovation, mentor development, and future-focused education.",
-        image: "/", // Replace with actual image
+        image:image5, // Replace with actual image
         href:''
     },
 ];

@@ -94,12 +94,12 @@ const Programs = () => {
                 <ContainerLayout>
 
                     {/* Header text */}
-                    <div className="max-w-6xl mb-24 md:mb-32">
+                    <div className="max-w-7xl mx-auto mb-24 md:mb-32">
                         <h2 className="text-[2rem] md:text-[3rem] lg:text-[4rem] font-medium leading-[1] mb-6 tracking-tight">
-                            Discover the <span className="font-ppe italic font-normal">programmes</span> your <br className="hidden md:block" /> child can step into
+                            <span className="font-ppe italic font-light">Learning</span> Pathways at RAKS Pallikkoodam
                         </h2>
-                        <p className="text-[1.05rem] md:text-[2rem] leading-[1.2] tracking-[-0.02em] opacity-90">
-                            At RAKS Pallikkoodam, your child&apos;s learning pathway is purposeful, future-ready, and globally recognized nurturing confidence, creativity, and character at every stage.
+                        <p className="text-[1.05rem] md:text-[2rem] text-center leading-[1.2] tracking-[-0.02em] opacity-90">
+                            At RaK’s Pallikkoodam, learning pathways are purposeful, future-ready, and globally recognised, nurturing confidence, creativity, and character at <br className="hidden md:block" /> every stage.
                         </p>
                     </div>
 
@@ -140,7 +140,7 @@ const Programs = () => {
 
                                 {/* Description */}
                                 <div 
-                                    className="text-center text-[0.95rem] md:text-[1.4rem] leading-tight max-w-xl whitespace-pre-line opacity-90 px-4 relative z-10"
+                                    className="text-center text-[0.95rem] md:text-[1.4rem] leading-tight max-w-2xl whitespace-pre-line opacity-90 px-4 relative z-10"
                                     dangerouslySetInnerHTML={{ __html: item.desc }}
                                 />
                             </div>

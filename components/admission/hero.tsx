@@ -26,8 +26,8 @@ const hero = () => {
                     <br />
                     journey with us
                 </h1>
-                <p className='xl:text-3xl lg:text-2xl leading-[1.1] md:text-xl text-lg text-white max-w-5xl mx-auto mt-5'>
-                    At RAKS Pallikkoodam, every child’s journey is guided by curiosity, confidence, and care. Learning here is not just taught, it is lived, experienced, and cherished, building strong foundations for joyful discovery and lifelong growth from day one.
+                <p className='xl:text-3xl lg:text-2xl leading-[1.1] md:text-xl text-lg text-white max-w-6xl mx-auto mt-5'>
+                    At RAKS Pallikkoodam, every child’s journey is guided by curiosity,<br/> confidence, and care. Learning here is not merely taught, it is lived,<br/> experienced, and cherished. From the earliest years onward, we build strong foundations for joyful discovery, meaningful engagement, and lifelong growth.
                 </p>
             </div>
         </section>

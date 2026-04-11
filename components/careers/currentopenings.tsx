@@ -37,11 +37,11 @@ const currentopenings = () => {
     }
 
     return (
-        <div className='w-full min-h-[50vh] bg-white py-16 md:py-24 text-black'>
+        <div id='current-openings' className='relative z-50 w-full min-h-[50vh] bg-white py-16 md:py-24 text-black'>
             <ContainerLayout>
 
                 {/* Header Section */}
-                <div className='mb-12'>
+                <div className='relative z-10 mb-12'>
                     <h2 className='text-2xl md:text-5xl lg:text-[48px] font-regular tracking-tight mb-2 md:mb-6'>
                         <span className='font-ppe italic font-light'>Current</span> Open Positions
                     </h2>

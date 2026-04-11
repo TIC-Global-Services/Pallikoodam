@@ -19,10 +19,11 @@ const ContactHero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full flex justify-center text-center px-4">
+      <div className="relative z-10 w-full flex flex-col justify-center text-center px-4">
         <h1 className="text-white text-[clamp(2rem,5vw,4.5rem)] leading-[1.1]  tracking-tight font-medium">
           Reach Out to <br/><span className="font-ppe italic font-light">RAKS Pallikkoodam</span>
         </h1>
+        <p className='md:text-[2rem] text-lg text-white text-center mt-3'> We’re here to guide and support you <br/>through your child’s enrollment journey.</p>
       </div>
     </section>
   )

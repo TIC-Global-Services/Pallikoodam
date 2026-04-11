@@ -14,8 +14,8 @@ const ContactHero = () => {
               <h1 className="text-[2.8rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] leading-[1.05] font-medium text-[#111] tracking-tight">
                 Reach Out to<br />
                 <span className="font-ppe font-normal italic">RAKS Pallikkoodam</span>
+                <p className='xl:text-3xl lg:text-2xl md:text-xl text-lg text-white max-w-6xl mx-auto mt-5'> We’re here to guide and support you through your child’s enrollment journey.</p>
               </h1>
-
               <div className="">
                 <p className="text-lg md:text-xl lg:text-[28px] text-[#111] leading-[1.4] tracking-tight font-medium font-sans">
                   Every meaningful journey begins with a conversation. Whether you're exploring admissions

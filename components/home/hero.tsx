@@ -22,7 +22,7 @@ const Hero = () => {
         <div className="flex items-center justify-center h-full w-full">
           <video
             ref={videoRef}
-            src="/Admission compressed (2).mp4"
+            src="/raks_banner_video.MP4"
             autoPlay
             muted={!isGlobalAudioEnabled}
             loop

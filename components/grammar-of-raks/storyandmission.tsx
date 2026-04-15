@@ -69,7 +69,7 @@ const StoryAndMission = () => {
 
           {/* Mobile Title */}
           <h2 className='block lg:hidden text-4xl font-medium tracking-tight mb-4 leading-none'>
-            <span className='font-ppe font-light italic text-[#000086]'>Head of School note,</span> RAKS Pallikkoodam School of Excellence
+            <span className='font-ppe font-light italic text-[#000086]'>Head of School,</span> RAKS Pallikkoodam School of Excellence
           </h2>
 
           {/* Image - Order 1 on mobile */}
@@ -87,7 +87,7 @@ const StoryAndMission = () => {
           {/* Text Content - Order 2 on mobile */}
           <div className='order-2 lg:order-1 flex flex-col justify-center'>
             <h2 className='hidden lg:block text-4xl md:text-5xl lg:text-5xl font-medium mb-6 md:mb-8 tracking-tight leading-[1.1]'>
-              <span className='font-ppe font-light italic text-[#000086]'>Head of School note,</span> RAKS Pallikkoodam School of Excellence
+              <span className='font-ppe font-light italic text-[#000086]'>Head of School,</span> RAKS Pallikkoodam School of Excellence
             </h2>
 
             <div className='space-y-4 md:space-y-6'>

@@ -7,7 +7,7 @@ import { useGSAP } from '@gsap/react';
 import ContainerLayout from '@/layout/ContainerLayout';
 import tempbg from '@/assets/grammar-of-raks/whatwedobg.jpg';
 import why from '@/assets/home/visionimg.jpg';
-import how from '@/assets/grammar-of-raks/how_we_do.png';
+import how from '@/assets/grammar-of-raks/how_we_do_bg.jpg';
 import where from '@/assets/grammar-of-raks/where_we_do.png';
 import whom from '@/assets/grammar-of-raks/with_whom_we_do.jpg';
 

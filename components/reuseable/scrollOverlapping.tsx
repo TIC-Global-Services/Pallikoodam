@@ -2,19 +2,18 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { useLetterReveal } from './texteffect/useLetterReveal';
 import BlurText from './texteffect/BlurText';
 
 gsap.registerPlugin(ScrollTrigger);
 
 interface Card {
-    color: string;
+    bgImage: StaticImageData;
     title: string;
     description: string;
     icon: React.ReactNode;
     textColor: string;
-    // badge?: React.ReactNode;
 }
 
 interface ScrollOverlappingCardsProps {
@@ -131,25 +130,39 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
                             {cards.map((card, index) => (
                                 <div
                                     key={index}
-                                    className={`card card-${index} absolute top-0 left-0 w-full lg:w-[521px] rounded-3xl overflow-auto shadow-lg p-4 md:p-6 lg:p-8 xl:p-10 flex flex-col justify-between gap-3 md:gap-4 h-[35vh] min-h-[35vh] md:h-[40vh] md:max-h-[40vh] lg:h-[42vh] lg:max-h-[42vh] xl:h-[50vh] xl:max-h-[50vh]`}
+                                    className={`card card-${index} absolute top-0 left-0 w-full lg:w-[521px] rounded-3xl overflow-hidden shadow-lg h-[35vh] min-h-[35vh] md:h-[40vh] md:max-h-[40vh] lg:h-[42vh] lg:max-h-[42vh] xl:h-[50vh] xl:max-h-[50vh]`}
                                     style={{
                                         zIndex: index + 1,
-                                        backgroundColor: card.color
                                     }}
                                 >
-                                    <div className="flex justify-between items-start w-full gap-3">
-                                        <h3 className={`text-${card.textColor} text-[clamp(1.25rem,3vw,3rem)] font-medium tracking-tight font-inter-tight leading-tight max-w-[70%]`}>
-                                            {card.title}
-                                        </h3>
-                                        <div className={`bg-white rounded-full flex items-center justify-center w-[clamp(2.5rem,8vw,4rem)] h-[clamp(2.5rem,8vw,4rem)] shrink-0 text-black ${index === 2 || index === 3 ? 'p-0' : 'p-2 md:p-3 lg:p-4'}`}>
-                                            {card.icon}
-                                        </div>
-                                    </div>
+                                    {/* Background Image */}
+                                    <Image
+                                        src={card.bgImage}
+                                        alt={card.title}
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 768px) 100vw, 521px"
+                                        priority={index === 0}
+                                    />
+                                    {/* Dark gradient overlay for text readability */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10 z-[1]" />
 
-                                    <div className="relative">
-                                        <p className={` text-${card.textColor} font-inter-tight text-base md:text-[clamp(0.875rem,2vw,1.125rem)] leading-tight`}>
-                                            {card.description}
-                                        </p>
+                                    {/* Card content */}
+                                    <div className="relative z-[2] flex flex-col justify-between h-full p-4 md:p-6 lg:p-8 xl:p-10 gap-3 md:gap-4">
+                                        <div className="flex justify-between items-start w-full gap-3">
+                                            <h3 className={`text-${card.textColor} text-[clamp(1.25rem,3vw,3rem)] font-medium tracking-tight font-inter-tight leading-tight max-w-[70%]`}>
+                                                {card.title}
+                                            </h3>
+                                            <div className={`bg-white rounded-full flex items-center justify-center w-[clamp(2.5rem,8vw,4rem)] h-[clamp(2.5rem,8vw,4rem)] shrink-0 text-black ${index === 2 || index === 3 ? 'p-0' : 'p-2 md:p-3 lg:p-4'}`}>
+                                                {card.icon}
+                                            </div>
+                                        </div>
+
+                                        <div className="relative">
+                                            <p className={`text-${card.textColor} font-inter-tight text-base md:text-[clamp(0.875rem,2vw,1.125rem)] leading-tight`}>
+                                                {card.description}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             ))}

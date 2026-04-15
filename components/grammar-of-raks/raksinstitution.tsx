@@ -5,10 +5,10 @@ import ContainerLayout from '@/layout/ContainerLayout';
 
 import earlyyears from '@/assets/grammar-of-raks/early-years.jpg';
 import Link from 'next/link';
-import image1 from '@/assets/grammar-of-raks/raks_early_years.png';
-import image2 from '@/assets/grammar-of-raks/early_years.jpg';
+import image1 from '@/assets/grammar-of-raks/raks_early_years_bg.jpg';
+import image2 from '@/assets/grammar-of-raks/early_years_bg.png';
 // import image3 from '@/assets/grammar-of-raks/academy.png';
-import image4 from '@/assets/grammar-of-raks/academy.png';
+import image4 from '@/assets/grammar-of-raks/academy_img.png';
 import image5 from '@/assets/grammar-of-raks/visionary.png';
 
 const institutionData = [

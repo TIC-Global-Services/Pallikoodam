@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import herobanner from '@/assets/grammar-of-raks/grammar-of-raks-Hero.jpg'
+import herobanner from '@/assets/grammar-of-raks/grammer_of_raks_banner.jpg'
 
 const Hero = () => {
   return (

@@ -85,7 +85,7 @@ const curricullam = () => {
           {/* First Card - Cambridge */}
           <div
             ref={card1Ref}
-            className="absolute bg-transparent top-0 left-0 w-full h-full overflow-hidden shadow-2xl"
+            className="absolute bg-transparent top-0 left-0 w-full h-full overflow-hidden"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 h-full">
               {/* Left side - Text */}

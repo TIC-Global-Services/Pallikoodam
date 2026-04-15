@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
 import vision from "@/assets/home/visionnewimg-1.png"
-import image3 from '@/assets/home/campus-3new.png'
+import image3 from '@/assets/home/our_mission.png'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'

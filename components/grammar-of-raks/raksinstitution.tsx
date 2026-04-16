@@ -5,9 +5,9 @@ import ContainerLayout from '@/layout/ContainerLayout';
 
 import earlyyears from '@/assets/grammar-of-raks/early-years.jpg';
 import Link from 'next/link';
-import image1 from '@/assets/grammar-of-raks/raks_early_years_bg.jpg';
-import image2 from '@/assets/grammar-of-raks/early_years_bg.png';
-// import image3 from '@/assets/grammar-of-raks/academy.png';
+import image1 from '@/assets/grammar-of-raks/raks_early_years.png';
+import image2 from '@/assets/grammar-of-raks/raks_early_years_bg.jpg';
+import image3 from '@/assets/grammar-of-raks/early_years_bg.png';
 import image4 from '@/assets/grammar-of-raks/academy_img.png';
 import image5 from '@/assets/grammar-of-raks/visionary.png';
 
@@ -15,22 +15,22 @@ const institutionData = [
     {
         number: "01",
         title: "RAKS Early Years",
-        description: "Rooted in the Reggio Emilia philosophy and affiliated with the Cambridge Early Years Programme, offering inquiry-led, child-centred early learning.",
+        description: "Reggio Emilia–inspired early learning aligned with the Cambridge Early Years Programme",
         image: image1,
         href:"/"
     },
     {
         number: "02",
         title: "RAKS Pallikkoodam",
-        description: "A CBSE-affiliated school following the national curriculum, focused on conceptual understanding, learner agency, and holistic development.",
+        description: "CBSE school focused on conceptual learning, learner agency, and holistic growth.",
         image: image2, // Replace with actual image
         href:"/"
     },
     {
         number: "03",
         title: "RAKS Pallikkoodam  \n School of Excellence",
-        description: "Cambridge international school offering globally aligned academic pathways",
-        image: earlyyears, // Replace with actual image
+        description: "Cambridge International school offering globally aligned academic pathways.",
+        image: image3, // Replace with actual image
         href:"/learning-at-raks"
     },
     {

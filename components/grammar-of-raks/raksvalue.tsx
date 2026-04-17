@@ -143,7 +143,7 @@ const RaksValue = () => {
                                     src={card.bg}
                                     alt={card.title}
                                     
-                                    className={`object-contain bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  transition-opacity duration-300 ease-in-out ${active ? 'opacity-100' : 'opacity-0'}`}
+                                    className={`object-contain bg-white absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 max-h-[400px] transition-opacity duration-300 ease-in-out ${active ? 'opacity-100' : 'opacity-0'}`}
                                     style={{ zIndex: active ? 1 : 0 }}
                                     placeholder="blur"
                                 />
@@ -184,7 +184,7 @@ const RaksValue = () => {
                                             flex: (!isMobile || section.cards.length === 4) ? '1' : (isHovered ? '2.5' : '1'),
                                             height: isMobile
                                                 ? (section.cards.length === 4 ? '28vw' : '40vw')
-                                                : (isHovered ? '50vh' : '35vh'),
+                                                : (isHovered ? '36vh' : '35vh'),
                                             backgroundColor: isHovered ? 'rgba(40,40,40,0.6)' : 'rgba(0,0,0,0.2)',
                                             backdropFilter: isHovered ? 'blur(12px)' : 'blur(0px)',
                                             WebkitBackdropFilter: isHovered ? 'blur(12px)' : 'blur(0px)',

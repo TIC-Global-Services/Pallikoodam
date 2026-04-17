@@ -105,11 +105,11 @@ const Wayofteaching = () => {
                         </h1>
                     </div>
 
-                    <div className='relative w-full flex justify-center items-start min-h-[75vh] sm:min-h-[70vh] md:min-h-[clamp(300px,50vh,500px)]'>
+                    <div className='relative w-full flex justify-center items-start min-h-[75vh] sm:min-h-[85vh]'>
                         {data.map((item, index) => (
                             <div
                                 key={index}
-                                className={`card-${index} absolute top-0 w-full max-w-5xl rounded-[10px] overflow-hidden shadow-2xl origin-top bg-white h-[65vh] sm:h-[70vh] md:h-[clamp(300px,50vh,700px)]!`}
+                                className={`card-${index} absolute top-0 w-full max-w-5xl rounded-[10px] overflow-hidden shadow-2xl origin-top bg-white h-[65vh] sm:h-[70vh] md:h-[clamp(300px,60vh,1100px)]!`}
                                 style={{
                                     zIndex: index + 1,
                                 }}
@@ -121,6 +121,7 @@ const Wayofteaching = () => {
                                         fill
                                         className='object-cover'
                                         placeholder='blur'
+                                        style={{objectPosition:"20% 10%"}}
                                         priority={index === 0}
                                     />
                                     {/* Gradient Overlay */}

@@ -55,7 +55,7 @@ const StoryAndMission = () => {
 
             <div className='mt-8 md:mt-10'>
               <p className='font-ppe italic font-light text-2xl md:text-3xl tracking-tight text-black mb-1'>
-                Swetha Krishnamurthy
+                Ms.Swetha Krishnamurthy
               </p>
               <p className='text-md md:text-xl  font-medium text-gray-700'>
                 Founder Director

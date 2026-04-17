@@ -179,7 +179,7 @@ const Shapingthefuture = () => {
                             <div className="w-1 h-20 bg-blue-600/30 absolute left-8 top-8 hidden"></div>
                             <p className="text-gray-800 text-sm lg:text-base xl:text-lg leading-[22px] mb-auto max-w-lg z-10 font-normal">
                                 <span className="border-l-3 border-[#23519D] pl-4 block">
-                                    Enabling learners to <span className="font-ppe font-light italic">&quot;thrive with purpose&quot;</span> and build a sustainable, equitable, and compassionate world.
+                                    Enabling learners to <span className="font-ppe font-light italic">&quot;Thrive with Purpose&quot;</span> and build a sustainable, equitable, and compassionate world.
                                 </span>
                             </p>
                             <div className="absolute bottom-5  md:bottom-10 scale-120 left-0 w-full h-[65%]">
@@ -194,7 +194,7 @@ const Shapingthefuture = () => {
                                     Our <span className="text-[#000086] font-ppe font-light italic">Mission</span>
                                 </h4>
                                 <ol className="text-gray-800 text-sm leading-[16px] lg:text-base xl:text-lg border-l-3 border-[#23519D] pl-4 md:leading-[26px] mb-auto max-w-lg z-10 font-normal list-decimal list-inside space-y-3">
-                                    <li>To nurture curious, compassionate, and courageous learners who <span className='font-ppe font-light italic'>&quot;thrive with purpose&quot;</span></li>
+                                    <li>To nurture curious, compassionate, and courageous learners who <span className='font-ppe font-light italic'>&quot;Thrive with Purpose&quot;</span></li>
                                     <li>To cultivate character, creativity, and critical thinking through meaningful, enquiry-driven experiences.</li>
                                     <li>To empower every learner to act responsibly, lead ethically, and contribute positively to the world.</li>
                                 </ol>

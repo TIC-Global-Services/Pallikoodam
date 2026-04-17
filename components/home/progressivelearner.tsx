@@ -9,10 +9,10 @@ import ContainerLayout from '@/layout/ContainerLayout'
 import ScrollOverlappingCards from '../reuseable/scrollOverlapping'
 
 import progressive1 from '@/assets/home/progressive_1.png'
-import progressive2 from '@/assets/home/progressive_2.png'
-import progressive3 from '@/assets/home/progressive_3.jpg'
-import progressive4 from '@/assets/home/progressive_4.jpg'
-import progressive5 from '@/assets/home/learningwallspace.jpg'
+import progressive2 from '@/assets/home/pod.png'
+import progressive3 from '@/assets/home/innovation_labs.jpg'
+import progressive4 from '@/assets/home/clifton_blocks.jpg'
+import progressive5 from '@/assets/home/quad.png'
 
 const ProgressiveLearner = () => {
 
@@ -28,28 +28,28 @@ const ProgressiveLearner = () => {
             title: "Innovation Labs",
             description: "Purpose-designed environments where ideas are tested, shaped, and brought to life",
             icon: <Image src={icon2} alt="Innovation Labs" className="w-full h-full object-contain" />,
-            bgImage: progressive2,
-            textColor: "white"
-        },
-        {
-            title: "POD Learning",
-            description: "Here is where curiosity turns into collaboration and ideas find expression through deeper thinking.",
-            icon: <Image src={icon3} alt="POD Learning" className="w-84 h-84 object-contain" />,
             bgImage: progressive3,
             textColor: "white"
         },
         {
-            title: "QUAD Learning",
+            title: "POD",
+            description: "Here is where curiosity turns into collaboration and ideas find expression through deeper thinking.",
+            icon: <Image src={icon3} alt="POD Learning" className="w-84 h-84 object-contain" />,
+            bgImage: progressive2,
+            textColor: "white"
+        },
+        {
+            title: "QUAD",
             description: "A space designed for movement, collaboration, discovery, and presentations.",
             icon: <Image src={icon4} alt="QUAD Learning" className="w-full h-full object-contain" />,
-            bgImage: progressive4,
+            bgImage: progressive5,
             textColor: "white"
         },
         {
             title: "Clifton Block (Library)",
             description: "A quiet, sunlit haven where stories, ideas, and possibilities wait to be discovered.",
             icon: <Image src={icon5} alt="Clifton Block" className="w-full h-full object-contain" />,
-            bgImage: progressive5,
+            bgImage: progressive4,
             textColor: "white"
         },
     ]

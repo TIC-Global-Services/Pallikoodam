@@ -17,22 +17,22 @@ if (typeof window !== 'undefined') {
 
 const slidesData = [
     {
-        title: "WHY we do what we do @ RAKS",
+        title: "WHY we do WHAT we do @RAKS",
         subtitle: "Because thriving is a collective journey.",
         bg: why,
     },
     {
-        title: "HOW we do what we do @RAKS",
+        title: "HOW we do WHAT we do @RAKS",
         subtitle: "Through purposeful pedagogy, project-based learning, hands on, minds on approach, inquiry, and reflective practices.",
         bg: how,
     },
     {
-        title: "WHERE we do what we do @RAKS",
+        title: "WHERE we do WHAT we do @RAKS",
         subtitle: "In purpose-built spaces designed for exploration, collaboration, and creativity.",
         bg: where,
     },
     {
-        title: "With whom we do what we do @RAKS",
+        title: "With WHOM we do WHAT we do @RAKS",
         subtitle: "Together with learners, families, educators, and communities, building a culture of care, courage, and curiosity.",
         bg: whom,
     },

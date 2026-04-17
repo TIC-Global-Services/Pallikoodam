@@ -4,7 +4,7 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import image1 from "@/assets/home/cambridgeimg.jpg";
-import image2 from "@/assets/home/national-curriculamimg.jpg";
+import image2 from "@/assets/home/national-curriculamimg-1.jpg";
 import { useLetterReveal } from "../reuseable/texteffect/useLetterReveal";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -176,7 +176,8 @@ const curricullam = () => {
                       alt="CBSE curriculum students"
                       width={800}
                       height={500}
-                      className="object-cover w-full h-auto"
+                      style={{objectPosition:"80% 30%"}}
+                      className="object-fit w-full h-auto"
                     />
                   </div>
 

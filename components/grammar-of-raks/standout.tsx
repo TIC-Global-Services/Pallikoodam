@@ -48,7 +48,7 @@ const Standout = () => {
                 className="absolute left-0 -bottom-1 md:-bottom-3 w-full h-3 md:h-5 z-0"
                 style={{ objectFit: 'fill' }}
               />
-            </span> and strong school–family partnerships, learners grow with confidence, curiosity, and purpose. @ RAKS</p>
+            </span> and strong school–family partnerships, learners grow with confidence, curiosity, and purpose @RAKS</p>
           {/* <p className='text-xl mt-5 md:text-3xl lg:text-[2.5rem] leading-[1.4] space-y-5 text-white font-normal'></p> */}
         </div>
       </ContainerLayout>

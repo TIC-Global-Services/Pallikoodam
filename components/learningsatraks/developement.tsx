@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import develope from '@/assets/learningatraks/developement.jpg'
+import develope from '@/assets/learningatraks/development_bg.png'
 import SimpleParallax from 'simple-parallax-js'
 
 const developement = () => {

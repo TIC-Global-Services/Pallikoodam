@@ -4,7 +4,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-import sportimg1 from '@/assets/sports/sportsbased-1.jpg';
+import sportimg1 from '@/assets/sports/sportsbasedimg-1.png';
 import sportimg2 from '@/assets/sports/sportsbased-2.jpg';
 import sportimg3 from '@/assets/sports/sportsbased-3.jpg';
 

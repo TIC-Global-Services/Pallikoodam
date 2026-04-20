@@ -1,8 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
-import environments1 from '@/assets/learningatraks/environment-1.jpg'
-import environments2 from '@/assets/learningatraks/environment-2.jpg'
-import environments3 from '@/assets/home/innovationnew-5.jpg'
+import environments1 from '@/assets/learningatraks/learner_outcomes.jpg'
+import environments2 from '@/assets/learningatraks/resource_for_parents.jpg'
+import environments3 from '@/assets/learningatraks/assessment.jpg'
+import environments4 from '@/assets/learningatraks/resource_for_learner.png'
 import icon1 from '@/assets/admission/books.png'
 import icon2 from '@/assets/admission/react.png'
 import icon3 from '@/assets/admission/lab.png'
@@ -23,7 +24,7 @@ const Environments = () => {
             id: 2,
             title: <>Resources for <span className='font-ppe italic pl-1 font-light'>Parents</span></>,
             description: "We engage families through curriculum orientations, learning reflections, and guidance to support growth at home.",
-            image: environments1,
+            image: environments2,
             imagePosition: "left"
         },
         {
@@ -37,7 +38,7 @@ const Environments = () => {
             id: 4,
             title: <>Resources for <span className='font-ppe italic pl-1 font-light'>Learners</span></>,
             description: "A robust wellbeing and guidance framework supports learners through academic support, counselling, mentorship, and safe, inclusive spaces for growth and dialogue.",
-            image: environments3,
+            image: environments4,
             imagePosition: "right"
         }
     ];

@@ -8,7 +8,7 @@ import icon5 from "@/assets/home/icons/icon-5.svg"
 import ContainerLayout from '@/layout/ContainerLayout'
 import ScrollOverlappingCards from '../reuseable/scrollOverlapping'
 
-import progressive1 from '@/assets/home/progressive_1.png'
+import progressive1 from '@/assets/home/innovative_classroom.png'
 import progressive2 from '@/assets/home/pod.png'
 import progressive3 from '@/assets/home/innovation_labs.jpg'
 import progressive4 from '@/assets/home/clifton_blocks.jpg'

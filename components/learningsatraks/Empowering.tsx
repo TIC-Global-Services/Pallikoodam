@@ -6,10 +6,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import { Plus } from 'lucide-react'
 
-import empowering1 from '@/assets/learningatraks/empowering-1.jpg'
-import empowering2 from '@/assets/learningatraks/empowering-2.jpg'
-import empowering3 from '@/assets/learningatraks/empowering-3.jpg'
-import empowering4 from '@/assets/learningatraks/empowering-4.png'
+import empowering1 from '@/assets/learningatraks/empowerimg-1.jpg'
+import empowering2 from '@/assets/learningatraks/empowerimg-2.jpg'
+import empowering3 from '@/assets/learningatraks/empowerimg-3.jpg'
+import empowering4 from '@/assets/learningatraks/empowerimg-4.jpg'
 
 if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger, useGSAP)

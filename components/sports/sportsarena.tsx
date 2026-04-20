@@ -4,15 +4,15 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-import tennis from '@/assets/sports/Tennis.jpg';
+import tennis from '@/assets/sports/tennis.png';
 import basketball from '@/assets/sports/Basketball.jpg';
 import football from '@/assets/sports/Football.png';
 import Equestrian from '@/assets/sports/Equestrian.jpg';
 import karata from '@/assets/sports/Karate.jpg';
-import silambam from '@/assets/sports/Silambam.jpg';
+import silambam from '@/assets/sports/silambam.png';
 import pickleball from '@/assets/sports/Pickleball.jpg';
-import yoga from '@/assets/sports/Yoga.jpg';
-import batmitton from '@/assets/sports/Badminton.jpg';
+import yoga from '@/assets/sports/yoga.png';
+import batmitton from '@/assets/sports/batmitton.png';
 
 const SportsArena = () => {
     const data = [

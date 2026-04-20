@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import ourPhilosophyImg from '@/assets/sports/ourphilosophy.jpg'
+import ourPhilosophyImg from '@/assets/sports/philosophy-img.jpg'
 
 const OurPhilosophy = () => {
     return (

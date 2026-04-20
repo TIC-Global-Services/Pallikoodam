@@ -1,7 +1,7 @@
 import React from 'react'
 import ContainerLayout from '@/layout/ContainerLayout'
 import Image from 'next/image'
-import HeroBanner from '@/assets/learningatraks/academicsBanner.jpg'
+import HeroBanner from '@/assets/learningatraks/learning_at_raks_banner.png'
 
 const hero = () => {
     return (
@@ -13,10 +13,11 @@ const hero = () => {
                     alt="Students in circular seating"
                     fill
                     priority
+                    style={{objectPosition:"60% 85%"}}
                     className="object-cover"
                 />
                 {/* Dark overlay for text readability */}
-                <div className="absolute inset-0 bg-black/60" />
+                <div className="absolute inset-0 bg-black/40" />
             </div>
 
             {/* Content */}

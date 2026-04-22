@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import gettingstart from '@/assets/learningatraks/gettingstarted.jpg'
+import gettingstart from '@/assets/learningatraks/getting_startedimg.jpg'
 import ContainerLayout from '@/layout/ContainerLayout'
 import SimpleParallax from 'simple-parallax-js'
 

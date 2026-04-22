@@ -4,9 +4,9 @@ import Image from 'next/image';
 import ContainerLayout from '@/layout/ContainerLayout';
 
 // Importing images from assets
-import img1 from '@/assets/grammar-of-raks/sports_movement.png';
-import img2 from '@/assets/grammar-of-raks/educator_growth.png';
-import img3 from '@/assets/grammar-of-raks/internation_exposure.png';
+import img1 from '@/assets/grammar-of-raks/sports-movements.jpg';
+import img2 from '@/assets/grammar-of-raks/educator-growth.jpg';
+import img3 from '@/assets/grammar-of-raks/internation_growth.png';
 
 const classroomData = [
   {

@@ -1,3 +1,4 @@
+import CambridgeEarly from "@/components/home/cambridgeearly";
 import Campus from "@/components/home/campus";
 import Campustour from "@/components/home/campustour";
 import Curricullam from "@/components/home/curricullam";
@@ -24,6 +25,7 @@ export default function Home() {
         <Differencewecreate />
         <Shapingthefuture />
         <Curricullam />
+        <CambridgeEarly/>
         <ProgressiveLearner />
         <Innovationspace />
         <Wayofteaching />

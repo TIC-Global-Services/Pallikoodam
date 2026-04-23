@@ -50,7 +50,7 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
                 // Adjust scroll multiplier for better control
                 let scrollMultiplier = 150;
                 if (isMobile) {
-                    scrollMultiplier = isSmallHeight ? 90 : 95;
+                    scrollMultiplier = isSmallHeight ? 105 : 105;
                 } else if (isSmallHeightDesktop) {
                     scrollMultiplier = 100;
                 }

@@ -21,7 +21,7 @@ const cards = [
         title: "The Learning Wall",
         italic: "SPACE",
         italicPosition: "after",
-        description: "A dynamic storytelling corridor where learning grows.literally on the walls.\n\nDesign, documentation, and dialogue come together to make thinking visible reminding learners that their process is as powerful as their product.",
+        description: "A dynamic storytelling corridor where learning \ngrows-literally on the walls.\n\nDesign, documentation, and dialogue come together to make thinking visible reminding learners that their process is as powerful as their product.",
         image: innovation1,
         colSpan: "md:col-span-3"
     },

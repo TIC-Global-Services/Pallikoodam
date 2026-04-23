@@ -155,7 +155,7 @@ const RaksValue = () => {
 
                         {/* Section title */}
                         <div className="absolute top-8 left-4 md:top-20 md:left-[2vw] px-4" style={{ zIndex: 3 }}>
-                            <h3 className="text-3xl md:text-5xl lg:text-[3.5rem] text-white font-normal tracking-tight">
+                            <h3 className="text-3xl md:text-5xl lg:text-[2.8rem] text-white font-normal tracking-tight">
                                 <span className="font-ppe font-light italic">{section.title.split(':')[0]}:</span>
                                 {section.title.split(':')[1]}
                             </h3>

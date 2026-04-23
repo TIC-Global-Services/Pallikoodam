@@ -89,7 +89,7 @@ const SportsBasedLearning = () => {
                     <div className="relative w-[95%] lg:w-[85%] max-md:w-full h-[90vh] md:h-full md:py-[8vh] lg:py-[10vh] max-md:h-auto flex flex-col">
 
                         {/* Wiping bounds */}
-                        <div className="wiping-bounds-container shrink relative w-full flex-1 max-md:flex-none max-md:aspect-4/3 min-h-[25vh] rounded max-md:rounded-[16px] shadow-sm overflow-hidden z-20">
+                        <div className="wiping-bounds-container shrink relative w-full flex-1 max-md:flex-none max-md:aspect-4/3 min-h-[35dvh] rounded max-md:rounded-[16px] shadow-sm overflow-hidden z-20">
 
                             {/* Panel 1 */}
                             <div className="absolute inset-0 z-10 bg-gray-50">

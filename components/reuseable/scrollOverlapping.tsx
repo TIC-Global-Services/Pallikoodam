@@ -140,7 +140,7 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
                                         src={card.bgImage}
                                         alt={card.title}
                                         fill
-                                        className="object-cover"
+                                        className="object-cover scale-110"
                                         sizes="(max-width: 768px) 100vw, 521px"
                                         priority={index === 0}
                                     />

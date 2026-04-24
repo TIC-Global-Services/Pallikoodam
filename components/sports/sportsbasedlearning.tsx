@@ -73,7 +73,7 @@ const SportsBasedLearning = () => {
             <div className="max-w-7xl mx-auto w-full h-full flex max-md:flex-col px-4 md:px-8">
 
                 {/* Left Column - Sticky Text */}
-                <div className="w-1/2 max-md:w-full h-full max-md:h-auto flex flex-col pt-[20vh] md:pt-[25vh] max-md:pt-4">
+                <div className="w-1/2 max-md:w-full h-full max-md:h-auto flex flex-col pt-[20vh] md:pt-[25vh] max-md:pt-4 max-md:shrink-0">
                     <div ref={textRef} className="animated-text">
                         <h2 className="text-[clamp(2.5rem,4vw,4.5rem)] text-black leading-[1.05] font-normal">
                             Sports-Based <br />
@@ -83,13 +83,13 @@ const SportsBasedLearning = () => {
                 </div>
 
                 {/* Right Column - Wiping Images */}
-                <div className="w-1/2 max-md:w-full h-full relative flex flex-col justify-center max-md:justify-start items-start pl-4 md:pl-8 max-md:pl-0 max-md:mt-6">
+                <div className="w-1/2 max-md:w-full h-full relative flex flex-col justify-center max-md:justify-start items-start pl-4 md:pl-8 max-md:pl-0 max-md:mt-4 max-md:flex-1 max-md:min-h-0">
 
                     {/* The image stack container */}
-                    <div className="relative w-[95%] lg:w-[85%] max-md:w-full h-[90vh] md:h-full md:py-[8vh] lg:py-[10vh] max-md:h-auto flex flex-col">
+                    <div className="relative w-[95%] lg:w-[95%] max-md:w-full h-[90vh] md:h-full md:py-6 lg:py-8 max-md:h-full flex flex-col max-md:min-h-0">
 
                         {/* Wiping bounds */}
-                        <div className="wiping-bounds-container shrink relative w-full flex-1 max-md:flex-none max-md:aspect-4/3 min-h-[35dvh] rounded max-md:rounded-[16px] shadow-sm overflow-hidden z-20">
+                        <div className="wiping-bounds-container shrink relative w-full flex-1 min-h-[150px] md:min-h-[20vh] max-h-[50vh] rounded max-md:rounded-[16px] shadow-sm overflow-hidden z-20">
 
                             {/* Panel 1 */}
                             <div className="absolute inset-0 z-10 bg-gray-50">
@@ -109,22 +109,22 @@ const SportsBasedLearning = () => {
                         </div>
 
                         {/* Text under Panel 3 (in DOM flow so it never gets cut off) */}
-                        <div className="text-panel-3 shrink-0 relative w-full z-10 pt-6 cursor-default pointer-events-auto bg-transparent">
-                            <h3 className="text-2xl md:text-[2rem] font-medium text-black mb-4">
+                        <div className="text-panel-3 shrink-0 relative w-full z-10 pt-3 md:pt-5 pb-4 md:pb-0 cursor-default pointer-events-auto bg-transparent">
+                            <h3 className="text-xl md:text-[1.75rem] font-medium text-black mb-2 md:mb-3">
                                 <span className="font-ppe italic font-normal">Learning</span> Through Movement
                             </h3>
-                            <div className="text-gray-800 mb-6 text-sm lg:text-[1.1rem] leading-relaxed w-full">
-                                <p className="mb-3">
+                            <div className="text-gray-800 mb-4 text-sm lg:text-[1.05rem] leading-snug md:leading-relaxed w-full">
+                                <p className="mb-2">
                                     At RAKS, sports are intentionally designed as learning experiences, learners engage in structured sporting experiences that cultivate:
                                 </p>
-                                <ul className="list-disc pl-5 leading-normal">
+                                <ul className="list-disc pl-5 leading-snug md:leading-normal space-y-1">
                                     <li>Goal-setting and self-reflection</li>
                                     <li>Deepen their understanding of rules, fairness, and respect</li>
                                     <li>Strengthen their ability to handle both success and failure with grace</li>
                                     <li>Build meaningful collaboration across team and individual sports.</li>
                                 </ul>
                             </div>
-                            <button className="bg-[#000086] text-white px-8 py-3 rounded text-sm font-medium hover:bg-blue-900 transition-colors block w-max">
+                            <button className="bg-[#000086] text-white px-6 py-2.5 md:px-8 md:py-3 rounded text-sm font-medium hover:bg-blue-900 transition-colors block w-max">
                                 Sports Learning
                             </button>
                         </div>

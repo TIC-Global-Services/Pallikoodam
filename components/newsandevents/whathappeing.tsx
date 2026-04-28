@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 import ContainerLayout from '@/layout/ContainerLayout'
-import comingup1 from '@/assets/news-and-events/comingup-1.jpg'
-import comingup2 from '@/assets/news-and-events/comingup-2.jpg'
-import comingup3 from '@/assets/news-and-events/comingup-3.jpg'
+import comingup1 from '@/assets/news-and-events/whats_comingup_1.png'
+import comingup2 from '@/assets/news-and-events/whats_comingup_2.png'
+import comingup3 from '@/assets/news-and-events/whats_comingup_3.png'
 
 const WhatHappeing = () => {
     const highlights = [

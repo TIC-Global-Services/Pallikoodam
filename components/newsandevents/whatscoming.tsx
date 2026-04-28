@@ -1,25 +1,27 @@
 import React from 'react'
 import Image from 'next/image'
-import whatshappeing from '@/assets/news-and-events/whatshappeing-1.jpg'
+import whatshappein1 from '@/assets/news-and-events/recent_highlights-1.png'
+import whatshappein2 from '@/assets/news-and-events/recent_highlights-2.png'
+import whatshappein3 from '@/assets/news-and-events/recent_highlights-3.png'
 import ContainerLayout from '@/layout/ContainerLayout';
 
 const whatscoming = () => {
     const highlights = [
         {
             id: 1,
-            image: whatshappeing,
+            image: whatshappein1,
             text: "Santa's Social, A joyful celebration filled with warmth, sharing, and festive cheer across age groups.",
             imageTop: true
         },
         {
             id: 2,
-            image: whatshappeing,
+            image: whatshappein2,
             text: "Young Speaker Series, RAKS Resonance, Learners finding their voice, sharing ideas, stories, and perspectives with confidence and purpose.",
             imageTop: false
         },
         {
             id: 3,
-            image: whatshappeing,
+            image: whatshappein3,
             text: "Year-End Programme, A celebration of learning, creativity, collaboration, and growth, marking milestones and memories as a community.",
             imageTop: true
         }

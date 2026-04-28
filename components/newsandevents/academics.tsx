@@ -2,8 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 import ContainerLayout from '@/layout/ContainerLayout'
 import academics1 from '@/assets/learningatraks/environment-1.jpg'
-import academics2 from '@/assets/learningatraks/environment-2.jpg'
-import academics3 from '@/assets/home/innovationnew-5.jpg'
+import academics2 from '@/assets/news-and-events/curriculam_overview.png'
+import academics3 from '@/assets/news-and-events/assesment_guidlines.png'
 
 const academics = () => {
 

@@ -19,7 +19,7 @@ const page = () => {
       <WhatHappening />
       <Academics />
       <Media />
-      <Downloads />
+      {/* <Downloads /> */}
     </div>
   )
 }

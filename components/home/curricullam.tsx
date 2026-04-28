@@ -30,9 +30,10 @@ const curricullam = () => {
             start: "top top",
             end: "+=150%",
             pin: true,
-            scrub: 1,
-            anticipatePin: 1,
+            scrub: 0.6,
+            anticipatePin: 0.6,
             invalidateOnRefresh: true,
+            fastScrollEnd:true,
             onUpdate: (self) => {
               if (self.progress > 0.15) {
                 triggerAnimation2();

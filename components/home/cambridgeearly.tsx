@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperType } from 'swiper'
 import { Navigation } from 'swiper/modules'
@@ -14,6 +14,7 @@ import educators from '@/assets/home/Educators.jpg'
 import parentpartnership from '@/assets/home/Parent_Partnership.png'
 import transition from '@/assets/home/Transition.jpg'
 import campuses from '@/assets/home/Campuses.png'
+import Image from 'next/image'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
@@ -25,57 +26,57 @@ const CambridgeEarly = () => {
         {
             title: "Philosophy",
             description: "Every child is capable, curious, and full of potential. At RAKS, children think, explore, question, express, and connect with the world around them.",
-            img:Philosophy
+            img: Philosophy
         },
         {
             title: "Framework",
             description: "Rooted in the Cambridge Early Years framework, we focus on communication, physical development, personal and social growth, emotional wellbeing, and early thinking, building strong foundations for lifelong learning.",
-            img:framework
+            img: framework
         },
         {
             title: "How Learning Happens",
             description: "Learning is inquiry-led and responsive. Through play and project-based experiences, children explore their ideas. Documentation makes learning visible, and the environment acts as a third teacher.",
-            img:howwelearn
+            img: howwelearn
         },
         {
             title: "Learning Spaces",
             description: "Thoughtfully designed spaces inspire exploration, atelier for expression, loose parts for imagination, sensory and water play for discovery, and outdoor environments that connect children with nature.",
-            img:learning
+            img: learning
         },
         {
             title: "Programmes",
-            description: "Art explorations, storytelling, and child-led projects nurture creativity and communication. Strong parent engagement deepens the home–school connection.",    
-            img:programmes
+            description: "Art explorations, storytelling, and child-led projects nurture creativity and communication. Strong parent engagement deepens the home–school connection.",
+            img: programmes
         },
         {
             title: "A Day in Early Years",
             description: "A balanced rhythm of exploration, interaction, outdoor play, and reflection, honouring each child’s pace.",
-            img:dayinclass
+            img: dayinclass
         },
         {
             title: "Assessment",
             description: "Ongoing, observation-based assessment through portfolios and documentation. No formal testing.",
-            img:assessment
+            img: assessment
         },
         {
             title: "Educators",
             description: "Facilitators and co-learners who guide, observe, and nurture each child in a safe, inspiring environment.",
-            img:educators
+            img: educators
         },
         {
             title: "Parent Partnership",
             description: "A strong, collaborative partnership with parents supports every child's journey.",
-            img:parentpartnership
+            img: parentpartnership
         },
         {
             title: "Transition",
             description: "A seamless bridge into Primary Years, building confidence, independence, and readiness for what lies ahead.",
-            img:transition
+            img: transition
         },
         {
             title: "Campuses",
             description: "Available across two campuses, RAKS Codissia Campus and City Campus VOC Campus.",
-            img:campuses
+            img: campuses
         }
     ];
 
@@ -87,8 +88,26 @@ const CambridgeEarly = () => {
         }
     }, []);
 
+    const [startAnimation, setStartAnimation] = useState(false)
+    const sectionRef = useRef(null)
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setStartAnimation(true)
+                }
+            },
+            { threshold: 0.2 }
+        )
+
+        if (sectionRef.current) observer.observe(sectionRef.current)
+
+        return () => observer.disconnect()
+    }, [])
+
     return (
-        <div className='bg-white py-12 md:py-10 min-h-screen overflow-hidden relative'>
+        <div ref={sectionRef} className='bg-white py-12 md:py-10 min-h-screen overflow-hidden relative'>
             <style dangerouslySetInnerHTML={{
                 __html: `
         @keyframes marquee {
@@ -127,9 +146,13 @@ const CambridgeEarly = () => {
                                 key={index}
                                 className="w-[300px] lg:w-[20vw] min-h-[50dvh] bg-[#EAEAEA] rounded-2xl p-6 md:p-8 flex flex-col flex-shrink-0 relative overflow-hidden group"
                             >
-                                <div 
-                                    className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                                    style={{ backgroundImage: `url(${item.img?.src || item.img})` }}
+                                <Image
+                                    width={300}
+                                    height={200}
+                                    src={item.img.src || item.img}
+                                    alt={item.title}
+                                    loading="lazy"
+                                    className="absolute inset-0 w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 bg-black/40 z-0" />
                                 <div className="relative z-10 flex flex-col justify-end h-full">
@@ -155,7 +178,7 @@ const CambridgeEarly = () => {
                         {data.map((item, index) => (
                             <SwiperSlide key={index}>
                                 <div className="w-full min-h-[55dvh] bg-[#EAEAEA] rounded-2xl p-6 flex flex-col h-full relative overflow-hidden group">
-                                    <div 
+                                    <div
                                         className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                                         style={{ backgroundImage: `url(${item.img?.src || item.img})` }}
                                     />

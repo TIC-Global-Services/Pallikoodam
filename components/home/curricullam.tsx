@@ -28,12 +28,12 @@ const curricullam = () => {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top top",
-            end: "+=150%",
+            end: "+=200%",
             pin: true,
             scrub: 0.6,
             anticipatePin: 0.6,
             invalidateOnRefresh: true,
-            fastScrollEnd:true,
+            fastScrollEnd: true,
             onUpdate: (self) => {
               if (self.progress > 0.15) {
                 triggerAnimation2();
@@ -42,21 +42,17 @@ const curricullam = () => {
           },
         });
 
-        gsap.set(card1Ref.current, { zIndex: 2 });
-        gsap.set(card2Ref.current, { zIndex: 1, opacity: 1 });
+        gsap.set(card1Ref.current, { zIndex: 10 });
+        gsap.set(card2Ref.current, { zIndex: 5 });
 
         tl.to(text1Ref.current, {
-          yPercent: 100,
-          ease: "none",
-        }).to(
-          img1Ref.current,
-          {
-            yPercent: -100,
-            ease: "none",
-          },
-          "<"
-        );
-        ScrollTrigger.refresh();
+          yPercent: -100,
+          ease: "power2.inOut",
+        })
+          .to(img1Ref.current, {
+            yPercent: 100,
+            ease: "power2.inOut",
+          }, 0);
       }, sectionRef);
     };
 
@@ -119,7 +115,7 @@ const curricullam = () => {
                     <p className="md:leading-[26px] tracking-tight text-base md:text-[clamp(16px,10vw,1.125rem)]">
                       A pathway that nurtures inquiry, reflection, and
                       independent thinking.
-                      <br /><br/> Its global framework pairs seamlessly with our
+                      <br /><br /> Its global framework pairs seamlessly with our
                       active, project-based learning, research-led approach
                       encouraging learners to question, explore, create, and
                       connect ideas with real-world meaning.
@@ -177,7 +173,7 @@ const curricullam = () => {
                       alt="CBSE curriculum students"
                       width={800}
                       height={500}
-                      style={{objectPosition:"80% 30%"}}
+                      style={{ objectPosition: "80% 30%" }}
                       className="object-fit w-full h-auto"
                     />
                   </div>
@@ -188,7 +184,7 @@ const curricullam = () => {
                     </p>
                     <p className="leading-[26px] tracking-tight text-sm md:text-lg">
                       A strong, structured academic pathway that builds clarity,
-                      discipline, and conceptual depth.<br/>
+                      discipline, and conceptual depth.<br />
                       <br /> When blended with our experiential, hands-on
                       methodology, CBSE becomes dynamic helping learners
                       understand, apply, question, and express learning with

@@ -1,7 +1,7 @@
 import React from 'react'
 import ContainerLayout from '@/layout/ContainerLayout'
 import Image from 'next/image'
-import HeroBanner from '@/assets/news-and-events/news&events-hero.jpg'
+import HeroBanner from '@/assets/learningatraks/developement.jpg'
 
 const hero = () => {
     return (

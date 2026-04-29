@@ -5,10 +5,10 @@ import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-import cambridge from '@/assets/admission/Cambridge-early-years.png'
-import cambridgeprimary from '@/assets/admission/cambridge-primary.jpg'
-import igcse from '@/assets/admission/igcse.jpg'
-import alevels from '@/assets/admission/asalevel.jpg'
+import cambridge from '@/assets/admission/early_years.jpg'
+import cambridgeprimary from '@/assets/admission/primary.jpg'
+import igcse from '@/assets/admission/middle_school.jpg'
+import alevels from '@/assets/admission/upper_secondary.jpg'
 
 const data = [
     {

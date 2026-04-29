@@ -1,6 +1,6 @@
 import React from 'react'
 import ContainerLayout from '@/layout/ContainerLayout'
-import admissonimage from '@/assets/admission/AdmissionsAt.jpg'
+import admissonimage from '@/assets/admission/admisson_at_raks.jpg'
 import Image from 'next/image'
 
 const AdmissionAt = () => {

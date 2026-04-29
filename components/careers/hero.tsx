@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import herobanner from '@/assets/admission/enquiry.jpg'
+import herobanner from '@/assets/carrer/carrer_banner.jpg'
 import Link from 'next/link'
 
 const Hero = () => {

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import workwithusimg from '@/assets/carrer/workwithus.jpg'
+import workwithusimg from '@/assets/carrer/why_work_with_us.jpg'
 import React from 'react'
 
 const workwithus = () => {

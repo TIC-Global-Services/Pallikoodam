@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import media1 from '@/assets/news-and-events/media_highlights-1.png'
+import media1 from '@/assets/news-and-events/media-highlights-1.jpg'
 import media2 from '@/assets/news-and-events/media_highlights-2.png'
 import media3 from '@/assets/news-and-events/media_highlights-3.jpg'
 import ContainerLayout from '@/layout/ContainerLayout'

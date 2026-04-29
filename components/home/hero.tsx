@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import LetterRevealWrapper from "@/components/reuseable/texteffect/LetterRevealWrapper";
 import { useLetterReveal } from "../reuseable/texteffect/useLetterReveal";
 import { useLoading } from "@/context/LoadingContext";
@@ -16,13 +16,25 @@ const Hero = () => {
   // Encapsulated GSAP Animations
   useHeroAnimation(spacerRef, containerRef, videoRef, textRef);
 
+  const [isMobile, setIsMobile] = React.useState(false);
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // or 640 based on your breakpoint
+    };
+
+    checkMobile(); // run once
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, [])
+
   return (
     <div ref={spacerRef} className="relative h-[250vh]">
       <section className="fixed top-0 left-0 w-full h-screen overflow-hidden z-0" ref={containerRef}>
         <div className="flex items-center justify-center h-full w-full">
           <video
             ref={videoRef}
-            src="/raks_banner_video.MP4"
+            src={isMobile ? "/hero_banner_mobile.mp4" : "/raks_banner_video.MP4"}
             autoPlay
             muted={!isGlobalAudioEnabled}
             loop
@@ -31,6 +43,7 @@ const Hero = () => {
             onCanPlayThrough={() => setHeroVideoLoaded(true)}
             className="w-full h-full object-cover"
           />
+
 
           <div
             ref={textRef}

@@ -1,7 +1,7 @@
 import React from 'react'
 import ContainerLayout from '@/layout/ContainerLayout'
 import Image from 'next/image'
-import HeroBanner from '@/assets/admission/Admission_hero.jpg'
+import HeroBanner from '@/assets/admission/welcom.png'
 
 const hero = () => {
     return (

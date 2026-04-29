@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import whatshappein1 from '@/assets/news-and-events/recent_highlights-1.png'
 import whatshappein2 from '@/assets/news-and-events/recent_highlights-2.png'
-import whatshappein3 from '@/assets/news-and-events/recent_highlights-3.png'
+import whatshappein3 from '@/assets/news-and-events/recent_highlighths-3.png'
 import ContainerLayout from '@/layout/ContainerLayout';
 
 const whatscoming = () => {

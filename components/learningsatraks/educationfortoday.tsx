@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import education from '@/assets/learningatraks/board_we_offer.png'
+import education from '@/assets/learningatraks/board_we_offer.jpg'
 import { useLetterReveal } from '../reuseable/texteffect/useLetterReveal'
 
 const EducationForToday = () => {

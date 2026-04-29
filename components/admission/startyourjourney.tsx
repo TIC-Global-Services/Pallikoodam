@@ -5,10 +5,10 @@ import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-import enquiryImg from '@/assets/admission/enquiry.jpg'
-import interactImg from '@/assets/admission/intract.jpg'
-import assessImg from '@/assets/admission/asses.jpg'
-import welcomeImg from '@/assets/admission/welcome.jpg'
+import enquiryImg from '@/assets/admission/enquire.jpg'
+import interactImg from '@/assets/admission/intract_img.jpg'
+import assessImg from '@/assets/admission/asses_img.jpg'
+import welcomeImg from '@/assets/admission/welcom.png'
 
 const defaultDesc1_1 = "We understand that choosing the right school is an important decision for every family. Our enquiry process is designed to be simple, transparent, and supportive, ensuring that all your questions are answered with clarity."
 const defaultDesc1_2 = "From your first interaction with us, our team is here to guide you through the next steps, providing the information and assistance you need with care and responsiveness."

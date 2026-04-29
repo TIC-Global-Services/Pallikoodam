@@ -25,52 +25,52 @@ const CambridgeEarly = () => {
     const data = [
         {
             title: "Philosophy",
-            description: "Every child is capable, curious, and full of potential. At RAKS, children think, explore, question, express, and connect with the world around them.",
+            description: " Every child is capable, curious, and driven to explore, learning begins with wonder.",
             img: Philosophy
         },
         {
             title: "Framework",
-            description: "Rooted in the Cambridge Early Years framework, we focus on communication, physical development, personal and social growth, emotional wellbeing, and early thinking, building strong foundations for lifelong learning.",
+            description: "A Cambridge-led foundation nurturing communication, wellbeing, and early thinking for lifelong growth.",
             img: framework
         },
         {
             title: "How Learning Happens",
-            description: "Learning is inquiry-led and responsive. Through play and project-based experiences, children explore their ideas. Documentation makes learning visible, and the environment acts as a third teacher.",
+            description: "Inquiry, play, and projects shape learning, where questions lead and thinking becomes visible.",
             img: howwelearn
         },
         {
             title: "Learning Spaces",
-            description: "Thoughtfully designed spaces inspire exploration, atelier for expression, loose parts for imagination, sensory and water play for discovery, and outdoor environments that connect children with nature.",
+            description: "Inquiry, play, and projects shape learning, where questions lead and thinking becomes visible.",
             img: learning
         },
         {
             title: "Programmes",
-            description: "Art explorations, storytelling, and child-led projects nurture creativity and communication. Strong parent engagement deepens the home–school connection.",
+            description: "Art, stories, and child-led projects that build voice, creativity, and connection.",
             img: programmes
         },
         {
             title: "A Day in Early Years",
-            description: "A balanced rhythm of exploration, interaction, outdoor play, and reflection, honouring each child’s pace.",
+            description: " A balanced rhythm of exploration, play, and reflection—honouring every child’s pace.",
             img: dayinclass
         },
         {
             title: "Assessment",
-            description: "Ongoing, observation-based assessment through portfolios and documentation. No formal testing.",
+            description: "Observation-led insights that capture growth-no tests, only meaningful progress.",
             img: assessment
         },
         {
             title: "Educators",
-            description: "Facilitators and co-learners who guide, observe, and nurture each child in a safe, inspiring environment.",
+            description: " Facilitators and co-learners guiding each child with care, intent, and inspiration.",
             img: educators
         },
         {
             title: "Parent Partnership",
-            description: "A strong, collaborative partnership with parents supports every child's journey.",
+            description: "A strong home–school connection that nurtures every child together.",
             img: parentpartnership
         },
         {
             title: "Transition",
-            description: "A seamless bridge into Primary Years, building confidence, independence, and readiness for what lies ahead.",
+            description: "A seamless pathway into Primary Years—building confidence and independence.",
             img: transition
         },
         {
@@ -157,7 +157,7 @@ const CambridgeEarly = () => {
                                 <div className="absolute inset-0 bg-black/40 z-0" />
                                 <div className="relative z-10 flex flex-col justify-end h-full">
                                     <h3 className="font-ppe italic font-light text-[28px] mb-4 text-white drop-shadow-md">{item.title}</h3>
-                                    <p className="text-sm md:text-base leading-snug text-white font-medium drop-shadow-md">
+                                    <p className="text-sm md:text-base leading-snug text-white font-normal drop-shadow-md">
                                         {item.description}
                                     </p>
                                 </div>

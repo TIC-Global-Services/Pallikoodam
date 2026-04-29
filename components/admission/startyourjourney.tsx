@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import enquiryImg from '@/assets/admission/enquire.jpg'
 import interactImg from '@/assets/admission/intract_img.jpg'
 import assessImg from '@/assets/admission/asses_img.jpg'
-import welcomeImg from '@/assets/admission/welcom.png'
+import welcomeImg from '@/assets/admission/welcome_img.jpg'
 
 const defaultDesc1_1 = "We understand that choosing the right school is an important decision for every family. Our enquiry process is designed to be simple, transparent, and supportive, ensuring that all your questions are answered with clarity."
 const defaultDesc1_2 = "From your first interaction with us, our team is here to guide you through the next steps, providing the information and assistance you need with care and responsiveness."
@@ -141,7 +141,7 @@ const StartYourJourney = () => {
                                     <h3 className="text-[2.5rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3.5rem] font-ppe font-light italic leading-none text-[#111] mb-6 xl:mb-8">
                                         {stage.title}
                                     </h3>
-                                    <p className="text-[#333] text-[1rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1.5rem] leading-relaxed xl:leading-snug max-w-lg">
+                                    <p className="text-[#333] text-[1rem] md:text-[0.85rem] lg:text-[0.95rem] xl:text-[1.5rem] leading-snug xl:leading-snug max-w-lg">
                                         {stage.desc1_1}
                                     </p>
                                     <div className="flex flex-col justify-center gap-4 xl:gap-6 md:mt-auto">

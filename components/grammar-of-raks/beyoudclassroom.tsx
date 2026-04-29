@@ -76,7 +76,7 @@ const BeyondTheClassroom = () => {
       <ContainerLayout>
         <div className="text-center mb-10 md:mb-8">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight">
-            <span className="font-ppe font-light italic mr-1 md:mr-0">Beyond </span>The Classroom
+            <span className="font-ppe font-light italic mr-2 md:mr-0">Beyond </span>The Classroom
           </h2>
         </div>
 
@@ -109,7 +109,7 @@ const BeyondTheClassroom = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-sm text-gray-800 leading-relaxed font-medium">
+                <p className="text-sm text-gray-800 leading-[1.3] font-medium">
                   {item.description}
                 </p>
               </div>

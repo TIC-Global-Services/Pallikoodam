@@ -6,7 +6,7 @@ import ContainerLayout from '@/layout/ContainerLayout'
 
 const StoryAndMission = () => {
   return (
-    <section className='w-full bg-white py-10 md:py-20'>
+    <section className='w-full bg-white py-10 md:py-10'>
       <ContainerLayout>
         {/* Founder Section */}
         <div className='flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-[10vh] md:mb-[15vh]'>

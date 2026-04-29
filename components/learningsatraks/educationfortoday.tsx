@@ -13,24 +13,24 @@ const EducationForToday = () => {
                 <div className="flex flex-col lg:flex-col">
 
                     {/* Title Area */}
-                    <div ref={titleRef1} className="w-full flex-shrink-0 translate-y-10 md:translate-x-10">
-                        <h2 className="text-[#2C313E] text-[36px] md:text-[44px] lg:text-[48px] xl:text-[56px] leading-[1.1] font-medium tracking-tight">
+                    <div ref={titleRef1} className="w-full flex-shrink-0 md:translate-y-10 md:translate-x-10">
+                        <h2 className="text-[#2C313E] text-[32px] md:text-[44px] lg:text-[48px] xl:text-[56px] leading-[1.1] font-medium tracking-tight">
                             Boards We <br /><span className='font-ppe font-normal italic'>Offer</span>
                         </h2>
                     </div>
 
                     {/* Right Area (Image + Text) */}
-                    <div className="flex gap-5 justify-end items-end">
+                    <div className="flex md:flex-row flex-col gap-5 justify-end items-end">
 
                         {/* Image<div></    div> */}
                         <div></div>
-                        <div className="w-[50vw] max-h-[50vh] aspect-[4/3] relative">
+                        <div className="w-full md:w-[50vw] md:max-h-[50vh] aspect-[4/3] relative">
                             <Image
                                 src={education}
                                 alt="Students working on a project"
                                 width={800}
                                 height={600}
-                                style={{ objectPosition: '30% 50%' }}
+                                style={{ objectPosition: '49% 40%' }}
                                 className="w-full h-full rounded-[12px] object-cover object-center"
                             />
                         </div>
@@ -46,7 +46,6 @@ const EducationForToday = () => {
                             </p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>

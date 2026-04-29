@@ -173,10 +173,10 @@ const SportsArena = () => {
     };
 
     return (
-        <section ref={containerRef} className="w-full md:py-24 bg-white text-black relative z-20">
-            <div className="px-4 md:px-8 text-center mb-16 md:mb-32">
+        <section ref={containerRef} className="w-full mt-10 md:py-24 bg-white text-black relative z-20">
+            <div className="px-4 md:px-8 text-center mb-0 md:mb-32">
                 <h2 className="text-2xl md:text-[clamp(3.4rem,3vw,4rem)] font-medium mb-2">
-                    International-Standard <span className="font-ppe italic font-normal">Sports Arenas</span>
+                    International-Standard <br className='md:hidden'/><span className="font-ppe italic font-normal">Sports Arenas</span>
                 </h2>
                 <p className="text-black text-sm md:text-[2rem] font-medium">
                     World-Class Facilities for Holistic Growth

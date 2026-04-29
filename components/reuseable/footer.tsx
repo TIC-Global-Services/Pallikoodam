@@ -10,11 +10,11 @@ const Footer = () => {
     const navLinks = [
         { label: 'Home', href: '/' },
         { label: 'Grammar of RAKS', href: '/grammar-of-raks' },
+        { label: 'Admissions', href: '/admissions' },
         { label: 'Learning @ RAKS', href: '/learning-at-raks' },
         { label: 'Hidden curriculum @ RAKS', href: '/hiddencurricular-at-raks' },
-        { label: 'News & Events', href: '/news-and-events' },
-        { label: 'Admissions', href: '/admissions' },
         { label: 'Careers', href: '/careers' },
+        { label: 'News & Events', href: '/news-and-events' },
         { label: 'Contact us', href: '/contact-us' },
     ]
     return (

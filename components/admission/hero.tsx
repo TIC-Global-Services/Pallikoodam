@@ -1,7 +1,7 @@
 import React from 'react'
 import ContainerLayout from '@/layout/ContainerLayout'
 import Image from 'next/image'
-import HeroBanner from '@/assets/admission/welcom.png'
+import HeroBanner from '@/assets/admission/admission_banner.png'
 
 const hero = () => {
     return (
@@ -26,7 +26,7 @@ const hero = () => {
                     <br />
                     journey with us
                 </h1>
-                <p className='xl:text-3xl lg:text-2xl leading-[1.1] md:text-xl text-lg text-white max-w-6xl mx-auto mt-5'>
+                <p className='xl:text-3xl lg:text-2xl leading-[1.2] md:text-xl text-lg text-white max-w-6xl mx-auto mt-5'>
                     At RAKS Pallikkoodam, every child’s journey is guided by curiosity,<br/> confidence, and care. Learning here is not merely taught, it is lived,<br/> experienced, and cherished. From the earliest years onward, we build strong foundations for joyful discovery, meaningful engagement, and lifelong growth.
                 </p>
             </div>

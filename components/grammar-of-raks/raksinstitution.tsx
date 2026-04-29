@@ -15,7 +15,7 @@ const institutionData = [
     {
         number: "01",
         title: "RAKS Early Years",
-        description: "Reggio Emilia–inspired early learning aligned with the Cambridge Early Years Programme",
+        description: "Reggio Emilia inspired early learning aligned with the Cambridge Early Years Programme",
         image: image1,
         href:"/"
     },
@@ -110,13 +110,12 @@ const RaksInstitution = () => {
             <ContainerLayout>
                 {/* Section heading */}
                 <div className="mb-10 md:mb-24 max-w-6xl mx-auto">
-                    <p className="text-lg md:text-2xl lg:text-[2rem] font-regular text-center text-black leading-[1.4]">
+                    <p className="text-lg md:text-2xl lg:text-[2rem] font-regular text-center text-black leading-[1.2]">
                         <span className="font-ppe font-light italic">RAKS Institutions</span>{' '}
                         brings together multiple learning pathways under a<br className='hidden md:block'/> shared commitment to purposeful education and human flourishing.
                     </p>
                 </div>
 
-                
                 <div
                     className="md:hidden relative"
                     onTouchStart={handleTouchStart}

@@ -112,8 +112,8 @@ const RaksValue = () => {
     return (
         <>
             {/* Title section — normal flow, scrolls away before panels */}
-            <section className="w-full bg-white py-10 md:py-[20]">
-                <ContainerLayout>
+            <section className="w-full bg-white py-10 md:py-10 px-[5%]">
+                {/* <ContainerLayout> */}
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal mb-6 tracking-tight">
                         <span className="font-ppe font-light italic text-[#000086]">RAKS</span> Values
                     </h2>
@@ -121,7 +121,7 @@ const RaksValue = () => {
                         We organise our philosophy around the 3 P's, 3 R's, and 4 E's, frameworks that keep
                         learning future-ready, meaningful, and active.
                     </p>
-                </ContainerLayout>
+                {/* </ContainerLayout> */}
             </section>
 
             {/* Full-screen scroll panels */}
@@ -154,7 +154,7 @@ const RaksValue = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 pointer-events-none" style={{ zIndex: 2 }} />
 
                         {/* Section title */}
-                        <div className="absolute top-8 left-4 md:top-20 md:left-[2vw] px-4" style={{ zIndex: 3 }}>
+                        <div className="absolute top-8 left-4 md:top-10 md:left-[2vw] px-4" style={{ zIndex: 3 }}>
                             <h3 className="text-3xl md:text-5xl lg:text-[2.8rem] text-white font-normal tracking-tight">
                                 <span className="font-ppe font-light italic">{section.title.split(':')[0]}:</span>
                                 {section.title.split(':')[1]}

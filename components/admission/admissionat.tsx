@@ -20,6 +20,9 @@ const AdmissionAt = () => {
                                 <span className="font-ppe italic font-light">Pallikkoodam</span>
                             </span>
                         </h2>
+                         <h3 className="text-[1.5rem] md:text-[3rem] lg:text-[4rem] font-medium text-left mt-3 mb-3 tracking-[-0.01em] md:text-left leading-[1.1] text-[#111] md:hidden">
+                            Start Your <span className="font-ppe italic font-light">Journey</span>
+                        </h3>
                     </div>
 
                     {/* Mobile Image */}
@@ -39,7 +42,7 @@ const AdmissionAt = () => {
                     </div>
 
                     {/* Start Your Journey */}
-                    <div className="order-4 mt-auto flex justify-end -translate-y-10 md:justify-start md:translate-y-20">
+                    <div className="order-4 mt-auto md:flex justify-end -translate-y-10 md:justify-start md:translate-y-20 hidden">
                         <h3 className="text-[1.5rem] md:text-[3rem] lg:text-[4rem] font-medium text-right tracking-[-0.01em] md:text-left leading-[1.1] text-[#111]">
                             Start<br />
                             Your <span className="font-ppe italic font-light">Journey</span>

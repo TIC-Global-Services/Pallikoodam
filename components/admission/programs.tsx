@@ -94,11 +94,11 @@ const Programs = () => {
                 <ContainerLayout>
 
                     {/* Header text */}
-                    <div className="max-w-7xl mx-auto mb-24 md:mb-32">
+                    <div className="max-w-7xl mx-auto mb-10 md:mb-32">
                         <h2 className="text-[2rem] md:text-[3rem] lg:text-[4rem] font-medium leading-[1] mb-6 tracking-tight">
                             <span className="font-ppe italic font-light">Learning</span> Pathways at RAKS Pallikkoodam
                         </h2>
-                        <p className="text-[1.05rem] md:text-[2rem] text-center leading-[1.2] tracking-[-0.02em] opacity-90">
+                        <p className="text-[1.05rem] md:text-[2rem] text-left md:text-center leading-[1.2] tracking-[-0.02em] opacity-90">
                             At RaK’s Pallikkoodam, learning pathways are purposeful, future-ready, and globally recognised, nurturing confidence, creativity, and character at <br className="hidden md:block" /> every stage.
                         </p>
                     </div>

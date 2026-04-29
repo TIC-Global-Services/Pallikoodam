@@ -38,7 +38,7 @@ const Map = () => {
                                 className="object-contain md:w-[90px] md:h-[90px]"
                             />
                         </div>
-                        <p className="text-[1.25rem] md:text-[1.5rem] lg:text-[2rem] text-gray-500 font-medium leading-[1.4] text-center md:text-left">
+                        <p className="text-[1.25rem] md:text-[1.5rem] lg:text-[2rem] text-gray-500 font-medium leading-[1.2] md:leading-[1.4] text-center md:text-left">
                             We encourage parents to visit our campus to better understand our environment, teachers, and classrooms.
                         </p>
                     </div>

@@ -1,7 +1,8 @@
 "use client";
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 import Image, { StaticImageData } from 'next/image';
 import { useLetterReveal } from './texteffect/useLetterReveal';
 import BlurText from './texteffect/BlurText';
@@ -30,82 +31,68 @@ const ScrollOverlappingCards: React.FC<ScrollOverlappingCardsProps> = ({
     const sectionRef = useRef<HTMLElement>(null);
     const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>();
 
-    useEffect(() => {
-        let ctx: gsap.Context;
+    useGSAP(() => {
+        const isMobile = window.innerWidth < 768;
+        const isSmallHeight = window.innerHeight < 700;
+        const isSmallHeightDesktop = window.innerWidth >= 768 && isSmallHeight;
 
-        const initAnimation = () => {
-            ctx = gsap.context(() => {
-                const isMobile = window.innerWidth < 768;
-                const isSmallHeight = window.innerHeight < 700;
-                const isSmallHeightDesktop = window.innerWidth >= 768 && isSmallHeight;
+        // Adjust offset based on screen size
+        let offset = 5;
+        if (isSmallHeight && isMobile) {
+            offset = 1;
+        } else if (isSmallHeightDesktop) {
+            offset = 2;
+        }
 
-                // Adjust offset based on screen size
-                let offset = 5;
-                if (isSmallHeight && isMobile) {
-                    offset = 1;
-                } else if (isSmallHeightDesktop) {
-                    offset = 2;
-                }
+        // Adjust scroll multiplier for better control
+        let scrollMultiplier = 150;
+        if (isMobile) {
+            scrollMultiplier = isSmallHeight ? 105 : 105;
+        } else if (isSmallHeightDesktop) {
+            scrollMultiplier = 100;
+        }
 
-                // Adjust scroll multiplier for better control
-                let scrollMultiplier = 150;
-                if (isMobile) {
-                    scrollMultiplier = isSmallHeight ? 105 : 105;
-                } else if (isSmallHeightDesktop) {
-                    scrollMultiplier = 100;
-                }
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionRef.current,
+                refreshPriority:2,
+                start: isSmallHeight ? 'top 10%' : 'top 15%',
+                end: `+=${scrollMultiplier}%`,
+                pin: true,
+                scrub: isMobile ? 0.2 : 1,
+                // anticipatePin: 1,
+                invalidateOnRefresh: true, // Re-calc on resize
+            },
+        });
 
-                const tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: sectionRef.current,
-                        start: isSmallHeight ? 'top 10%' : 'top 15%',
-                        end: `+=${scrollMultiplier}%`,
-                        pin: true,
-                        scrub: isMobile ? 0.2 : 1,
-                        anticipatePin: 1,
-                        invalidateOnRefresh: true, // Re-calc on resize
-                    },
-                });
+        // Set initial state for first card immediately
+        gsap.set(`.card-0`, { yPercent: 0, xPercent: 0, rotation: 0 });
 
-                // Set initial state for first card immediately
-                gsap.set(`.card-0`, { yPercent: 0, xPercent: 0, rotation: 0 });
+        // Set other cards below the view initially
+        cards.forEach((_, index) => {
+            if (index > 0) {
+                gsap.set(`.card-${index}`, { yPercent: 250, xPercent: 10, rotation: -20 });
+            }
+        });
 
-                // Set other cards below the view initially
-                cards.forEach((_, index) => {
-                    if (index > 0) {
-                        gsap.set(`.card-${index}`, { yPercent: 250, xPercent: 10, rotation: -20 });
-                    }
-                });
+        cards.forEach((_, index) => {
+            if (index === 0) return;
 
-                cards.forEach((_, index) => {
-                    if (index === 0) return;
+            tl.to(
+                `.card-${index}`,
+                { yPercent: index * offset, xPercent: 0, rotation: 0, duration: 0.4, ease: "power2.out" }
+            );
+        });
 
-                    tl.to(
-                        `.card-${index}`,
-                        { yPercent: index * offset, xPercent: 0, rotation: 0, duration: 0.4, ease: "power2.out" }
-                    );
-                });
-                
-                // Final refresh after setup
-                ScrollTrigger.refresh();
-            }, sectionRef);
-        };
-
-        // Defer calculation slightly to ensure fonts/images are rendered
-        const timer = setTimeout(initAnimation, 100);
-
-        // Add robust resize handler
-        const handleResize = () => ScrollTrigger.refresh();
-        window.addEventListener('resize', handleResize);
-        window.addEventListener('orientationchange', handleResize);
+        // Ensure layout is fully calculated after fonts/images load
+        const handleRefresh = () => ScrollTrigger.refresh();
+        document.fonts?.ready.then(handleRefresh);
+        window.addEventListener("load", handleRefresh);
 
         return () => {
-            clearTimeout(timer);
-            window.removeEventListener('resize', handleResize);
-            window.removeEventListener('orientationchange', handleResize);
-            if (ctx) ctx.revert();
+            window.removeEventListener("load", handleRefresh);
         };
-    }, [cards]);
+    }, { scope: sectionRef, dependencies: [cards] });
 
     return (
         <section ref={sectionRef} className="scroll-section min-h-[50vh] md:min-h-[70vh]  bg-background relative">

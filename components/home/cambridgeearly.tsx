@@ -157,7 +157,7 @@ const CambridgeEarly = () => {
                                 <div className="absolute inset-0 bg-black/40 z-0" />
                                 <div className="relative z-10 flex flex-col justify-end h-full">
                                     <h3 className="font-ppe italic font-light text-[28px] mb-4 text-white drop-shadow-md">{item.title}</h3>
-                                    <p className="text-sm md:text-base leading-relaxed text-white font-medium drop-shadow-md">
+                                    <p className="text-sm md:text-base leading-snug text-white font-medium drop-shadow-md">
                                         {item.description}
                                     </p>
                                 </div>

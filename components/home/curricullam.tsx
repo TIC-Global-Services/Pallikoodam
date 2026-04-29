@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import image1 from "@/assets/home/cambridgeimg.jpg";
 import image2 from "@/assets/home/national-curriculamimg-1.jpg";
 import { useLetterReveal } from "../reuseable/texteffect/useLetterReveal";
@@ -19,58 +20,47 @@ const curricullam = () => {
   const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>();
   const { elementRef: titleRef2, triggerAnimation: triggerAnimation2 } = useLetterReveal<HTMLHeadingElement>(0.1, false);
 
-  useEffect(() => {
-    let ctx: gsap.Context;
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        refreshPriority:2,
+        start: "top top",
+        end: "+=200%",
+        pin: true,
+        scrub: 0.6,
+        // anticipatePin: 1,
+        invalidateOnRefresh: true,
+        fastScrollEnd: true,
+        onUpdate: (self) => {
+          if (self.progress > 0.15) {
+            triggerAnimation2();
+          }
+        },
+      },
+    });
 
-    const initAnimation = () => {
-      ctx = gsap.context(() => {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "+=200%",
-            pin: true,
-            scrub: 0.6,
-            anticipatePin: 0.6,
-            invalidateOnRefresh: true,
-            fastScrollEnd: true,
-            onUpdate: (self) => {
-              if (self.progress > 0.15) {
-                triggerAnimation2();
-              }
-            },
-          },
-        });
+    gsap.set(card1Ref.current, { zIndex: 10 });
+    gsap.set(card2Ref.current, { zIndex: 5 });
 
-        gsap.set(card1Ref.current, { zIndex: 10 });
-        gsap.set(card2Ref.current, { zIndex: 5 });
+    tl.to(text1Ref.current, {
+      yPercent: -100,
+      ease: "power2.inOut",
+    })
+      .to(img1Ref.current, {
+        yPercent: 100,
+        ease: "power2.inOut",
+      }, 0);
 
-        tl.to(text1Ref.current, {
-          yPercent: -100,
-          ease: "power2.inOut",
-        })
-          .to(img1Ref.current, {
-            yPercent: 100,
-            ease: "power2.inOut",
-          }, 0);
-      }, sectionRef);
-    };
-
-    const timer = setTimeout(initAnimation, 100);
-
-    const handleResize = () => ScrollTrigger.refresh();
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("orientationchange", handleResize);
-    window.addEventListener("load", handleResize);
+    // Wait for fonts and complete layout to prevent pin shifting
+    const handleRefresh = () => ScrollTrigger.refresh();
+    document.fonts?.ready.then(handleRefresh);
+    window.addEventListener("load", handleRefresh);
 
     return () => {
-      clearTimeout(timer);
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("orientationchange", handleResize);
-      window.removeEventListener("load", handleResize);
-      if (ctx) ctx.revert();
+      window.removeEventListener("load", handleRefresh);
     };
-  }, []);
+  }, { scope: sectionRef });
 
   return (
     <section

@@ -11,10 +11,12 @@ import ShapingthefutureCP from "@/components/home/shapingthefuturecp";
 import Wayofteaching from "@/components/home/wayofteaching copy";
 import Image from "next/image";
 
+
 export const metadata = {
   title: "Home | RAKS Pallikoodam",
   description: "Welcome to RAKS Pallikoodam - Discover our progressive curriculum and modern campus.",
 };
+
 
 export default function Home() {
   return (
@@ -25,7 +27,7 @@ export default function Home() {
         <Differencewecreate />
         <Shapingthefuture />
         <Curricullam />
-        <CambridgeEarly/>
+        <CambridgeEarly />
         <ProgressiveLearner />
         <Innovationspace />
         <Wayofteaching />

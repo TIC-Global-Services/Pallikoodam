@@ -52,7 +52,7 @@ const academics = () => {
                                 <h3 className="text-[#000000] text-lg lg:text-xl font-medium mb-1">
                                     {resourcesInfo.main.title}
                                 </h3>
-                                <p className="text-[#6B7280] text-sm lg:text-xl leading-snug whitespace-pre-line">
+                                <p className="text-[#6B7280] text-sm lg:text-xl leading-snug md:whitespace-pre-line">
                                     {resourcesInfo.main.description}
                                 </p>
                             </div>
@@ -62,7 +62,7 @@ const academics = () => {
                         <div className="flex flex-col gap-6 w-full lg:w-1/2">
                             {resourcesInfo.items.map((item) => (
                                 <div key={item.id} className="bg-[#E9E9E9] rounded-xl lg:rounded-2xl p-2 lg:p-4 flex flex-col sm:flex-row gap-6 h-full items-start sm:items-center">
-                                    <div className="relative w-full sm:w-1/2 aspect-[4/4] rounded-xl overflow-hidden shrink-0">
+                                    <div className="relative w-full sm:w-1/2 aspect-[4/3] md:aspect-[4/4] rounded-xl overflow-hidden shrink-0">
                                         <Image
                                             src={item.image}
                                             alt="Academic Resource"

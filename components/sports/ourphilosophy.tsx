@@ -7,7 +7,7 @@ const OurPhilosophy = () => {
         <section className="w-full py-16 px-4 md:px-8 max-w-360 mx-auto flex items-center justify-center">
             <div className="bg-[#f4f4f4] rounded-4xl w-full overflow-hidden flex flex-col lg:flex-row shadow-sm">
                 {/* Left Side: Image */}
-                <h2 className="text-[clamp(2rem,4vw,4rem)] leading-tight text-center tracking-tighter font-regular mb-3 mt-3 md:hidden text-black">
+                <h2 className="text-[clamp(2rem,4vw,4rem)] leading-tight text-left tracking-tighter font-regular mb-3 mt-3 md:hidden text-black">
                         Our <span className="font-ppe italic font-light tracking-wide">Philosophy</span>
                     </h2>
                 <div className="w-full lg:w-1/2 relative min-h-[300px] sm:min-h-[400px] lg:min-h-[600px]">
@@ -15,7 +15,7 @@ const OurPhilosophy = () => {
                         src={ourPhilosophyImg}
                         alt="Sports field at RAKS"
                         fill
-                        className="object-cover"
+                        className="object-cover rounded-2xl"
                     />
                 </div>
 

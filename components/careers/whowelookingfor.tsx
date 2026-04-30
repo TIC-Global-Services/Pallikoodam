@@ -190,7 +190,7 @@ const WhoWeLookingFor: React.FC = () => {
                         ))}
                     </div>
                     {/* Divider Line */}
-                    <div className="absolute bottom-0 left-[10%] right-[10%] h-px bg-white/30" />
+                    <div className="absolute w-full bottom-0 left-[0%] md:left-[10%] md:right-[10%] h-px bg-white/30" />
                 </div>
 
                 {/* Description Container */}

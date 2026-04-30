@@ -31,7 +31,7 @@ const WhatHappeing = () => {
     ];
 
     return (
-        <section className="w-full bg-white py-16 md:py-10 overflow-visible">
+        <section className="w-full bg-white py-10 md:py-10 overflow-visible">
             <ContainerLayout>
                 <div className="w-full">
                     <h2 className="text-[28px] md:text-[36px] lg:text-[40px] text-[#000000] leading-[1.1] font-medium tracking-tight mb-8 md:mb-12">

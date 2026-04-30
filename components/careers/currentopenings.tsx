@@ -74,7 +74,7 @@ const currentopenings = () => {
                                     onClick={() => toggleAccordion(idx)}
                                     className='w-full cursor-pointer py-4 md:py-6 grid grid-cols-12 md:grid-cols-12 gap-x-2 md:gap-x-4 items-center group'
                                 >
-                                    <div className='col-span-6 md:col-span-6 lg:col-span-7 leading-[1.2] md:leading-[30px] text-[13px] md:text-2xl lg:text-[30px] font-normal pr-2 md:pr-0'>
+                                    <div className='col-span-6 md:col-span-6 lg:col-span-7 leading-[1.2] md:leading-[30px] text-sm md:text-2xl lg:text-[30px] font-normal pr-2 md:pr-0'>
                                         {job.position}
                                     </div>
 
@@ -109,11 +109,11 @@ const currentopenings = () => {
                                 >
                                     <div className='overflow-hidden'>
                                         <div className='pt-2 pb-10 pr-4 md:pr-12 lg:pr-24'>
-                                            <p className='text-base md:text-lg lg:text-2xl leading-[1.1] tracking-tight font-light mb-8'>
+                                            <p className='text-sm md:text-lg lg:text-2xl leading-[1.3] tracking-tight font-light mb-8'>
                                                 {job.description}
                                             </p>
 
-                                            <button className='bg-[#000086] hover:bg-[#000086]/90 text-white transition-colors text-sm md:text-base px-8 py-3 rounded-[8px] font-medium'>
+                                            <button className='bg-[#000086] hover:bg-[#000086]/90 text-white transition-colors text-xs md:text-base px-4 py-2 md:px-8 md:py-3 rounded-[8px] font-medium'>
                                                 Apply Now
                                             </button>
                                         </div>

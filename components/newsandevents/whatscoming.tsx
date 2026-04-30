@@ -32,11 +32,11 @@ const whatscoming = () => {
             <ContainerLayout>
                 <div className="w-full">
                     {/* Header Section */}
-                    <div className="mb-16 md:mb-10 mt-10">
-                        <h2 className="text-[36px] md:text-[48px] lg:text-[56px] text-[#000000] leading-[1.1] font-medium tracking-tight mb-6">
+                    <div className="mb-16 md:mb-10 mt-5 md:mt-10">
+                        <h2 className="text-2xl md:text-[48px] lg:text-[56px] text-[#000000] leading-[1.1] font-medium tracking-tight mb-6">
                             What's happening at <span className="font-ppe italic font-normal">RAKS</span>
                         </h2>
-                        <p className="text-[#000000] text-[18px] md:text-[22px] lg:text-[28px] leading-[1.3] max-w-[800px] font-medium">
+                        <p className="text-[#000000] text-lg md:text-2xl lg:text-3xl leading-[1.3] max-w-[800px] font-medium">
                             From classrooms buzzing with inquiry to stages alive with expression, our learners are constantly engaged in meaningful experiences.
                         </p>
                     </div>

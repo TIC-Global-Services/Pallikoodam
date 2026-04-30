@@ -174,7 +174,7 @@ const SportsArena = () => {
 
     return (
         <section ref={containerRef} className="w-full mt-10 md:py-24 bg-white text-black relative z-20">
-            <div className="px-4 md:px-8 text-center mb-0 md:mb-32">
+            <div className="px-4 md:px-8 text-center mb-10 md:mb-32">
                 <h2 className="text-2xl md:text-[clamp(3.4rem,3vw,4rem)] font-medium mb-2">
                     International-Standard <br className='md:hidden'/><span className="font-ppe italic font-normal">Sports Arenas</span>
                 </h2>

@@ -24,7 +24,7 @@ const hero = () => {
                 <h1 className="text-white text-[clamp(2rem,5vw,4.5rem)] leading-[1.1] tracking-tight font-medium">
                     School life, at a <span className="font-ppe italic font-normal">glance</span>
                 </h1>
-                <p className='xl:text-3xl lg:text-2xl md:text-xl text-lg text-white max-w-5xl mx-auto mt-5'>
+                <p className='xl:text-3xl lg:text-2xl md:text-xl text-lg leading-[1.3] text-white max-w-5xl mx-auto mt-5'>
                     Stay connected with the pulse of RAKS Pallikkoodam where learning unfolds not just in classrooms, but across experiences, celebrations, conversations, and community moments.
                 </p>
             </div>

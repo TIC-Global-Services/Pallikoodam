@@ -8,7 +8,7 @@ const EducationForToday = () => {
     const { elementRef: titleRef1 } = useLetterReveal<HTMLHeadingElement>();
     const { elementRef: titleRef2 } = useLetterReveal<HTMLHeadingElement>();
     return (
-        <section className="w-full overflow-hidden py-16 md:py-10 bg-white">
+        <section className="w-full overflow-hidden py-10 md:py-10 bg-white">
             <div className="w-full mx-auto px-4 md:px-8">
                 <div className="flex flex-col lg:flex-col">
 

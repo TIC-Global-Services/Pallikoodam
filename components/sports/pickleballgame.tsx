@@ -190,7 +190,7 @@ const PickleballGame = () => {
     };
 
     return (
-        <section id="pickleball-game-section" className="sticky top-0 h-screen flex flex-col justify-center w-full bg-white overflow-x-clip select-none z-10">
+        <section id="pickleball-game-section" className="sticky top-0 -mt-10 h-[85dvh] flex flex-col justify-center w-full bg-white overflow-x-clip select-none z-10">
 
             {/* Background Balls Area */}
             <div className="absolute inset-0 w-full h-full pointer-events-none">

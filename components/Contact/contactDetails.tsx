@@ -6,11 +6,11 @@ import Link from 'next/link';
 
 const ContactDetails = () => {
     return (
-        <section className="relative w-full min-h-screen bg-white flex flex-col lg:flex-row items-start justify-between overflow-hidden sm:py-16 lg:py-0">
+        <section className="relative w-full min-h-screen bg-white flex flex-col lg:flex-row items-start md:justify-between overflow-hidden mb-5 sm:py-16 lg:py-0">
 
             {/* Left Content */}
-            <div className="order-1 lg:order-none w-full lg:w-1/2 flex flex-col space-y-6 z-10 px-6 sm:px-12 lg:pl-20 py-12 lg:py-20">
-                <h2 className="text-4xl md:text-5xl lg:text-[3.2rem] font-medium text-black leading-tight tracking-tight">
+            <div className="order-1 lg:order-none w-full lg:w-1/2 flex flex-col space-y-2 md:space-y-6 z-10 px-6 sm:px-12 lg:pl-20 py-12 lg:py-20">
+                <h2 className="text-3xl md:text-5xl lg:text-[3.2rem] font-medium text-black leading-tight tracking-tight">
                     Experience Our <span className="italic font-ppe font-normal">School </span><br className='hidden md:block' />
                     Environment Firsthand
                 </h2>
@@ -22,7 +22,7 @@ const ContactDetails = () => {
             </div>
 
             {/* Middle - Lanyard */}
-            <div className="order-3 hidden  lg:order-none w-full lg:absolute lg:inset-0 lg:z-20 md:flex justify-center items-center pointer-events-none h-[60vh] lg:h-auto -my-10 lg:my-0">
+            <div className="order-3 hidden  lg:order-none w-full lg:absolute lg:inset-0 lg:z-20 md:flex justify-center items-center pointer-events-none h-[60vh] lg:h-auto  lg:my-0">
                 <div className="scale-[0.8] sm:scale-75 md:scale-90 lg:scale-[1.1] w-full flex justify-center items-center pointer-events-auto">
                     <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
                 </div>

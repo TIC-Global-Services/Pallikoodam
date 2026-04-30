@@ -77,7 +77,7 @@ const SportsForLife = () => {
         </div>
 
         {/* Visuals - Right Ball */}
-        <div className="ball-right absolute -right-[25%] md:-right-1/2 -bottom-[10%]  md:bottom-auto top-auto md:top-1/2 translate-y-[40%] md:-translate-y-1/2 w-[150%] md:w-full md:max-w-[1000vh] aspect-square pointer-events-none">
+        <div className="ball-right absolute -right-[45%] md:-right-1/2 -bottom-[7%]  md:bottom-auto top-auto md:top-1/2 translate-y-[40%] md:-translate-y-1/2 w-[190%] md:w-full md:max-w-[1000vh] aspect-square pointer-events-none">
           <Image src={ball2} alt="Right Ball Elements" fill className="object-contain rotate-45 object-center md:object-center" />
         </div>
         
@@ -91,7 +91,7 @@ const SportsForLife = () => {
             Beyond <span className="font-ppe font-light italic">School</span>, Beyond the <span className="font-ppe font-light italic">Game</span>
           </h3>
 
-          <p className="animate-text text-[1.1rem] md:text-[1.3rem] lg:text-[1.8rem] leading-relaxed max-w-5xl md:leading-[1.1] text-white/90 font-medium px-2 md:px-10">
+          <p className="animate-text text-[1.1rem] md:text-[1.3rem] lg:text-[1.8rem] leading-[1.3] max-w-5xl md:leading-[1.1] text-white/90 font-medium px-2 md:px-10">
             Sports at RAKS prepare learners not just for competition, but for life. Through consistent practice, they internalise commitment and self-discipline, respect for themselves and others, the value of effort over instant success, and a growth mindset that prioritises progress. Sport becomes a lifelong companion, nurturing wellbeing, balance, and resilience well into adulthood.
           </p>
         </div>

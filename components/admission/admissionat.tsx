@@ -13,7 +13,7 @@ const AdmissionAt = () => {
                     <div className="mb-6 md:mb-10 md:-translate-y-15">
                         <h2 className="text-[2.25rem] md:text-5xl lg:text-[4rem] leading-[1.1] md:leading-[60px] font-medium">
                             <span className="relative inline-block md:pb-1">
-                                Admissions at <span className="font-ppe italic font-light">RAKS</span>
+                                Admissions @ <span className="font-ppe italic font-light">RAKS</span>
                             </span>
                             <br />
                             <span className="relative inline-block md:pb-1 md:mt-2">
@@ -37,7 +37,8 @@ const AdmissionAt = () => {
                     {/* Paragraph */}
                     <div className="order-3 mb-8 md:mb-8 md:pl-10 max-w-sm md:max-w-md lg:max-w-xl">
                         <p className="text-[#717580] text-[1.05rem] md:text-lg lg:text-[1.2rem] leading-tight">
-                            Your child’s future begins with a simple step: joining a school where heart meets purpose and learning inspires action.  Our admissions process is designed to be transparent, welcoming, and supportive, ensuring families feel informed and confident at every stage.
+                            Your child’s future begins with a simple step: joining a school where heart meets purpose and learning inspires action.<br /><br />
+                            Our admissions process is designed to be transparent, welcoming, and supportive, ensuring families feel informed and confident at every stage.
                         </p>
                     </div>
 

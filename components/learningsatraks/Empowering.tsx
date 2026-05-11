@@ -125,7 +125,7 @@ const Empowering = () => {
                                     src={item.image}
                                     alt=""
                                     fill
-                                    sizes="(max-width: 768px) 100vw, 300px"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 280px, 433px"
                                     className="object-cover rounded-[10px] md:rounded-[13px]"
                                 />
 

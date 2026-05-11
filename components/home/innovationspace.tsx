@@ -3,7 +3,7 @@ import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import innovation1 from '@/assets/home/learningwallspace.jpg'
+import innovation1 from '@/assets/home/learningwallspace_copy.jpg'
 import innovation2 from '@/assets/home/designtechnology.jpg'
 import innovation3 from '@/assets/home/artstudio.jpg'
 import innovation4 from '@/assets/home/makers_space.jpg'
@@ -205,7 +205,7 @@ const Innovationspace = () => {
                         {cards.map((card) => (
                             <div
                                 key={card.id}
-                                className='snap-start shrink-0 w-[80vw] bg-white text-black rounded-[30px] overflow-hidden flex flex-col justify-between min-h-[420px]'
+                                className='snap-start shrink-0 w-[80vw] bg-white text-black rounded-[27px] overflow-hidden flex flex-col justify-between min-h-[420px]'
                             >
                                 <div className='p-6 h-[50%]'>
                                     <h3 className='text-lg font-medium leading-tight tracking-tight mb-4'>
@@ -251,10 +251,10 @@ const Innovationspace = () => {
                         {cards.map((card) => (
                             <div
                                 key={card.id}
-                                className={`${card.colSpan} bg-white text-black rounded-[30px] overflow-hidden flex flex-col justify-between ${card.id > 2 ? 'min-h-[500px] md:min-h-[500px]' : 'min-h-[400px] md:min-h-[500px]'} group hover:scale-105 transition-all duration-300`}
+                                className={`${card.colSpan} bg-white text-black rounded-[27px] overflow-hidden flex flex-col justify-between ${card.id <= 2 ? 'h-[528px]' : 'h-[450px]'} group hover:scale-105 transition-all duration-300`}
                             >
-                                <div className='p-8 md:p-10 h-[50%]'>
-                                    <h3 className='text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium leading-[15px] tracking-tight'>
+                                <div className={`${card.id <= 2 ? 'p-8 md:p-10' : 'pl-4 md:pl-6 pr-8 md:pr-10 py-8 md:py-10'} flex-shrink-0`}>
+                                    <h3 className='text-xl md:text-3xl lg:text-[42px] font-medium leading-tight tracking-tight text-left'>
                                         {card.italicPosition === 'before' && (
                                             <>
                                                 <span className='font-ppe italic tracking-tighter font-light'>{card.italic}</span>{' '}
@@ -272,7 +272,7 @@ const Innovationspace = () => {
                                         {card.description.split('\n\n').map((paragraph, idx, arr) => (
                                             <div key={idx} className={`relative pl-4 ${idx !== arr.length - 1 ? 'pb-4' : ''}`}>
                                                 <div className="w-0.5 h-full bg-[#0045FF] absolute left-0 top-0"></div>
-                                                <p className='text-cd md:text-xs lg:text-lg xl:text-lg leading-[20px] whitespace-pre-line text-gray-800 font-medium'>
+                                                <p className={`text-xs sm:text-xs lg:text-base leading-[16px] whitespace-pre-line text-gray-800 font-normal text-left ${card.id <= 2 ? 'md:text-sm md:leading-[18px]' : 'md:text-[11px] md:leading-[15px]'}`}>
                                                     {paragraph}
                                                 </p>
                                             </div>
@@ -280,7 +280,7 @@ const Innovationspace = () => {
                                     </div>
                                 </div>
 
-                                <div className={`w-full h-[50%] relative mt-auto`}>
+                                <div className='w-full flex-1 relative min-h-[120px]'>
                                     <Image
                                         src={card.image}
                                         alt={`${card.title} ${card.italic}`}

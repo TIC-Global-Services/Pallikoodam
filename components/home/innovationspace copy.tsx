@@ -110,10 +110,10 @@ const Innovationspace = () => {
                     {cards.map((card) => (
                         <div
                             key={card.id}
-                            className={`${card.colSpan} bg-white text-black rounded-[30px] overflow-hidden flex flex-col justify-between ${card.id > 2 ? 'min-h-[400px] md:min-h-[400px]' : 'min-h-[400px] md:min-h-[500px]'} group hover:scale-105 transition-all duration-300`}
+                            className={`${card.colSpan} bg-white text-black rounded-[27px] overflow-hidden flex flex-col justify-between ${card.id <= 2 ? 'h-[528px]' : 'h-[450px]'} group hover:scale-105 transition-all duration-300`}
                         >
-                            <div className='p-8 md:p-10 h-[50%]'>
-                                <h3 className='text-[clamp(16px,10vw,2rem)] font-medium  leading-clamp-2 tracking-tight'>
+                                <div className={`${card.id <= 2 ? 'p-8 md:p-10' : 'pl-4 md:pl-6 pr-8 md:pr-10 py-8 md:py-10'} flex-shrink-0`}>
+                                <h3 className='text-xl md:text-3xl lg:text-[42px] font-medium leading-tight tracking-tight text-left'>
                                     {card.italicPosition === 'before' && (
                                         <>
                                             <span className='font-ppe italic tracking-tighter font-light'>{card.italic}</span>{' '}
@@ -132,7 +132,7 @@ const Innovationspace = () => {
                                     {card.description.split('\n\n').map((paragraph, idx) => (
                                         <div key={idx} className='relative'>
                                             <div className="w-0.5 h-full bg-[#0045FF] absolute left-0 top-0"></div>
-                                            <p className='text-[clamp(16px,10vw,1rem)] leading-clamp-2 pl-2 text-gray-800 font-medium'>
+                                            <p className={`text-xs sm:text-xs lg:text-base leading-clamp-2 pl-2 text-gray-800 font-medium text-left ${card.id <= 2 ? 'md:text-sm' : 'md:text-[11px]'}`}>
                                                 {paragraph}
                                             </p>
                                         </div>
@@ -140,7 +140,7 @@ const Innovationspace = () => {
                                 </div>
                             </div>
 
-                            <div className={`w-full ${card.id > 2 ? 'h-[30%]' : 'h-[50%]'} relative mt-auto`}>
+                                <div className='w-full flex-1 relative min-h-[120px]'>
                                 <Image
                                     src={card.image}
                                     alt={`${card.title} ${card.italic}`}

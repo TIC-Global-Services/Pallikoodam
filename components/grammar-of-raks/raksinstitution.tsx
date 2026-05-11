@@ -211,8 +211,8 @@ const RaksInstitution = () => {
 
                     {/* Right column — sticky image */}
                     <div className="hidden lg:block w-[40%]">
-                        <div className="sticky top-[20vh] h-[50vh]">
-                            <div className="relative w-full h-full rounded-lg overflow-hidden">
+                        <div className="sticky top-[20vh]">
+                            <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden">
                                 {institutionData.map((item, idx) => (
                                     <Image
                                         key={idx}

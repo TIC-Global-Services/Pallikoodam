@@ -12,17 +12,17 @@ const classroomData = [
   {
     title: "Sports & Movement",
     image: img1,
-    description: "Morning And Evening Sports Helps Build Resilience, Teamwork, Strategy, Confidence, And Courage."
+    description: "Morning and evening sports helps build resilience, teamwork, strategy, confidence, and courage."
   },
   {
     title: "Educator Growth",
     image: img2,
-    description: "Continuous Teacher Training, Professional Development, And Certifications To Ensure High-Quality Education Is Sustained."
+    description: "Continuous teacher training, professional development, and certifications to ensure high-quality education is sustained."
   },
   {
     title: "International Exposure",
     image: img3,
-    description: "Internships, Sports, Academics, Conferences, Alumni Testimonials, Parent Testimonials"
+    description: "Internships, sports, academics, conferences, alumni testimonials, parent testimonials"
   }
 ];
 
@@ -76,7 +76,7 @@ const BeyondTheClassroom = () => {
       <ContainerLayout>
         <div className="text-center mb-10 md:mb-8">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight">
-            <span className="font-ppe font-light italic mr-2 md:mr-0">Beyond </span>The Classroom
+            <span className="font-ppe font-light italic mr-2 md:mr-0">Beyond</span> The Classroom
           </h2>
         </div>
 

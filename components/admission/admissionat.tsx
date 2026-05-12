@@ -37,7 +37,7 @@ const AdmissionAt = () => {
                     {/* Paragraph */}
                     <div className="order-3 mb-8 md:mb-8 md:pl-10 max-w-sm md:max-w-md lg:max-w-xl">
                         <p className="text-[#717580] text-[1.05rem] md:text-lg lg:text-[1.2rem] leading-tight">
-                            Your child’s future begins with a simple step: joining a school where heart meets purpose and learning inspires action.<br /><br />
+                            Your child’s future begins with a simple step: joining a school where heart meets purpose and learning inspires action. <br />
                             Our admissions process is designed to be transparent, welcoming, and supportive, ensuring families feel informed and confident at every stage.
                         </p>
                     </div>

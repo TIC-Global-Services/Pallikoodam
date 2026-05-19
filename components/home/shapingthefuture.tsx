@@ -194,9 +194,9 @@ const Shapingthefuture = () => {
                                     Our <span className="text-[#000086] font-ppe font-light italic">Mission</span>
                                 </h4>
                                 <ol className="text-gray-800 text-sm leading-[16px] lg:text-base xl:text-lg border-l-3 border-[#23519D] pl-4 md:leading-[26px] mb-auto max-w-lg z-10 font-normal list-decimal list-inside space-y-3">
-                                    <li>To nurture curious, compassionate, and courageous learners who <span className='font-ppe font-light italic'>&quot;Thrive with Purpose&quot;</span></li>
-                                    <li>To cultivate character, creativity, and critical thinking through meaningful, enquiry-driven experiences.</li>
-                                    <li>To empower every learner to act responsibly, lead ethically, and contribute positively to the world.</li>
+                                    <li>Nurturing curious minds and courageous hearts to <span className='font-ppe font-light italic'>&quot;Thrive with Purpose&quot;</span></li>
+                                    <li>⁠Inspiring character, creativity, and critical thinking through meaningful inquiry.</li>
+                                    <li>⁠Shaping resilient global citizens through wellbeing, sports, leadership, and lifelong learning.</li>
                                 </ol>
                             </div>
                            

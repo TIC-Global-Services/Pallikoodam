@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import image1 from '@/assets/home/campusnew-1.png'
+import image1 from '@/assets/home/campus-new-memoirs.png'
 import image2 from '@/assets/home/campusnewimg-2.jpg'
 import image3 from '@/assets/home/school_announcement.jpg'
 import Image from 'next/image'

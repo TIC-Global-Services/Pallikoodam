@@ -39,7 +39,7 @@ const cards = [
         title: "Studios",
         italic: "Art",
         italicPosition: "before",
-        description: "A sanctuary where colours, textures, and emotions breathe... where learners experiment, express, and evolve understanding that art is not just a subject, but a language of identity, joy, and discovery.",
+        description: "A sanctuary where colours, textures, and emotions breathe.\n Where learners experiment, express, and evolve understanding that art is not just a subject, but a language of identity, joy, and discovery.",
         image: innovation3,
         colSpan: "md:col-span-2"
     },
@@ -48,7 +48,7 @@ const cards = [
         title: "Maker's",
         italic: "Space",
         italicPosition: "after",
-        description: "A playground of innovation where hands lead the mind.\nFrom tinkering to building, this is where ideas are tested, stretched, rebuilt, and celebrated turning creativity into capability.",
+        description: "A playground of innovation where hands lead the mind.\nFrom tinkering to building, this is where ideas are tested, stretched, rebuilt, and celebrated-turning creativity into capability.",
         image: innovation4,
         colSpan: "md:col-span-2"
     },

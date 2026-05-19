@@ -19,7 +19,7 @@ const data = [
     },
     {
         title: <span><span className='font-ppe italic font-light'>Learning</span> Begins With the Learner at the Center of Everything We Do! </span>,
-        description: "Every experience is planned with intention and centred on the learner.",
+        description: "Their voice, their agency, their pace, honoured every day.",
         image: image3
     },
 ]

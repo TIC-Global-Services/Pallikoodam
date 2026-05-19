@@ -106,12 +106,12 @@ const curricullam = () => {
                       A pathway that nurtures inquiry, reflection, and
                       independent thinking.
                       <br /><br /> Its global framework pairs seamlessly with our
-                      active, project-based learning, research-led approach
+                      active, project-based learning, research-led approach,
                       encouraging learners to question, explore, create, and
                       connect ideas with real-world meaning.
                     </p>
                     <p className="leading-[26px] mt-10 text-base tracking-tight md:text-[clamp(16px,10vw,1.125rem)]">
-                      Rooted in the legacy of PSG and inspired by the visionary ethos of the Vidhya Niketan group of schools, RAKS Institutions founded by Ms Swetha Krishnamurthy reflects a synthesis of tradition and progressive educational thought.
+                      Rooted in the legacy of PSG and inspired by the visionary ethos of the Vidhya Niketan group of schools, RAKS Institutions founded by Ms. Swetha Krishnamurthy reflects a synthesis of tradition and progressive educational thought.
                     </p>
                   </div>
                 </div>

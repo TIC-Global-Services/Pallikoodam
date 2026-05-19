@@ -34,7 +34,7 @@ const sectionsData = [
         title: "The 3 R's: Rituals, Routines, Rhythms",
         cards: [
             { id: "rituals", title: "Rituals", desc: "Circle time, story assemblies, and community gatherings to celebrate values, belonging and identity.", bg: img4 },
-            { id: "routines", title: "Routines", desc: "Clear, predictable habits like self-care and rest cycles that cultivate calm and focus.", bg: img5 },
+            { id: "routines", title: "Routines", desc: "Clear, predictable habits like self-care and rest-cycles that cultivate calm and focus.", bg: img5 },
             { id: "rhythms", title: "Rhythms", desc: "The annual rhythmic beat of our calendar bringing the RAKS community together.", bg: img6 },
         ],
     },
@@ -118,7 +118,7 @@ const RaksValue = () => {
                         <span className="font-ppe font-light italic text-[#000086]">RAKS</span> Values
                     </h2>
                     <p className="text-base md:text-xl lg:text-lg text-black max-w-5xl leading-[1.2]">
-                        We organise our philosophy around the 3 P's, 3 R's, and 4 E's frameworks that keep
+                        We organise our philosophy around the 3 P's, 3 R's, and 4 E's framework that keep
                         learning future-ready, meaningful, and active.
                     </p>
                 {/* </ContainerLayout> */}

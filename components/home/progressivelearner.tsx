@@ -26,7 +26,7 @@ const ProgressiveLearner = () => {
         },
         {
             title: "Innovation Labs",
-            description: "Purpose-designed environments where ideas are tested, shaped, and brought to life",
+            description: "Purpose-designed environments where ideas are tested, shaped, and brought to life.",
             icon: <Image src={icon2} alt="Innovation Labs" className="w-full h-full object-contain" />,
             bgImage: progressive3,
             textColor: "white"

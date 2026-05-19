@@ -56,9 +56,9 @@ const Navbar = () => {
     const menuItems = [
         { name: 'Home', href: '/' },
         { name: 'Grammar of RAKS', href: '/grammar-of-raks' },
-        { name: 'Admissions', href: '/admissions' },
         { name: 'Learning @ RAKS', href: '/learning-at-raks' },
         { name: 'Hidden Curriculum @ RAKS', href: '/hiddencurricular-at-raks' },
+        { name: 'Admissions', href: '/admissions' },
         { name: 'Careers', href: '/careers' },
         { name: 'News & Events', href: '/news-and-events' },
         { name: 'Contact us', href: '/contact-us' },

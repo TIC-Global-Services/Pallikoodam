@@ -88,7 +88,7 @@ const ShapingthefutureCP = () => {
                             INSTITUTIONS
                         </h2> */}
                         <h3 className="text-2xl md:text-[50px] font-bold leading-[52px]">
-                            <span className="font-bold">15+</span> Years Of Shaping The Future
+                            <span className="font-bold">15+</span> Years of Shaping the Future
                         </h3>
                     </div>
                 </div>
@@ -104,7 +104,7 @@ const ShapingthefutureCP = () => {
                         <div className="w-1 h-20 bg-blue-600/30 absolute left-8 top-8 hidden"></div> {/* Decorative line if needed */}
                         <p className="text-gray-800 text-sm md:text-lg leading-relaxed mb-auto max-w-lg z-10 font-normal">
                             <span className="border-l-4 border-blue-300 pl-4 block">
-                                Enabling learners to thrive With purpose and build a sustainable, equitable, and compassionate world. From a vision guided by passion to a thriving community of joyful, purposeful learners discover how 11+ years of innovation, care, and courageous ideas have shaped the RAKS story.
+                                Enabling learners to thrive with purpose and build a sustainable, equitable, and compassionate world. From a vision guided by passion to a thriving community of joyful, purposeful learners discover how 11+ years of innovation, care, and courageous ideas have shaped the RAKS story.
                             </span>
                         </p>
                         <div className="absolute -bottom-[70%] left-[0%] w-full h-full scale-160">
@@ -120,7 +120,7 @@ const ShapingthefutureCP = () => {
                             </h4>
                             <p className="text-gray-800 text-sm md:text-lg leading-relaxed mb-auto max-w-lg z-10 font-normal">
                                 <span className="border-l-4 border-blue-800/40 pl-4 block">
-                                    At RAKS <span className="italic font-serif">Pallikkoodam</span> we Promote inquiry-based, experiential learning
+                                    At RAKS <span className="italic font-serif">Pallikkoodam</span> we promote inquiry-based, experiential learning
                                     and critical thinking through rigorous academic standards. Build a culture of lifelong learning to
                                     prepare students for the future. Develop leadership skills with a global outlook and nurture cross-cultural collaboration.
                                 </span>

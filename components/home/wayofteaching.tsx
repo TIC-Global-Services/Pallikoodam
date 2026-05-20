@@ -87,7 +87,7 @@ const Wayofteaching = () => {
             <ContainerLayout>
                 <div className='text-center mb-0 md:mb-16'>
                     <h1 className='text-3xl md:text-[54px] font-medium leading-tight tracking-tight text-black'>
-                        RaKs way of <span className='font-ppe italic font-light'>Teaching & Learning</span>
+                        RAKS way of <span className='font-ppe italic font-light'>Teaching & Learning</span>
                     </h1>
                 </div>
 

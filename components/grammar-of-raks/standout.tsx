@@ -33,7 +33,7 @@ const Standout = () => {
       <ContainerLayout>
         <div className='py-20 md:py-32 lg:py-40 md:max-w-6xl mx-auto text-center'>
           <p className='text-xl md:text-3xl lg:text-[2.5rem] leading-[1.4] tracking-tight space-y-5 text-white font-normal'>
-            <span className='font-ppe font-light italic'>Together, We Thrive</span><br className='hidden md:block' /> Founded in 2014, by Swetha Krishnamurthy, RAKS draws from the rich legacy of PSG Institutions and the progressive vision of the Vidhya Niketan Group of Schools. Grounded in strong values and future-ready thinking, RAKS reimagines education for a changing world. <br className='md:hidden' />
+            <span className='font-ppe font-light italic'>Together, We Thrive</span><br className='hidden md:block' /> Founded in 2014 by Ms. Swetha Krishnamurthy, RAKS draws from the rich legacy of PSG Institutions and the progressive vision of the Vidhya Niketan Group of Schools. Grounded in strong values and future-ready thinking, RAKS reimagines education for a changing world. <br className='md:hidden' />
           </p>
           <p className='text-xl md:text-3xl lg:text-[2.5rem] mt-5 leading-[1.2] tracking-tight space-y-5 text-white font-normal'>   
             <br className='md:hidden' /><span className=''></span><br className='hidden md:block' />

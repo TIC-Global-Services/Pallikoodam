@@ -30,7 +30,7 @@ const cards = [
         title: "Design & Technology",
         italic: "Labs",
         italicPosition: "after",
-        description: "Here we don't imagine the future, we prototype it.\n\nLearners explore tools, materials, mechanisms, and real-world challenges transforming concepts through guided curiosity and fearless problem-solving.",
+        description: "Here we don't imagine the future; we prototype it.\n\nLearners explore tools, materials, mechanisms, and real-world challenges transforming concepts through guided curiosity and fearless problem-solving.",
         image: innovation2,
         colSpan: "md:col-span-3"
     },

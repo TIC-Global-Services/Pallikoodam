@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const ContactDetails = () => {
     return (
-        <section className="relative w-full min-h-screen bg-white flex flex-col lg:flex-row items-start md:justify-between overflow-hidden mb-5 sm:py-16 lg:py-0">
+        <section id="contact" className="relative w-full min-h-screen bg-white flex flex-col lg:flex-row items-start md:justify-between overflow-hidden mb-5 sm:py-16 lg:py-0">
 
             {/* Left Content */}
             <div className="order-1 lg:order-none w-full lg:w-1/2 flex flex-col space-y-2 md:space-y-6 z-10 px-6 sm:px-12 lg:pl-20 py-12 lg:py-20">

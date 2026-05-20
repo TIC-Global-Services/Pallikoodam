@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import ContainerLayout from '@/layout/ContainerLayout'
 import tickicon from '@/assets/home/icons/tickicon.png'
+import Link from 'next/link'
 
 const Map = () => {
     return (
@@ -41,9 +42,11 @@ const Map = () => {
                     </div>
 
                     {/* Schedule Button */}
-                    <button className="bg-[#000080] hover:bg-blue-900 transition-colors text-white text-[1rem] md:text-[1.1rem] font-medium px-8 md:px-12 py-3 md:py-4 rounded w-auto mt-2 md:mt-2 shadow-sm hover:shadow-md">
-                        Schedule A Campus Tour
-                    </button>
+                    <Link href="/contact-us#contact">
+                        <button className="bg-[#000080] hover:bg-blue-900 transition-colors text-white text-[1rem] md:text-[1.1rem] font-medium px-8 md:px-12 py-3 md:py-4 rounded w-auto mt-2 md:mt-2 shadow-sm hover:shadow-md">
+                            Talk to Us
+                        </button>
+                    </Link>
 
                 </div>
             </ContainerLayout>

@@ -23,7 +23,7 @@ const slidesData = [
     },
     {
         title: "HOW we do WHAT we do @RAKS",
-        subtitle: "Through purposeful pedagogy, project-based learning, hands on, minds on approach, inquiry, and reflective practices.",
+        subtitle: "Through purposeful pedagogy, project-based learning, hands-on, minds-on approach, inquiry, and reflective practices.",
         bg: how,
     },
     {

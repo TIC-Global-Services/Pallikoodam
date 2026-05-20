@@ -18,7 +18,7 @@ const stages = [
     {
         title: 'Enquire',
         img: enquiryImg,
-        desc1_1: "Reach out to us and tell us a little about your child, we’ll understand their needs, guide you through the next steps, and help you get started with the right support.",
+        desc1_1: "Reach out to us and tell us a little about your child. we’ll understand their needs, guide you through the next steps, and help you get started with the right support.",
         // desc1_2: defaultDesc1_2,
         // desc2: defaultDesc2,
     },

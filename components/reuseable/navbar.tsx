@@ -61,7 +61,7 @@ const Navbar = () => {
         { name: 'Admissions', href: '/admissions' },
         { name: 'Careers', href: '/careers' },
         { name: 'News & Events', href: '/news-and-events' },
-        { name: 'Contact us', href: '/contact-us' },
+        { name: 'Contact Us', href: '/contact-us' },
     ];
 
     return (
@@ -122,7 +122,7 @@ const Navbar = () => {
                        </div>
 
                         <Link href={'/admissions'} className=" hidden md:flex bg-[#000086] hover:bg-[#0c0cbc] text-white py-2 px-4 rounded-md transition-colors duration-200  items-center justify-center gap-2 cursor-pointer font-normal uppercase  text-sm md:text-base">
-                            Admission
+                            Admissions
                         </Link>
 
                         <div className="relative">

@@ -118,7 +118,7 @@ const RaksValue = () => {
                         <span className="font-ppe font-light italic text-[#000086]">RAKS</span> Values
                     </h2>
                     <p className="text-base md:text-xl lg:text-lg text-black max-w-5xl leading-[1.2]">
-                        We organise our philosophy around the 3 P's, 3 R's, and 4 E's framework that keep
+                        We organise our philosophy around the 3 P's, 3 R's, and 4 E's framework that keeps
                         learning future-ready, meaningful, and active.
                     </p>
                 {/* </ContainerLayout> */}

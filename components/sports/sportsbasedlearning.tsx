@@ -115,7 +115,7 @@ const SportsBasedLearning = () => {
                             </h3>
                             <div className="text-gray-800 mb-4 text-sm lg:text-[1.05rem] leading-snug md:leading-relaxed w-full">
                                 <p className="mb-2">
-                                    At RAKS, sports are intentionally designed as learning experiences, learners engage in structured sporting experiences that cultivate:
+                                    At RAKS, sports are intentionally designed as learning experiences. learners engage in structured sporting experiences that cultivate:
                                 </p>
                                 <ul className="list-disc pl-5 leading-snug md:leading-normal space-y-1">
                                     <li>Goal-setting and self-reflection</li>

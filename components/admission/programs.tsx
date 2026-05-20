@@ -12,9 +12,9 @@ import alevels from '@/assets/admission/upper_secondary.jpg'
 
 const data = [
     {
-        title: "Early years",
+        title: "Early Years",
         image: cambridge,
-        desc: "A warm, Reggio-Emilia inspired, play-based beginning that nurtures curiosity, emotional security, and joyful exploration, laying strong foundations for lifelong learning."
+        desc: "A warm, Reggio-Emilia-inspired, play-based beginning that nurtures curiosity, emotional security, and joyful exploration, laying strong foundations for lifelong learning."
     },
     {
         title: "Primary",
@@ -29,7 +29,7 @@ const data = [
     {
         title: "Upper Secondary",
         image: alevels,
-        desc: "<strong>IGCSE:</strong> An internationally recognised qualification that develops independent thinking, clear communication, and academic rigour.\n\n<strong>AS & A Levels:</strong> Advanced pathways that empower learners to specialise, excel, and gain entry to leading universities worldwide preparing them to lead with confidence and purpose."
+        desc: "<strong>IGCSE:</strong> An internationally recognised qualification that develops independent thinking, clear communication, and academic rigour.\n\n<strong>AS & A Levels:</strong> Advanced pathways that empower learners to specialise, excel, and gain entry to leading universities worldwide preparing them, to lead with confidence and purpose."
     }
 ]
 
@@ -99,7 +99,7 @@ const Programs = () => {
                             <span className="font-ppe italic font-light">Learning</span> Pathways at RAKS Pallikkoodam
                         </h2>
                         <p className="text-[1.05rem] md:text-[2rem] text-left md:text-center leading-[1.2] tracking-[-0.02em] opacity-90">
-                            At RaK’s Pallikkoodam, learning pathways are purposeful, future-ready, and globally recognised, nurturing confidence, creativity, and character at <br className="hidden md:block" /> every stage.
+                            At RAKS Pallikkoodam, learning pathways are purposeful, future-ready, and globally recognised, nurturing confidence, creativity, and character at <br className="hidden md:block" /> every stage.
                         </p>
                     </div>
 

@@ -55,7 +55,7 @@ const CambridgeEarly = () => {
         },
         {
             title: "Assessment",
-            description: "Observation-led insights that capture growth-no tests, only meaningful progress.",
+            description: "Observation-led insights that capture growth - no tests, only meaningful progress.",
             img: assessment
         },
         {

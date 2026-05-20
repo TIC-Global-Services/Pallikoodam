@@ -12,7 +12,7 @@ const classroomData = [
   {
     title: "Sports & Movement",
     image: img1,
-    description: "Morning and evening sports helps build resilience, teamwork, strategy, confidence, and courage."
+    description: "Morning and evening sports help build resilience, teamwork, strategy, confidence, and courage."
   },
   {
     title: "Educator Growth",

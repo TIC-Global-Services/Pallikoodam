@@ -43,9 +43,9 @@ const Map = () => {
                         </p>
                     </div>
                     <div>
-                        <Link href={'/contact-us'}>
+                        <Link href={'/contact-us#contact'}>
                             <button className="bg-[#000086] text-white px-8 py-3 rounded-[6px] hover:bg-[#0000aa] transition-colors duration-300 font-medium text-[16px] xl:text-[18px] w-auto shadow-lg">
-                                Schedule a Campus Tour
+                                Talk to Us
                             </button>
                         </Link>
                     </div>

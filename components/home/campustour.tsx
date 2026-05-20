@@ -4,6 +4,7 @@ import Image, { StaticImageData } from 'next/image'
 import ScrollReveal from '../reuseable/effects/Scrollreveal'
 import ContainerLayout from '@/layout/ContainerLayout'
 import gsap from 'gsap'
+import Link from 'next/link'
 
 import icon1 from '@/assets/iconnew-1.png'
 import icon2 from '@/assets/iconnew-2.png'
@@ -156,7 +157,9 @@ const campustour = () => {
                     </div>
 
                     <div className="mt-[5%] flex justify-center">
-                        <button suppressHydrationWarning={true} className='bg-white text-[#000086] text-sm md:text-base lg:text-xl xl:text-2xl hover:scale-105 transition-all duration-300 font-medium px-4 py-3 capitalize rounded-md'>schedule a campus tour</button>
+                        <Link href="/contact-us">
+                            <button suppressHydrationWarning={true} className='bg-white text-[#000086] text-sm md:text-base lg:text-xl xl:text-2xl hover:scale-105 transition-all duration-300 font-medium px-4 py-3 capitalize rounded-md'>Talk to Us</button>
+                        </Link>
                     </div>
                 </div>
             </ContainerLayout>

@@ -163,7 +163,7 @@ const Shapingthefuture = () => {
                             INSTITUTIONS
                         </h2> */}
                             <h3 className="text-xl md:text-[30px] bg-white font-bold leading-[52px]">
-                                <span className="font-bold text-black">10+</span> Years Of Shaping The Future
+                                <span className="font-bold text-black">10+</span> Years of Shaping the Future
                             </h3>
                         </div>
                     </div>

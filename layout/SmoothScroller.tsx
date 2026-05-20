@@ -1,5 +1,6 @@
 "use client";
 import { ReactNode, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import gsap from "gsap";
@@ -10,6 +11,7 @@ interface LenisProviderProps {
 
 const SmoothScroller = ({ children }: LenisProviderProps) => {
   const lenisRef = useRef<Lenis | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -48,6 +50,28 @@ const SmoothScroller = ({ children }: LenisProviderProps) => {
       ScrollTrigger.killAll();
     };
   }, []);
+
+  // Scroll to top on every route change (except hash links)
+  useEffect(() => {
+    const lenis = lenisRef.current;
+    if (!lenis) return;
+
+    // Small delay ensures the DOM has rendered before scrolling
+    const timeout = setTimeout(() => {
+      if (window.location.hash) {
+        // If there's a hash, scroll to the target element
+        const target = document.querySelector(window.location.hash) as HTMLElement | null;
+        if (target) {
+          lenis.scrollTo(target, { immediate: true });
+          return;
+        }
+      }
+      // Otherwise, scroll to top
+      lenis.scrollTo(0, { immediate: true });
+    }, 0);
+
+    return () => clearTimeout(timeout);
+  }, [pathname]);
 
   return <>{children}</>;
 };

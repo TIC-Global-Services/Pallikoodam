@@ -2,7 +2,6 @@ import React from 'react'
 import Image from 'next/image'
 import ContainerLayout from '@/layout/ContainerLayout'
 import tickicon from '@/assets/home/icons/tickicon.png'
-import Link from 'next/link'
 
 const Map = () => {
     return (
@@ -41,13 +40,6 @@ const Map = () => {
                         <p className="text-[1.25rem] md:text-[1.5rem] lg:text-[2rem] text-gray-500 font-medium leading-[1.2] md:leading-[1.4] text-center md:text-left">
                             We encourage parents to visit our campus to better understand our environment, teachers, and classrooms.
                         </p>
-                    </div>
-                    <div>
-                        <Link href={'/contact-us#contact'}>
-                            <button className="bg-[#000086] text-white px-8 py-3 rounded-[6px] hover:bg-[#0000aa] transition-colors duration-300 font-medium text-[16px] xl:text-[18px] w-auto shadow-lg">
-                                Talk to Us
-                            </button>
-                        </Link>
                     </div>
                 </div>
             </ContainerLayout>

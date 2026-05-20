@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import image1 from "@/assets/home/cambridgeimg.jpg";
 import image2 from "@/assets/home/national-curriculamimg-1.jpg";
 import { useLetterReveal } from "../reuseable/texteffect/useLetterReveal";
+import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -116,12 +117,14 @@ const curricullam = () => {
                   </div>
                 </div>
 
-                <button
-                  suppressHydrationWarning
-                  className="bg-white text-sm md:text-xl mt-3 md:mt-15 text-[#0033A0] md:px-10 px-5 py-2 md:py-3 rounded-lg hover:scale-105 transition-all duration-300 font-semibold hover:bg-gray-100 w-fit"
-                >
-                  Explore Cambridge
-                </button>
+                <Link href="/learning-at-raks">
+                  <button
+                    suppressHydrationWarning
+                    className="bg-white text-sm md:text-xl mt-3 md:mt-15 text-[#0033A0] md:px-10 px-5 py-2 md:py-3 rounded-lg hover:scale-105 transition-all duration-300 font-semibold hover:bg-gray-100 w-fit"
+                  >
+                    Explore Cambridge
+                  </button>
+                </Link>
               </div>
 
               {/* Right side - Image (desktop only) */}
@@ -184,12 +187,14 @@ const curricullam = () => {
                   </div>
                 </div>
 
-                <button
-                  suppressHydrationWarning
-                  className="bg-white text-sm md:text-xl mt-3 md:mt-15 text-[#0033A0] md:px-10 px-5 py-2 md:py-3 rounded-lg hover:scale-105 transition-all duration-300 font-semibold hover:bg-gray-100 w-fit"
-                >
-                  Explore CBSE
-                </button>
+                <Link href="/academics">
+                  <button
+                    suppressHydrationWarning
+                    className="bg-white text-sm md:text-xl mt-3 md:mt-15 text-[#0033A0] md:px-10 px-5 py-2 md:py-3 rounded-lg hover:scale-105 transition-all duration-300 font-semibold hover:bg-gray-100 w-fit"
+                  >
+                    Explore CBSE
+                  </button>
+                </Link>
               </div>
 
               {/* Right side - Image (desktop only) */}

@@ -18,6 +18,7 @@ import Image from 'next/image'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import Link from 'next/link'
 
 const CambridgeEarly = () => {
     const swiperRef = useRef<SwiperType | null>(null)
@@ -130,9 +131,11 @@ const CambridgeEarly = () => {
                     Inquiry-led, child-centred learning aligned with the Cambridge Early Years framework, inspired by the Reggio Emilia approach.
                 </p>
                 <div>
-                    <button className='bg-[#000086] text-white px-6 py-3 rounded-md text-sm font-medium hover:bg-blue-900 transition-colors'>
-                        Enquire Now
-                    </button>
+                    <Link href="/admissions">
+                        <button className='bg-[#000086] text-white px-6 py-3 rounded-md text-sm font-medium hover:bg-blue-900 transition-colors'>
+                            Enquire Now
+                        </button>
+                    </Link>
                 </div>
             </div>
 

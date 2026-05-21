@@ -7,6 +7,7 @@ import { MenuIcon } from './menuicon'
 import Link from 'next/link'
 import ContainerLayout from '@/layout/ContainerLayout'
 import { useLoading } from '@/context/LoadingContext'
+import { useAdmissionsPopup } from '@/context/AdmissionsPopupContext'
 
 // Custom Hooks for Architecture and Optimization
 import { useNavbarScroll } from '@/hooks/useNavbarScroll';
@@ -15,6 +16,7 @@ import { useMenuAnimation } from '@/hooks/useMenuAnimation';
 
 const Navbar = () => {
     const { isGlobalAudioEnabled, setIsGlobalAudioEnabled } = useLoading();
+    const { openPopup } = useAdmissionsPopup();
     const pathname = usePathname();
     const menuBtnRef = useRef<HTMLButtonElement>(null);
     const menuSfxRef = useRef<HTMLAudioElement | null>(null);
@@ -59,7 +61,7 @@ const Navbar = () => {
         { name: 'Learning @ RAKS', href: '/learning-at-raks' },
         { name: 'Hidden Curriculum @ RAKS', href: '/hiddencurricular-at-raks' },
         { name: 'Admissions', href: '/admissions' },
-        { name: 'Careers', href: '/careers' },
+        { name: 'Teach @ RAKS', href: '/careers' },
         { name: 'News & Events', href: '/news-and-events' },
         { name: 'Contact Us', href: '/contact-us' },
     ];
@@ -121,9 +123,12 @@ const Navbar = () => {
                         </button>
                        </div>
 
-                        <Link href={'/admissions'} className=" hidden md:flex bg-[#000086] hover:bg-[#0c0cbc] text-white py-2 px-4 rounded-md transition-colors duration-200  items-center justify-center gap-2 cursor-pointer font-normal uppercase  text-sm md:text-base">
+                        <button
+                            onClick={openPopup}
+                            className="hidden md:flex bg-[#000086] hover:bg-[#0c0cbc] text-white py-2 px-4 rounded-md transition-colors duration-200 items-center justify-center gap-2 cursor-pointer font-normal uppercase text-sm md:text-base"
+                        >
                             Admissions
-                        </Link>
+                        </button>
 
                         <div className="relative">
                             <MenuIcon ref={menuBtnRef} isOpen={menuOpen} onClick={handleToggleMenu} />

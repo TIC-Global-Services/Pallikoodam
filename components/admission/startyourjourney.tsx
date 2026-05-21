@@ -4,6 +4,7 @@ import ContainerLayout from '@/layout/ContainerLayout'
 import Image from 'next/image'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useAdmissionsPopup } from '@/context/AdmissionsPopupContext'
 
 import enquiryImg from '@/assets/admission/enquire.jpg'
 import interactImg from '@/assets/admission/intract_img.jpg'
@@ -48,6 +49,7 @@ const stages = [
 const StartYourJourney = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+    const { openPopup } = useAdmissionsPopup();
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -121,7 +123,7 @@ const StartYourJourney = () => {
                             Admission Process Guide
                         </h2>
 
-                        <button className="bg-[#000080] text-white px-6 lg:px-8 py-3 rounded font-medium text-[0.9rem] hover:bg-blue-900 transition-colors mt-2">
+                        <button onClick={openPopup} className="bg-[#000080] text-white px-6 lg:px-8 py-3 rounded font-medium text-[0.9rem] hover:bg-blue-900 transition-colors mt-2">
                             Enquire Now
                         </button>
                     </div>

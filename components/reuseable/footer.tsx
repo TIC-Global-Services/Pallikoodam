@@ -13,7 +13,7 @@ const Footer = () => {
         { label: 'Admissions', href: '/admissions' },
         { label: 'Learning @ RAKS', href: '/learning-at-raks' },
         { label: 'Hidden Curriculum @ RAKS', href: '/hiddencurricular-at-raks' },
-        { label: 'Careers', href: '/careers' },
+        { label: 'Teach @ RAKS', href: '/careers' },
         { label: 'News & Events', href: '/news-and-events' },
         { label: 'Contact Us', href: '/contact-us' },
     ]

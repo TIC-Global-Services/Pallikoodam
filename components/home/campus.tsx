@@ -8,6 +8,7 @@ import ContainerLayout from '@/layout/ContainerLayout'
 import SimpleParallax from 'simple-parallax-js'
 import { useLetterReveal } from '../reuseable/texteffect/useLetterReveal'
 import BlurText from '../reuseable/texteffect/BlurText'
+import Link from 'next/link'
 
 const Campus = () => {
 
@@ -22,7 +23,8 @@ const Campus = () => {
         },
         {
             title: "School Announcements",
-            image: image3
+            image: image3,
+            href: "/news-and-events"
         },
     ]
     const { elementRef: titleRef } = useLetterReveal<HTMLHeadingElement>();
@@ -40,38 +42,52 @@ const Campus = () => {
 
                     {/* Mobile: horizontal swipe slider */}
                     <div className="md:hidden flex overflow-x-auto gap-4 snap-start snap-mandatory pb-4 -mx-11 pl-11 scrollbar-none">
-                        {data.map((item, index) => (
-                            <div key={index} className="snap-start shrink-0 w-[80vw] flex flex-col group">
-                                <div className="relative w-full aspect-4/5 overflow-hidden rounded-[2rem] mb-4">
-                                    <Image
-                                        src={item.image}
-                                        alt={item.title}
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </div>
-                                <h3 className="text-lg font-medium">{item.title}</h3>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Desktop: original 3-col grid */}
-                    <div className="hidden md:grid md:grid-cols-3 gap-8">
-                        {data.map((item, index) => (
-                            <div key={index} className="flex flex-col group">
-                                <div className="relative w-full aspect-4/5 overflow-hidden rounded-[2rem] mb-6">
-                                    <SimpleParallax>
+                        {data.map((item, index) => {
+                            const CardContent = (
+                                <div key={index} className="snap-start shrink-0 w-[80vw] flex flex-col group">
+                                    <div className="relative w-full aspect-4/5 overflow-hidden rounded-[2rem] mb-4">
                                         <Image
                                             src={item.image}
                                             alt={item.title}
                                             fill
-                                            className={`object-cover transition-transform duration-700  ${index === 0 ? 'object-cover scale-95 group-hover:scale-90' : 'object-cover group-hover:scale-105'}`}
+                                            className="object-cover"
                                         />
-                                    </SimpleParallax>
+                                    </div>
+                                    <h3 className="text-lg font-medium">{item.title}</h3>
                                 </div>
-                                <h3 className="text-2xl font-medium">{item.title}</h3>
-                            </div>
-                        ))}
+                            );
+                            return item.href ? (
+                                <Link key={index} href={item.href} className="block">
+                                    {CardContent}
+                                </Link>
+                            ) : CardContent;
+                        })}
+                    </div>
+
+                    {/* Desktop: original 3-col grid */}
+                    <div className="hidden md:grid md:grid-cols-3 gap-8">
+                        {data.map((item, index) => {
+                            const CardContent = (
+                                <div key={index} className="flex flex-col group">
+                                    <div className="relative w-full aspect-4/5 overflow-hidden rounded-[2rem] mb-6">
+                                        <SimpleParallax>
+                                            <Image
+                                                src={item.image}
+                                                alt={item.title}
+                                                fill
+                                                className={`object-cover transition-transform duration-700  ${index === 0 ? 'object-cover scale-95 group-hover:scale-90' : 'object-cover group-hover:scale-105'}`}
+                                            />
+                                        </SimpleParallax>
+                                    </div>
+                                    <h3 className="text-2xl font-medium">{item.title}</h3>
+                                </div>
+                            );
+                            return item.href ? (
+                                <Link key={index} href={item.href} className="block">
+                                    {CardContent}
+                                </Link>
+                            ) : CardContent;
+                        })}
                     </div>
 
                 </section>

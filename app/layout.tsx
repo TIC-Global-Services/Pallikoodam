@@ -8,6 +8,7 @@ import { ppe } from '@/font'
 import SmoothScroller from "@/layout/SmoothScroller";
 import Loader from "@/components/reuseable/Loader";
 import { LoadingProvider } from "@/context/LoadingContext";
+import { AdmissionsPopupProvider } from "@/context/AdmissionsPopupContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,12 +35,14 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <LoadingProvider>
-          <Loader />
-          <SmoothScroller>
-            <Navbar />
-            {children}
-            <Footer />
-          </SmoothScroller>
+          <AdmissionsPopupProvider>
+            <Loader />
+            <SmoothScroller>
+              <Navbar />
+              {children}
+              <Footer />
+            </SmoothScroller>
+          </AdmissionsPopupProvider>
         </LoadingProvider>
       </body>
     </html>

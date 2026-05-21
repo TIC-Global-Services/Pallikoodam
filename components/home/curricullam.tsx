@@ -73,7 +73,7 @@ const curricullam = () => {
           {/* First Card - Cambridge */}
           <div
             ref={card1Ref}
-            className="absolute bg-transparent top-0 left-0 w-full h-full overflow-hidden"
+            className="absolute bg-transparent top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 h-full">
               {/* Left side - Text */}
@@ -117,7 +117,7 @@ const curricullam = () => {
                   </div>
                 </div>
 
-                <Link href="/learning-at-raks">
+                <Link href="/learning-at-raks" className="pointer-events-auto">
                   <button
                     suppressHydrationWarning
                     className="bg-white text-sm md:text-xl mt-3 md:mt-15 text-[#0033A0] md:px-10 px-5 py-2 md:py-3 rounded-lg hover:scale-105 transition-all duration-300 font-semibold hover:bg-gray-100 w-fit"
@@ -182,12 +182,12 @@ const curricullam = () => {
                       confidence.
                     </p>
                     <p className="leading-[26px] mt-10 text-sm tracking-tight md:text-lg">
-                      At <span className="font-ppe font-light">RAKS</span> CBSE evolves into a pathway of rigour, purpose, and meaningful mastery.
+                      At <span className="font-ppe font-light">RAKS,</span> CBSE evolves into a pathway of rigour, purpose, and meaningful mastery.
                     </p>
                   </div>
                 </div>
 
-                <Link href="/academics">
+                <Link href="https://www.rakspallikkoodamcbse.com/" target="_blank">
                   <button
                     suppressHydrationWarning
                     className="bg-white text-sm md:text-xl mt-3 md:mt-15 text-[#0033A0] md:px-10 px-5 py-2 md:py-3 rounded-lg hover:scale-105 transition-all duration-300 font-semibold hover:bg-gray-100 w-fit"

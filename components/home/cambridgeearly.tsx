@@ -18,10 +18,11 @@ import Image from 'next/image'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import Link from 'next/link'
+import { useAdmissionsPopup } from '@/context/AdmissionsPopupContext'
 
 const CambridgeEarly = () => {
     const swiperRef = useRef<SwiperType | null>(null)
+    const { openPopup } = useAdmissionsPopup()
 
     const data = [
         {
@@ -123,19 +124,20 @@ const CambridgeEarly = () => {
         }
       `}} />
 
-            <div className='flex flex-col gap-6 px-[3%] md:px-[3%] mb-12 relative z-10'>
-                <h1 className='text-[36px] md:text-[56px] font-medium tracking-tighter leading-tight'>
+            <div className='flex flex-col gap-6 px-[3%] md:px-[3%] mb-12 relative z-10 text-center'>
+                <h1 className='text-[36px] md:text-[56px] font-medium  tracking-tighter leading-tight'>
                     Cambridge <span className='font-ppe italic font-light'>Early years</span>
                 </h1>
-                <p className='text-[16px] md:text-[20px] font-medium leading-relaxed max-w-3xl text-gray-800'>
-                    Inquiry-led, child-centred learning aligned with the Cambridge Early Years framework, inspired by the Reggio Emilia approach.
+                <p className='text-[16px] md:text-[20px] font-medium leading-relaxed text-gray-800'>
+                    Inquiry-led, child-centred learning aligned with the Cambridge Early Years framework, <br /> inspired by the Reggio Emilia approach.
                 </p>
                 <div>
-                    <Link href="/admissions">
-                        <button className='bg-[#000086] text-white px-6 py-3 rounded-md text-sm font-medium hover:bg-blue-900 transition-colors'>
-                            Enquire Now
-                        </button>
-                    </Link>
+                    <button
+                        onClick={openPopup}
+                        className='bg-[#000086] text-white px-6 py-3 rounded-md text-sm font-medium hover:bg-blue-900 transition-colors'
+                    >
+                        Enquire Now
+                    </button>
                 </div>
             </div>
 

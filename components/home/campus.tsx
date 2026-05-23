@@ -20,7 +20,8 @@ const Campus = () => {
         },
         {
             title: "Events & Celebrations",
-            image: image2
+            image: image2,
+            href: "https://www.youtube.com/c/LilandRaksPallikkoodam"
         },
         {
             title: "School Announcements",
@@ -44,6 +45,7 @@ const Campus = () => {
                     {/* Mobile: horizontal swipe slider */}
                     <div className="md:hidden flex overflow-x-auto gap-4 snap-start snap-mandatory pb-4 -mx-11 pl-11 scrollbar-none">
                         {data.map((item, index) => {
+                            const isExternal = item.href?.startsWith('http');
                             const CardContent = (
                                 <div key={index} className="snap-start shrink-0 w-[80vw] flex flex-col group">
                                     <div className="relative w-full aspect-4/5 overflow-hidden rounded-[2rem] mb-4">
@@ -58,9 +60,15 @@ const Campus = () => {
                                 </div>
                             );
                             return item.href ? (
-                                <Link key={index} href={item.href} className="block">
-                                    {CardContent}
-                                </Link>
+                                isExternal ? (
+                                    <a key={index} href={item.href} target="_blank" rel="noopener noreferrer" className="block">
+                                        {CardContent}
+                                    </a>
+                                ) : (
+                                    <Link key={index} href={item.href} className="block">
+                                        {CardContent}
+                                    </Link>
+                                )
                             ) : CardContent;
                         })}
                     </div>
@@ -68,6 +76,7 @@ const Campus = () => {
                     {/* Desktop: original 3-col grid */}
                     <div className="hidden md:grid md:grid-cols-3 gap-8">
                         {data.map((item, index) => {
+                            const isExternal = item.href?.startsWith('http');
                             const CardContent = (
                                 <div key={index} className="flex flex-col group">
                                     <div className="relative w-full aspect-4/5 overflow-hidden rounded-[2rem] mb-6">
@@ -84,9 +93,15 @@ const Campus = () => {
                                 </div>
                             );
                             return item.href ? (
-                                <Link key={index} href={item.href} className="block">
-                                    {CardContent}
-                                </Link>
+                                isExternal ? (
+                                    <a key={index} href={item.href} target="_blank" rel="noopener noreferrer" className="block">
+                                        {CardContent}
+                                    </a>
+                                ) : (
+                                    <Link key={index} href={item.href} className="block">
+                                        {CardContent}
+                                    </Link>
+                                )
                             ) : CardContent;
                         })}
                     </div>

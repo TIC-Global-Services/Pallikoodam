@@ -1,7 +1,8 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Eye, Download, FileText } from 'lucide-react'
+import Image from 'next/image'
+import { Eye, Download } from 'lucide-react'
 import type { Resource } from '@/lib/newsletters-data'
 import { getThumbnailUrl, getViewUrl, getDownloadUrl } from '@/lib/newsletters-data'
 
@@ -24,9 +25,14 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
             onError={() => setImgError(true)}
           />
         ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center gap-2 text-gray-400">
-            <FileText size={40} strokeWidth={1.5} />
-            <span className="text-xs font-medium uppercase tracking-wide">Document</span>
+          <div className="w-full h-full flex items-center justify-center p-8">
+            <Image
+              src="/Raks_Logo.png"
+              alt="RAKS Pallikoodam"
+              width={120}
+              height={60}
+              className="object-contain"
+            />
           </div>
         )}
       </div>

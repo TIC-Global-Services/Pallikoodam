@@ -15,25 +15,25 @@ export const newsletters: Resource[] = [
   {
     id: 'nl-aug',
     title: 'August Newsletter',
-    subtitle: 'August 2025-26',
+    subtitle: '2025-26',
     fileId: '1dWOZIq4-uuTp2Ktt7m79kPpahE-Uww5N',
   },
   {
     id: 'nl-jun-jul',
     title: 'June & July Newsletter',
-    subtitle: 'June & July 2025-26',
+    subtitle: '2025-26',
     fileId: '1LxNjeZPOmR7A1OYeVvZJBHvxuamElpp-',
   },
   {
     id: 'nl-oct',
     title: 'October Newsletter',
-    subtitle: 'October 2025-26',
+    subtitle: '2025-26',
     fileId: '1QFnKRpcZWKa5Ugx4uw6NkGZcezzVAKVD',
   },
   {
     id: 'nl-sept',
     title: 'September Newsletter',
-    subtitle: 'September 2025-26',
+    subtitle: '2025-26',
     fileId: '1NlCUvwVL9IX6QBQixuU2dCR3jvQYmJ8u',
   },
 ]
@@ -42,25 +42,25 @@ export const raksHeralds: Resource[] = [
   {
     id: 'rh-dec',
     title: 'December Raks Herald',
-    subtitle: 'December 2025',
+    subtitle: '2025',
     fileId: '1zsiwRKy_1y02hK-7EqaALdsRMXjzwHIp',
   },
   {
     id: 'rh-nov',
     title: 'November Raks Herald',
-    subtitle: 'November 2025',
+    subtitle: '2025',
     fileId: '1sV51yYLOYjD7lI0XsDN9S_CkEInJPaMM',
   },
   {
     id: 'rh-oct',
     title: 'October Raks Herald',
-    subtitle: 'October 2025',
+    subtitle: '2025',
     fileId: '1Ts3PfwTuMtHD8mWA88jwxTF1sJJBR3VC',
   },
   {
     id: 'rh-sept',
     title: 'September Raks Herald',
-    subtitle: 'September 2025',
+    subtitle: '2025',
     fileId: '1YCRkiV4_GTk9BXMB99VWv7Vias0_zV9e',
   },
 ]

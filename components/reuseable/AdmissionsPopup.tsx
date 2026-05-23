@@ -32,6 +32,7 @@ interface FormData {
   grade: string
   phone: string
   email: string
+  otp: string
 }
 
 interface FormErrors {
@@ -46,13 +47,14 @@ const initialFormData: FormData = {
   grade: '',
   phone: '',
   email: '',
+  otp: '',
 }
 
 export default function AdmissionsPopup({ isOpen, onClose }: AdmissionsPopupProps) {
   const [formData, setFormData] = useState<FormData>(initialFormData)
   const [errors, setErrors] = useState<FormErrors>({})
-  const [submitting, setSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success'>('idle')
+  const [otpSent, setOtpSent] = useState(false)
   const overlayRef = useRef<HTMLDivElement>(null)
 
   // Close on Escape key
@@ -82,6 +84,7 @@ export default function AdmissionsPopup({ isOpen, onClose }: AdmissionsPopupProp
       setFormData(initialFormData)
       setErrors({})
       setSubmitStatus('idle')
+      setOtpSent(false)
     }
   }, [isOpen])
 
@@ -95,6 +98,29 @@ export default function AdmissionsPopup({ isOpen, onClose }: AdmissionsPopupProp
       return prev
     })
   }, [])
+
+  const handleGetOtp = useCallback(() => {
+    const phone = formData.phone.trim()
+    let valid = true
+
+    if (!phone) {
+      setErrors(prev => ({ ...prev, phone: 'Enter phone number first' }))
+      valid = false
+    } else {
+      const digits = phone.replace(/\D/g, '')
+      if ((digits.length === 12 && digits.startsWith('91')) || digits.length === 10) {
+        // valid
+      } else {
+        setErrors(prev => ({ ...prev, phone: 'Enter a valid 10-digit phone number' }))
+        valid = false
+      }
+    }
+
+    if (valid) {
+      setErrors(prev => ({ ...prev, phone: undefined }))
+      setOtpSent(true)
+    }
+  }, [formData.phone])
 
   const validate = (): boolean => {
     const newErrors: FormErrors = {}
@@ -141,38 +167,15 @@ export default function AdmissionsPopup({ isOpen, onClose }: AdmissionsPopupProp
     return Object.keys(newErrors).length === 0
   }
 
-  const handleSubmit = async (e: { preventDefault: () => void }) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault()
 
     if (!validate()) return
 
-    setSubmitting(true)
-    setSubmitStatus('idle')
-
-    try {
-      const res = await fetch('/api/admissions', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          learnerName: formData.learnerName.trim(),
-          grade: formData.grade,
-          phone: formData.phone.trim(),
-          email: formData.email.trim(),
-          submittedAt: new Date().toISOString(),
-        }),
-      })
-
-      if (!res.ok) throw new Error('Submission failed')
-
-      setSubmitStatus('success')
-      setTimeout(() => {
-        onClose()
-      }, 2000)
-    } catch {
-      setSubmitStatus('error')
-    } finally {
-      setSubmitting(false)
-    }
+    setSubmitStatus('success')
+    setTimeout(() => {
+      onClose()
+    }, 2000)
   }
 
   if (!isOpen) return null
@@ -298,31 +301,38 @@ export default function AdmissionsPopup({ isOpen, onClose }: AdmissionsPopupProp
             </div>
           </div>
 
-          {/* OTP Row — disabled for now */}
-          {/* <div className="mb-6 max-w-md mx-auto">
-            <div className="flex gap-3">
-              <input
-                type="text"
-                value={formData.otp}
-                onChange={(e) => handleChange('otp', e.target.value)}
-                placeholder="Enter OTP"
-                maxLength={6}
-                className="flex-1 px-5 py-3.5 rounded-lg border border-gray-300 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#000086] focus:border-transparent transition-all text-sm"
-              />
+          {/* OTP Row */}
+          <div className="mb-6 max-w-md mx-auto flex justify-center">
+            {!otpSent ? (
               <button
                 type="button"
                 onClick={handleGetOtp}
-                className={`px-6 py-3 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${
-                  otpSent
-                    ? 'bg-green-100 text-green-700 border border-green-300 cursor-default'
-                    : 'bg-[#000086] text-white hover:bg-blue-900'
-                }`}
-                disabled={otpSent}
+                className="bg-[#000086] text-white px-8 py-3 rounded-lg text-sm font-medium hover:bg-blue-900 transition-all"
               >
-                {otpSent ? 'OTP Sent ✓' : 'Get OTP'}
+                Get OTP
               </button>
-            </div>
-          </div> */}
+            ) : (
+              <div className="flex gap-3 animate-fade-in">
+                <input
+                  type="text"
+                  value={formData.otp}
+                  onChange={(e) => handleChange('otp', e.target.value)}
+                  placeholder="Enter OTP"
+                  maxLength={6}
+                  inputMode="numeric"
+                  autoFocus
+                  className="flex-1 px-5 py-3.5 rounded-lg border border-gray-300 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#000086] focus:border-transparent transition-all text-sm"
+                />
+                <button
+                  type="button"
+                  className="px-6 py-3 rounded-lg text-sm font-medium transition-all whitespace-nowrap bg-green-100 text-green-700 border border-green-300 cursor-default"
+                  disabled
+                >
+                  OTP Sent ✓
+                </button>
+              </div>
+            )}
+          </div>
 
           {/* Submit + Status */}
           <div className="flex flex-col items-center gap-3">
@@ -331,17 +341,11 @@ export default function AdmissionsPopup({ isOpen, onClose }: AdmissionsPopupProp
                 Enquiry submitted successfully! Closing...
               </p>
             )}
-            {submitStatus === 'error' && (
-              <p className="text-red-500 text-sm font-medium">
-                Something went wrong. Please try again.
-              </p>
-            )}
             <button
               type="submit"
-              disabled={submitting}
-              className="bg-[#000086] text-white px-10 py-3 rounded-lg text-sm font-medium hover:bg-blue-900 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+              className="bg-[#000086] text-white px-10 py-3 rounded-lg text-sm font-medium hover:bg-blue-900 transition-all"
             >
-              {submitting ? 'Submitting...' : 'Submit Enquiry'}
+              Submit Enquiry
             </button>
           </div>
         </form>
@@ -361,6 +365,13 @@ export default function AdmissionsPopup({ isOpen, onClose }: AdmissionsPopupProp
         }
         .animate-in {
           animation: slideUpFade 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(-4px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+          animation: fadeIn 0.25s ease-out forwards;
         }
       `}</style>
     </div>

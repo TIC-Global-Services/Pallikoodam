@@ -5,6 +5,7 @@ import WhatsComing from '@/components/newsandevents/whatscoming'
 import Academics from '@/components/newsandevents/academics'
 import Media from '@/components/newsandevents/media'
 import Downloads from '@/components/newsandevents/downloads'
+import NewslettersBlogs from '@/components/newsandevents/NewslettersBlogs'
 
 export const metadata = {
   title: "News & Events | RAKS Pallikoodam",
@@ -20,6 +21,7 @@ const page = () => {
       <Academics />
       <Media />
       {/* <Downloads /> */}
+      <NewslettersBlogs />
     </div>
   )
 }

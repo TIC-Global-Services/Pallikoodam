@@ -15,7 +15,8 @@ const Campus = () => {
     const data = [
         {
             title: "Newsletter & Blogs",
-            image: image1
+            image: image1,
+            href: "/news-and-events#newsletters"
         },
         {
             title: "Events & Celebrations",

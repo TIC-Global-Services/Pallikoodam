@@ -26,8 +26,8 @@ const Media = () => {
     ];
 
     return (
-        <section className="w-full py-10 pl-4">
-            {/* <ContainerLayout> */}
+        <section className="w-full py-10">
+            <ContainerLayout>
                 <div className="w-full">
                     {/* Header Section */}
                     <div className="mb-8 md:mb-12">
@@ -59,7 +59,7 @@ const Media = () => {
                         ))}
                     </div>
                 </div>
-            {/* </ContainerLayout> */}
+            </ContainerLayout>
         </section>
     )
 }

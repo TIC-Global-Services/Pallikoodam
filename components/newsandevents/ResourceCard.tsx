@@ -8,9 +8,9 @@ import { getThumbnailUrl, getViewUrl, getDownloadUrl } from '@/lib/newsletters-d
 
 export default function ResourceCard({ resource }: { resource: Resource }) {
   const [imgError, setImgError] = useState(false)
-  const thumbnail = getThumbnailUrl(resource.fileId, resource.type)
-  const viewUrl = getViewUrl(resource.fileId, resource.type)
-  const downloadUrl = getDownloadUrl(resource.fileId, resource.type)
+  const thumbnail = getThumbnailUrl(resource.fileId)
+  const viewUrl = getViewUrl(resource.fileId)
+  const downloadUrl = getDownloadUrl(resource.fileId)
 
   return (
     <div className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300">

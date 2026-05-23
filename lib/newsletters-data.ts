@@ -1,14 +1,11 @@
 // Add new items by appending to the relevant array below.
-// fileId = the ID in your Google Drive shareable link:
-//   https://drive.google.com/file/d/{FILE_ID}/view
+// fileId = file name inside /public/newslettersBlogs
 
 export interface Resource {
   id: string
   title: string
   subtitle?: string
   fileId: string
-  /** For Google Docs (not PDFs), set type to 'gdoc' */
-  type?: 'pdf' | 'gdoc'
 }
 
 export const newsletters: Resource[] = [
@@ -16,25 +13,25 @@ export const newsletters: Resource[] = [
     id: 'nl-aug',
     title: 'August Newsletter',
     subtitle: '2025-26',
-    fileId: '1dWOZIq4-uuTp2Ktt7m79kPpahE-Uww5N',
+    fileId: 'Aug Raks News Letter - August 2025-26.pdf',
   },
   {
     id: 'nl-jun-jul',
     title: 'June & July Newsletter',
     subtitle: '2025-26',
-    fileId: '1LxNjeZPOmR7A1OYeVvZJBHvxuamElpp-',
+    fileId: 'June & JUly Raks News Letter - June & July 2025-26.pdf',
   },
   {
     id: 'nl-oct',
     title: 'October Newsletter',
     subtitle: '2025-26',
-    fileId: '1QFnKRpcZWKa5Ugx4uw6NkGZcezzVAKVD',
+    fileId: 'Oct Raks News Letter - October - 2025-26.pdf',
   },
   {
     id: 'nl-sept',
     title: 'September Newsletter',
     subtitle: '2025-26',
-    fileId: '1NlCUvwVL9IX6QBQixuU2dCR3jvQYmJ8u',
+    fileId: 'Sept Raks News Letter - September - 2025-26.pdf',
   },
 ]
 
@@ -43,25 +40,25 @@ export const raksHeralds: Resource[] = [
     id: 'rh-dec',
     title: 'December Raks Herald',
     subtitle: '2025',
-    fileId: '1zsiwRKy_1y02hK-7EqaALdsRMXjzwHIp',
+    fileId: "DEC RaK's Herald - December_.pdf",
   },
   {
     id: 'rh-nov',
     title: 'November Raks Herald',
     subtitle: '2025',
-    fileId: '1sV51yYLOYjD7lI0XsDN9S_CkEInJPaMM',
+    fileId: "NOV Rak's Herald - November.pdf",
   },
   {
     id: 'rh-oct',
     title: 'October Raks Herald',
     subtitle: '2025',
-    fileId: '1Ts3PfwTuMtHD8mWA88jwxTF1sJJBR3VC',
+    fileId: "OCT Rak's Herald - October.pdf",
   },
   {
     id: 'rh-sept',
     title: 'September Raks Herald',
     subtitle: '2025',
-    fileId: '1YCRkiV4_GTk9BXMB99VWv7Vias0_zV9e',
+    fileId: "SEPT Rak's Newsletter September.pdf",
   },
 ]
 
@@ -70,31 +67,22 @@ export const blogs: Resource[] = [
     id: 'blog-1',
     title: 'Blog Piece',
     subtitle: '',
-    fileId: '1vpsxI7b50IPnJzr5U0y5lF7ziKFWRfizl8vkdiQ9XBA',
-    type: 'gdoc',
+    fileId: 'Ms. Swetha Blog Post.pdf',
   },
 ]
 
-/** Google Drive thumbnail — direct lh3 URL avoids 302 redirect issues in browsers */
-export function getThumbnailUrl(fileId: string, type?: 'pdf' | 'gdoc'): string {
-  if (type === 'gdoc') {
-    return '' // Google Docs thumbnails aren't reliable; use fallback icon
-  }
-  return `https://lh3.googleusercontent.com/d/${fileId}=w600-h900`
+/** First-page thumbnail image with same filename as PDF in /public/newslettersBlogs/thumbnails */
+export function getThumbnailUrl(fileId: string): string {
+  const thumbnailFile = fileId.replace(/\.pdf$/i, '.jpg')
+  return `/newslettersBlogs/thumbnails/${encodeURIComponent(thumbnailFile)}`
 }
 
 /** View link — opens the file in a new tab */
-export function getViewUrl(fileId: string, type?: 'pdf' | 'gdoc'): string {
-  if (type === 'gdoc') {
-    return `https://docs.google.com/document/d/${fileId}/view`
-  }
-  return `https://drive.google.com/file/d/${fileId}/view`
+export function getViewUrl(fileId: string): string {
+  return `/newslettersBlogs/${encodeURIComponent(fileId)}`
 }
 
 /** Download link */
-export function getDownloadUrl(fileId: string, type?: 'pdf' | 'gdoc'): string {
-  if (type === 'gdoc') {
-    return `https://docs.google.com/document/d/${fileId}/export?format=pdf`
-  }
-  return `https://drive.google.com/uc?export=download&id=${fileId}`
+export function getDownloadUrl(fileId: string): string {
+  return `/newslettersBlogs/${encodeURIComponent(fileId)}`
 }

@@ -30,7 +30,7 @@ const Hero = () => {
 
   return (
     <div ref={spacerRef} className="relative h-[250vh]">
-      <section className="fixed top-0 left-0 w-full h-screen overflow-hidden z-0" ref={containerRef}>
+      <section className="fixed top-0 left-0 w-full h-screen overflow-hidden z-[1]" ref={containerRef}>
         <div className="flex items-center justify-center h-full w-full">
           <video
             ref={videoRef}

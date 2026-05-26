@@ -8,6 +8,7 @@ import image1 from "@/assets/home/cambridgeimg.jpg";
 import image2 from "@/assets/home/national-curriculamimg-1.jpg";
 import { useLetterReveal } from "../reuseable/texteffect/useLetterReveal";
 import Link from 'next/link';
+import { div } from "motion/react-client";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,7 +67,7 @@ const curricullam = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-white mt-20 min-h-screen"
+      className="relative w-full bg-white min-h-screen"
     >
       <div className="w-full h-full">
         <div className="relative w-full h-full">
@@ -79,7 +80,7 @@ const curricullam = () => {
               {/* Left side - Text */}
               <div
                 ref={text1Ref}
-                className="bg-[#000086] p-8 md:p-12 flex flex-col justify-center text-white overflow-y-auto"
+                className="bg-[#000086] p-8 md:p-12 flex flex-col justify-center text-white overflow-y-auto md:overflow-y-hidden"
               >
                 <div ref={titleRef}>
                   <h2 className="text-2xl md:text-[clamp(2.5rem,5dvh,3.375rem)] leading-[1.2] mb-2">
@@ -148,7 +149,7 @@ const curricullam = () => {
               {/* Left side - Text */}
               <div
                 ref={text2Ref}
-                className="bg-[#000086] p-8 md:p-12 flex flex-col text-white justify-center overflow-y-auto"
+                className="bg-[#000086] p-8 md:p-12 flex flex-col text-white justify-center overflow-y-auto md:overflow-y-hidden"
               >
                 <div ref={titleRef2}>
                   <h2 className="text-2xl md:text-[clamp(2.5rem,5dvh,3.375rem)] leading-[1.2] mb-2">

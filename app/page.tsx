@@ -26,7 +26,9 @@ export default function Home() {
         <Campustour />
         <Differencewecreate />
         <Shapingthefuture />
+        <div className="mt-20">
         <Curricullam />
+        </div>
         <CambridgeEarly />
         <ProgressiveLearner />
         <Innovationspace />

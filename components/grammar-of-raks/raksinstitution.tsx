@@ -11,41 +11,52 @@ import image3 from '@/assets/grammar-of-raks/early_years_bg.png';
 import image4 from '@/assets/grammar-of-raks/academy_img.png';
 import image5 from '@/assets/grammar-of-raks/raks_visionary_hub.png';
 
-const institutionData = [
+interface InstitutionItem {
+    number: string;
+    title: string;
+    description: string;
+    image: StaticImageData;
+    href: string;
+    target?: string;
+}
+
+const institutionData: InstitutionItem[] = [
     {
         number: "01",
         title: "RAKS Early Years",
         description: "Reggio Emilia inspired early learning aligned with the Cambridge Early Years Programme",
         image: image1,
-        href:"/"
+        href: "https://www.lilpallikkoodam.com/",
+        target: "_blank"
     },
     {
         number: "02",
         title: "RAKS Pallikkoodam",
         description: "CBSE school focused on conceptual learning, learner agency, and holistic growth.",
         image: image2, // Replace with actual image
-        href:"/"
+        href: "https://www.rakspallikkoodamcbse.com/",
+        target: "_blank"
     },
     {
         number: "03",
         title: "RAKS Pallikkoodam  \n School of Excellence",
         description: "Cambridge International school offering globally aligned academic pathways.",
         image: image3, // Replace with actual image
-        href:"/learning-at-raks"
+        href: "/learning-at-raks"
     },
     {
         number: "04",
         title: "RAKS Academy",
         description: "A vibrant sports ecosystem building skill, discipline, and character.",
         image: image4, // Replace with actual image
-        href:"/"
+        href: "/"
     },
     {
         number: "05",
         title: "RAKS Visionary Hub",
         description: "A centre for innovation, mentor development, and future-focused education.",
-        image:image5, // Replace with actual image
-        href:''
+        image: image5, // Replace with actual image
+        href: ""
     },
 ];
 
@@ -146,9 +157,13 @@ const RaksInstitution = () => {
                             <p className="text-center text-xl font-medium leading-[1.2] text-gray-700 max-w-xs mx-auto">
                                 {item.description}
                             </p>
-                           <div className='flex justify-center'>
-                             <Link href={item.href}> <button className="mt-4 bg-[#000086] text-white px-4 py-2 rounded-md">Know More</button></Link>
-                            </div>
+                            {item.href && (
+                                <div className='flex justify-center'>
+                                    <Link href={item.href} target={item.target}>
+                                        <button className="mt-4 bg-[#000086] text-white px-4 py-2 rounded-md cursor-pointer">Know More</button>
+                                    </Link>
+                                </div>
+                            )}
                         </div>
                     ))}
 
@@ -201,7 +216,11 @@ const RaksInstitution = () => {
                                             <p className="text-sm md:text-base lg:text-[1.5rem] font-[500] leading-[1.3] max-w-lg">
                                                 {item.description}
                                             </p>
-                                            <Link href={item.href}> <button className="mt-4 bg-[#000086] text-white px-4 py-2 rounded-md">Know More</button></Link>
+                                            {item.href && (
+                                                <Link href={item.href} target={item.target}>
+                                                    <button className="mt-4 bg-[#000086] text-white px-4 py-2 rounded-md cursor-pointer">Know More</button>
+                                                </Link>
+                                            )}
                                         </div>
                                     </div>
                                 </div>

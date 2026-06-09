@@ -46,7 +46,6 @@ const Footer = () => {
                             <Link href="https://www.linkedin.com/company/pallikkoodam" target="_blank" className="hover:text-white">LinkedIn</Link>
                             <Link href="https://www.instagram.com/pallikkoodamcoimbatore" target="_blank" className="hover:text-white">Instagram</Link>
                             <Link href="https://www.facebook.com/PallikkoodamCoimbatore" target="_blank" className="hover:text-white">Facebook</Link>
-                            <Link href="https://x.com/raks_lil?s=08" target="_blank" className="hover:text-white">X</Link>
                             <Link href="https://www.youtube.com/c/LilandRaksPallikkoodam" target="_blank" className="hover:text-white">YouTube</Link>
                         </div>
                         {/* Address */}

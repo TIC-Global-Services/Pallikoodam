@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import image1 from '@/assets/home/wayofteaching-1.jpg'
 import image2 from '@/assets/home/wayofteaching-2.jpg'
-import image3 from '@/assets/home/wayofteaching-4.jpg'
+import image3 from '@/assets/home/wayofteaching-3.jpg'
 import ContainerLayout from '@/layout/ContainerLayout'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -121,7 +121,7 @@ const Wayofteaching = () => {
                                         fill
                                         className='object-cover'
                                         placeholder='blur'
-                                        style={{objectPosition:"20% 10%"}}
+                                        style={{ objectPosition: "20% 10%" }}
                                         priority={index === 0}
                                     />
                                     {/* Gradient Overlay */}

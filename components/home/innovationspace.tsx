@@ -30,7 +30,7 @@ const cards = [
         title: "Design & Technology",
         italic: "Labs",
         italicPosition: "after",
-        description: "Here we don't imagine the future; we prototype it.\n\nLearners explore tools, materials, mechanisms, and real-world challenges transforming concepts through guided curiosity and fearless problem-solving.",
+        description: "Here we don't imagine the future, we prototype it.\n\nLearners explore tools, materials, mechanisms, and real-world challenges transforming concepts through guided curiosity and fearless problem-solving.",
         image: innovation2,
         colSpan: "md:col-span-3"
     },
@@ -39,7 +39,7 @@ const cards = [
         title: "Studios",
         italic: "Art",
         italicPosition: "before",
-        description: "A sanctuary where colours, textures, and emotions breathe.\n Where learners experiment, express, and evolve understanding that art is not just a subject, but a language of identity, joy, and discovery.",
+        description: "A sanctuary where colours, textures, and emotions breathe.\n\n Where learners experiment, express, and evolve understanding that art is not just a subject, but a language of identity, joy, and discovery.",
         image: innovation3,
         colSpan: "md:col-span-2"
     },
@@ -105,7 +105,7 @@ const Innovationspace = () => {
                         invalidateOnRefresh: true,
                     }
                 })
-                
+
                 if (bubblesRef.current.length > 0) {
                     gsap.set(bubblesRef.current, {
                         scaleY: 0,

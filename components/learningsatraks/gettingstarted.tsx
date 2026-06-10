@@ -53,7 +53,7 @@ const gettingstarted = () => {
                     </div>
 
                     {/* Image - Right Side on Desktop, Top on Mobile */}
-                    <div className='relative z-10 order-1 mb-5 lg:order-1 w-full lg:w-[45%] h-[350px] md:h-[500px] lg:h-auto overflow-hidden rounded-2xl'>
+                    <div className='relative z-10 order-1 mt-5 mb-5 lg:order-1 w-full lg:w-[45%] h-[350px] md:h-[500px] lg:h-auto overflow-hidden rounded-2xl'>
                         <SimpleParallax>
                             <Image
                                 src={gettingstart}
